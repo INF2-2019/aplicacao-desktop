@@ -10,11 +10,9 @@ Esse repositório tem afazeres globais, caso queira ajudar verifique o [`TO-DO`]
 
 ### Ferramentas necessárias
 
-- `Oracle JDK 11+` ou `OpenJDK 11+` [recomendado]
-- `OpenJFX 11+`, 13 recomendado
+- `Oracle JDK 7/8` ou `OpenJDK 7/8` [recomendado]
 - Uma IDE recomendada
 
-Download `OpenJFX 11+`: [aqui](https://gluonhq.com/products/javafx/)
 Instruções para instalação: [aqui](https://duckduckgo.com/)
 
 ### IDE's recomendadas
@@ -49,21 +47,16 @@ insert_final_newline = true
 
 ## Como _buildar_ o projeto
 
-Utilizar a ferramenta de _build_ padrão da IDE utilizada. Mais instruções serão adicionadas futuramente.
-
-## Sobre os bancos de dados
-
-Os bancos de dados seguem um padrão semelhante ao documento do projeto, futuramente serão adicionados os `dumps` e um esquema
+Utilizar a ferramenta de _build_ padrão da IDE utilizada.
 
 ## Bibliotecas
 
 As bibliotecas usadas atualmente são:
 
-- `OpenJFX`
+- `JavaFX 8`
 
 ## Documentações e links úteis
 
 A documentação estará disponível na pasta `docs`.
 
-`OpenJFX 13`: [aqui](https://openjfx.io/javadoc/13/)
-`OpenJFX 11`: [aqui](https://openjfx.io/javadoc/11/)
+`JavaFX 8`: [aqui](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
