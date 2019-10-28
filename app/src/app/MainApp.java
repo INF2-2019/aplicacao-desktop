@@ -1,5 +1,6 @@
 package app;
 
+import departamentos.controllers.TableController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,8 +16,9 @@ public class MainApp extends Application {
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("resources/styles.css").toExternalForm());
+        TableController t = new TableController();
         
-        stage.setTitle("JavaFX and JDK8");
+        stage.setTitle("Departamentos");
         stage.setScene(scene);
         stage.show();
     }
