@@ -60,22 +60,37 @@ public class TableController implements Initializable{
     }
     
 
-    ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
+    static ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        consultarBD();
+        criaTabela();
         
+    }
+    public void refresh(){
+        oblist.clear();
+        consultarBD();
+        criaTabela();
+        System.out.println("clicou");
+    }
+    
+    static public void consultarBD(){
         try {
             Connection con = DbConnector.getConnection();
             
             ResultSet rs = con.createStatement().executeQuery("select * from cursos");
-            
+            oblist = FXCollections.observableArrayList();
             while(rs.next()){
                 oblist.add(new ModelTable(rs.getString("id"),rs.getString("id-depto"),rs.getString("nome"),rs.getString("horas-total"),rs.getString("modalidade"),new Button("INFO"),new Button("EDITAR"),new Button("DELETAR")));
             }
+            
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public void criaTabela(){
         col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         col_idDepto.setCellValueFactory(new PropertyValueFactory<>("idDepto"));
         col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -85,9 +100,6 @@ public class TableController implements Initializable{
         col_funcoes1.setCellValueFactory(new PropertyValueFactory<>("edita"));
         col_funcoes2.setCellValueFactory(new PropertyValueFactory<>("deleta"));
         
-        
         table.setItems(oblist);
-        
     }
-    
 }

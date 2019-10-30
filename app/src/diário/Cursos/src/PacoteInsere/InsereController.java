@@ -5,7 +5,13 @@
  */
 package PacoteInsere;
 
+import Principal.DbConnector;
+import Principal.TableController;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,7 +54,7 @@ public class InsereController implements Initializable {
     private Label modalidadeLabel;
 
     @FXML
-    private TextField modelidadeInput;
+    private TextField modalidadeInput;
 
     @FXML
     private Label horasLabel;
@@ -61,8 +67,26 @@ public class InsereController implements Initializable {
         fecha();
     }
     @FXML
-    void acaoSalvar(ActionEvent event) {
+    void acaoSalvar(ActionEvent event) throws SQLException {
+        Connection con = new DbConnector().getConnection();
+
+            // cria um preparedStatement
+            String sql = "insert into cursos" +
+                    " (`id`, `id-depto`, `nome`, `horas-total`, `modalidade`)" +
+                    " values (?,?,?,?,?)";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            System.out.println((Button) event.getSource());
+            // preenche os valores
+            stmt.setString(1,idInput.getText());
+            stmt.setString(2,idDeptoInput.getText());
+            stmt.setString(3,nomeInput.getText());
+            stmt.setString(4,horasInput.getText());
+            stmt.setString(5,modalidadeInput.getText());
+            stmt.execute();
+            stmt.close();
+            con.close();
         fecha();
+        
     }
     
     @Override

@@ -45,6 +45,6 @@
       <TextField fx:id="idDeptoInput" layoutX="221.0" layoutY="104.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="horasInput" layoutX="358.0" layoutY="104.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="nomeInput" layoutX="91.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
-      <TextField fx:id="modelidadeInput" layoutX="279.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
+      <TextField fx:id="modalidadeInput" layoutX="279.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
     </children>
 </AnchorPane>
