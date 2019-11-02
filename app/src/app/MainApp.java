@@ -1,30 +1,30 @@
-package app;
+        package app;
 
-import departamentos.controllers.TableController;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+        import diario.departamentos.controllers.TableController;
+        import javafx.application.Application;
+        import javafx.fxml.FXMLLoader;
+        import javafx.scene.Parent;
+        import javafx.scene.Scene;
+        import javafx.stage.Stage;
 
 
-public class MainApp extends Application {
+        public class MainApp extends Application {
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("resources/scene.fxml"));
-        
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("resources/styles.css").toExternalForm());
-        TableController t = new TableController();
-        
-        stage.setTitle("Departamentos");
-        stage.setScene(scene);
-        stage.show();
-    }
+            @Override
+            public void start(Stage stage) throws Exception {
+                Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/scene.fxml"));
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getResource("resources/styles.css").toExternalForm());
+                TableController t = new TableController();
 
-}
+                stage.setTitle("Departamentos");
+                stage.setScene(scene);
+                stage.show();
+            }
+
+            public static void main(String[] args) {
+                launch(args);
+            }
+
+        }
