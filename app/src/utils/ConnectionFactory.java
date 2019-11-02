@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class DatabaseConnection {
+public class ConnectionFactory {
     
     Connection con;
     
-    public DatabaseConnection(){
+    public ConnectionFactory(){
         try {
             Class.forName("com.mysql.jdbc.Drver");
         } catch (Exception e) {

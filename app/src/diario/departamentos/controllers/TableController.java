@@ -1,6 +1,7 @@
 package diario.departamentos.controllers;
 
 import departamentos.model.Departamento;
+import diario.departamentos.repository.DepartamentoRepository;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,7 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
-import utils.DatabaseConnection;
+import utils.ConnectionFactory;
 
 public class TableController implements Initializable{
     
@@ -40,21 +41,7 @@ public class TableController implements Initializable{
     }
 
     private void loadTableData() throws SQLException{
-        Connection con = DatabaseConnection.getDiario();
-        if(con != null){    
-            Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM `departamentos`");
-
-			while(rs.next()) {
-				tabelaDeptos.add(new Departamento(rs.getInt("id"), rs.getInt("id-campi"), rs.getString("nome")));
-			}
-                
-            stmt.close();
-            con.close();
-        }
-        else{
-            throw new SQLException();
-        }
+        tabelaDeptos = (ObservableList) DepartamentoRepository.consulta();
         
         tabela.setItems(tabelaDeptos);
         tabela.setOnMouseClicked(e ->{
