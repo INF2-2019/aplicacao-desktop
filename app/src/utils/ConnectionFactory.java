@@ -18,24 +18,24 @@ public class ConnectionFactory {
     }
     
     public static Connection getConnection(String database){
-		String driver, url, usuario, senha;
+	String driver, url, usuario, senha;
 
-		driver = "com.mysql.cj.jdbc.Driver";
+        driver = "com.mysql.cj.jdbc.Driver";
         url = "jdbc:mysql://localhost/";
         usuario = "root";
         senha = "";
 
-		try {
-			Class.forName(driver);
-			return DriverManager.getConnection(url + database + "?useTimezone=true&serverTimezone=UTC&useSSL=false", usuario, senha);
-		} catch (ClassNotFoundException e) {
-			System.err.println("Driver não encontrado: " + e);
-			return null;
-		} catch (SQLException e) {
-			System.err.println("Falha ao conectar ao banco de dados: " + e);
-			return null;
-		}
+	try {
+            Class.forName(driver);
+            return DriverManager.getConnection(url + database + "?useTimezone=true&serverTimezone=UTC&useSSL=false", usuario, senha);
+	} catch (ClassNotFoundException e) {
+            System.err.println("Driver não encontrado: " + e);
+            return null;
+	} catch (SQLException e) {
+            System.err.println("Falha ao conectar ao banco de dados: " + e);
+            return null;
 	}
+    }
   
     public static Connection getDiario() {
 		return getConnection("diario");

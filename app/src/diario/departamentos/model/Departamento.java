@@ -1,6 +1,14 @@
-package departamentos.model;
+package diario.departamentos.model;
 
+import diario.departamentos.repository.DepartamentoRepository;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javax.swing.ButtonGroup;
 
@@ -25,15 +33,16 @@ public class Departamento {
         this.nome = nome;
         btns = new Button[3];
         hbox = new HBox();
-        btns[0]= new Button("INFO");
-        btns[1]=new Button("EDITAR");
-        btns[2]=new Button("DELETAR");
+        btns[0] = new Button("INFO");
+        btns[1] = new Button("EDITAR");
+        btns[2] = new Button("DELETAR");
         hbox.getChildren().add(0, btns[0]);
         btns[0].getStyleClass().add("info");
         btns[1].getStyleClass().add("editar");
         btns[2].getStyleClass().add("deletar");
         hbox.getChildren().add(1, btns[1]);
         hbox.getChildren().add(2, btns[2]);
+        btnSetup(this.id);
     }
 
     public HBox getHbox() {
@@ -76,4 +85,19 @@ public class Departamento {
         this.nome = nome;
     }
     
+    public void btnSetup(int id){
+        btns[2].setOnAction(new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                try {
+                    removerDepto();
+                } catch (SQLException ex) {
+                    System.err.println(ex);
+                }
+            }});
+    }
+    
+    private void removerDepto() throws SQLException{
+        DepartamentoRepository.remove(this.id);
+    } 
 }

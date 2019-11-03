@@ -28,7 +28,7 @@
             <Insets left="240.0" top="73.0" />
          </StackPane.margin>
       </Label>
-      <Button mnemonicParsing="false" style="-fx-background-color: #29a58c;" text="ADICIONAR" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
+      <Button fx:id="adicionar" mnemonicParsing="false" onAction="#modalAdicionar" style="-fx-background-color: #29a58c;" text="ADICIONAR" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
          <StackPane.margin>
             <Insets right="240.0" top="150.0" />
          </StackPane.margin>

@@ -1,6 +1,6 @@
 package diario.departamentos.repository;
 
-import departamentos.model.Departamento;
+import diario.departamentos.model.Departamento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,13 +16,13 @@ public class DepartamentoRepository {
         Connection con = ConnectionFactory.getDiario();
         if(con != null){    
             Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM `departamentos`");
+		ResultSet rs = stmt.executeQuery("SELECT * FROM `departamentos`");
 
-			List<Departamento> deptos = new LinkedList();
+		List<Departamento> deptos = new LinkedList();
 
-			while(rs.next()) {
-				deptos.add(new Departamento(rs.getInt("id"), rs.getInt("id-campi"), rs.getString("nome")));
-			}
+            while(rs.next()) {
+                deptos.add(new Departamento(rs.getInt("id"), rs.getInt("id-campi"), rs.getString("nome")));
+            }
                 
             stmt.close();
             con.close();
