@@ -21,14 +21,6 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Label text="Departamentos" StackPane.alignment="TOP_LEFT">
-         <font>
-            <Font size="60.0" />
-         </font>
-         <StackPane.margin>
-            <Insets left="240.0" top="73.0" />
-         </StackPane.margin>
-      </Label>
       <Button fx:id="adicionar" mnemonicParsing="false" onAction="#modalAdicionar" style="-fx-background-color: #29a58c;" text="ADICIONAR" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
          <StackPane.margin>
             <Insets right="240.0" top="150.0" />
@@ -40,6 +32,22 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <Label fx:id="aviso" alignment="TOP_CENTER" contentDisplay="CENTER" style="-fx-background-color: red;" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="240.0" top="112.0" />
+         </StackPane.margin>
+      </Label>
+      <Label text="Departamentos" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="60.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="242.0" top="112.0" />
+         </StackPane.margin>
+      </Label>
       <TableView fx:id="tabela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="1116.0" StackPane.alignment="CENTER">
         <columns>
             <TableColumn fx:id="col_nome" minWidth="372.0" prefWidth="69.0" style="-fx-font-size: 16;" text="Nome" />

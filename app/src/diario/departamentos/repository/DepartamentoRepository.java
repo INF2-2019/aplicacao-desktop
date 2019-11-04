@@ -16,7 +16,7 @@ public class DepartamentoRepository {
         Connection con = ConnectionFactory.getDiario();
         if(con != null){    
             Statement stmt = con.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM `departamentos`");
+		ResultSet rs = stmt.executeQuery("SELECT * FROM `departamentos` ORDER BY `id` ASC");
 
 		List<Departamento> deptos = new LinkedList();
 
@@ -71,8 +71,8 @@ public class DepartamentoRepository {
         Connection con = ConnectionFactory.getDiario();
         if(con != null){
             PreparedStatement prst = con.prepareStatement("INSERT INTO `departamentos` (`id-campi`, `nome`) VALUES (?, ?)");
-			prst.setInt(1, depto.getIdCampi());
-			prst.setString(2, depto.getNome());
+            prst.setInt(1, depto.getIdCampi());
+            prst.setString(2, depto.getNome());
             prst.executeUpdate();
             prst.close();
             con.close();

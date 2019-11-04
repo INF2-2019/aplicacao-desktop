@@ -2,6 +2,7 @@ package diario.departamentos.model;
 
 import diario.departamentos.controllers.ModalConfirmacaoController;
 import diario.departamentos.controllers.ModalEditarController;
+import diario.departamentos.controllers.TableController;
 import java.io.IOException;
 import java.sql.SQLException;
 import javafx.event.Event;
@@ -113,7 +114,7 @@ public class Departamento {
     private void editarDepto (Event event) throws SQLException, IOException{
         Stage modalEditar = new Stage();
         
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/diario/departamentos/ModalEditar.fxml"));     
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/diario/departamentos/resources/ModalEditar.fxml"));     
 
         Parent root = (Parent)fxmlLoader.load();          
         ModalEditarController controller = fxmlLoader.<ModalEditarController>getController();
@@ -126,16 +127,16 @@ public class Departamento {
         modalEditar.initModality(Modality.APPLICATION_MODAL);
         modalEditar.showAndWait();
 
-        Stage btn = (Stage)btns[0].getScene().getWindow();
-        Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDepartamentos.fxml"));
+        Stage table = (Stage)btns[0].getScene().getWindow();
+        Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/resources/TabelaDepartamentos.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add("app/resources/styles.css");
-        btn.setScene(scene);
+        table.setScene(scene);
     }
     
     private void removerDepto(Event event) throws SQLException, IOException{
         Stage modalConfirmar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/ModalConfirmacao.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/resources/ModalConfirmacao.fxml"));
         
         modalConfirmar.setScene(new Scene(root));
         ModalConfirmacaoController.setId(this.id);
@@ -143,10 +144,10 @@ public class Departamento {
         modalConfirmar.initModality(Modality.APPLICATION_MODAL);
         modalConfirmar.showAndWait();
 
-        Stage btn = (Stage)btns[1].getScene().getWindow();
-        Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDepartamentos.fxml"));
+        Stage table = (Stage)btns[1].getScene().getWindow();
+        Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/resources/TabelaDepartamentos.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add("app/resources/styles.css");
-        btn.setScene(scene);
+        table.setScene(scene);
     }     
 }
