@@ -1,26 +1,19 @@
 package diario.departamentos.model;
 
 import diario.departamentos.controllers.ModalConfirmacaoController;
-import diario.departamentos.controllers.TableController;
-import diario.departamentos.repository.DepartamentoRepository;
+import diario.departamentos.controllers.ModalEditarController;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javax.swing.ButtonGroup;
 
 public class Departamento {
     
@@ -41,17 +34,14 @@ public class Departamento {
         this.id = id;
         this.idCampi = idCampi;
         this.nome = nome;
-        btns = new Button[3];
+        btns = new Button[2];
         hbox = new HBox();
-        btns[0] = new Button("INFO");
-        btns[1] = new Button("EDITAR");
-        btns[2] = new Button("DELETAR");
+        btns[0] = new Button("EDITAR");
+        btns[1] = new Button("DELETAR");
+        btns[0].getStyleClass().add("editar");
+        btns[1].getStyleClass().add("deletar");
         hbox.getChildren().add(0, btns[0]);
-        btns[0].getStyleClass().add("info");
-        btns[1].getStyleClass().add("editar");
-        btns[2].getStyleClass().add("deletar");
         hbox.getChildren().add(1, btns[1]);
-        hbox.getChildren().add(2, btns[2]);
         btnSetup(this.id);
     }
 
@@ -96,7 +86,18 @@ public class Departamento {
     }
     
     public void btnSetup(int id){
-        btns[2].setOnAction(new EventHandler() {
+        btns[0].setOnAction(new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                try {
+                    editarDepto(event);
+                } catch (SQLException ex) {
+                    System.err.println(ex);
+                } catch (IOException ex) {
+                    System.err.println(ex);
+                }
+        }});
+        btns[1].setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
                 try {
@@ -109,6 +110,29 @@ public class Departamento {
             }});
     }
     
+    private void editarDepto (Event event) throws SQLException, IOException{
+        Stage modalEditar = new Stage();
+        
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/diario/departamentos/ModalEditar.fxml"));     
+
+        Parent root = (Parent)fxmlLoader.load();          
+        ModalEditarController controller = fxmlLoader.<ModalEditarController>getController();
+        controller.setData(this.id, this.idCampi, this.nome);
+        Scene modalEditarScene = new Scene(root); 
+
+        modalEditar.setScene(modalEditarScene);     
+        
+        modalEditar.initOwner(((Node)event.getSource()).getScene().getWindow());
+        modalEditar.initModality(Modality.APPLICATION_MODAL);
+        modalEditar.showAndWait();
+
+        Stage btn = (Stage)btns[0].getScene().getWindow();
+        Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDepartamentos.fxml"));
+        Scene scene = new Scene(parent);
+        scene.getStylesheets().add("app/resources/styles.css");
+        btn.setScene(scene);
+    }
+    
     private void removerDepto(Event event) throws SQLException, IOException{
         Stage modalConfirmar = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/ModalConfirmacao.fxml"));
@@ -119,11 +143,10 @@ public class Departamento {
         modalConfirmar.initModality(Modality.APPLICATION_MODAL);
         modalConfirmar.showAndWait();
 
-        Stage btn = (Stage)btns[2].getScene().getWindow();
+        Stage btn = (Stage)btns[1].getScene().getWindow();
         Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDepartamentos.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add("app/resources/styles.css");
         btn.setScene(scene);
-        
-    } 
+    }     
 }

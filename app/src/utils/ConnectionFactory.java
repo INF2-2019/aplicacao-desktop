@@ -3,7 +3,6 @@ package utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class ConnectionFactory {
     
@@ -23,7 +22,7 @@ public class ConnectionFactory {
         driver = "com.mysql.cj.jdbc.Driver";
         url = "jdbc:mysql://localhost/";
         usuario = "root";
-        senha = "";
+        senha = "123456";
 
 	try {
             Class.forName(driver);
@@ -38,10 +37,10 @@ public class ConnectionFactory {
     }
   
     public static Connection getDiario() {
-		return getConnection("diario");
-	}
+        return getConnection("diario");
+    }
 
-	public static Connection getBiblioteca() {
-		return getConnection("biblioteca");
-	}
+    public static Connection getBiblioteca() {
+        return getConnection("biblioteca");
+    }
 }

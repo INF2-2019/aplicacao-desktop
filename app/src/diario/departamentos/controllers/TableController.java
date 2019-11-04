@@ -6,11 +6,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +22,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javax.swing.event.EventListenerList;
 
 
 public class TableController implements Initializable{
@@ -67,20 +61,10 @@ public class TableController implements Initializable{
 
     @FXML
     public void loadTableData() throws SQLException{
-        tabelaDeptos =  FXCollections.observableArrayList(DepartamentoRepository.consulta());
-        
-        
+        tabelaDeptos =  FXCollections.observableArrayList(DepartamentoRepository.consulta());        
         tabela.setItems(tabelaDeptos);
-        tabela.setOnMouseClicked(e ->{
-            events();
-        });
-        
     }
-    
-    private void events(){
         
-    }
-    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabelaDeptos = FXCollections.observableArrayList();

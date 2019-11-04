@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -18,7 +19,7 @@
                   <Font size="36.0" />
                </font>
                <VBox.margin>
-                  <Insets left="12.0" />
+                  <Insets left="14.0" top="12.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="59.0" prefWidth="800.0">
@@ -31,8 +32,11 @@
                         <Insets left="24.0" right="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Nome" />
+                  <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Nome" style="-fx-border-color: #29A58C;" />
                </children>
+               <VBox.margin>
+                  <Insets top="55.0" />
+               </VBox.margin>
             </HBox>
             <HBox prefHeight="127.0" prefWidth="800.0">
                <children>
@@ -44,25 +48,37 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campusTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Nome" text="Campus" />
+                  <TextField fx:id="campusTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Campus" style="-fx-border-color: #29A58C;" />
                </children>
+               <VBox.margin>
+                  <Insets top="32.0" />
+               </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="800.0">
+            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="800.0">
                <children>
-                  <Button fx:id="adicionarBtn" mnemonicParsing="false" onAction="#adicionarDepartamento" prefWidth="135.0" text="Adicionar">
+                  <Button fx:id="adicionarBtn" mnemonicParsing="false" onAction="#adicionarDepartamento" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Adicionar" textFill="#fdfbf9">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button fx:id="cancelarBtn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#cancelar" prefHeight="51.0" prefWidth="131.0" text="Cancelar">
+                  <Button fx:id="cancelarBtn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#cancelar" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: #E53935;" text="Cancelar" textFill="#fdfbf9">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <HBox.margin>
-                        <Insets />
+                        <Insets left="16.0" right="30.0" />
                      </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>
