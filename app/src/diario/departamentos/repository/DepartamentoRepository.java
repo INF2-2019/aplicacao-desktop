@@ -56,11 +56,11 @@ public class DepartamentoRepository {
         Connection con = ConnectionFactory.getDiario();
         if(con != null){
             PreparedStatement prst = con.prepareStatement("INSERT INTO `departamentos` (`id-campi`, `nome`) VALUES (?, ?)");
-			prst.setInt(1, idCampi);
-			prst.setString(2, nome);
+            prst.setInt(1, idCampi);
+	    prst.setString(2, nome);
             prst.executeUpdate();
             prst.close();
-            con.close();;
+            con.close();
         }
         else{
             throw new SQLException();

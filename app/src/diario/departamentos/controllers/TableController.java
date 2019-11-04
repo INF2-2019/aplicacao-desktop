@@ -27,10 +27,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.swing.event.EventListenerList;
 
 
 public class TableController implements Initializable{
-    
     private ObservableList<Departamento> tabelaDeptos;
     
     @FXML
@@ -56,8 +56,8 @@ public class TableController implements Initializable{
         modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);
         modalAdicionar.showAndWait();
+        loadTableData();
     }
-
     
     private void initTable(){
         col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -65,8 +65,10 @@ public class TableController implements Initializable{
         col_acoes.setCellValueFactory(new PropertyValueFactory<>("hbox"));
     }
 
+    @FXML
     public void loadTableData() throws SQLException{
         tabelaDeptos =  FXCollections.observableArrayList(DepartamentoRepository.consulta());
+        
         
         tabela.setItems(tabelaDeptos);
         tabela.setOnMouseClicked(e ->{
