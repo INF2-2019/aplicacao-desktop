@@ -60,3 +60,19 @@ As bibliotecas usadas atualmente são:
 A documentação estará disponível na pasta `docs`.
 
 `JavaFX 8`: [aqui](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
+
+## Padronizações
+
+- **Telas principais**: 
+
+	- Dimensões: 1280px x 720px
+	
+- **Modais**:
+	
+	- Dimensões: Ficarão a critério dos grupos de acordo com suas respectivas necessidades, respeitando o tamanho limite de 1280px x 720px
+	
+- **CSS**:
+	
+	- Todas as fontes deverão ser Montserrat
+	- Ao adicionar a referência à fonte no _início_ do arquivo: `@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');`
+	- Ao adicionar a fonte em classes, IDs e afins:`-fx-font-family: 'Montserrat', sans-serif;`

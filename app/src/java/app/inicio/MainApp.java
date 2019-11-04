@@ -1,4 +1,4 @@
-package app;
+package app.inicio;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +16,9 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         
-        stage.setTitle("JavaFX and JDK8");
+        stage.setTitle("Sistema Acadêmico");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
