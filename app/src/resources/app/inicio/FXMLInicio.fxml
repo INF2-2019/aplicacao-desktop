@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@EstiloInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.inicio.FXMLControllerInicio">
   <columnConstraints>
     <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="1280.0" />
   </columnConstraints>
@@ -36,12 +36,12 @@
                               <Image url="@../../imgs/Logo%20Diário.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="320.0" layoutY="141.0" text="SISTEMA">
+                        <Label layoutX="320.0" layoutY="141.0" styleClass="fontFamily" text="SISTEMA">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label layoutX="320.0" layoutY="186.0" text="DIÁRIO" textFill="#29a58c">
+                        <Label layoutX="320.0" layoutY="186.0" styleClass="fontFamily" text="DIÁRIO" textFill="#29a58c">
                            <font>
                               <Font size="40.0" />
                            </font>
@@ -62,12 +62,12 @@
                               <Image url="@../../imgs/Logo%20Livraria.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="287.0" layoutY="187.0" text="BIBLIOTECA" textFill="#29a58c">
+                        <Label layoutX="287.0" layoutY="187.0" styleClass="fontFamily" text="BIBLIOTECA" textFill="#29a58c">
                            <font>
                               <Font size="40.0" />
                            </font>
                         </Label>
-                        <Label layoutX="287.0" layoutY="142.0" text="SISTEMA">
+                        <Label layoutX="287.0" layoutY="142.0" styleClass="fontFamily" text="SISTEMA">
                            <font>
                               <Font size="30.0" />
                            </font>
@@ -87,7 +87,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label id="lblSistemaAcademico" alignment="CENTER" contentDisplay="CENTER" minWidth="1290.0" prefHeight="131.0" prefWidth="1280.0" text="SISTEMA ACADÊMICO" textFill="WHITE">
+            <Label id="lblSistemaAcademico" alignment="CENTER" contentDisplay="CENTER" minWidth="1290.0" prefHeight="131.0" prefWidth="1280.0" styleClass="fontFamily" text="SISTEMA ACADÊMICO" textFill="WHITE">
                <font>
                   <Font size="48.0" />
                </font>

@@ -1,4 +1,4 @@
-package app.inicio;
+package app.diario.telaloginadm;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-public class FXMLController implements Initializable {
+public class FXMLControllerTelaLoginAdm implements Initializable {
     
     @FXML
 //    private Label label;
