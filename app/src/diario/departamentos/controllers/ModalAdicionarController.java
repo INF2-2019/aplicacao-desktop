@@ -7,9 +7,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import java.util.regex.*;
 
-public class ModalAdicionarController {
-
+public class ModalAdicionarController { 
+    
     @FXML
     private TextField nomeTf;
 
@@ -23,11 +24,17 @@ public class ModalAdicionarController {
     private Button cancelarBtn;
 
     @FXML
-    void adicionarDepartamento(ActionEvent event) throws SQLException {
+    void adicionarDepartamento(ActionEvent event) throws SQLException, NumberFormatException {
         try {
             String nome = nomeTf.getText();
-            Integer campus = Integer.parseInt(campusTf.getText());
-            DepartamentoRepository.insere(campus, nome);
+            
+            if(Pattern.compile("[0-9]*").matcher(campusTf.getText()).matches()){
+                Integer campus = Integer.parseInt(campusTf.getText());
+                DepartamentoRepository.insere(campus, nome);
+            } else {
+                throw new NumberFormatException();
+            }
+            
         } catch (NumberFormatException ex) {
             System.err.println("O id do campus deve ser um inteiro");
         }
@@ -36,6 +43,8 @@ public class ModalAdicionarController {
         modal.close();
     }
 
+    
+    
     @FXML
     void cancelar(ActionEvent event) {
         Stage modal = (Stage) cancelarBtn.getScene().getWindow();

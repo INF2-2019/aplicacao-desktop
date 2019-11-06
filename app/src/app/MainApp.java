@@ -11,15 +11,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/resources/TabelaDepartamentos.fxml"));
-
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("resources/styles.css").toExternalForm());
-        TableController t = new TableController();
-
-        stage.setTitle("Departamentos");
-        stage.setScene(scene);
-        stage.show();
+        
     }
 
     public static void main(String[] args) {

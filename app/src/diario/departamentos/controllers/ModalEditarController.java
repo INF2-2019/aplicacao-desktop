@@ -4,6 +4,7 @@ import diario.departamentos.repository.DepartamentoRepository;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,17 +28,22 @@ public class ModalEditarController implements Initializable{
     private Button cancelarBtn;
 
     @FXML
-    void editarDepartamento(ActionEvent event) throws SQLException {
-        try {
+    void editarDepartamento(ActionEvent event) throws SQLException, NumberFormatException {
+        try{
             String nome = nomeTf.getText();
-            Integer campus = Integer.parseInt(campusTf.getText());
-            DepartamentoRepository.atualiza(id, campus, nome);
-        } catch (NumberFormatException ex) {
+            
+            if(Pattern.compile("[0-9]*").matcher(campusTf.getText()).matches()){
+                Integer campus = Integer.parseInt(campusTf.getText());
+                DepartamentoRepository.atualiza(id, campus, nome);
+            } else {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException ex){
             System.err.println("O id do campus deve ser um inteiro");
         }
         
-        Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-        modal.close();
+            Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+            modal.close();
     }
 
     @FXML
