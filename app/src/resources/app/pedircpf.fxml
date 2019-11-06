@@ -8,17 +8,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.departamentos.controllers.TableController">
+<StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.departamentos.controllers.TableController">
    <children>
-      <Label text="Transferência de Aluno" StackPane.alignment="TOP_LEFT">
-         <font>
-            <Font size="57.0" />
-         </font>
-         <StackPane.margin>
-            <Insets left="240.0" top="73.0" />
-         </StackPane.margin>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Label text="S.A. Admin" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="10.0" top="12.0" />
@@ -27,35 +19,36 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <TextField fx:id="inputCpf" alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="1090.0" StackPane.alignment="CENTER">
+      <TextField fx:id="inputCpf" alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="780.0" StackPane.alignment="CENTER">
          <StackPane.margin>
-            <Insets bottom="500.0" />
+            <Insets bottom="300.0" />
          </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
-      <Label text="CPF do Aluno" textFill="#000000a5" StackPane.alignment="CENTER_LEFT">
+      <Label text="CPF do Aluno" textFill="#00000087" StackPane.alignment="CENTER_LEFT">
          <StackPane.margin>
-            <Insets bottom="550.0" left="250.0" />
+            <Insets bottom="380.0" left="250.0" />
          </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </Label>
-      <Button fx:id="botaotransfere" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #29a58c;" text="Transferir" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
+      <Button fx:id="botaotransfere" mnemonicParsing="false" onAction="#modalTransferir" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #29a58c;" text="Transferir" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
          <StackPane.margin>
-            <Insets right="240.0" top="130.0" />
+            <Insets right="220.0" top="141.0" />
          </StackPane.margin>
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00e676" height="53.0" stroke="BLACK" strokeType="INSIDE" width="133.0" StackPane.alignment="TOP_RIGHT">
-         <StackPane.margin>
-            <Insets right="10.0" top="65.0" />
-         </StackPane.margin>
-      </Rectangle>
-      <Label layoutX="20.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="89.0" text="Bem vindo" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
+      <Label text="Transferência de Aluno" StackPane.alignment="TOP_LEFT">
          <font>
-            <Font size="19.0" />
+            <Font size="57.0" />
          </font>
          <StackPane.margin>
-            <Insets right="30.0" top="77.5" />
+            <Insets left="240.0" top="73.0" />
          </StackPane.margin>
       </Label>
    </children>
