@@ -10,7 +10,7 @@
 
 <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.departamentos.controllers.TableController">
    <children>
-      <Label text="Transferência de Alunos" StackPane.alignment="TOP_LEFT">
+      <Label text="Transferência de Aluno" StackPane.alignment="TOP_LEFT">
          <font>
             <Font size="57.0" />
          </font>
@@ -37,7 +37,7 @@
             <Insets bottom="550.0" left="250.0" />
          </StackPane.margin>
       </Label>
-      <Button fx:id="botaotransfere" mnemonicParsing="false" onAction="#modalAdicionar" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #29a58c;" text="Transferir" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
+      <Button fx:id="botaotransfere" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #29a58c;" text="Transferir" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
          <StackPane.margin>
             <Insets right="240.0" top="130.0" />
          </StackPane.margin>
