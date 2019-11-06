@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PacoteEditar;
+package PacoteInsere;
 
 import Principal.DbConnector;
 import Principal.TableController;
@@ -13,8 +13,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,16 +24,8 @@ import javafx.scene.control.TextField;
  *
  * @author tuba1
  */
-public class ControllerEditar implements Initializable {
-    static String id;
-
-    public static String getId() {
-        return id;
-    }
-
-    public static void setId(String id) {
-        ControllerEditar.id = id;
-    }
+public class InsereController implements Initializable {
+    
     @FXML
     private TextField nomeInput;
 
@@ -73,35 +63,38 @@ public class ControllerEditar implements Initializable {
     private Label nomeLabel;
     
     @FXML
+    private Label labelError;
+
+    
+    @FXML
     void acaoCancelar(ActionEvent event) {
         fecha();
     }
     @FXML
-    public void acaoSalvar(){
-        try {
-            Connection connection = DbConnector.getConnection();
-            PreparedStatement stmt = connection.prepareStatement("UPDATE `cursos` SET"
-                    + " `id-depto` = '"+idDeptoInput.getText()+"'"
-                    + ", `nome` = '"+nomeInput.getText()+"'"
-                    + ", `horas-total` = '"+horasInput.getText()+"'"
-                    + ", `modalidade` = '"+modalidadeInput.getText()+"'"
-                    + " WHERE `cursos`.`id` = "+ControllerEditar.getId());
+    void acaoSalvar(ActionEvent event) throws SQLException {
+        System.out.println("\n"+idDeptoInput.getText()+"<-- texto aqui");
+        if(!"".equals(idDeptoInput.getText()) || !"".equals(nomeInput.getText()) || !"".equals(horasInput.getText()) || !"".equals(modalidadeInput.getText())){
+            Connection con = new DbConnector().getConnection();
+
+            // cria um preparedStatement
+            String sql = "insert into cursos" +
+                    " (`id-depto`, `nome`, `horas-total`, `modalidade`)" +
+                    " values (?,?,?,?)";
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            // preenche os valores
+            stmt.setString(1,idDeptoInput.getText());
+            stmt.setString(2,nomeInput.getText());
+            stmt.setString(3,horasInput.getText());
+            stmt.setString(4,modalidadeInput.getText());
             stmt.execute();
+            System.out.println(stmt.execute());
             stmt.close();
-            connection.close();
+            con.close();
             fecha();
-        } catch (SQLException ex) {
-            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        labelError.setText("É necessário preencher todos os campos");
     }
-    @FXML
-    public void acaoCancelar(){
-        fecha();
-    }
-    
-            
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -109,6 +102,6 @@ public class ControllerEditar implements Initializable {
     }    
     
     public void fecha(){
-        MainEditar.getStage().close();
+        InsereMain.getStage().close();
     }
 }

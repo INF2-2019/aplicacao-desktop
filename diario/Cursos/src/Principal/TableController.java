@@ -70,7 +70,6 @@ public class TableController implements Initializable{
         criaTabela();
     }
     public void refresh(){
-        //oblist.clear();
         consultarBD();
         criaTabela();
     }
