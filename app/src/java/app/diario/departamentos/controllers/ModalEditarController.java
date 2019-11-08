@@ -13,12 +13,16 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
+import javafx.scene.control.Label;
 
 public class ModalEditarController implements Initializable{
 
     private String nome;
     private int idCampi, id;
     private String mensagem;
+
+    @FXML
+    private Label aviso;
     
     @FXML
     private TextField nomeTf;

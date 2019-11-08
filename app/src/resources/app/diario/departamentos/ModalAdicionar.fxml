@@ -12,17 +12,29 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.departamentos.controllers.ModalAdicionarController">
    <children>
+      <Label prefHeight="65.0" prefWidth="446.0" text="Adicionar Departamento" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <padding>
+            <Insets top="12.0" />
+         </padding>
+         <StackPane.margin>
+            <Insets left="24.0" top="12.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="aviso" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" style="-fx-background-color: red;" textAlignment="RIGHT" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="30.0" top="42.0" />
+         </StackPane.margin>
+      </Label>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Label prefHeight="59.0" prefWidth="391.0" text="Adicionar Departamento">
-               <font>
-                  <Font size="36.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="14.0" top="12.0" />
-               </VBox.margin>
-            </Label>
-            <HBox prefHeight="59.0" prefWidth="800.0">
+            <HBox alignment="TOP_RIGHT" prefHeight="65.0" prefWidth="601.0" />
+            <HBox prefHeight="75.0" prefWidth="800.0">
                <children>
                   <Label text="Nome" textFill="#29a58c">
                      <font>
@@ -35,7 +47,7 @@
                   <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Nome" style="-fx-border-color: #29A58C;" />
                </children>
                <VBox.margin>
-                  <Insets top="55.0" />
+                  <Insets top="120.0" />
                </VBox.margin>
             </HBox>
             <HBox prefHeight="127.0" prefWidth="800.0">
@@ -81,6 +93,9 @@
                </VBox.margin>
             </HBox>
          </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
       </VBox>
    </children>
 </StackPane>

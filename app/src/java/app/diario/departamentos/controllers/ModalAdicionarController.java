@@ -9,10 +9,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.util.regex.*;
 import java.sql.SQLException;
+import javafx.scene.control.Label;
 
 public class ModalAdicionarController { 
     
     private String mensagem;
+    
+    @FXML
+    private Label aviso;
     
     @FXML
     private TextField nomeTf;
@@ -30,6 +34,7 @@ public class ModalAdicionarController {
     void adicionarDepartamento(ActionEvent event) throws SQLException, NumberFormatException {
         if(nomeTf.getText().isEmpty() || campusTf.getText().isEmpty()){
             setMensagem("Por favor, verifique o preenchimento dos campos abaixo.");
+            System.out.println("fodas");
             return;
         }
         else{
@@ -38,6 +43,7 @@ public class ModalAdicionarController {
             
             if(!Validacao.validaNome(nome)){
                 setMensagem("Nome inválido");
+                System.out.println("god");
                 return;
             }  
 

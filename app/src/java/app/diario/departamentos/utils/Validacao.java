@@ -9,7 +9,7 @@ public final class Validacao {
     
     public static boolean validaNome(String nome){
         Matcher m = nomePattern.matcher(nome);
-        return m.matches();
+        return !m.matches();
     }
     
     public static boolean validaNome(Departamento depto){
