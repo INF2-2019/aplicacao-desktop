@@ -12,7 +12,7 @@
 
 <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.departamentos.controllers.TableController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1634.0" />
       <Label text="S.A. Admin" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="10.0" top="8.0" />
@@ -50,9 +50,10 @@
       </Label>
       <TableView fx:id="tabela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="1116.0" StackPane.alignment="CENTER">
         <columns>
-            <TableColumn fx:id="col_nome" minWidth="372.0" prefWidth="69.0" style="-fx-font-size: 16;" text="Nome" />
-          <TableColumn fx:id="col_campus" minWidth="372.0" prefWidth="81.0" style="-fx-font-size: 16;" text="Campus" />
-            <TableColumn fx:id="col_acoes" minWidth="372.0" prefWidth="81.0" style="-fx-font-size: 16;" text="Ações" />
+            <TableColumn fx:id="col_id" maxWidth="107.0" minWidth="120.0" prefWidth="120.0" resizable="false" style="-fx-font-size: 16;" text="ID" />
+            <TableColumn fx:id="col_nome" minWidth="335.0" prefWidth="602.0" style="-fx-font-size: 16;" text="Nome" />
+          <TableColumn fx:id="col_campus" maxWidth="255.0" minWidth="120.0" prefWidth="120.0" style="-fx-font-size: 16;" text="Campus" />
+            <TableColumn fx:id="col_acoes" maxWidth="289.0" minWidth="164.0" prefWidth="273.0" style="-fx-font-size: 16;" text="Ações" />
         </columns>
       </TableView>
    </children>

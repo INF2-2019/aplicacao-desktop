@@ -43,10 +43,13 @@ public class TableController implements Initializable{
     private TableView<Departamento> tabela;
 
     @FXML
+    private TableColumn<Departamento, String> col_id;
+    
+    @FXML
     private TableColumn<Departamento, String> col_nome;
 
     @FXML
-    private TableColumn<Departamento, Integer> col_campus;
+    private TableColumn<Departamento, String> col_campus;
 
     @FXML
     private TableColumn<Departamento, HBox> col_acoes;
@@ -70,6 +73,8 @@ public class TableController implements Initializable{
         col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         col_campus.setCellValueFactory(new PropertyValueFactory<>("idCampi"));
         col_acoes.setCellValueFactory(new PropertyValueFactory<>("hbox"));
+        col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        
     }
     
     public static void setMensagem(String m){
