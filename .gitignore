@@ -154,3 +154,5 @@ local.properties
 
 
 /app/target/
+
+!/**/lib/*
