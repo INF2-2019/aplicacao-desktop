@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 import javafx.scene.control.Label;
 
 public class ModalEditarController implements Initializable{
@@ -34,24 +33,27 @@ public class ModalEditarController implements Initializable{
     private Button cancelarBtn;
 
     @FXML
-    void editarDepartamento(ActionEvent event) throws SQLException, NumberFormatException {   
-        if(nomeTf.getText().isEmpty() || campusTf.getText().isEmpty()){
-                setMensagem("Por favor, verifique o preenchimento dos campos abaixo.");
-                return;
+    void editarDepartamento(ActionEvent event){
+        try{
+            if(nomeTf.getText().isEmpty() || campusTf.getText().isEmpty()){
+                setAviso("Por favor, verifique o preenchimento dos campos abaixo.");
+            }
+            else{
+                String nome = nomeTf.getText();
+                Integer campus = Integer.parseInt(campusTf.getText());
+                
+                if(!Validacao.validaNome(nome)){
+                    setAviso("Nome inválido(Excede 255 caracteres).");  
+                }  
+                else{
+                    DepartamentoRepository.atualiza(id, campus, nome);
+                    Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+                    modal.close();
+                }
+            }
         }
-        else{
-            String nome = nomeTf.getText();
-            Integer campus = Integer.parseInt(campusTf.getText());
-            
-            if(!Validacao.validaNome(nome)){
-                setMensagem("Nome inválido(Excede 255 caracteres).");
-                return;
-            }  
-
-            DepartamentoRepository.atualiza(id, campus, nome);
-        
-            Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-            modal.close();
+        catch(SQLException e){
+            setAviso("Não foi possível editar o departamento.");
         }
     }
 
@@ -67,8 +69,8 @@ public class ModalEditarController implements Initializable{
         nome = n;
     }    
     
-    public void setMensagem(String mensagem){
-        this.mensagem = mensagem;
+    public void setAviso(String aviso){
+        this.aviso.setText(aviso);
     }
 
     @Override

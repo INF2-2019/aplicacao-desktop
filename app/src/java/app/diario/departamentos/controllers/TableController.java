@@ -24,14 +24,14 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Timer;
-import java.util.TimerTask;
+import javafx.application.Platform;
 
 public class TableController implements Initializable{
     private ObservableList<Departamento> tabelaDeptos;
     
     private Timer t;
     
-    private String mensagemErro;
+    private static String mensagem;
     
     @FXML
     private Label aviso;
@@ -62,10 +62,18 @@ public class TableController implements Initializable{
         loadTableData();
     }
     
+    public void setAviso(String aviso){
+        this.aviso.setText(aviso);
+    }
+    
     private void initTable(){
         col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         col_campus.setCellValueFactory(new PropertyValueFactory<>("idCampi"));
         col_acoes.setCellValueFactory(new PropertyValueFactory<>("hbox"));
+    }
+    
+    public static void setMensagem(String m){
+        mensagem = m;
     }
 
     @FXML
@@ -78,19 +86,16 @@ public class TableController implements Initializable{
 
         } 
         catch (SQLException e){
-            aviso.setText(mensagemErro);
+            setAviso("Falha ao processar requisição");
         }  
     }
-        
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tabelaDeptos = FXCollections.observableArrayList();        
-        mensagemErro = "Falha ao processar requisição";
-        
-        initTable();
-        loadTableData();
+        Platform.runLater(() -> {
+            tabelaDeptos = FXCollections.observableArrayList();
+            initTable();
+            loadTableData();
+        });
     }
-    
-    
-
 }

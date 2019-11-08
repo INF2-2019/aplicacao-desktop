@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.departamentos.controllers.ModalConfirmacaoController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.departamentos.controllers.ModalRemoverController">
    <children>
       <Button fx:id="apagarBtn" mnemonicParsing="false" onAction="#apagarDepartamento" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Apagar" textFill="#fdfbf9" StackPane.alignment="CENTER_LEFT">
          <font>
@@ -36,8 +36,16 @@
             <Font size="36.0" />
          </font>
          <StackPane.margin>
-            <Insets top="84.0" />
+            <Insets top="40.0" />
          </StackPane.margin>
+      </Label>
+      <Label fx:id="aviso" style="-fx-background-color: red;" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="128.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </Label>
    </children>
 </StackPane>

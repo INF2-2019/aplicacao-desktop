@@ -1,6 +1,6 @@
 package app.diario.departamentos.model;
 
-import app.diario.departamentos.controllers.ModalConfirmacaoController;
+import app.diario.departamentos.controllers.ModalRemoverController;
 import app.diario.departamentos.controllers.ModalEditarController;
 import app.diario.departamentos.controllers.TableController;
 import javafx.event.Event;
@@ -113,39 +113,42 @@ public class Departamento {
     
     private void editarDepto (Event event) throws SQLException, IOException{
         Stage modalEditar = new Stage();
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/diario/departamentos/ModalEditar.fxml"));     
+        FXMLLoader modalEditarFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/departamentos/ModalEditar.fxml"));     
 
-        Parent root = (Parent)fxmlLoader.load();          
-        ModalEditarController controller = fxmlLoader.<ModalEditarController>getController();
-        controller.setData(this.id, this.idCampi, this.nome);
-        Scene modalEditarScene = new Scene(root); 
+        Parent modalEditarParent = (Parent)modalEditarFXMLLoader.load();          
+        ModalEditarController modalEditarController = modalEditarFXMLLoader.<ModalEditarController>getController();
+        modalEditarController.setData(this.id, this.idCampi, this.nome);
 
-        modalEditar.setScene(modalEditarScene);
+        modalEditar.setScene(new Scene(modalEditarParent));
         modalEditar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalEditar.initModality(Modality.APPLICATION_MODAL);
         modalEditar.showAndWait();
 
-        Stage table = (Stage)btns[0].getScene().getWindow();
-        Parent parent = FXMLLoader.load(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml"));
-        Scene scene = new Scene(parent);
+        Stage table = (Stage)btns[1].getScene().getWindow();
+        FXMLLoader TabelaDepartamentosfxmlL = new FXMLLoader(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml")); 
+        Parent tabelaDepartamentosRoot = (Parent)TabelaDepartamentosfxmlL.load();  
+        Scene scene = new Scene(tabelaDepartamentosRoot);
         scene.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
         table.setScene(scene);
     }
     
     private void removerDepto(Event event) throws SQLException, IOException{
-        Stage modalConfirmar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/departamentos/ModalConfirmacao.fxml"));
+        Stage modalRemover = new Stage();
+        FXMLLoader modalRemoverFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/departamentos/ModalRemover.fxml"));     
         
-        modalConfirmar.setScene(new Scene(root));
-        ModalConfirmacaoController.setId(this.id);
-        modalConfirmar.initOwner(((Node)event.getSource()).getScene().getWindow());
-        modalConfirmar.initModality(Modality.APPLICATION_MODAL);
-        modalConfirmar.showAndWait();
+        Parent modalRemoverParent = (Parent)modalRemoverFXMLLoader.load();  
+        ModalRemoverController modalRemoverController = modalRemoverFXMLLoader.<ModalRemoverController>getController();
+        modalRemoverController.setId(this.id);
+        
+        modalRemover.setScene(new Scene(modalRemoverParent));
+        modalRemover.initOwner(((Node)event.getSource()).getScene().getWindow());
+        modalRemover.initModality(Modality.APPLICATION_MODAL);
+        modalRemover.showAndWait();
 
         Stage table = (Stage)btns[1].getScene().getWindow();
-        Parent parent = FXMLLoader.load(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml"));
-        Scene scene = new Scene(parent);
+        FXMLLoader TabelaDepartamentosfxmlL = new FXMLLoader(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml")); 
+        Parent tabelaDepartamentosRoot = (Parent)TabelaDepartamentosfxmlL.load();  
+        Scene scene = new Scene(tabelaDepartamentosRoot);
         scene.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
         table.setScene(scene);
     }     

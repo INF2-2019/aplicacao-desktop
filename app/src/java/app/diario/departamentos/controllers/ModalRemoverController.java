@@ -3,30 +3,36 @@ package app.diario.departamentos.controllers;
 import app.diario.departamentos.repository.DepartamentoRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
+import javafx.scene.control.Label;
 
-public class ModalConfirmacaoController {
+public class ModalRemoverController {
     
-    private static int id;
+    private int id;
     
     @FXML
     private Button apagarBtn;
+    
+    @FXML
+    private Label aviso;
 
     @FXML
     private Button cancelarBtn;
 
     @FXML
-    void apagarDepartamento(ActionEvent event) throws SQLException, IOException {
-        DepartamentoRepository.remove(this.id);
+    void apagarDepartamento(ActionEvent event){
+        try{
+            DepartamentoRepository.remove(this.id);
         
-        Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-        modal.close();
+            Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+            modal.close();
+        }
+        catch(SQLException e){
+            aviso.setText("Não foi possível remover o departamento");
+        }
     }
 
     @FXML
@@ -35,7 +41,7 @@ public class ModalConfirmacaoController {
         modal.close();
     }
 
-    public static void setId(int id) {
-        ModalConfirmacaoController.id=id;
+    public void setId(int id) {
+        this.id = id;
     }
 }
