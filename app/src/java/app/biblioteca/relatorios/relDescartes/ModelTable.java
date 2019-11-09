@@ -2,16 +2,13 @@
 package app.biblioteca.relatorios.relDescartes;
 
 
-import app.biblioteca.relatorios.relAtrasos.*;
 import java.sql.Date;
 import javafx.scene.control.Label;
 
 public class ModelTable {
-    String id,idAlunos,idAcervo;
-    Date dataEmprestimo,dataPrevDevol,dataDevolucao;
-    Double multa;
+    String idAcervo, motivos, operador;
+    Date dataDescarte;
 
-    
     Label estado;
 
     public Label getEstado() {
@@ -26,14 +23,12 @@ public class ModelTable {
 
     
 
-    public ModelTable(String id, String idAlunos, String idAcervo, Date dataEmprestimo, Date dataPrevDevol, Date dataDevolucao, Double multa, Label estado){
-        this.id = id;
-        this.idAlunos = idAlunos;
+    public ModelTable(String idAcervo, Date dataDescarte, String motivos, String operador, Label estado){
+        
         this.idAcervo = idAcervo;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataPrevDevol = dataPrevDevol;
-	this.dataDevolucao = dataDevolucao;
-        this.multa = multa;
+        this.dataDescarte = dataDescarte;
+        this.motivos=motivos;
+	this.operador=operador;
         this.estado=estado;
         
         this.estado.setId("estado");
@@ -41,20 +36,7 @@ public class ModelTable {
         
     }
     
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getIdAlunos() {
-	return idAlunos;
-    }
-
-    public void setIdAlunos(String idAlunos) {
-	this.idAlunos = idAlunos;
-    }
+    
 
     public String getIdAcervo() {
 	return idAcervo;
@@ -64,36 +46,30 @@ public class ModelTable {
 	this.idAcervo = idAcervo;
     }
 
-    public Date getDataEmprestimo() {
-	return dataEmprestimo;
+    public String getMotivos() {
+	return motivos;
     }
 
-    public void setDataEmprestimo(Date dataEmprestimo) {
-	this.dataEmprestimo = dataEmprestimo;
+    public void setMotivos(String motivos) {
+	this.motivos = motivos;
     }
 
-    public Date getDataPrevDevol() {
-	return dataPrevDevol;
+    public String getOperador() {
+	return operador;
     }
 
-    public void setDataPrevDevol(Date dataPrevDevol) {
-	this.dataPrevDevol = dataPrevDevol;
+    public void setOperador(String operador) {
+	this.operador = operador;
     }
 
-    public Date getDataDevolucao() {
-	return dataDevolucao;
+    public Date getDataDescarte() {
+	return dataDescarte;
     }
 
-    public void setDataDevolucao(Date dataDevolucao) {
-	this.dataDevolucao = dataDevolucao;
+    public void setDataDescarte(Date dataDescarte) {
+	this.dataDescarte = dataDescarte;
     }
 
-    public Double getMulta() {
-	return multa;
-    }
-
-    public void setMulta(Double multa) {
-	this.multa = multa;
-    }
+    
     
 }

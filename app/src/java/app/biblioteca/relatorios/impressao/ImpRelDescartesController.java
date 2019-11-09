@@ -1,12 +1,9 @@
 
 package app.biblioteca.relatorios.impressao;
 
-
-import app.biblioteca.relatorios.relAtrasos.RelAtrasosMain;
+import app.biblioteca.relatorios.relDescartes.RelDescartesMain;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
@@ -21,32 +18,22 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class ImpressaoRelController implements Initializable {
+public class ImpRelDescartesController implements Initializable {
     
     
-    @FXML
-    private Button botaoCancelar;
 
     @FXML
-    private Button botaoSalvar;
-    
-    @FXML
-    private Button rel_atrasos;
-
+    private Button rel_descartes;
 
     
     
     @FXML
-    void acaoCancelar(ActionEvent event) {
-        fecha();
-    }
-    @FXML
-    void AbreRelatorios(ActionEvent event) throws SQLException {
-         RelAtrasosMain emp = new RelAtrasosMain();
+    void AbreRelDescartes(ActionEvent event) throws SQLException {
+         RelDescartesMain emp = new RelDescartesMain();
         try {
             emp.start(new Stage());
         } catch (Exception ex) {
-            Logger.getLogger(ImpressaoRelController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ImpRelDescartesController.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }
     
@@ -57,6 +44,6 @@ public class ImpressaoRelController implements Initializable {
     }    
     
     public void fecha(){
-        MainImpressaoRel.getStage().close();
+        MainImpRelDescartes.getStage().close();
     }
 }

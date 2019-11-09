@@ -5,7 +5,9 @@
  */
 package app.biblioteca.relatorios.principal;
 
-import app.biblioteca.relatorios.impressao.MainImpressaoRel;
+import app.biblioteca.relatorios.impressao.MainImpRelAtrasos;
+import app.biblioteca.relatorios.impressao.MainImpRelDescartes;
+import app.biblioteca.relatorios.impressao.MainImpRelMultas;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -20,7 +22,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -31,31 +32,43 @@ public class RelatoriosController implements Initializable {
     
     
     @FXML
-    private Button botaoCancelar;
+    private Button rel_descartes;
 
-    @FXML
-    private Button botaoSalvar;
-    
     @FXML
     private Button rel_atrasos;
 
+    @FXML
+    private Button rel_multas;
+
 
     
-    
     @FXML
-    void acaoCancelar(ActionEvent event) {
-        fecha();
-    }
-    @FXML
-    void AbreRelatorios(ActionEvent event) throws SQLException {
-         MainImpressaoRel emp = new MainImpressaoRel();
+    void AbreRelAtrasos(ActionEvent event) throws SQLException {
+         MainImpRelAtrasos emp = new MainImpRelAtrasos();
         try {
             emp.start(new Stage());
         } catch (Exception ex) {
             Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }
-    
+    @FXML
+    void AbreRelMultas(ActionEvent event) throws SQLException {
+         MainImpRelMultas emp = new MainImpRelMultas();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+    @FXML
+    void AbreRelDescartes(ActionEvent event) throws SQLException {
+         MainImpRelDescartes emp = new MainImpRelDescartes();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

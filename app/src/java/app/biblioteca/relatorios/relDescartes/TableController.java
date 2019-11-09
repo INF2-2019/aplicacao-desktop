@@ -5,7 +5,6 @@
  */
 package app.biblioteca.relatorios.relDescartes;
 
-import app.biblioteca.relatorios.relAtrasos.*;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.sql.Connection;
@@ -34,23 +33,17 @@ public class TableController implements Initializable{
     
     @FXML
     private TableView<ModelTable> table;
-    @FXML
-    private TableColumn<ModelTable, Integer> col_id;
-    @FXML
-    private TableColumn<ModelTable, Integer> col_idAlunos;
+    
     @FXML
     private TableColumn<ModelTable, Integer> col_idAcervo;
     @FXML
-    private TableColumn<ModelTable, Date> col_dataEmprestimo;
+    private TableColumn<ModelTable, Date> col_dataDescarte;
     @FXML
-    private TableColumn<ModelTable, Date> col_dataPrevDevol;
+    private TableColumn<ModelTable, String> col_motivos;
     @FXML
-    private TableColumn<ModelTable, Date> col_dataDevolucao;
+    private TableColumn<ModelTable, String> col_operador;
     @FXML
-    private TableColumn<ModelTable, Double> col_multa;
-    
-    @FXML
-    private TableColumn<ModelTable, Label> col_funcoes2;
+    private TableColumn<ModelTable, Label> col_estado;
     
     
     
@@ -72,30 +65,27 @@ public class TableController implements Initializable{
     
     static public void consultarBD(){
         try {
-            Connection con = DbConnector.getConnection();
-            
-            ResultSet rs = con.createStatement().executeQuery("select * from emprestimos");
-            oblist = FXCollections.observableArrayList();
-            while(rs.next()){
-                oblist.add(new ModelTable(rs.getString("id"),rs.getString("id-alunos"),rs.getString("id-acervo"),rs.getDate("data-emprestimo"),rs.getDate("data-prev-devol"),rs.getDate("data-devolucao"),rs.getDouble("multa"),new Label()));
-            }
-            
-            con.close();
+	    try (Connection con = DbConnector.getConnection()) {
+		ResultSet rs = con.createStatement().executeQuery("select * from descartes");
+		oblist = FXCollections.observableArrayList();
+		while(rs.next()){
+		    oblist.add(new ModelTable(rs.getString("id-acervo"),rs.getDate("data-descarte"),rs.getString("motivos"),rs.getString("operador"),new Label()));
+		}
+	    }
         } catch (SQLException ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public void criaTabela(){
-        col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        col_idAlunos.setCellValueFactory(new PropertyValueFactory<>("idAlunos"));
+        
         col_idAcervo.setCellValueFactory(new PropertyValueFactory<>("idAcervo"));
-        col_dataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
-        col_dataPrevDevol.setCellValueFactory(new PropertyValueFactory<>("dataPrevDevol"));
-	col_dataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
-        col_multa.setCellValueFactory(new PropertyValueFactory<>("multa"));
+        col_dataDescarte.setCellValueFactory(new PropertyValueFactory<>("dataDescarte"));
+        col_motivos.setCellValueFactory(new PropertyValueFactory<>("motivos"));
+	col_operador.setCellValueFactory(new PropertyValueFactory<>("operador"));
+        //col_multa.setCellValueFactory(new PropertyValueFactory<>("multa"));
         //col_funcoes.setCellValueFactory(new PropertyValueFactory<>("info"));
         //col_funcoes1.setCellValueFactory(new PropertyValueFactory<>("edita"));
-        col_funcoes2.setCellValueFactory(new PropertyValueFactory<>("deleta"));
+        col_estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
         
         table.setItems(oblist);
     }

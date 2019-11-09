@@ -14,12 +14,11 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Button fx:id="botaoCancelar" layoutX="473.0" layoutY="354.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
       <Button layoutX="122.0" layoutY="82.0" mnemonicParsing="false" style="-fx-background-color: #29A58C;" styleClass="fonte" text="1 - Acervo por tipo" textFill="WHITE" />
       <Button layoutX="122.0" layoutY="125.0" mnemonicParsing="false" style="-fx-background-color: #29A58C;" styleClass="fonte" text="2 - Obras emprestadas a devolver" textFill="WHITE" />
       <Button layoutX="122.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: #29A58C;" styleClass="fonte" text="3 - Reservas" textFill="WHITE" />
-      <Button fx:id="rel_atrasos" layoutX="122.0" layoutY="204.0" mnemonicParsing="false" onAction="#AbreRelatorios" style="-fx-background-color: #29A58C;" styleClass="fonte" text="4 - Atrasos" textFill="WHITE" />
-      <Button layoutX="122.0" layoutY="245.0" mnemonicParsing="false" style="-fx-background-color: #29A58C;" styleClass="fonte" text="5 - Multas Recebidas" textFill="WHITE" />
-      <Button layoutX="122.0" layoutY="290.0" mnemonicParsing="false" style="-fx-background-color: #29A58C;" styleClass="fonte" text="6 - Obras Descartadas" textFill="WHITE" />
+      <Button fx:id="rel_atrasos" layoutX="122.0" layoutY="204.0" mnemonicParsing="false" onAction="#AbreRelAtrasos" style="-fx-background-color: #29A58C;" styleClass="fonte" text="4 - Atrasos" textFill="WHITE" />
+      <Button fx:id="rel_multas" layoutX="122.0" layoutY="245.0" mnemonicParsing="false" onAction="#AbreRelMultas" style="-fx-background-color: #29A58C;" styleClass="fonte" text="5 - Multas Recebidas" textFill="WHITE" />
+      <Button fx:id="rel_descartes" layoutX="122.0" layoutY="290.0" mnemonicParsing="false" onAction="#AbreRelDescartes" style="-fx-background-color: #29A58C;" styleClass="fonte" text="6 - Obras Descartadas" textFill="WHITE" />
     </children>
 </AnchorPane>

@@ -1,5 +1,5 @@
 
-package app.biblioteca.relatorios.relDescartes;
+package app.biblioteca.relatorios.relMultas;
 
 import app.biblioteca.relatorios.relAtrasos.*;
 import javafx.application.Application;
@@ -8,11 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class RelDescartesMain extends Application{
+public class RelMultasMain extends Application{
     private static Stage stage;
     @Override
     public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDescartes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLMultas.fxml"));
         
         Scene scene = new Scene(root);
         

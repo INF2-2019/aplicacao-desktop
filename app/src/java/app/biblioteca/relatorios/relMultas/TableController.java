@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.biblioteca.relatorios.relAtrasos;
+package app.biblioteca.relatorios.relMultas;
 
 import java.awt.event.ActionEvent;
 import java.net.URL;

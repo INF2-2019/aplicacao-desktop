@@ -7,12 +7,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainImpressaoRel extends Application {
+public class MainImpRelDescartes extends Application {
     private static Stage stage;
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLImpressaoRel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLImpRelDescartes.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -33,6 +33,6 @@ public class MainImpressaoRel extends Application {
     }
 
     private void setStage(Stage stage) {
-        MainImpressaoRel.stage = stage;
+        MainImpRelDescartes.stage = stage;
     }
 }
