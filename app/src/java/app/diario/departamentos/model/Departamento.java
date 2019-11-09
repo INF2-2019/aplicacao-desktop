@@ -3,6 +3,7 @@ package app.diario.departamentos.model;
 import app.diario.departamentos.controllers.ModalRemoverController;
 import app.diario.departamentos.controllers.ModalEditarController;
 import app.diario.departamentos.controllers.TableController;
+import app.diario.departamentos.repository.DepartamentoRepository;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -19,22 +20,19 @@ import java.sql.SQLException;
 public class Departamento {
     
     private int id, idCampi;
-    private String nome;
+    private String nome, nomeCampi;
     private Button btns[];
     private HBox hbox;
     
-    public Departamento() {
-        this(0, 0, "");
+    public Departamento(){
+        this(0, 0, "", "");
     }
     
-    public Departamento(int idCampi, String nome) {
-        this(0, idCampi, nome);
-    }
-    
-    public Departamento(int id, int idCampi, String nome) {
+    public Departamento(int id, int idCampi, String nome, String nomeCampi) {
         this.id = id;
         this.idCampi = idCampi;
         this.nome = nome;
+        this.nomeCampi = nomeCampi;
         btns = new Button[2];
         hbox = new HBox();
         btns[0] = new Button("EDITAR");
@@ -85,7 +83,15 @@ public class Departamento {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public void setNomeCampi(String nomeCampi){
+        this.nomeCampi = nomeCampi;
+    }
     
+    public String getNomeCampi(){
+        return this.nomeCampi;
+    }
+
     public void btnSetup(int id){
         btns[0].setOnAction(new EventHandler() {
             @Override

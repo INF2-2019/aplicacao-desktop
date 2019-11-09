@@ -71,7 +71,7 @@ public class TableController implements Initializable{
     
     private void initTable(){
         col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        col_campus.setCellValueFactory(new PropertyValueFactory<>("idCampi"));
+        col_campus.setCellValueFactory(new PropertyValueFactory<>("nomeCampi"));
         col_acoes.setCellValueFactory(new PropertyValueFactory<>("hbox"));
         col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         
@@ -91,6 +91,8 @@ public class TableController implements Initializable{
 
         } 
         catch (SQLException e){
+            
+            System.out.println(e);
             setAviso("Falha ao processar requisição");
         }  
     }
