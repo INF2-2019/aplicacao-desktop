@@ -25,6 +25,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import javafx.application.Platform;
+import javafx.scene.control.TextField;
 
 public class TableController implements Initializable{
     private ObservableList<Departamento> tabelaDeptos;
@@ -53,6 +54,9 @@ public class TableController implements Initializable{
 
     @FXML
     private TableColumn<Departamento, HBox> col_acoes;
+    
+    @FXML
+    private TextField pesquisa;
     
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
