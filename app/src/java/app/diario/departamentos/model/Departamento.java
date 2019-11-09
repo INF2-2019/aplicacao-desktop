@@ -20,19 +20,21 @@ import java.sql.SQLException;
 public class Departamento {
     
     private int id, idCampi;
-    private String nome, nomeCampi;
+    private String nome, nomeCampi, ufCampi, cidadeCampi;
     private Button btns[];
     private HBox hbox;
     
     public Departamento(){
-        this(0, 0, "", "");
+        this(0, 0, "", "", "", "");
     }
     
-    public Departamento(int id, int idCampi, String nome, String nomeCampi) {
+    public Departamento(int id, int idCampi, String nome, String nomeCampi, String ufCampi, String cidadeCampi) {
         this.id = id;
         this.idCampi = idCampi;
         this.nome = nome;
         this.nomeCampi = nomeCampi;
+        this.ufCampi = ufCampi;
+        this.cidadeCampi = cidadeCampi;
         btns = new Button[2];
         hbox = new HBox();
         btns[0] = new Button("EDITAR");
@@ -84,14 +86,30 @@ public class Departamento {
         this.nome = nome;
     }
 
-    public void setNomeCampi(String nomeCampi){
-        this.nomeCampi = nomeCampi;
-    }
-    
     public String getNomeCampi(){
         return this.nomeCampi;
     }
 
+    public void setNomeCampi(String nomeCampi){
+        this.nomeCampi = nomeCampi;
+    }
+
+    public String getUfCampi() {
+        return ufCampi;
+    }
+
+    public void setUfCampi(String ufCampi) {
+        this.ufCampi = ufCampi;
+    }
+
+    public String getCidadeCampi() {
+        return cidadeCampi;
+    }
+
+    public void setCidadeCampi(String cidadeCampi) {
+        this.cidadeCampi = cidadeCampi;
+    }  
+    
     public void btnSetup(int id){
         btns[0].setOnAction(new EventHandler() {
             @Override

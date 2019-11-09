@@ -1,5 +1,6 @@
 package app.diario.departamentos.repository;
 
+import app.diario.departamentos.model.Campus;
 import app.diario.departamentos.model.Departamento;
 import app.utils.ConnectionFactory;
 import java.sql.Connection;
@@ -22,7 +23,7 @@ public class DepartamentoRepository {
             List<Departamento> deptos = new LinkedList();
 
             while(rs.next()) {
-                Departamento depto = new Departamento(rs.getInt("departamentos.id"), rs.getInt("departamentos.id-campi"), rs.getString("departamentos.nome"), rs.getString("campi.nome"));
+                Departamento depto = new Departamento(rs.getInt("departamentos.id"), rs.getInt("departamentos.id-campi"), rs.getString("departamentos.nome"), rs.getString("campi.nome"), rs.getString("campi.uf"), rs.getString("campi.cidade"));
                 deptos.add(depto);
             }
                 
@@ -42,7 +43,7 @@ public class DepartamentoRepository {
             prst.setInt(1, id);
 			ResultSet rs = prst.executeQuery();
             
-            Departamento depto = new Departamento(rs.getInt("departamentos.id"), rs.getInt("departamentos.id-campi"), rs.getString("departamentos.nome"), rs.getString("campi.nome"));
+            Departamento depto = new Departamento(rs.getInt("departamentos.id"), rs.getInt("departamentos.id-campi"), rs.getString("departamentos.nome"), rs.getString("campi.nome"), rs.getString("campi.uf"), rs.getString("campi.cidade"));
             
 			prst.close();
 			con.close();
@@ -173,5 +174,28 @@ public class DepartamentoRepository {
             throw new SQLException();
         }
     }
+    
+    public static List<Campus> consultaCampi() throws SQLException{
+        Connection con = ConnectionFactory.getDiario();
+        if(con != null){    
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM `campi`");
+
+            List<Campus> campi = new LinkedList();
+
+            while(rs.next()) {
+                Campus c = new Campus(rs.getInt("id"), rs.getString("nome"), rs.getString("uf"), rs.getString("cidade"));
+                campi.add(c);
+            }
+                
+            stmt.close();
+            con.close();
+            return campi;
+        }
+        else{
+            throw new SQLException();
+        }
+    }
+    
     
 }

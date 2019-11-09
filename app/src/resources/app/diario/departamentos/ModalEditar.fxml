@@ -41,7 +41,7 @@
                         <Insets left="24.0" right="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Nome" style="-fx-border-color: #29A58C;">
+                  <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="381.0" promptText="Nome" style="-fx-border-color: #29A58C;">
                      <HBox.margin>
                         <Insets top="4.0" />
                      </HBox.margin></TextField>
@@ -63,7 +63,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="campusCb" prefWidth="150.0" style="-fx-border-color: #29A58C; -fx-background-color: #FAFAFA;">
+                  <ChoiceBox fx:id="campusCb" prefHeight="27.0" prefWidth="365.0" style="-fx-border-color: #29A58C; -fx-background-color: #FAFAFA;">
                      <HBox.margin>
                         <Insets top="4.0" />
                      </HBox.margin>

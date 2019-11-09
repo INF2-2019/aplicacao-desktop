@@ -64,7 +64,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="campus" prefWidth="150.0" style="-fx-background-color: #FAFAFA; -fx-border-color: #29A58C;">
+                  <ChoiceBox fx:id="campusCb" prefWidth="150.0" style="-fx-background-color: #FAFAFA; -fx-border-color: #29A58C;">
                      <HBox.margin>
                         <Insets top="4.0" />
                      </HBox.margin>

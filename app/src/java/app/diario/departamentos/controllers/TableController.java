@@ -2,6 +2,7 @@ package app.diario.departamentos.controllers;
 
 import app.diario.departamentos.model.Departamento;
 import app.diario.departamentos.repository.DepartamentoRepository;
+import java.awt.event.KeyEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +26,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import javafx.application.Platform;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.scene.control.TextField;
 
 public class TableController implements Initializable{
@@ -56,7 +59,7 @@ public class TableController implements Initializable{
     private TableColumn<Departamento, HBox> col_acoes;
     
     @FXML
-    private TextField pesquisa;
+    private TextField pesquisaTf;
     
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
@@ -67,6 +70,19 @@ public class TableController implements Initializable{
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);
         modalAdicionar.showAndWait();
         loadTableData();
+    }
+    
+    private void loadTableData(){
+        try{
+            tabelaDeptos =  FXCollections.observableArrayList(DepartamentoRepository.consulta());      
+            tabela.getSortOrder().add(col_campus);
+            tabela.setItems(tabelaDeptos);
+            aviso.setText("");
+
+        } 
+        catch (SQLException e){
+            setAviso("Falha ao processar requisição");
+        }  
     }
     
     public void setAviso(String aviso){
@@ -81,24 +97,40 @@ public class TableController implements Initializable{
         
     }
     
+    @FXML
+    private void pesquisar(javafx.scene.input.KeyEvent event) {
+        System.out.println("A");
+        FilteredList<Departamento> filtro = new FilteredList<>(tabelaDeptos, p -> true);
+        pesquisaTf.textProperty().addListener((observable, oldValue, newValue) -> {
+            filtro.setPredicate(depto -> {
+                
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                
+                String digitado = newValue.toLowerCase();
+                
+                if (depto.getNome().toLowerCase().contains(digitado)) {
+                    return true; 
+                } 
+                else if (depto.getNomeCampi().toLowerCase().contains(digitado)) {
+                    return true;
+                }
+                else if (Integer.toString(depto.getId()).contains(digitado)) {
+                    return true;
+                }
+                
+                return false;
+            });
+            
+            SortedList<Departamento> sortedList = new SortedList<>(filtro);
+            sortedList.comparatorProperty().bind(tabela.comparatorProperty());
+            tabela.setItems(sortedList);        
+        });     
+    }
+    
     public static void setMensagem(String m){
         mensagem = m;
-    }
-
-    @FXML
-    public void loadTableData(){
-        try{
-            tabelaDeptos =  FXCollections.observableArrayList(DepartamentoRepository.consulta());      
-            tabela.getSortOrder().add(col_campus);
-            tabela.setItems(tabelaDeptos);
-            aviso.setText("");
-
-        } 
-        catch (SQLException e){
-            
-            System.out.println(e);
-            setAviso("Falha ao processar requisição");
-        }  
     }
     
     @Override
