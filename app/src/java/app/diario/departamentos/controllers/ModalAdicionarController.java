@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.sql.SQLException;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
 public class ModalAdicionarController { 
@@ -57,6 +58,9 @@ public class ModalAdicionarController {
     public void setAviso(String aviso){
         this.aviso.setText(aviso);
     }
+    
+    @FXML
+    private ChoiceBox<?> campus;
     
     @FXML
     void cancelar(ActionEvent event) {

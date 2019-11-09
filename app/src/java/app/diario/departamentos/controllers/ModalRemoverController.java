@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
 public class ModalRemoverController {
@@ -18,6 +19,9 @@ public class ModalRemoverController {
     
     @FXML
     private Label aviso;
+    
+    @FXML
+    private ChoiceBox<?> campusCb;
 
     @FXML
     private Button cancelarBtn;
