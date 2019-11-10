@@ -23,68 +23,68 @@ import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 
-public class ModalEditarController implements Initializable{
+public class ModalEditarController implements Initializable {
+
     private ObservableList<Campus> campusObservableList;
     private ObservableList<String> choiceBoxObservableList;
     private ObservableList<Departamento> deptoObservableList;
-    
+
     private String nome;
-    
+
     private int idCampi, id;
     private boolean status;
-    
+
     private String mensagem;
 
     @FXML
     private Label aviso;
-    
+
     @FXML
     private TextField nomeTf;
 
     @FXML
     private ChoiceBox<String> campusCb;
-    
+
     @FXML
     private Button cancelarBtn;
-    
+
     @FXML
     private Button editarBtn;
 
     @FXML
-    void editarDepartamento(ActionEvent event){
-        try{
+    void editarDepartamento(ActionEvent event) {
+        try {
             System.out.println(campusCb.getValue());
-            if(nomeTf.getText().isEmpty() ||  campusCb.getValue() == null){
+            if (nomeTf.getText().isEmpty() || campusCb.getValue() == null) {
                 setAviso("Por favor, verifique o preenchimento dos campos abaixo.");
-            }
-            else{
+            } else {
                 System.out.println("1");
                 String nome = nomeTf.getText();
                 String campus = campusCb.getValue();
-                
-                for(Campus c : campusObservableList){
-                    if((c.getNome() + " - " + c.getCidade() + " - " + c.getUf()).equals(campus)){
-                        
+
+                for (Campus c : campusObservableList) {
+                    if ((c.getNome() + " - " + c.getCidade() + " - " + c.getUf()).equals(campus)) {
+
                         idCampi = c.getId();
                         break;
                     }
                 }
-                
-                if(!Validacao.validaNome(nome)){
-                    setAviso("Nome inválido(Excede 255 caracteres).");  
-                }  
-                else{
+
+                if (!Validacao.validaNome(nome)) {
+                    setAviso("Nome inválido(Excede 255 caracteres).");
+                } else {
                     DepartamentoRepository.atualiza(id, idCampi, nome);
                     Stage modal = (Stage) cancelarBtn.getScene().getWindow();
                     status = true;
                     modal.close();
                 }
             }
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             setAviso("Não foi possível editar o departamento.");
         }
-    };
+    }
+
+    ;
 
     @FXML
     void cancelar(ActionEvent event) {
@@ -92,38 +92,38 @@ public class ModalEditarController implements Initializable{
         status = false;
         modal.close();
     }
-    
-    public void setData(int i, int idc, String n){
+
+    public void setData(int i, int idc, String n) {
         id = i;
         idCampi = idc;
         nome = n;
-    }    
-    
-    public void setAviso(String aviso){
+    }
+
+    public void setAviso(String aviso) {
         this.aviso.setText(aviso);
     }
-    
-    public void setChoiceBox() throws SQLException{
+
+    public void setChoiceBox() throws SQLException {
         campusObservableList = FXCollections.observableArrayList(DepartamentoRepository.consultaCampi());
         deptoObservableList = FXCollections.observableArrayList(DepartamentoRepository.consulta());
         choiceBoxObservableList = FXCollections.observableArrayList();
-        for(Campus c : campusObservableList){
+        for (Campus c : campusObservableList) {
             choiceBoxObservableList.add(c.getNome() + " - " + c.getCidade() + " - " + c.getUf());
-            if(idCampi == c.getId()){
+            if (idCampi == c.getId()) {
                 campusCb.setValue(c.getNome() + " - " + c.getCidade() + " - " + c.getUf());
             }
         }
         campusCb.setItems(choiceBoxObservableList);
     }
-    
-    public boolean getStatus(){
+
+    public boolean getStatus() {
         return status;
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> {
-            this.nomeTf.setText(this.nome); 
+            this.nomeTf.setText(this.nome);
             try {
                 setChoiceBox();
             } catch (SQLException ex) {

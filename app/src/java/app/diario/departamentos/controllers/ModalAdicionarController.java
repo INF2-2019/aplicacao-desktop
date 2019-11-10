@@ -19,19 +19,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
-public class ModalAdicionarController implements Initializable{ 
+public class ModalAdicionarController implements Initializable {
+
     private ObservableList<Campus> campusObservableList;
     private ObservableList<String> choiceBoxObservableList;
-    
+
     private String mensagem;
-    
+
     private int idCampi;
-    
+
     private boolean status;
-    
+
     @FXML
     private Label aviso;
-    
+
     @FXML
     private TextField nomeTf;
 
@@ -45,33 +46,30 @@ public class ModalAdicionarController implements Initializable{
     private Button cancelarBtn;
 
     @FXML
-    void adicionarDepartamento(ActionEvent event){
-        try{
-            if(nomeTf.getText().isEmpty() || campusCb.getValue() == null){
-                setAviso("Por favor, verifique o preenchimento dos campos abaixo.");  
-            }
-            else{
+    void adicionarDepartamento(ActionEvent event) {
+        try {
+            if (nomeTf.getText().isEmpty() || campusCb.getValue() == null) {
+                setAviso("Por favor, verifique o preenchimento dos campos abaixo.");
+            } else {
                 String nome = nomeTf.getText();
                 String campus = campusCb.getValue();
-                
-                for(Campus c : campusObservableList){
-                    if((c.getNome() + " - " + c.getCidade() + " - " + c.getUf()).equals(campus)){
+
+                for (Campus c : campusObservableList) {
+                    if ((c.getNome() + " - " + c.getCidade() + " - " + c.getUf()).equals(campus)) {
                         idCampi = c.getId();
                     }
-                }              
-            
-                if(!Validacao.validaNome(nome)){
-                    setAviso("Nome inválido(Excede 255 caracteres).");
                 }
-                else{
+
+                if (!Validacao.validaNome(nome)) {
+                    setAviso("Nome inválido(Excede 255 caracteres).");
+                } else {
                     DepartamentoRepository.insere(idCampi, nome);
                     Stage modal = (Stage) cancelarBtn.getScene().getWindow();
                     status = true;
                     modal.close();
-                }           
+                }
             }
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             status = false;
             setAviso("Não foi possível adicionar o departamento.");
         }
@@ -82,24 +80,24 @@ public class ModalAdicionarController implements Initializable{
         Stage modal = (Stage) cancelarBtn.getScene().getWindow();
         modal.close();
     }
-    
-    public void setChoiceBox() throws SQLException{
+
+    public void setChoiceBox() throws SQLException {
         campusObservableList = FXCollections.observableArrayList(DepartamentoRepository.consultaCampi());
         choiceBoxObservableList = FXCollections.observableArrayList();
-        for(Campus c : campusObservableList){
+        for (Campus c : campusObservableList) {
             choiceBoxObservableList.add(c.getNome() + " - " + c.getCidade() + " - " + c.getUf());
         }
         campusCb.setItems(choiceBoxObservableList);
     }
-    
-    public void setAviso(String aviso){
+
+    public void setAviso(String aviso) {
         this.aviso.setText(aviso);
-    }  
- 
+    }
+
     public boolean getStatus() {
         return status;
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         aviso.getStylesheets().add("/app/diario/departamentos/Departamentos.css");

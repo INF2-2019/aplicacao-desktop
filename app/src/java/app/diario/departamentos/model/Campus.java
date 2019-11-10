@@ -1,9 +1,9 @@
 package app.diario.departamentos.model;
 
 public class Campus {
-    
+
     private int id;
-    
+
     private String nome, uf, cidade;
 
     public Campus(int id, String nome, String uf, String cidade) {
@@ -12,7 +12,7 @@ public class Campus {
         this.uf = uf;
         this.cidade = cidade;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -44,5 +44,5 @@ public class Campus {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    
+
 }

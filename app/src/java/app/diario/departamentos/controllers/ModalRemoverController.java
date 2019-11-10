@@ -11,16 +11,16 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
 public class ModalRemoverController {
-    
+
     private int id;
     private boolean status;
-    
+
     @FXML
     private Button apagarBtn;
-    
+
     @FXML
     private Label aviso;
-    
+
     @FXML
     private ChoiceBox<?> campusCb;
 
@@ -28,15 +28,14 @@ public class ModalRemoverController {
     private Button cancelarBtn;
 
     @FXML
-    void apagarDepartamento(ActionEvent event){
-        try{
+    void apagarDepartamento(ActionEvent event) {
+        try {
             DepartamentoRepository.remove(this.id);
-        
+
             Stage modal = (Stage) cancelarBtn.getScene().getWindow();
             status = true;
             modal.close();
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             aviso.setText("Não foi possível remover o departamento");
         }
     }
@@ -47,8 +46,8 @@ public class ModalRemoverController {
         status = false;
         modal.close();
     }
-    
-    public boolean getStatus(){
+
+    public boolean getStatus() {
         return status;
     }
 
