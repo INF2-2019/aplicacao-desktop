@@ -24,7 +24,7 @@
                 <HBox prefHeight="61.0" prefWidth="533.0" style="-fx-spacing: 1em;" styleClass="content-header" BorderPane.alignment="TOP_CENTER">
                     <children>
                         <Button fx:id="botaoAdicionar" onAction="#adicionaAction" styleClass="greenBtn" text="ADICIONAR" />
-                        <Button mnemonicParsing="false" style="-fx-background-color: #00BFFF;" styleClass="greenBtn" text="INFO" />
+                        <Button fx:id="botaoInfo" onAction="#consultaAction" mnemonicParsing="false" style="-fx-background-color: #00BFFF;" styleClass="greenBtn" text="INFO" />
                     </children>
                 </HBox>
             </top>

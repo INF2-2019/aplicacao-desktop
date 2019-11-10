@@ -1,5 +1,6 @@
 package principal;
 
+import consultar.ConsultaMain;
 import inserir.InsereMain;
 import java.net.URL;
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class MainController implements Initializable {
 	private final String URL_DELETAR = "http://localhost:8080/app/diario/turmas/deletar";
 
 	public static ObservableList<Turma> tabList = FXCollections.observableArrayList();
-	
+
 	@FXML
 	public TableView<Turma> tab;
 
@@ -40,7 +41,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	public TableColumn<Turma, String> colAcoes;
-	
+
 	@FXML
 	public TableColumn<Turma, String> colAcoes2;
 
@@ -48,10 +49,10 @@ public class MainController implements Initializable {
 	private Button botaoAdicionar;
 
 	@FXML
-	private Button botaoEditar;
+	private Button botaoInfo;
 
 	private static TableView<Turma> table;
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
@@ -63,11 +64,11 @@ public class MainController implements Initializable {
 			System.out.println(ex);
 		}
 	}
-	
-	public static void setTable(){
+
+	public static void setTable() {
 		table.setItems(tabList);
 	}
-	
+
 	public static void updateTab() throws SQLException, ClassNotFoundException {
 		tabList.clear();
 		Connection con = Conector.conectar();
@@ -95,6 +96,16 @@ public class MainController implements Initializable {
 		InsereMain im = new InsereMain();
 		try {
 			im.start(new Stage());
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+	}
+
+	@FXML
+	private void consultaAction(ActionEvent event) {
+		ConsultaMain cm = new ConsultaMain();
+		try {
+			cm.start(new Stage());
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
