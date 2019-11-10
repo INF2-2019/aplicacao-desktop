@@ -1,10 +1,10 @@
-# Apicação Desktop
+# Aplicação Desktop
 
-Esse repositório é dedicado a parte de `front-end` desktop da aplicação a ser der desenvolvida.
+Este repositório é dedicado à parte de `front-end` desktop da aplicação a ser desenvolvida.
 
 ## Aviso
 
-Esse repositório tem afazeres globais, caso queira ajudar verifique o [`TO-DO`](TO-DO.md).
+Este repositório tem afazeres globais, caso queira ajudar verifique o [`TO-DO`](TO-DO.md).
 
 ## Instruções para IDEs e Editores recomendados
 
@@ -22,7 +22,7 @@ Instruções para instalação: [aqui](https://duckduckgo.com/)
 
 ### Plugins e Configurações
 
-Recomendamos, para sua facilidade, instalar o plugin `EditorConfig` que ira padronizar o seu projeto "automaticamente" baseado no arquivo `.editorconfig` em `app`. [Tutorial para instalação no NetBeans](https://inf2-2019.github.io/help/editorconfig/).
+Recomendamos, para sua facilidade, instalar o plugin `EditorConfig` que irá padronizar o seu projeto "automaticamente", baseado no arquivo `.editorconfig` em `app`. [Tutorial para instalação no NetBeans](https://inf2-2019.github.io/help/editorconfig/).
 
 Serão usados:
 
