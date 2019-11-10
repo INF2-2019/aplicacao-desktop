@@ -33,12 +33,12 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Label fx:id="aviso" alignment="TOP_CENTER" contentDisplay="CENTER" style="-fx-background-color: red;" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+      <Label fx:id="aviso" alignment="TOP_CENTER" contentDisplay="CENTER" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
          <font>
             <Font size="14.0" />
          </font>
          <StackPane.margin>
-            <Insets right="240.0" top="148.0" />
+            <Insets right="85.0" top="80.0" />
          </StackPane.margin>
       </Label>
       <Label text="Departamentos" StackPane.alignment="TOP_LEFT">

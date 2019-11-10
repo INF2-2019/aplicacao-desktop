@@ -25,17 +25,20 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Timer;
+import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
 
 public class TableController implements Initializable{
     private ObservableList<Departamento> tabelaDeptos;
     
     private Timer t;
     
-    private static String mensagem;
+    private String avisoMensagem;
+    private int avisoTipo;
     
     @FXML
     private Label aviso;
@@ -64,11 +67,20 @@ public class TableController implements Initializable{
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
         Stage modalAdicionar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/departamentos/ModalAdicionar.fxml"));
-        modalAdicionar.setScene(new Scene(root));
+        FXMLLoader modalAdicionarFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/departamentos/ModalAdicionar.fxml"));     
+        Parent modalAdicionarParent = (Parent)modalAdicionarFXMLLoader.load();          
+        ModalAdicionarController modalAdicionarController = modalAdicionarFXMLLoader.<ModalAdicionarController>getController();
+
+        modalAdicionar.setScene(new Scene(modalAdicionarParent));
         modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);
         modalAdicionar.showAndWait();
+        boolean status = modalAdicionarController.getStatus();
+        
+        if(status){
+            setAviso("Departamento Adicionado com Sucesso", 1);
+        }
+        
         loadTableData();
     }
     
@@ -77,16 +89,39 @@ public class TableController implements Initializable{
             tabelaDeptos =  FXCollections.observableArrayList(DepartamentoRepository.consulta());      
             tabela.getSortOrder().add(col_campus);
             tabela.setItems(tabelaDeptos);
-            aviso.setText("");
-
         } 
         catch (SQLException e){
-            setAviso("Falha ao processar requisição");
+            setAviso("Falha ao processar requisição", 0);
         }  
     }
     
-    public void setAviso(String aviso){
-        this.aviso.setText(aviso);
+    public void setAviso(String avisoMensagem, int avisoTipo){
+        this.avisoMensagem = avisoMensagem;
+        this.avisoTipo = avisoTipo;
+        mostraAviso();
+    }
+    
+    public void mostraAviso(){
+        if(this.avisoTipo == 1){
+            this.aviso.getStyleClass().clear();
+            this.aviso.getStyleClass().add("aviso-sucesso");
+            this.aviso.setText(this.avisoMensagem);
+        }else if(this.avisoTipo == 0){
+            this.aviso.getStyleClass().clear();
+            this.aviso.getStyleClass().add("aviso-erro");
+            this.aviso.setText(this.avisoMensagem);         
+        }
+        if(!this.avisoMensagem.isEmpty()){
+            this.aviso.getStyleClass().add("aviso");
+            fadeOutAviso();
+        }
+    }
+
+    public void fadeOutAviso(){
+        FadeTransition transicao = new FadeTransition(Duration.millis(2000), aviso);
+        transicao.setFromValue(1);
+        transicao.setToValue(0);
+        transicao.play();
     }
     
     private void initTable(){
@@ -99,7 +134,6 @@ public class TableController implements Initializable{
     
     @FXML
     private void pesquisar(javafx.scene.input.KeyEvent event) {
-        System.out.println("A");
         FilteredList<Departamento> filtro = new FilteredList<>(tabelaDeptos, p -> true);
         pesquisaTf.textProperty().addListener((observable, oldValue, newValue) -> {
             filtro.setPredicate(depto -> {
@@ -129,16 +163,13 @@ public class TableController implements Initializable{
         });     
     }
     
-    public static void setMensagem(String m){
-        mensagem = m;
-    }
-    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> {
             tabelaDeptos = FXCollections.observableArrayList();
             initTable();
             loadTableData();
+            mostraAviso();
         });
     }
 }

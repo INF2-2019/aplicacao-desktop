@@ -16,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
+import javafx.scene.layout.Pane;
 
 public class Departamento {
     
@@ -147,10 +148,18 @@ public class Departamento {
         modalEditar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalEditar.initModality(Modality.APPLICATION_MODAL);
         modalEditar.showAndWait();
-
+        boolean status = modalEditarController.getStatus();
+        
         Stage table = (Stage)btns[1].getScene().getWindow();
-        FXMLLoader TabelaDepartamentosfxmlL = new FXMLLoader(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml")); 
-        Parent tabelaDepartamentosRoot = (Parent)TabelaDepartamentosfxmlL.load();  
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Pane tabelaDepartamentosRoot = fxmlLoader.load(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml").openStream());
+        TableController tableController = (TableController) fxmlLoader.getController();
+        
+        if(status){
+            tableController.setAviso("Departamento editado com sucesso", 1);
+        }
+        
         Scene scene = new Scene(tabelaDepartamentosRoot);
         scene.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
         table.setScene(scene);
@@ -168,10 +177,18 @@ public class Departamento {
         modalRemover.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalRemover.initModality(Modality.APPLICATION_MODAL);
         modalRemover.showAndWait();
+        boolean status = modalRemoverController.getStatus();
 
         Stage table = (Stage)btns[1].getScene().getWindow();
-        FXMLLoader TabelaDepartamentosfxmlL = new FXMLLoader(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml")); 
-        Parent tabelaDepartamentosRoot = (Parent)TabelaDepartamentosfxmlL.load();  
+        
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Pane tabelaDepartamentosRoot = fxmlLoader.load(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml").openStream());
+        TableController tableController = (TableController) fxmlLoader.getController();
+        
+        if(status){
+            tableController.setAviso("Departamento removido com sucesso", 1);
+        }
+        
         Scene scene = new Scene(tabelaDepartamentosRoot);
         scene.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
         table.setScene(scene);

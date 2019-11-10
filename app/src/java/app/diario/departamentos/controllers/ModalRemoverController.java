@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 public class ModalRemoverController {
     
     private int id;
+    private boolean status;
     
     @FXML
     private Button apagarBtn;
@@ -32,6 +33,7 @@ public class ModalRemoverController {
             DepartamentoRepository.remove(this.id);
         
             Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+            status = true;
             modal.close();
         }
         catch(SQLException e){
@@ -42,7 +44,12 @@ public class ModalRemoverController {
     @FXML
     void cancelar(ActionEvent event) {
         Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+        status = false;
         modal.close();
+    }
+    
+    public boolean getStatus(){
+        return status;
     }
 
     public void setId(int id) {

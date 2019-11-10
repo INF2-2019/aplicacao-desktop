@@ -21,6 +21,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 
 public class ModalEditarController implements Initializable{
     private ObservableList<Campus> campusObservableList;
@@ -30,6 +31,7 @@ public class ModalEditarController implements Initializable{
     private String nome;
     
     private int idCampi, id;
+    private boolean status;
     
     private String mensagem;
 
@@ -51,7 +53,8 @@ public class ModalEditarController implements Initializable{
     @FXML
     void editarDepartamento(ActionEvent event){
         try{
-            if(nomeTf.getText().isEmpty() ||  campusCb.getValue().isEmpty()){
+            System.out.println(campusCb.getValue());
+            if(nomeTf.getText().isEmpty() ||  campusCb.getValue() == null){
                 setAviso("Por favor, verifique o preenchimento dos campos abaixo.");
             }
             else{
@@ -73,6 +76,7 @@ public class ModalEditarController implements Initializable{
                 else{
                     DepartamentoRepository.atualiza(id, idCampi, nome);
                     Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+                    status = true;
                     modal.close();
                 }
             }
@@ -85,6 +89,7 @@ public class ModalEditarController implements Initializable{
     @FXML
     void cancelar(ActionEvent event) {
         Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+        status = false;
         modal.close();
     }
     
@@ -110,17 +115,20 @@ public class ModalEditarController implements Initializable{
         }
         campusCb.setItems(choiceBoxObservableList);
     }
-
+    
+    public boolean getStatus(){
+        return status;
+    }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> {
-            nomeTf.setText(nome);
-            try {   
+            this.nomeTf.setText(this.nome); 
+            try {
                 setChoiceBox();
             } catch (SQLException ex) {
-                setAviso("Houve um erro ao carregar os campi");
+                setAviso("Houve um erro ao editar o departamento");
             }
         });
     }
-
 }

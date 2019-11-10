@@ -24,7 +24,10 @@ public class ModalAdicionarController implements Initializable{
     private ObservableList<String> choiceBoxObservableList;
     
     private String mensagem;
+    
     private int idCampi;
+    
+    private boolean status;
     
     @FXML
     private Label aviso;
@@ -44,7 +47,7 @@ public class ModalAdicionarController implements Initializable{
     @FXML
     void adicionarDepartamento(ActionEvent event){
         try{
-            if(nomeTf.getText().isEmpty() || campusCb.getValue().isEmpty()){
+            if(nomeTf.getText().isEmpty() || campusCb.getValue() == null){
                 setAviso("Por favor, verifique o preenchimento dos campos abaixo.");  
             }
             else{
@@ -63,15 +66,23 @@ public class ModalAdicionarController implements Initializable{
                 else{
                     DepartamentoRepository.insere(idCampi, nome);
                     Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+                    status = true;
                     modal.close();
                 }           
             }
         }
         catch(SQLException e){
+            status = false;
             setAviso("Não foi possível adicionar o departamento.");
         }
     }
 
+    @FXML
+    void cancelar(ActionEvent event) {
+        Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+        modal.close();
+    }
+    
     public void setChoiceBox() throws SQLException{
         campusObservableList = FXCollections.observableArrayList(DepartamentoRepository.consultaCampi());
         choiceBoxObservableList = FXCollections.observableArrayList();
@@ -84,20 +95,19 @@ public class ModalAdicionarController implements Initializable{
     public void setAviso(String aviso){
         this.aviso.setText(aviso);
     }  
-    
-    @FXML
-    void cancelar(ActionEvent event) {
-        Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-        modal.close();
+ 
+    public boolean getStatus() {
+        return status;
     }
-
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        aviso.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
+        aviso.getStyleClass().add("aviso-erro");
         try {
             setChoiceBox();
         } catch (SQLException ex) {
             setAviso("Houve um erro ao carregar os campi");
         }
     }
-
 }
