@@ -118,7 +118,7 @@ public class TableController implements Initializable {
     }
 
     public void fadeOutAviso() {
-        FadeTransition transicao = new FadeTransition(Duration.millis(2000), aviso);
+        FadeTransition transicao = new FadeTransition(Duration.millis(5000), aviso);
         transicao.setFromValue(1);
         transicao.setToValue(0);
         transicao.play();
