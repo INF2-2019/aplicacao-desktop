@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.departamentos.controllers.ModalConfirmacaoController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.transferencia.ModalTransferenciaController">
    <children>
       <Button fx:id="confirmarBtn" alignment="CENTER" mnemonicParsing="false" onAction="#transferirAluno" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Transferir" textFill="#fdfbf9" StackPane.alignment="CENTER_LEFT">
          <font>
@@ -16,9 +16,6 @@
          <StackPane.margin>
             <Insets left="224.0" top="128.0" />
          </StackPane.margin>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </Button>
       <Button fx:id="cancelarBtn" alignment="CENTER" mnemonicParsing="false" onAction="#cancelar" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: #E53935;" text="Cancelar" textFill="#fdfbf9" StackPane.alignment="CENTER_RIGHT">
          <font>
