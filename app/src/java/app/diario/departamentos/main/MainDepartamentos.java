@@ -12,7 +12,7 @@ public class MainDepartamentos extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/app/diario/departamentos/TabelaDepartamentos.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/app/diario/departamentos/Departamentos.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/app/diario/departamentos/EstiloDepartamentos.css").toExternalForm());
         
         stage.setTitle("Sistema Acadêmico");
         stage.setScene(scene);
