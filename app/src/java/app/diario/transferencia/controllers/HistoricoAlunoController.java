@@ -3,27 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.diario.transferencia;
+package app.diario.transferencia.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author caios
  */
-public class PedirCPFController implements Initializable {
+public class HistoricoAlunoController implements Initializable {
 
     @FXML
-    private TextField inputCPF;
-    @FXML
-    private Button botaoTransferir;
+    private Button botaoVolta;
 
     /**
      * Initializes the controller class.
@@ -32,9 +28,5 @@ public class PedirCPFController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void modalTransferir(ActionEvent event) {
-    }
     
 }
