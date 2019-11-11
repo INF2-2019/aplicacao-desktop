@@ -4,6 +4,6 @@
     -fx-background-color: #29a58c;
 }
 
-#btnAdmEntraDiario {
+#btnAdmEntraBiblioteca, #btnVoltaInicio {
     -fx-background-color: #29a58c;
 }

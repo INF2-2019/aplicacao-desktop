@@ -13,10 +13,10 @@ public class MainTelaLoginAdmBiblioteca extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaLoginAdm.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaLoginAdmBiblioteca.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("EstiloTelaLoginAdm.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("EstiloTelaLoginAdmBiblioteca.css").toExternalForm());
         
         stage.setTitle("Sistema Acadêmico");
         stage.setScene(scene);
