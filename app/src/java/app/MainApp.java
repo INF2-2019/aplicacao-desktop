@@ -1,4 +1,4 @@
-package app.diario.telaloginadm;
+package app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,18 +7,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class MainTelaLoginAdm extends Application {
+public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaLoginAdm.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("EstiloTelaLoginAdm.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         
-        stage.setTitle("Sistema Acadêmico");
+        stage.setTitle("JavaFX and JDK8");
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
     }
 
