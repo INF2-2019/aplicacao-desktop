@@ -7,17 +7,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Relatorio10Main extends Application {
+public class Relatorio10ModalMain extends Application {
 
 	private static Stage stage;
 
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("relatorio10.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("relatorio10Modal.fxml"));
 
 		Scene sc = new Scene(root);
 		sc.getStylesheets().add(getClass().getResource("../principal/styles.css").toExternalForm());
 
-		stage.setTitle("");
+		stage.setTitle("Relatório 10");
 		stage.setScene(sc);
 		setStage(stage);
 

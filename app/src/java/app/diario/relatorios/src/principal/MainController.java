@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import relatorio10.Relatorio10ModalMain;
 
 public class MainController implements Initializable {
 
@@ -31,27 +33,34 @@ public class MainController implements Initializable {
 
 	@FXML
 	private void rel7Action(ActionEvent event) {
-		
+		System.out.println("rel. 7");
 	}
 
 	@FXML
 	private void rel8Action(ActionEvent event) {
-		
+		System.out.println("rel. 8");
 	}
 
 	@FXML
 	private void rel9Action(ActionEvent event) {
-		
+		System.out.println("rel. 9");
 	}
 
 	@FXML
 	private void rel10Action(ActionEvent event) {
-		
+		System.out.println("a");
+		Relatorio10ModalMain r10mm = new Relatorio10ModalMain();
+		try{
+			r10mm.start(new Stage());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 	}
 
 	@FXML
 	private void rel11Action(ActionEvent event) {
-		
+		System.out.println("rel. 11");
 	}
 	
 }
