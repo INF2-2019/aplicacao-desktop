@@ -5,7 +5,6 @@
  */
 package app.diario.cursos;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,12 +21,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import app.diario.cursos.InsereMain;
-import java.awt.event.MouseEvent;
 import java.sql.PreparedStatement;
-import java.util.Timer;
-import java.util.TimerTask;
-import javafx.event.EventType;
 
 /**
  *
@@ -98,7 +92,7 @@ public class ControllerTable implements Initializable{
             oblist = FXCollections.observableArrayList();
             
             while(rs.next()){
-                oblist.add(new ModelTable(rs.getString("id"),rs.getString("id-depto"),rs.getString("nome"),rs.getString("horas-total"),rs.getString("modalidade"),new Button("EDITAR"),new Button("DELETAR")));
+                oblist.add(new ModelTable(rs.getString("id"),verificaDepto(rs.getString("id-depto")),rs.getString("nome"),rs.getString("horas-total"),rs.getString("modalidade"),new Button("EDITAR"),new Button("DELETAR")));
             }
             
             con.close();
@@ -119,5 +113,17 @@ public class ControllerTable implements Initializable{
         
           
         table.setItems(oblist);
+    }
+    public static String verificaDepto(String id) throws SQLException {
+        ResultSet resultadoBusca;
+        Connection con = DbConnector.getConnection();
+        int Iid = Integer.parseUnsignedInt(id);
+        // cria um preparedStatement
+        String sql = "SELECT `nome` FROM `departamentos` WHERE `id` = ?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setInt(1, Iid);
+        resultadoBusca =  stmt.executeQuery();
+        resultadoBusca.next();
+        return resultadoBusca.getString("nome");
     }
 }

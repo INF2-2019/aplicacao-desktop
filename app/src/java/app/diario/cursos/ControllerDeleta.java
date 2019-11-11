@@ -5,7 +5,6 @@
  */
 package app.diario.cursos;
 
-import app.diario.cursos.ControllerTable;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

@@ -5,16 +5,10 @@
  */
 package app.diario.cursos;
 
-import app.diario.cursos.ControllerDeleta;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import app.diario.cursos.DeletaMain;
-import app.diario.cursos.ControllerEditar;
-import app.diario.cursos.EditarMain;
 import javafx.stage.Stage;
 
 /**

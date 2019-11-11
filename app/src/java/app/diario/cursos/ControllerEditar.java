@@ -5,13 +5,10 @@
  */
 package app.diario.cursos;
 
-import app.diario.cursos.DbConnector;
-import app.diario.cursos.ControllerTable;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Enumeration;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -82,18 +79,25 @@ public class ControllerEditar implements Initializable {
     @FXML
     public void acaoSalvar(){
         try {
-            if(!"".equals(idDeptoInput.getText()) || !"".equals(nomeInput.getText()) || !"".equals(horasInput.getText()) || !"".equals(modalidadeInput.getText())){
-                Connection connection = DbConnector.getConnection();
-                PreparedStatement stmt = connection.prepareStatement("UPDATE `cursos` SET"
-                        + " `id-depto` = '"+idDeptoInput.getText()+"'"
-                        + ", `nome` = '"+nomeInput.getText()+"'"
-                        + ", `horas-total` = '"+horasInput.getText()+"'"
-                        + ", `modalidade` = '"+modalidadeInput.getText()+"'"
-                        + " WHERE `cursos`.`id` = "+ControllerEditar.getId());
-                stmt.execute();
-                stmt.close();
-                connection.close();
-                fecha();
+           if(!"".equals(idDeptoInput.getText()) &&
+              !"".equals(nomeInput.getText()) &&
+              !"".equals(horasInput.getText()) &&
+              !"".equals(modalidadeInput.getText())){
+              if(isNum(idDeptoInput.getText()) && 
+                 isNum(horasInput.getText())){
+                    Connection connection = DbConnector.getConnection();
+                        PreparedStatement stmt = connection.prepareStatement("UPDATE `cursos` SET"
+                                + " `id-depto` = '"+idDeptoInput.getText()+"'"
+                                + ", `nome` = '"+nomeInput.getText()+"'"
+                                + ", `horas-total` = '"+horasInput.getText()+"'"
+                                + ", `modalidade` = '"+modalidadeInput.getText()+"'"
+                                + " WHERE `cursos`.`id` = "+ControllerEditar.getId());
+                        stmt.execute();
+                        stmt.close();
+                        connection.close();
+                        fecha();
+               }else
+                   errorLabel.setText("Valores inseridos inválidos");
             }
             else{
                 errorLabel.setText("É necessário preencher todos os campos");
@@ -113,10 +117,21 @@ public class ControllerEditar implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
     
     public void fecha(){
         EditarMain.getStage().close();
+    }
+     public static boolean isNum(String strNum) {
+        boolean ret = true;
+        try {
+
+            Double.parseDouble(strNum);
+
+        }catch (NumberFormatException e) {
+            ret = false;
+        }
+        return ret;
     }
 }

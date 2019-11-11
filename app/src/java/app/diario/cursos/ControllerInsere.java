@@ -5,13 +5,11 @@
  */
 package app.diario.cursos;
 
-import app.diario.cursos.DbConnector;
-import app.diario.cursos.ControllerTable;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Enumeration;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +23,7 @@ import javafx.scene.control.TextField;
  * @author tuba1
  */
 public class ControllerInsere implements Initializable {
-    
+
     @FXML
     private TextField nomeInput;
 
@@ -61,47 +59,67 @@ public class ControllerInsere implements Initializable {
 
     @FXML
     private Label nomeLabel;
-    
+
     @FXML
     private Label labelError;
 
-    
     @FXML
     void acaoCancelar(ActionEvent event) {
         fecha();
     }
+
     @FXML
     void acaoSalvar(ActionEvent event) throws SQLException {
-        System.out.println("\n"+idDeptoInput.getText()+"<-- texto aqui");
-        if(!"".equals(idDeptoInput.getText()) || !"".equals(nomeInput.getText()) || !"".equals(horasInput.getText()) || !"".equals(modalidadeInput.getText())){
-            Connection con = new DbConnector().getConnection();
+        if (!"".equals(idDeptoInput.getText())
+                && !"".equals(nomeInput.getText())
+                && !"".equals(horasInput.getText())
+                && !"".equals(modalidadeInput.getText())) {
+            if (isNum(idDeptoInput.getText())
+                    && isNum(horasInput.getText())) {
+                Connection con = new DbConnector().getConnection();
 
-            // cria um preparedStatement
-            String sql = "insert into cursos" +
-                    " (`id-depto`, `nome`, `horas-total`, `modalidade`)" +
-                    " values (?,?,?,?)";
-            PreparedStatement stmt = con.prepareStatement(sql);
+                // cria um preparedStatement
+                String sql = "insert into cursos"
+                        + " (`id-depto`, `nome`, `horas-total`, `modalidade`)"
+                        + " values (?,?,?,?)";
+                PreparedStatement stmt = con.prepareStatement(sql);
 
-            // preenche os valores
-            stmt.setString(1,idDeptoInput.getText());
-            stmt.setString(2,nomeInput.getText());
-            stmt.setString(3,horasInput.getText());
-            stmt.setString(4,modalidadeInput.getText());
-            stmt.execute();
-            System.out.println(stmt.execute());
-            stmt.close();
-            con.close();
-            fecha();
+                // preenche os valores
+                stmt.setString(1, idDeptoInput.getText());
+                stmt.setString(2, nomeInput.getText());
+                stmt.setString(3, horasInput.getText());
+                stmt.setString(4, modalidadeInput.getText());
+                stmt.execute();
+                stmt.close();
+                con.close();
+                fecha();
+            } else {
+                labelError.setText("Valores inseridos inválidos");
+            }
+        } else {
+            labelError.setText("É necessário preencher todos os campos");
         }
-        labelError.setText("É necessário preencher todos os campos");
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    public void fecha(){
+    }
+
+    public void fecha() {
         InsereMain.getStage().close();
     }
+
+    public static boolean isNum(String strNum) {
+        boolean ret = true;
+        try {
+
+            Double.parseDouble(strNum);
+
+        } catch (NumberFormatException e) {
+            ret = false;
+        }
+        return ret;
+    }
+
 }
