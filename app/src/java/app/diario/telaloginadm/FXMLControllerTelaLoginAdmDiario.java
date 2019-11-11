@@ -44,11 +44,15 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
         
         con = ConnectionFactory.getDiario();
         try {
-            PreparedStatement stmt = con.prepareStatement("SELECT usuario, senha FROM admin WHERE usuario=?, senha=?");
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM admin WHERE usuario=? AND senha=?");
             stmt.setString(1, usuario);
             stmt.setString(2, senha);
             ResultSet rs = stmt.executeQuery();
-            if (!rs.next()) {
+            System.out.println(rs.toString());
+            if (rs.next()) {
+                System.out.println("Usuário e senha equivalentes com o do db");
+            }
+            else {
                 System.out.println("Erro");
             }
         } catch (SQLException ex) {

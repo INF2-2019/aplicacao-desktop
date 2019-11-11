@@ -4,7 +4,13 @@ import app.inicio.MainApp;
 import app.utils.ConnectionFactory;
 import javafx.event.ActionEvent;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,6 +30,8 @@ public class FXMLControllerTelaLoginAdmBiblioteca implements Initializable {
     @FXML
     private Button btnVoltaInicio;
     
+    private Connection con;
+    
     @FXML
     public void executaLoginAdmBiblioteca(ActionEvent event) {
         String usuario = txtFieldUsuario.getText();
@@ -34,7 +42,22 @@ public class FXMLControllerTelaLoginAdmBiblioteca implements Initializable {
         txtFieldUsuario.setText("");
         passwordFieldSenha.setText("");
         
-        ConnectionFactory.getBiblioteca();
+        con = ConnectionFactory.getBiblioteca();
+        try {
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM admin WHERE usuario=? AND senha=?");
+            stmt.setString(1, usuario);
+            stmt.setString(2, senha);
+            ResultSet rs = stmt.executeQuery();
+            System.out.println(rs.toString());
+            if (rs.next()) {
+                System.out.println("Usuário e senha equivalentes com o do db");
+            }
+            else {
+                System.out.println("Erro");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLControllerTelaLoginAdmBiblioteca.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML
