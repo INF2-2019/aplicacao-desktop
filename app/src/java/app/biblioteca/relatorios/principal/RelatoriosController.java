@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package app.biblioteca.relatorios.principal;
 
 import app.biblioteca.relatorios.impressao.MainImpRelAtrasos;
@@ -24,10 +20,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-/**
- *
- * @author tuba1
- */
 public class RelatoriosController implements Initializable {
     
     

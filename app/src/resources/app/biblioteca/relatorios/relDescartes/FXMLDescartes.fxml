@@ -6,15 +6,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.relatorios.relDescartes.TableController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.relatorios.relDescartes.TableController">
    <children>
-      <TableView fx:id="table" layoutX="157.0" layoutY="200.0" mouseTransparent="true" prefHeight="495.0" prefWidth="966.0" style="-fx-border-color: #ffffff;" stylesheets="@style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="200.0">
+      <TableView fx:id="table" layoutX="157.0" layoutY="200.0" mouseTransparent="true" prefHeight="495.0" prefWidth="966.0" style="-fx-border-color: #ffffff;" stylesheets="@../principal/style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="200.0">
          <columns>
-            <TableColumn fx:id="col_idAcervo" prefWidth="144.0" styleClass="coluna" text="ID-ACERVO" />
-            <TableColumn fx:id="col_dataDescarte" prefWidth="137.0" styleClass="coluna" text="DATA-DESCARTE" />
-            <TableColumn fx:id="col_motivos" prefWidth="387.0" styleClass="coluna" text="MOTIVOS" />
-            <TableColumn fx:id="col_operador" prefWidth="155.0" styleClass="coluna" text="OPERADOR" />
-            <TableColumn fx:id="col_estado" prefWidth="141.0" styleClass="coluna" text="ESTADO" />
+            <TableColumn fx:id="col_idAcervo" prefWidth="109.0" styleClass="coluna" text="ID-ACERVO" />
+            <TableColumn fx:id="col_dataDescarte" prefWidth="129.0" styleClass="coluna" text="DATA-DESCARTE" />
+            <TableColumn fx:id="col_motivos" prefWidth="627.0" styleClass="coluna" text="MOTIVOS" />
+            <TableColumn fx:id="col_operador" prefWidth="99.0" styleClass="coluna" text="OPERADOR" />
          </columns>
       </TableView>
       <Label prefHeight="51.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" text="Biblioteca" textFill="WHITE">

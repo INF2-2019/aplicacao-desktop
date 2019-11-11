@@ -11,21 +11,12 @@ public class ModelTable {
     Double multa;
 
     
-    Label estado;
-
-    public Label getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Label estado) {
-        this.estado = estado;
-    }
-
+    
     
 
     
 
-    public ModelTable(String id, String idAlunos, String idAcervo, Date dataEmprestimo, Date dataPrevDevol, Date dataDevolucao, Double multa, Label estado){
+    public ModelTable(String id, String idAlunos, String idAcervo, Date dataEmprestimo, Date dataPrevDevol, Date dataDevolucao, Double multa){
         this.id = id;
         this.idAlunos = idAlunos;
         this.idAcervo = idAcervo;
@@ -33,10 +24,7 @@ public class ModelTable {
         this.dataPrevDevol = dataPrevDevol;
 	this.dataDevolucao = dataDevolucao;
         this.multa = multa;
-        this.estado=estado;
         
-        this.estado.setId("estado");
-        this.estado.setText("algo");
         
     }
     

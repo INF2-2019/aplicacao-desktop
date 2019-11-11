@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package app.biblioteca.relatorios.relMultas;
 
+import app.biblioteca.relatorios.principal.DbConnector;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.sql.Connection;
@@ -22,13 +19,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import java.sql.Date;
+import java.util.Date;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author Aluno
- */
 public class TableController implements Initializable{
     
     @FXML
@@ -48,10 +41,10 @@ public class TableController implements Initializable{
     @FXML
     private TableColumn<ModelTable, Double> col_multa;
     
-    @FXML
-    private TableColumn<ModelTable, Label> col_estado;
+   
     
-    
+    private boolean podeConstruir=false;
+    private Date data =new Date();
     
 
     static ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
@@ -59,24 +52,35 @@ public class TableController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         consultarBD();
+        if(podeConstruir){
         criaTabela();
+        }
         
     }
     public void refresh(){
         oblist.clear();
         consultarBD();
+        if(podeConstruir){
         criaTabela();
-        System.out.println("clicou");
+        }
     }
     
-    static public void consultarBD(){
+    public void consultarBD(){
         try {
             Connection con = DbConnector.getConnection();
             
             ResultSet rs = con.createStatement().executeQuery("select * from emprestimos");
             oblist = FXCollections.observableArrayList();
-            while(rs.next()){
-                oblist.add(new ModelTable(rs.getString("id"),rs.getString("id-alunos"),rs.getString("id-acervo"),rs.getDate("data-emprestimo"),rs.getDate("data-prev-devol"),rs.getDate("data-devolucao"),rs.getDouble("multa"),new Label()));
+            //tabela.dataPrevDevol.compareTo(data);
+             while(rs.next()){
+                if(rs.getDate("data-devolucao").getTime()!=0){
+                if(rs.getDouble("multa")!=0){
+                    oblist.add(new ModelTable(rs.getString("id"),rs.getString("id-alunos"),rs.getString("id-acervo"),rs.getDate("data-emprestimo"),rs.getDate("data-prev-devol"),rs.getDate("data-devolucao"),rs.getDouble("multa")));
+                    podeConstruir=true;
+                }else if(rs.getDouble("multa")!=0){
+                    podeConstruir=false;
+                }
+                }
             }
             
             con.close();
@@ -92,9 +96,6 @@ public class TableController implements Initializable{
         col_dataPrevDevol.setCellValueFactory(new PropertyValueFactory<>("dataPrevDevol"));
 	col_dataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
         col_multa.setCellValueFactory(new PropertyValueFactory<>("multa"));
-        //col_funcoes.setCellValueFactory(new PropertyValueFactory<>("info"));
-        //col_funcoes1.setCellValueFactory(new PropertyValueFactory<>("edita"));
-        col_estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
         
         table.setItems(oblist);
     }

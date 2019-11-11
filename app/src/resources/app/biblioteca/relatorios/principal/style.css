@@ -69,3 +69,6 @@ table-view, .tree-table-view {
 .fonte{
     -fx-font-family: 'Montserrat', sans-serif;
 }
+#estado{
+    -fx-text-fill: red;
+}

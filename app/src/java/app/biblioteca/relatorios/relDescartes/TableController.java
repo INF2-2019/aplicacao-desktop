@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package app.biblioteca.relatorios.relDescartes;
 
+import app.biblioteca.relatorios.principal.DbConnector;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.sql.Connection;
@@ -25,10 +22,7 @@ import javafx.stage.Stage;
 import java.sql.Date;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author Aluno
- */
+
 public class TableController implements Initializable{
     
     @FXML
@@ -42,8 +36,7 @@ public class TableController implements Initializable{
     private TableColumn<ModelTable, String> col_motivos;
     @FXML
     private TableColumn<ModelTable, String> col_operador;
-    @FXML
-    private TableColumn<ModelTable, Label> col_estado;
+    
     
     
     
@@ -60,7 +53,6 @@ public class TableController implements Initializable{
         oblist.clear();
         consultarBD();
         criaTabela();
-        System.out.println("clicou");
     }
     
     static public void consultarBD(){
@@ -69,7 +61,7 @@ public class TableController implements Initializable{
 		ResultSet rs = con.createStatement().executeQuery("select * from descartes");
 		oblist = FXCollections.observableArrayList();
 		while(rs.next()){
-		    oblist.add(new ModelTable(rs.getString("id-acervo"),rs.getDate("data-descarte"),rs.getString("motivos"),rs.getString("operador"),new Label()));
+		    oblist.add(new ModelTable(rs.getString("id-acervo"),rs.getDate("data-descarte"),rs.getString("motivos"),rs.getString("operador")));
 		}
 	    }
         } catch (SQLException ex) {
@@ -84,8 +76,6 @@ public class TableController implements Initializable{
 	col_operador.setCellValueFactory(new PropertyValueFactory<>("operador"));
         //col_multa.setCellValueFactory(new PropertyValueFactory<>("multa"));
         //col_funcoes.setCellValueFactory(new PropertyValueFactory<>("info"));
-        //col_funcoes1.setCellValueFactory(new PropertyValueFactory<>("edita"));
-        col_estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
         
         table.setItems(oblist);
     }

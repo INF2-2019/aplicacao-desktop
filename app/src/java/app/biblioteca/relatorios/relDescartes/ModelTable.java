@@ -9,30 +9,18 @@ public class ModelTable {
     String idAcervo, motivos, operador;
     Date dataDescarte;
 
-    Label estado;
-
-    public Label getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Label estado) {
-        this.estado = estado;
-    }
+   
 
     
 
     
 
-    public ModelTable(String idAcervo, Date dataDescarte, String motivos, String operador, Label estado){
+    public ModelTable(String idAcervo, Date dataDescarte, String motivos, String operador){
         
         this.idAcervo = idAcervo;
         this.dataDescarte = dataDescarte;
         this.motivos=motivos;
 	this.operador=operador;
-        this.estado=estado;
-        
-        this.estado.setId("estado");
-        this.estado.setText("algo");
         
     }
     

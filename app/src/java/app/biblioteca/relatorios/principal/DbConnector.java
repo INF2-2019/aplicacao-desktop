@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package app.biblioteca.relatorios.relAtrasos;
+
+package app.biblioteca.relatorios.principal;
 
 
 import java.sql.Connection;
@@ -16,7 +12,7 @@ public class DbConnector {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/biblioteca?useTimezone=true&serverTimezone=UTC", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/biblioteca?useTimezone=true&serverTimezone=UTC", "root", "123456");
         }catch(ClassNotFoundException ex){
             
         }

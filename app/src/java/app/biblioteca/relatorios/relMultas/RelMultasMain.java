@@ -1,7 +1,6 @@
 
 package app.biblioteca.relatorios.relMultas;
 
-import app.biblioteca.relatorios.relAtrasos.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
