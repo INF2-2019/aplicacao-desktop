@@ -13,6 +13,21 @@
     -fx-background-radius: 2px;
     -fx-cursor: HAND;
 }
+.identificadores{
+    -fx-font-family: 'Montserrat', sans-serif;
+    -fx-font-size: 20px;
+    -fx-text-fill:#29a58c;
+}
+.identificandos{
+    -fx-font-family: 'Montserrat', sans-serif;
+    -fx-font-size: 20px;
+    -fx-text-fill:BLACK;
+    
+}
+.titulo{
+    -fx-font-size: 30px;
+    
+}
 
 .aviso{
     -fx-padding: 5px;
