@@ -38,7 +38,7 @@ public class TableController implements Initializable {
 
     private Timer t;
 
-    private String avisoMensagem;
+    private String avisoMensagem = "";
     private int avisoTipo;
 
     @FXML

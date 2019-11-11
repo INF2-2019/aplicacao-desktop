@@ -163,7 +163,7 @@ public class Departamento {
         }
 
         Scene scene = new Scene(tabelaDepartamentosRoot);
-        scene.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
+        scene.getStylesheets().add("/app/diario/departamentos/EstiloDepartamentos.css");
         table.setScene(scene);
     }
 
@@ -192,7 +192,7 @@ public class Departamento {
         }
 
         Scene scene = new Scene(tabelaDepartamentosRoot);
-        scene.getStylesheets().add("/app/diario/departamentos/Departamentos.css");
+        scene.getStylesheets().add("/app/diario/departamentos/EstiloDepartamentos.css");
         table.setScene(scene);
     }
 }
