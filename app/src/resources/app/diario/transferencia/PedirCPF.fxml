@@ -51,5 +51,13 @@
             <Insets right="250.0" top="141.0" />
          </StackPane.margin>
       </Button>
+      <Label style="-fx-padding: 2px; -fx-background-color: red;" text="Aluno não encontrado" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+         <StackPane.margin>
+            <Insets right="250.0" top="110.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </StackPane>

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Validacao {
     private static Pattern cpfPontuadoPattern = Pattern.compile("^[0-9]{3}[\\.][0-9]{3}[\\.][0-9]{3}[\\-][0-9]{2}$");
-    private static Pattern cpfNaoPontuadoPattern = Pattern.compile("/^[0-9]{11}$/");
+    private static Pattern cpfNaoPontuadoPattern = Pattern.compile("^[0-9]{11}$");
     
     private static Matcher cpfPontuadoMatcher;
     private static Matcher cpfNaoPontuadoMatcher;

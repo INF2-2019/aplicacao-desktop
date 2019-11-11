@@ -33,16 +33,21 @@
             <Font size="36.0" />
          </font>
          <StackPane.margin>
-            <Insets top="30.0" />
+            <Insets top="48.0" />
          </StackPane.margin>
       </Label>
-      <Label fx:id="nomedoalunoLabel" alignment="TOP_CENTER" layoutX="39.0" layoutY="40.0" prefHeight="59.0" prefWidth="742.0" text="{nome_do_aluno}">
+      <Label fx:id="nomedoalunoLabel" alignment="TOP_CENTER" layoutX="39.0" layoutY="40.0" prefHeight="59.0" prefWidth="742.0">
          <font>
             <Font size="36.0" />
          </font>
          <StackPane.margin>
-            <Insets bottom="50.0" />
+            <Insets bottom="32.0" />
          </StackPane.margin>
+      </Label>
+      <Label fx:id="nomedoalunoLabel1" alignment="TOP_CENTER" layoutX="39.0" layoutY="115.0" prefHeight="59.0" prefWidth="742.0">
+         <font>
+            <Font size="36.0" />
+         </font>
       </Label>
    </children>
 </StackPane>
