@@ -5,6 +5,7 @@ import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AlteraMain extends Application {
@@ -22,7 +23,8 @@ public class AlteraMain extends Application {
 		stage.setScene(sc);
 		setStage(stage);
 
-		stage.show();
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.showAndWait();
 	}
 
 	public static void main(String[] args) {
