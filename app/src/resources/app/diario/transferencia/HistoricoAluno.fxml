@@ -26,7 +26,7 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Button fx:id="botaoVolta" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #29a58c;" text="Voltar" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
+      <Button fx:id="voltarBtn" mnemonicParsing="false" onAction="#voltar" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #29a58c;" text="Voltar" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
          <StackPane.margin>
             <Insets right="240.0" top="100.0" />
          </StackPane.margin>

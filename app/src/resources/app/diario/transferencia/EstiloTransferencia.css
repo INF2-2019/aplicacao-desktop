@@ -1,1 +1,4 @@
-
+.aviso {
+    -fx-background-color: red;
+    -fx-padding: 2px;
+}

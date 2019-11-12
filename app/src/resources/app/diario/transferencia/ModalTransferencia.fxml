@@ -24,9 +24,6 @@
          <StackPane.margin>
             <Insets right="224.0" top="128.0" />
          </StackPane.margin>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </Button>
       <Label alignment="TOP_CENTER" prefHeight="59.0" prefWidth="742.0" text="Deseja realmente transferir o aluno:" StackPane.alignment="TOP_CENTER">
          <font>
