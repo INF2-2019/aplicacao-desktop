@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
-</AnchorPane>
+<BorderPane prefHeight="421.0" prefWidth="553.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relatorio11.Relatorio11Controller">
+    <top>
+        <BorderPane prefHeight="74.0" prefWidth="553.0" styleClass="header">
+            <left>
+                <Label text="Conteúdos" textFill="WHITE" />
+            </left>
+        </BorderPane>
+    </top>
+    <center>
+        <BorderPane prefHeight="348.0" prefWidth="535.0" styleClass="container">
+            <top>
+                <HBox prefHeight="61.0" prefWidth="533.0" style="-fx-spacing: 1em;" styleClass="content-header" BorderPane.alignment="TOP_CENTER">
+                    <children>
+                        <Label styleClass="generalLabel" fx:id="nomeDisciplinaEtapa"></Label>
+                    </children>
+                </HBox>
+            </top>
+            <center>
+                <VBox prefHeight="267.0" prefWidth="456.0" styleClass="content" BorderPane.alignment="CENTER">
+                    <children>
+                        <TableView fx:id="tab" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="266.0" prefWidth="524.0">
+                            <columns>
+                                <TableColumn fx:id="colConteudos" prefWidth="43.0" text="Conteúdos" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>

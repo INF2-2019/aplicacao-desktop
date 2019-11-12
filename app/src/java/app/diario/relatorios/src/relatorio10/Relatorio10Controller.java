@@ -1,31 +1,46 @@
 package relatorio10;
 
-import javafx.event.ActionEvent;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class Relatorio10Controller {
+public class Relatorio10Controller implements Initializable {
+	private static String nome;
+	
+	@FXML
+	private TableView tab;
+	
+	@FXML
+	private TableColumn colEtapas;
+	
+	@FXML
+	private TableColumn colDisciplinas;
+	
+	@FXML
+	private TableColumn colNotas;
+	
+	@FXML
+	private Label nomeAluno;
 
-	@FXML
-	private Button impressoBtn;
-	@FXML
-	private Button telaBtn;
-
-	@FXML
-	private void impressoAction(ActionEvent event) {
-		System.out.println("impresso action");
-	}
-
-	@FXML
-	private void telaAction(ActionEvent event) {
-		Relatorio10Main r10m = new Relatorio10Main();
-		try{
-			r10m.start(new Stage());
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		colEtapas.setCellValueFactory(new PropertyValueFactory<>("etapas"));
+		colDisciplinas.setCellValueFactory(new PropertyValueFactory<>("disciplinas"));
+		colNotas.setCellValueFactory(new PropertyValueFactory<>("notas"));
+		nomeAluno.setText("Aluno: "+nome);
 	}
 	
+	public static String getNome() {
+		return nome;
+	}
+
+	public static void setNome(String nome) {
+		Relatorio10Controller.nome = nome;
+	}
+
 }

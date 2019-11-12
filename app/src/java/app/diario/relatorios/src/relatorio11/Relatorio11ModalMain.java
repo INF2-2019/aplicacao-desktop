@@ -1,14 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package relatorio11;
 
-/**
- *
- * @author Aluno
- */
-public class Relatorio11ModalMain {
-	
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Relatorio11ModalMain extends Application {
+
+	private static Stage stage;
+
+	public void start(Stage stage) throws Exception {
+		Parent root = FXMLLoader.load(getClass().getResource("relatorio11Modal.fxml"));
+
+		Scene sc = new Scene(root);
+		sc.getStylesheets().add(getClass().getResource("../principal/styles.css").toExternalForm());
+
+		stage.setTitle("Relatório 11");
+		stage.setScene(sc);
+		setStage(stage);
+
+		stage.show();
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	public static Stage getStage() {
+		return stage;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
 }

@@ -156,3 +156,4 @@ local.properties
 /app/target/
 
 !/**/lib/*
+/app/src/java/app/diario/relatorios/nbproject/private/

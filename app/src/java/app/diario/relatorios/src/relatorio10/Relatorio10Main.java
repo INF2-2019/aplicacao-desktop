@@ -1,7 +1,6 @@
 package relatorio10;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,7 +16,7 @@ public class Relatorio10Main extends Application {
 		Scene sc = new Scene(root);
 		sc.getStylesheets().add(getClass().getResource("../principal/styles.css").toExternalForm());
 
-		stage.setTitle("");
+		stage.setTitle("Relatório 10");
 		stage.setScene(sc);
 		setStage(stage);
 
