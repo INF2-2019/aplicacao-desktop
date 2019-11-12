@@ -42,38 +42,45 @@ public class PedirCPFController implements Initializable {
 
     @FXML
     private void transferencia(ActionEvent event) throws IOException, SQLException {
-        if(!inputCPF.getText().isEmpty()){
-            if(Validacao.validaCpf(inputCPF.getText())){
+        try{
+            if(!inputCPF.getText().isEmpty()){
+                if(Validacao.validaCpf(inputCPF.getText())){
             
-                long cpf = Long.parseLong(inputCPF.getText().replaceAll("\\D", ""));
-                String cpfAluno = TransferenciaRepository.consultaNomeAluno(cpf);
+                    long cpf = Long.parseLong(inputCPF.getText().replaceAll("\\D", ""));
+                    String cpfAluno = TransferenciaRepository.consultaNomeAluno(cpf);
             
-                if(cpfAluno.equals("Aluno não encontrado")){
-                    avisoL.setText("Aluno não encontrado.");
+                    if(cpfAluno.equals("Aluno não encontrado")){
+                        avisoL.setText("Aluno não encontrado.");
+                        avisoL.getStyleClass().add("aviso");
+                        fadeOutAviso();
+                
+                    } else {
+                        Stage modalTransferencia = new Stage();
+                        FXMLLoader modalTransferenciaFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/transferencia/ModalTransferencia.fxml"));
+        
+                        Parent modalTransferenciaParent = (Parent) modalTransferenciaFXMLLoader.load();
+                        modalTransferenciaParent.getStylesheets().add(getClass().getResource("/app/diario/transferencia/EstiloTransferencia.css").toExternalForm());
+                        ModalTransferenciaController modalTransferenciaController = modalTransferenciaFXMLLoader.<ModalTransferenciaController>getController(); 
+                        modalTransferenciaController.setNomeAluno(cpfAluno);
+                        modalTransferenciaController.setCpf(cpf);
+            
+                        modalTransferencia.setScene(new Scene(modalTransferenciaParent));
+                        modalTransferencia.initOwner(((Node) event.getSource()).getScene().getWindow());
+                        modalTransferencia.initModality(Modality.APPLICATION_MODAL);
+                        modalTransferencia.showAndWait();
+                    }
+                } else {
+                    avisoL.setText("CPF Inválido.");
                     avisoL.getStyleClass().add("aviso");
                     fadeOutAviso();
-                
-                } else {
-                    Stage modalTransferencia = new Stage();
-                    FXMLLoader modalTransferenciaFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/transferencia/ModalTransferencia.fxml"));
-        
-                    Parent modalTransferenciaParent = (Parent) modalTransferenciaFXMLLoader.load();
-                    ModalTransferenciaController modalTransferenciaController = modalTransferenciaFXMLLoader.<ModalTransferenciaController>getController(); 
-                    modalTransferenciaController.setNomeAluno(cpfAluno);
-                    modalTransferenciaController.setCpf(cpf);
-            
-                    modalTransferencia.setScene(new Scene(modalTransferenciaParent));
-                    modalTransferencia.initOwner(((Node) event.getSource()).getScene().getWindow());
-                    modalTransferencia.initModality(Modality.APPLICATION_MODAL);
-                    modalTransferencia.showAndWait();
                 }
             } else {
-                avisoL.setText("CPF Inválido.");
+                avisoL.setText("Por favor, insira um CPF.");
                 avisoL.getStyleClass().add("aviso");
                 fadeOutAviso();
             }
-        } else {
-            avisoL.setText("Por favor, insira um CPF.");
+        } catch (SQLException e) {
+            avisoL.setText("Não foi possivel consultar o CPF.");
             avisoL.getStyleClass().add("aviso");
             fadeOutAviso();
         }
