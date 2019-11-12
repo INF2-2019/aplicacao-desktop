@@ -1,33 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package PacoteDeletar;
+package app.diario.professores.editar;
 
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author tuba1
+ * @author Nikolas Victor
+ * @author Jonata Novais
  */
-public class MainDeleta extends Application {
+public class MainEditar extends Application {
     private static Stage stage;
-
-    public static Stage getStage() {
-        return stage;
-    }
-
-    public static void setStage(Stage stage) {
-        MainDeleta.stage = stage;
-    }
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("DeletaFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/professores/Editar.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -43,4 +32,11 @@ public class MainDeleta extends Application {
         launch(args);
     }
     
+    public static Stage getStage(){
+        return stage;
+    }
+
+    private void setStage(Stage stage) {
+        MainEditar.stage = stage;
+    }
 }

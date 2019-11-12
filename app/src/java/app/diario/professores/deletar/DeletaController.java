@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package PacoteDeletar;
+package app.diario.professores.deletar;
 
-import Principal.TableController;
+import app.diario.professores.principal.TableController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,10 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
- *
- * @author tuba1
+ * @author Nikolas Victor
+ * @author Jonata Novais
  */
-public class ControllerDeleta implements Initializable {
+public class DeletaController implements Initializable {
     static String id,nome;
 
     public static String getNome() {
@@ -26,7 +21,7 @@ public class ControllerDeleta implements Initializable {
     }
 
     public static void setNome(String nome) {
-        ControllerDeleta.nome = nome;
+        DeletaController.nome = nome;
     }
 
     public static String getId() {
@@ -34,7 +29,7 @@ public class ControllerDeleta implements Initializable {
     }
 
     public static void setId(String id) {
-        ControllerDeleta.id = id;
+        DeletaController.id = id;
     }
 
     @FXML
@@ -49,8 +44,7 @@ public class ControllerDeleta implements Initializable {
     @FXML
     void confirma(ActionEvent event) {
         TableController controle = new TableController();
-       // controle.deleta(getId());
-                
+        controle.deleta(DeletaController.getId());         
         fecha();
     }
 
@@ -61,7 +55,7 @@ public class ControllerDeleta implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        text.setText("Você realmente deseja DELETAR o curso: "+ControllerDeleta.getNome());
+        text.setText("Você realmente deseja DELETAR o professor: "+DeletaController.getNome());
     }  
     
     public void fecha(){

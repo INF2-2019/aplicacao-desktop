@@ -62,3 +62,8 @@ table-view, .tree-table-view {
     -fx-text-fill: white;
 
 }
+#info{
+    -fx-background-color: #00b0ff;
+    -fx-text-fill: white;
+
+}

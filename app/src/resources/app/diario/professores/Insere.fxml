@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PacoteInsere.InsereController">
+<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.professores.insere.InsereController">
     <children>
-      <Label fx:id="idDeptoLabel" layoutX="14.0" layoutY="81.0" minHeight="16" minWidth="69" text="   ID-DEPTO" textAlignment="CENTER" textFill="#5dbaa7">
+      <Label fx:id="idDeptoLabel" layoutX="14.0" layoutY="81.0" minHeight="16" minWidth="69" text="ID-DEPTO" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -19,12 +19,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="horasLabel" layoutX="143.0" layoutY="81.0" minHeight="16" minWidth="69" text="SEAP" textAlignment="CENTER" textFill="#5dbaa7">
+      <Label fx:id="horasLabel" layoutX="131.0" layoutY="81.0" minHeight="16" minWidth="69" text="SIAPE" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="modalidadeLabel" layoutX="193.0" layoutY="155.0" minHeight="16" minWidth="69" text="TITULAÇÃO" textAlignment="CENTER" textFill="#5dbaa7">
+      <Label fx:id="modalidadeLabel" layoutX="376.0" layoutY="155.0" minHeight="16" minWidth="69" text="TITULAÇÃO" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -37,20 +37,20 @@
       <Button fx:id="botaoCancelar" layoutX="469.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935; -fx-" text="CANCELAR" textFill="WHITE" />
       <Button fx:id="botaoSalvar" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE" />
       <TextField fx:id="idDeptoInput" layoutX="14.0" layoutY="109.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
-      <TextField fx:id="seapInput" layoutX="143.0" layoutY="109.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
-      <TextField fx:id="nomeInput" layoutX="14.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
-      <TextField fx:id="titulacaoInput" layoutX="193.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
-      <Label fx:id="emailLabel" layoutX="262.0" layoutY="81.0" minHeight="16" minWidth="69" text="EMAIL" textAlignment="CENTER" textFill="#5dbaa7">
+      <TextField fx:id="seapInput" layoutX="131.0" layoutY="109.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
+      <TextField fx:id="nomeInput" layoutX="14.0" layoutY="181.0" prefHeight="25.0" prefWidth="342.0" style="-fx-background-color: #dddddd;" />
+      <TextField fx:id="titulacaoInput" layoutX="376.0" layoutY="181.0" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="emailLabel" layoutX="249.0" layoutY="81.0" minHeight="16" minWidth="69" text="EMAIL" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="emailInput" layoutX="262.0" layoutY="109.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
-      <Label fx:id="senhaLabel" layoutX="435.0" layoutY="81.0" minHeight="16" minWidth="69" text="SENHA" textAlignment="CENTER" textFill="#5dbaa7">
+      <TextField fx:id="emailInput" layoutX="249.0" layoutY="109.0" prefHeight="25.0" prefWidth="197.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="senhaLabel" layoutX="472.0" layoutY="81.0" minHeight="16" minWidth="69" text="SENHA" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="senhaInput" layoutX="432.0" layoutY="109.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
+      <PasswordField fx:id="senhaInput" layoutX="468.0" layoutY="109.0" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: #dddddd;" />
     </children>
 </AnchorPane>

@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package PacoteInsere;
+package app.diario.professores.insere;
 
-import Principal.DbConnector;
-import Principal.TableController;
+import app.diario.professores.principal.TableController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +17,8 @@ import javafx.scene.control.TextField;
 
 /**
  *
- * @author tuba1
+ * @author Nikolas Victor
+ * @author Jonata Novais
  */
 public class InsereController implements Initializable {
     
@@ -80,7 +76,7 @@ public class InsereController implements Initializable {
     }
     @FXML
     void acaoSalvar(ActionEvent event) throws SQLException {
-        Connection con = new DbConnector().getConnection();
+        Connection con = ConnectionFactory.getDiario();
 
             // cria um preparedStatement
             String sql = "insert into professores" +

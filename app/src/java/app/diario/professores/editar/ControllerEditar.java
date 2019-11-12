@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package PacoteEditar;
+package app.diario.professores.editar;
 
-import Principal.DbConnector;
-import Principal.TableController;
+import app.diario.professores.principal.TableController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,7 +19,8 @@ import javafx.scene.control.TextField;
 
 /**
  *
- * @author tuba1
+ * @author Nikolas Victor
+ * @author Jonata Novais
  */
 public class ControllerEditar implements Initializable {
     static String id;
@@ -50,31 +46,25 @@ public class ControllerEditar implements Initializable {
     private Label idDeptoLabel;
 
     @FXML
-    private TextField idInput;
-
-    @FXML
-    private Label idLabel;
-
-    @FXML
     private Button botaoSalvar;
 
     @FXML
     private TextField idDeptoInput;
 
     @FXML
-    private TextField horasInput;
-
-    @FXML
-    private Label modalidadeLabel;
-
-    @FXML
-    private TextField modalidadeInput;
-
-    @FXML
-    private Label horasLabel;
-
-    @FXML
     private Label nomeLabel;
+     
+    @FXML
+    private TextField senhaInput;
+    
+    @FXML
+    private TextField emailInput;
+    
+    @FXML
+    private TextField titulacaoInput;
+    
+    @FXML
+    private TextField siapeInput;
     
     @FXML
     void acaoCancelar(ActionEvent event) {
@@ -83,13 +73,15 @@ public class ControllerEditar implements Initializable {
     @FXML
     public void acaoSalvar(){
         try {
-            Connection connection = DbConnector.getConnection();
-            PreparedStatement stmt = connection.prepareStatement("UPDATE `cursos` SET"
+            Connection connection = ConnectionFactory.getDiario();
+            PreparedStatement stmt = connection.prepareStatement("UPDATE `professores` SET"
                     + " `id-depto` = '"+idDeptoInput.getText()+"'"
                     + ", `nome` = '"+nomeInput.getText()+"'"
-                    + ", `horas-total` = '"+horasInput.getText()+"'"
-                    + ", `modalidade` = '"+modalidadeInput.getText()+"'"
-                    + " WHERE `cursos`.`id` = "+ControllerEditar.getId());
+                    + ", `titulacao` = '"+titulacaoInput.getText()+"'"
+                    + ", `email` = '"+emailInput.getText()+"'" 
+                    + ", `senha` = '"+senhaInput.getText()+"'" 
+                    + ", `id` = '"+siapeInput.getText()+"'" 
+                    + " WHERE `professores`.`id` = "+ControllerEditar.getId());
             stmt.execute();
             stmt.close();
             connection.close();

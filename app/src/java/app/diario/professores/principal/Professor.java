@@ -1,14 +1,16 @@
-package Principal;
+package app.diario.professores.principal;
 
-import PacoteDeletar.ControllerDeleta;
-import PacoteDeletar.MainDeleta;
-import PacoteEditar.ControllerEditar;
-import PacoteEditar.MainEditar;
+import app.diario.professores.deletar.DeletaController;
+import app.diario.professores.deletar.MainDeleta;
+import app.diario.professores.editar.ControllerEditar;
+import app.diario.professores.editar.MainEditar;
+import app.diario.professores.info.InfoController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import app.diario.professores.info.InfoMain;
 
 /**
  *
@@ -42,14 +44,15 @@ public class Professor {
         
         deleta.setOnMouseClicked((MouseEvent event) -> {
             MainDeleta mainDeleta = new MainDeleta();
-            ControllerDeleta.setId(Integer.toString(id));
-            ControllerDeleta.setNome(nome);
+            DeletaController.setId(Integer.toString(id));
+            DeletaController.setNome(nome);
             try {
                 mainDeleta.start(new Stage());
             } catch (Exception ex) {
                 Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        
         
         edita.setOnMouseClicked((MouseEvent event) -> {
             MainEditar mainEditar = new MainEditar();
@@ -62,7 +65,13 @@ public class Professor {
         });
         
         info.setOnMouseClicked((MouseEvent event) -> {
-            
+             InfoMain mainInfo = new InfoMain();
+             InfoController.setId(Integer.toString(id));
+            try {
+                mainInfo.start(new Stage());
+            } catch (Exception ex) {
+                Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
         
     }
@@ -147,6 +156,14 @@ public class Professor {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Button getInfo() {
+        return info;
+    }
+
+    public void setInfo(Button info) {
+        this.info = info;
     }
     
     
