@@ -45,9 +45,8 @@ public class PedirCPFController implements Initializable {
         if(!inputCPF.getText().isEmpty()){
             if(Validacao.validaCpf(inputCPF.getText())){
             
-                String cpfAluno = inputCPF.getText().replaceAll("\\D", "");
-            
-                cpfAluno = TransferenciaRepository.consultaNomeAluno(Long.parseLong(cpfAluno));
+                long cpf = Long.parseLong(inputCPF.getText().replaceAll("\\D", ""));
+                String cpfAluno = TransferenciaRepository.consultaNomeAluno(cpf);
             
                 if(cpfAluno.equals("Aluno não encontrado")){
                     avisoL.setText("Aluno não encontrado.");
@@ -61,6 +60,7 @@ public class PedirCPFController implements Initializable {
                     Parent modalTransferenciaParent = (Parent) modalTransferenciaFXMLLoader.load();
                     ModalTransferenciaController modalTransferenciaController = modalTransferenciaFXMLLoader.<ModalTransferenciaController>getController(); 
                     modalTransferenciaController.setNomeAluno(cpfAluno);
+                    modalTransferenciaController.setCpf(cpf);
             
                     modalTransferencia.setScene(new Scene(modalTransferenciaParent));
                     modalTransferencia.initOwner(((Node) event.getSource()).getScene().getWindow());

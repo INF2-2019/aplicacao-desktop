@@ -24,7 +24,6 @@ public class TransferenciaRepository {
                 return "Aluno não encontrado";
             }
             
-
             prst.close();
             con.close();
             
@@ -34,4 +33,18 @@ public class TransferenciaRepository {
         }
     }
     
+    public static void mudaStatusMatricula(long cpf) throws SQLException{
+        Connection con = ConnectionFactory.getDiario();
+        if(con != null){
+            PreparedStatement prst = con.prepareStatement("UPDATE `matriculas` SET `ativo` = 0 WHERE `id-alunos` = ?");
+            prst.setLong(1, cpf);
+            prst.executeUpdate();
+            
+            prst.close();
+            con.close();
+        } else {
+            throw new SQLException();
+        }
+        
+    }
 }

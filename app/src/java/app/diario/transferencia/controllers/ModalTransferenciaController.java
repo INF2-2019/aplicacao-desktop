@@ -1,7 +1,9 @@
 package app.diario.transferencia.controllers;
 
+import app.diario.transferencia.repository.TransferenciaRepository;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -18,6 +20,8 @@ import javafx.stage.Stage;
 
 public class ModalTransferenciaController implements Initializable {
 
+    private long cpf;
+    
     @FXML
     private Button confirmarBtn;
     @FXML
@@ -30,9 +34,15 @@ public class ModalTransferenciaController implements Initializable {
     public void setNomeAluno(String aluno){
         nomedoalunoLabel.setText(aluno);
     }  
-
+    
+    public void setCpf(long cpf){
+        this.cpf = cpf;
+    }
+    
     @FXML
-    private void transferirAluno(ActionEvent event) throws IOException {
+    private void transferirAluno(ActionEvent event) throws IOException, SQLException { 
+        TransferenciaRepository.mudaStatusMatricula(cpf);
+        
         Stage janelaHistorico = new Stage();
         FXMLLoader modalTransferenciaFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/transferencia/HistoricoAluno.fxml"));
         
