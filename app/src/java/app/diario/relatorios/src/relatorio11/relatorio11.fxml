@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<BorderPane prefHeight="421.0" prefWidth="553.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relatorio11.Relatorio11Controller">
+<BorderPane prefHeight="421.0" prefWidth="553.0" stylesheets="@../principal/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relatorio11.Relatorio11Controller">
     <top>
         <BorderPane prefHeight="74.0" prefWidth="553.0" styleClass="header">
             <left>
@@ -23,7 +24,7 @@
             <top>
                 <HBox prefHeight="61.0" prefWidth="533.0" style="-fx-spacing: 1em;" styleClass="content-header" BorderPane.alignment="TOP_CENTER">
                     <children>
-                        <Label styleClass="generalLabel" fx:id="nomeDisciplinaEtapa"></Label>
+                        <Label fx:id="nomeDisciplinaEtapa" styleClass="generalLabel" />
                     </children>
                 </HBox>
             </top>
@@ -32,7 +33,9 @@
                     <children>
                         <TableView fx:id="tab" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="266.0" prefWidth="524.0">
                             <columns>
-                                <TableColumn fx:id="colConteudos" prefWidth="43.0" text="Conteúdos" />
+                                <TableColumn fx:id="colConteudos" prefWidth="43.0" text="Conteúdo" />
+                        <TableColumn fx:id="colData" prefWidth="43.0" text="Data" />
+                        <TableColumn fx:id="colValor" prefWidth="43.0" text="Valor" />
                             </columns>
                             <columnResizePolicy>
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -41,6 +44,9 @@
                     </children>
                 </VBox>
             </center>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
         </BorderPane>
     </center>
 </BorderPane>

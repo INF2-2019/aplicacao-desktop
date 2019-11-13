@@ -14,7 +14,7 @@
    <top>
       <BorderPane prefHeight="74.0" prefWidth="600.0" styleClass="header" BorderPane.alignment="CENTER">
          <left>
-            <Label alignment="TOP_CENTER" text="Relatório 11 - Relação por seleção de Aluno" BorderPane.alignment="CENTER" />
+            <Label alignment="TOP_CENTER" text="Relatório 11 - Relação de Conteúdos" BorderPane.alignment="CENTER" />
          </left>
       </BorderPane>
    </top>
