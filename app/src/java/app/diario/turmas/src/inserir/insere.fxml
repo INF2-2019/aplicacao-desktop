@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="637.0" stylesheets="@../principal/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inserir.InsereController">
+    <children>
+        <TextField fx:id="idField" layoutX="158.0" layoutY="95.0" prefHeight="31.0" prefWidth="246.0" />
+        <TextField fx:id="idCursosField" layoutX="158.0" layoutY="139.0" prefHeight="31.0" prefWidth="246.0" />
+        <TextField fx:id="nomeField" layoutX="158.0" layoutY="184.0" prefHeight="31.0" prefWidth="246.0" />
+        <Label alignment="CENTER" layoutX="66.0" layoutY="93.0" prefHeight="31.0" prefWidth="51.0" styleClass="generalLabel" text="ID" />
+        <Label layoutX="40.0" layoutY="137.0" styleClass="generalLabel" text="ID Cursos" />
+        <Label layoutX="59.0" layoutY="182.0" styleClass="generalLabel" text="Nome" />
+        <BorderPane prefHeight="73.0" prefWidth="1444.0" styleClass="header">
+            <left>
+                <Label id="header-text" prefHeight="33.0" prefWidth="367.0" styleClass="h1" text="Adicionar Turma" />
+            </left>
+        </BorderPane>
+        <Button fx:id="botaoCancelar" layoutX="319.0" layoutY="259.0" mnemonicParsing="false" onAction="#cancelaAction" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #E53935;" styleClass="redBtn" text="CANCELAR" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="botaoConfirmar" layoutX="480.0" layoutY="259.0" mnemonicParsing="false" onAction="#insereAction" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #29a58c;" styleClass="greenBtn" text="SALVAR" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+      <Label fx:id="errorLabel" layoutX="434.0" layoutY="93.0" styleClass="errorLabel" />
+    </children>
+</AnchorPane>
