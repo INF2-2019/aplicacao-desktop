@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="365.0" prefWidth="686.0" stylesheets="@../Principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.professores.info.FXMLInfoController">
+<AnchorPane id="AnchorPane" prefHeight="365.0" prefWidth="686.0" stylesheets="@../Principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.professores.info.InfoController">
    <children>
       <Label layoutX="15.0" prefHeight="67.0" prefWidth="246.0" text="Informações" textFill="#5dbaa7">
          <font>
