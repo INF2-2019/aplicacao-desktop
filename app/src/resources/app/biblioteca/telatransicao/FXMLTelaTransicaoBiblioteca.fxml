@@ -38,7 +38,23 @@
                 <RowConstraints minHeight="10.0" prefHeight="672.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <AnchorPane prefHeight="672.0" prefWidth="640.0" GridPane.columnIndex="1" />
+                  <AnchorPane prefHeight="672.0" prefWidth="640.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="btnManutencaoDescartes" layoutX="85.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoDescartes" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE DESCARTES" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnManutencaoReservas" layoutX="85.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraManutencaoReservas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE RESERVAS" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                     </children></AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button id="btnVoltaInicio" fx:id="btnVoltaInicio" layoutX="14.0" layoutY="618.0" mnemonicParsing="false" onAction="#voltaInicio" prefHeight="40.0" prefWidth="200.0" text="VOLTAR" textFill="WHITE">
@@ -49,12 +65,31 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label layoutX="14.0" layoutY="14.0" text="Serviços:" />
-                        <Button layoutX="14.0" layoutY="42.0" mnemonicParsing="false" text="MANUTENÇÃO DE ACERVOS" />
-                        <Button layoutX="14.0" layoutY="81.0" mnemonicParsing="false" text="MANUTENÇÃO DE EMPRÉSTIMOS" />
-                        <Button layoutX="14.0" layoutY="124.0" mnemonicParsing="false" text="MANUTENÇÃO DE DESCARTES" />
-                        <Button layoutX="14.0" layoutY="165.0" mnemonicParsing="false" text="MANUTENÇÃO DE RESERVAS" />
-                        <Button layoutX="14.0" layoutY="209.0" mnemonicParsing="false" text="MENU DE RELATÓRIOS" />
+                        <Label layoutX="255.0" layoutY="75.0" text="Serviços:">
+                           <font>
+                              <Font size="36.0" />
+                           </font></Label>
+                        <Button fx:id="btnManutencaoAcervos" layoutX="255.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoAcervos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ACERVOS" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnManutencaoEmprestimos" layoutX="255.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraManutencaoEmprestimos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE EMPRÉSTIMOS" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnMenuRelatorios" layoutX="255.0" layoutY="315.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
                      </children>
                   </AnchorPane>
                </children>

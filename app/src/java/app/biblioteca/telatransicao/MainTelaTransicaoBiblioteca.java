@@ -1,6 +1,5 @@
 package app.biblioteca.telatransicao;
 
-import app.diario.telaloginadm.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

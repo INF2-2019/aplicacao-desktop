@@ -30,6 +30,46 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
         stg.show();
     }
     
+        @FXML
+    void entraManutencaoProfessores(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraManutencaoCursos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraManutencaoDisciplinas(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraManutencaoCampi(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraTransferenciaAluno(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraManutencaoDepartamentos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraManutencaoEtapas(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraManutencaoAlunos(ActionEvent event) {
+
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         

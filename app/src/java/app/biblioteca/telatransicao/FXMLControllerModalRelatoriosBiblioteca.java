@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class FXMLControllerTelaTransicaoBiblioteca implements Initializable {
+public class FXMLControllerModalRelatoriosBiblioteca implements Initializable {
     
     @FXML
     private Button btnVoltaInicio;
@@ -28,31 +28,6 @@ public class FXMLControllerTelaTransicaoBiblioteca implements Initializable {
         stg.setResizable(false);
         stg.setWidth(1280);
         stg.show();
-    }
-    
-    @FXML
-    void entraManutencaoDescartes(ActionEvent event) {
-
-    }
-
-    @FXML
-    void entraManutencaoReservas(ActionEvent event) {
-
-    }
-
-    @FXML
-    void entraManutencaoAcervos(ActionEvent event) {
-
-    }
-
-    @FXML
-    void entraManutencaoEmprestimos(ActionEvent event) {
-
-    }
-
-    @FXML
-    void abreModalRelatorios(ActionEvent event) {
-
     }
     
     @Override
