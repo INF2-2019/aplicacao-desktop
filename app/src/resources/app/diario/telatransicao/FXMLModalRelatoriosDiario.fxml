@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="740.0" stylesheets="@EstiloTelaTransicaoBiblioteca.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.telatransicao.FXMLControllerModalRelatoriosBiblioteca">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="740.0" stylesheets="@EstiloTelaTransicaoDiario.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.telatransicao.FXMLControllerModalRelatoriosDiario">
    <children>
       <Button layoutX="60.0" layoutY="235.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE MULTAS" textFill="WHITE">
          <font>
@@ -40,13 +40,6 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Button layoutX="405.0" layoutY="160.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE ATRASOS" textFill="WHITE">
-         <font>
-            <Font size="13.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button layoutX="405.0" layoutY="235.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE DESCARTES" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

@@ -57,7 +57,7 @@
                      </children></AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button id="btnVoltaInicio" fx:id="btnVoltaInicio" layoutX="14.0" layoutY="618.0" mnemonicParsing="false" onAction="#voltaInicio" prefHeight="40.0" prefWidth="200.0" text="VOLTAR" textFill="WHITE">
+                        <Button fx:id="btnVoltaInicio" layoutX="14.0" layoutY="618.0" mnemonicParsing="false" onAction="#voltaInicio" prefHeight="40.0" prefWidth="200.0" styleClass="bgBtn" text="VOLTAR" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

@@ -30,7 +30,7 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
         stg.show();
     }
     
-        @FXML
+    @FXML
     void entraManutencaoProfessores(ActionEvent event) {
 
     }

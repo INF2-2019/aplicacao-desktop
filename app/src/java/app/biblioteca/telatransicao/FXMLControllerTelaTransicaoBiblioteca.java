@@ -51,8 +51,14 @@ public class FXMLControllerTelaTransicaoBiblioteca implements Initializable {
     }
 
     @FXML
-    void abreModalRelatorios(ActionEvent event) {
-
+    void abreModalRelatorios(ActionEvent event) throws Exception {
+        Parent root = FXMLLoader.load(MainApp.class.getResource("/app/biblioteca/telatransicao/FXMLModalRelatoriosBiblioteca.fxml"));
+        Stage stg = new Stage();
+        Scene scene = new Scene(root);
+        stg.setScene(scene);
+        stg.setResizable(false);
+        stg.setWidth(740);
+        stg.showAndWait();
     }
     
     @Override

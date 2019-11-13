@@ -1,4 +1,4 @@
-package app.biblioteca.telatransicao;
+package app.diario.telatransicao;
 
 import app.inicio.MainApp;
 import javafx.event.ActionEvent;
@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class FXMLControllerModalRelatoriosBiblioteca implements Initializable {
+public class FXMLControllerModalRelatoriosDiario implements Initializable {
     
     @FXML
     private Button btnFechaModal;
