@@ -55,7 +55,11 @@ public class InfoController implements Initializable {
             labelNome.setText(rs.getString("nome"));
             labelEmail.setText(rs.getString("email"));
             labelTitulacao.setText(rs.getString("titulacao"));
-            labelDepartamento.setText(Integer.toString(rs.getInt("id-depto")));
+            PreparedStatement s = connection.prepareStatement("SELECT `nome` FROM `departamentos` WHERE `id` = ?");
+            s.setInt(1, rs.getInt("id-depto"));
+			ResultSet r = s.executeQuery();
+			r.first();
+			labelDepartamento.setText(r.getString(1));
   
         } catch (SQLException ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);

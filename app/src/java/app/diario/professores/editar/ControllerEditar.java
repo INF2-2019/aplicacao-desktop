@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,7 +54,7 @@ public class ControllerEditar implements Initializable {
     private Button botaoSalvar;
 
     @FXML
-    private TextField idDeptoInput;
+    private ChoiceBox<String> idDeptoInput;
 
     @FXML
     private Label nomeLabel;
@@ -74,12 +75,15 @@ public class ControllerEditar implements Initializable {
     void acaoCancelar(ActionEvent event) {
         fecha();
     }
+	
+	private HashMap<String, Integer> deptosMap;
+	
     @FXML
     public void acaoSalvar(){
         try {
             Connection connection = ConnectionFactory.getDiario();
             PreparedStatement stmt = connection.prepareStatement("UPDATE `professores` SET"
-                    + " `id-depto` = '"+idDeptoInput.getText()+"'"
+                    + " `id-depto` = '"+deptosMap.get(idDeptoInput.getValue())+"'"
                     + ", `nome` = '"+nomeInput.getText()+"'"
                     + ", `titulacao` = '"+tituInput.getValue()+"'"
                     + ", `email` = '"+emailInput.getText()+"'" 
@@ -100,20 +104,25 @@ public class ControllerEditar implements Initializable {
         fecha();
     }
     
-            
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+		
+		deptosMap = new HashMap<>();
                
         ObservableList<String> oblist = FXCollections.observableArrayList();
         oblist.add("M");
         oblist.add("D");
         oblist.add("G");
         oblist.add("E");
+		
+		ObservableList<String> deptos = FXCollections.observableArrayList();
         
          try {
             Connection connection = ConnectionFactory.getDiario();
+			
+			atualizarDeptos(deptos);
+			idDeptoInput.setItems(deptos);
+			
             ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM `professores` WHERE `id`="+id);
             rs.first();
             siapeInput.setText(rs.getString("id"));
@@ -121,13 +130,29 @@ public class ControllerEditar implements Initializable {
             emailInput.setText(rs.getString("email"));
             tituInput.setValue(rs.getString("titulacao"));
             tituInput.setItems(oblist);
-            idDeptoInput.setText(Integer.toString(rs.getInt("id-depto")));
+			PreparedStatement s = connection.prepareStatement("SELECT `nome` FROM `departamentos` WHERE `id` = ?");
+            s.setInt(1, rs.getInt("id-depto"));
+			ResultSet r = s.executeQuery();
+			r.first();
+			idDeptoInput.setItems(deptos);
+			idDeptoInput.setValue(r.getString(1));
             senhaInput.setText(rs.getString("senha"));
   
         } catch (SQLException ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }    
+    
+    private void atualizarDeptos(ObservableList<String> oblist) throws SQLException {
+        String query = "SELECT * FROM `departamentos`";
+        Connection con = ConnectionFactory.getDiario();
+        ResultSet rs = con.createStatement().executeQuery(query);
+		while(rs.next()) {
+			String nome = rs.getString("nome");
+			deptosMap.put(nome, (Integer) rs.getInt("id"));
+			oblist.add(nome);
+		}
+    }
     
     public void fecha(){
         MainEditar.getStage().close();
