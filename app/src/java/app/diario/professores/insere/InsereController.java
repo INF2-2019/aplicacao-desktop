@@ -8,10 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -50,7 +53,7 @@ public class InsereController implements Initializable {
     private Label titulacaoLabel;
 
     @FXML
-    private TextField titulacaoInput;
+    private ChoiceBox<String> tituInput;
 
     @FXML
     private Label seapLabel;
@@ -88,7 +91,7 @@ public class InsereController implements Initializable {
             stmt.setString(2,idDeptoInput.getText());
             stmt.setString(3,nomeInput.getText());
             stmt.setString(1,seapInput.getText());
-            stmt.setString(4,titulacaoInput.getText());
+            stmt.setString(4,tituInput.getValue());
             stmt.setString(5,emailInput.getText());
             stmt.setString(6,senhaInput.getText());
             stmt.execute();
@@ -100,7 +103,14 @@ public class InsereController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        ObservableList<String> oblistTitulacao = FXCollections.observableArrayList();
+        oblistTitulacao.add("M");
+        oblistTitulacao.add("D");
+        oblistTitulacao.add("G");
+        oblistTitulacao.add("E");
+        tituInput.setItems(oblistTitulacao);
+        tituInput.setValue("G");
     }    
     
     public void fecha(){

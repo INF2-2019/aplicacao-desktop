@@ -15,18 +15,12 @@ import app.diario.professores.info.InfoMain;
 /**
  *
  * @author Nikolas Victor
- * @author Jonata Novaes
+ * @author Jonata Novais
  */
 public class Professor {
-    int idDpto;
-    String nome;
-    int id;
-    String titulacao;
-    String email;
-    String senha;
-    Button deleta,edita, info;
-    boolean isCancela;
-    int contador;
+    private int idDpto, id;
+    private String titulacao, email, senha, nome;
+    private Button deleta,edita, info;
     
     public Professor(int id, int idDpto, String nome, String titulacao, String email, String senha, Button edita, Button deleta, Button info){
         this.id = id;
@@ -91,25 +85,7 @@ public class Professor {
     public void setEdita(Button edita) {
         this.edita = edita;
     }
-
-    public boolean isIsCancela() {
-        return isCancela;
-    }
-
-    public void setIsCancela(boolean isCancela) {
-        this.isCancela = isCancela;
-    }
-
-    public int getContador() {
-        return contador;
-    }
-
-    public void setContador(int contador) {
-        this.contador = contador;
-    }
     
-    
-
     public int getIdDpto() {
         return idDpto;
     }

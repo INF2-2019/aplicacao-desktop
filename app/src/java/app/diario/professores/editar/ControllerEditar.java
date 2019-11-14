@@ -5,15 +5,19 @@ import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -61,7 +65,7 @@ public class ControllerEditar implements Initializable {
     private TextField emailInput;
     
     @FXML
-    private TextField titulacaoInput;
+    private ChoiceBox<String> tituInput;
     
     @FXML
     private TextField siapeInput;
@@ -77,7 +81,7 @@ public class ControllerEditar implements Initializable {
             PreparedStatement stmt = connection.prepareStatement("UPDATE `professores` SET"
                     + " `id-depto` = '"+idDeptoInput.getText()+"'"
                     + ", `nome` = '"+nomeInput.getText()+"'"
-                    + ", `titulacao` = '"+titulacaoInput.getText()+"'"
+                    + ", `titulacao` = '"+tituInput.getValue()+"'"
                     + ", `email` = '"+emailInput.getText()+"'" 
                     + ", `senha` = '"+senhaInput.getText()+"'" 
                     + ", `id` = '"+siapeInput.getText()+"'" 
@@ -101,7 +105,28 @@ public class ControllerEditar implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+               
+        ObservableList<String> oblist = FXCollections.observableArrayList();
+        oblist.add("M");
+        oblist.add("D");
+        oblist.add("G");
+        oblist.add("E");
+        
+         try {
+            Connection connection = ConnectionFactory.getDiario();
+            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM `professores` WHERE `id`="+id);
+            rs.first();
+            siapeInput.setText(rs.getString("id"));
+            nomeInput.setText(rs.getString("nome"));
+            emailInput.setText(rs.getString("email"));
+            tituInput.setValue(rs.getString("titulacao"));
+            tituInput.setItems(oblist);
+            idDeptoInput.setText(Integer.toString(rs.getInt("id-depto")));
+            senhaInput.setText(rs.getString("senha"));
+  
+        } catch (SQLException ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
     public void fecha(){
