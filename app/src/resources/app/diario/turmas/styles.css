@@ -16,7 +16,7 @@
 
 .header .h1{
     -fx-text-fill: #fff;
-    -fx-font-size: 3em;
+    -fx-font-size: 32px;
 }
 
 .turmas{

@@ -1,5 +1,6 @@
 package app.diario.turmas.inserir;
 
+import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.MainController;
 import java.net.URL;
 import java.sql.Connection;
@@ -17,7 +18,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import principal.Conector;
 
 public class InsereController implements Initializable {
 

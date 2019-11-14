@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.turmas.principal.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.turmas.principal.MainController">
     <children>
         <TableView fx:id="tab" editable="true" layoutX="155.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="473.0" prefWidth="891.0" styleClass="label">
             <columnResizePolicy>
@@ -31,9 +31,12 @@
         </Label>
         <Button fx:id="botaoAdicionar" layoutX="1103.0" layoutY="132.0" onAction="#adicionaAction" prefHeight="32.0" prefWidth="138.0" styleClass="greenBtn" text="ADICIONAR" />
         <Button fx:id="botaoInfo" layoutX="1118.0" layoutY="620.0" onAction="#consultaAction" prefHeight="41.0" prefWidth="107.0" styleClass="blueBtn" text="INFO" />
-        <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="84.0" prefWidth="1393.0" styleClass="header">
+        <BorderPane prefHeight="48.0" prefWidth="1280.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <left>
-                <Label id="header-text" prefHeight="53.0" prefWidth="403.0" styleClass="h1" text="S.A. Admin" />
+                <Label id="header-text" prefHeight="53.0" prefWidth="403.0" styleClass="h1" text="S.A. Admin">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
             </left>
         </BorderPane>
     </children>

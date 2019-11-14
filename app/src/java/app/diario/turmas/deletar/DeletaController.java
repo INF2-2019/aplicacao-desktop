@@ -1,5 +1,6 @@
 package app.diario.turmas.deletar;
 
+import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.MainController;
 import java.net.URL;
 import java.sql.Connection;
@@ -9,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import principal.Conector;
 
 public class DeletaController implements Initializable {
 

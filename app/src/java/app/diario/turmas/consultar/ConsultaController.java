@@ -1,5 +1,6 @@
 package app.diario.turmas.consultar;
 
+import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.Turma;
 import java.net.URL;
 import java.sql.Connection;
@@ -15,7 +16,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import principal.Conector;
 
 public class ConsultaController implements Initializable {
 
