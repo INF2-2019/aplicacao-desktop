@@ -4,6 +4,7 @@ package app.biblioteca.relatorios.relAtrasos;
 import app.biblioteca.relatorios.principal.DbConnector;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -31,13 +32,7 @@ public class TableController implements Initializable{
     @FXML
     private TableColumn<ModelTable, Integer> col_idAcervo;
     @FXML
-    private TableColumn<ModelTable, Date> col_dataEmprestimo;
-    @FXML
-    private TableColumn<ModelTable, Date> col_dataPrevDevol;
-    @FXML
-    private TableColumn<ModelTable, Date> col_dataDevolucao;
-    @FXML
-    private TableColumn<ModelTable, Double> col_multa;
+    private TableColumn<ModelTable, String> col_atraso;
     
     
     private boolean podeConstruir=false;
@@ -73,7 +68,12 @@ public class TableController implements Initializable{
                 
                 if(rs.getDate("data-devolucao").getTime()==0){
                     if(rs.getDate("data-prev-devol").compareTo(data)<0){
-                        oblist.add(new ModelTable(rs.getString("id"),rs.getString("id-alunos"),rs.getString("id-acervo"),rs.getDate("data-emprestimo"),rs.getDate("data-prev-devol"),rs.getDate("data-devolucao"),rs.getDouble("multa")));
+			
+			long dt = (data.getTime() - rs.getDate("data-prev-devol").getTime()) + 3600000; // 1 hora para compensar horário de verão
+			double diasatraso = dt / 86400000L;
+			String strAtraso = Double.toString(diasatraso);
+			String strSemPonto = strAtraso.substring(0, strAtraso.length()-2);
+                        oblist.add(new ModelTable(rs.getString("id"),verificaAlunos(rs.getString("id-alunos")),verificaAcervo(rs.getString("id-acervo")),strSemPonto));
                         podeConstruir=true;
                       }else if(rs.getDate("data-prev-devol").compareTo(data)>=0){
                          podeConstruir=false;
@@ -92,14 +92,31 @@ public class TableController implements Initializable{
         col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         col_idAlunos.setCellValueFactory(new PropertyValueFactory<>("idAlunos"));
         col_idAcervo.setCellValueFactory(new PropertyValueFactory<>("idAcervo"));
-        col_dataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
-        col_dataPrevDevol.setCellValueFactory(new PropertyValueFactory<>("dataPrevDevol"));
-	col_dataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
-        col_multa.setCellValueFactory(new PropertyValueFactory<>("multa"));
-        //col_funcoes.setCellValueFactory(new PropertyValueFactory<>("info"));
-        //col_funcoes1.setCellValueFactory(new PropertyValueFactory<>("edita"));
-        //col_estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
-        
+        col_atraso.setCellValueFactory(new PropertyValueFactory<>("atraso"));
         table.setItems(oblist);
+    }
+    public static String verificaAcervo(String id) throws SQLException {
+        ResultSet resultadoBusca;
+        Connection con = DbConnector.getConnection();
+        int Iid = Integer.parseUnsignedInt(id);
+        // cria um preparedStatement
+        String sql = "SELECT `nome` FROM `acervo` WHERE `id` = ?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setInt(1, Iid);
+        resultadoBusca =  stmt.executeQuery();
+        resultadoBusca.next();
+        return resultadoBusca.getString("nome");
+    }
+    public static String verificaAlunos(String id) throws SQLException {
+        ResultSet resultadoBusca;
+        Connection con = DbConnector.getConnection();
+        int Iid = Integer.parseUnsignedInt(id);
+        // cria um preparedStatement
+        String sql = "SELECT `nome` FROM `alunos` WHERE `id` = ?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setInt(1, Iid);
+        resultadoBusca =  stmt.executeQuery();
+        resultadoBusca.next();
+        return resultadoBusca.getString("nome");
     }
 }
