@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package app;
+package app.biblioteca.descartes.main;
 
 import javafx.beans.property.SimpleStringProperty;
 

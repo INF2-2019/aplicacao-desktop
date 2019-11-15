@@ -6,6 +6,7 @@
 
 package app;
 
+import app.biblioteca.descartes.main.DescartadoLista;
 import RespostaXML.RespostaXML;
 import java.sql.Connection;
 import java.sql.Date;

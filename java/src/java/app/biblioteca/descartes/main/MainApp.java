@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app;
+package app.biblioteca.descartes.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +20,7 @@ public class MainApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/app/FXMLTelaDescartes.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("app/biblioteca/descartes/teladescartes/FXMLTelaDescartes.fxml"));        
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm()); 
         stage.setScene(scene);
