@@ -1,4 +1,4 @@
-package relatorio10;
+package app.diario.relatorios.relatorio11;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -8,18 +8,19 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Relatorio10ModalMain extends Application {
+public class Relatorio11ModalMain extends Application {
 
 	private static Stage stage;
 
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("relatorio10Modal.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/relatorio11Modal.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("../principal/styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/styles.css").toExternalForm());
 
-		stage.setTitle("Relatório 10");
+		stage.setTitle("Relatório 11");
 		stage.setScene(sc);
+		stage.setResizable(false);
 		setStage(stage);
 
 		stage.initModality(Modality.APPLICATION_MODAL);

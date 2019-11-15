@@ -1,4 +1,4 @@
-package principal;
+package app.diario.relatorios.principal;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -11,13 +11,14 @@ public class RelatoriosMain extends Application {
 	
 	@Override
 	public void start(Stage stage) throws IOException{
-		Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/main.fxml"));
 		
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/styles.css").toExternalForm());
 		
-		stage.setTitle("Manutenção de Turmas");
+		stage.setTitle("Relatórios");
 		stage.setScene(sc);
+		stage.setResizable(false);
 		stage.show();
 	}
 	

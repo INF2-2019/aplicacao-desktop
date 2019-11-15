@@ -1,4 +1,4 @@
-package principal;
+package app.diario.relatorios.principal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

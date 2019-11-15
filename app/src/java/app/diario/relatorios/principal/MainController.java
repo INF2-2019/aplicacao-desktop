@@ -1,5 +1,7 @@
-package principal;
+package app.diario.relatorios.principal;
 
+import app.diario.relatorios.relatorio10.Relatorio10ModalMain;
+import app.diario.relatorios.relatorio11.Relatorio11ModalMain;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -7,8 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import relatorio10.Relatorio10ModalMain;
-import relatorio11.Relatorio11ModalMain;
 
 public class MainController implements Initializable {
 
