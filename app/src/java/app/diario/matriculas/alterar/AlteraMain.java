@@ -18,7 +18,7 @@ public class AlteraMain extends Application {
 		Scene sc = new Scene(root);
 		sc.getStylesheets().add(getClass().getResource("/app/diario/matriculas/styles.css").toExternalForm());
 
-		stage.setTitle("Alterar turma");
+		stage.setTitle("Alterar matrícula");
 		stage.setScene(sc);
 		setStage(stage);
 
