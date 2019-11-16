@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 *{
-    -fx-font-family: 'Montserrat', sans-serif;
 }
 
 .button{
     
-    -fx-font-family: 'Montserrat', sans-serif;
     -fx-text-fill: #FDFBF9;
     -fx-padding: 15px;
     -fx-background-insets: 2px;
@@ -16,18 +13,16 @@
     
 }
 .identificadores{
-    -fx-font-family: 'Montserrat', sans-serif;
     -fx-font-size: 20px;
     -fx-text-fill:#29a58c;
 }
 .identificandos{
-    -fx-font-family: 'Montserrat', sans-serif;
     -fx-font-size: 20px;
     -fx-text-fill:BLACK;
     
 }
 .titulo{
-    -fx-font-size: 30px;
+    -fx-font-size: 32px;
     
 }
 
