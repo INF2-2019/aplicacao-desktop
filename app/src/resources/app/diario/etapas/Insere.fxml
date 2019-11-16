@@ -23,8 +23,8 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Button fx:id="botaoCancelar" layoutX="469.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
-      <Button fx:id="botaoSalvar" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE" />
+      <Button fx:id="botaoCancelar" layoutX="469.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935; -fx-cursor: hand;" text="CANCELAR" textFill="WHITE" />
+      <Button fx:id="botaoSalvar" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c; -fx-cursor: hand;" text="SALVAR" textFill="WHITE" />
       <TextField fx:id="AnoInput" layoutX="53.0" layoutY="117.0" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="ValorInput" layoutX="344.0" layoutY="117.0" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: #dddddd;" />
     </children>

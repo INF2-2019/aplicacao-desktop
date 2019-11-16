@@ -43,9 +43,9 @@ public class TableController implements Initializable{
 
     @FXML
     private TableColumn<ModelTable, Button> col_funcoes1;
-
+    
     @FXML
-    private TableColumn<ModelTable, Button> col_funcoes2;
+    private Button btnVoltar;
     
     @FXML
     private void Insere(javafx.event.ActionEvent event) {

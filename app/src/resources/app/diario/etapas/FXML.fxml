@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="914.0" prefWidth="1310.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.TableController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.TableController">
    <children>
       <TableView fx:id="table" editable="true" layoutX="185.0" layoutY="205.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="640.0" prefWidth="940.0" style="-fx-border-color: #ffffff;" stylesheets="@style.css" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="205.0">
          <columns>
@@ -21,18 +21,19 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label prefHeight="51.0" prefWidth="1310.0" style="-fx-background-color: #29A58C;" text="S.A." textFill="WHITE">
+      <Label prefHeight="51.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" text="S.A." textFill="WHITE">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
-      <Button fx:id="adiciona" layoutX="1046.0" layoutY="155.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" text="ADICIONAR" textFill="WHITE" />
+      <Button fx:id="adiciona" layoutX="1016.0" layoutY="155.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C; -fx-cursor: hand;" text="ADICIONAR" textFill="WHITE" />
       <Label layoutX="89.0" layoutY="86.0" text="Etapas">
          <font>
             <Font size="65.0" />
          </font>
       </Label>
-      <Button fx:id="consulta" layoutX="1046.0" layoutY="108.0" mnemonicParsing="false" onAction="#Consulta" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #29A58C;" text="CONSULTA" textFill="WHITE" />
-      <Button fx:id="reload" layoutX="924.0" layoutY="155.0" mnemonicParsing="false" onAction="#Recarrega" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #29A58C;" text="RECARREGA" textFill="WHITE" />
+      <Button fx:id="consulta" layoutX="925.0" layoutY="155.0" mnemonicParsing="false" onAction="#Consulta" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #29A58C; -fx-cursor: hand;" text="CONSULTA" textFill="WHITE" />
+      <Button fx:id="reload" layoutX="823.0" layoutY="155.0" mnemonicParsing="false" onAction="#Recarrega" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #29A58C; -fx-cursor: hand;" text="RECARREGA" textFill="WHITE" />
+      <Button fx:id="btnVoltar" layoutX="1136.0" layoutY="668.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #29A58C; -fx-cursor: hand;" text="VOLTAR" textFill="WHITE" />
    </children>
 </AnchorPane>
