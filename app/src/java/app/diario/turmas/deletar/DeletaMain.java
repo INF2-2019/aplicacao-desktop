@@ -1,25 +1,23 @@
-package alterar;
+package app.diario.turmas.deletar;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class AlteraMain extends Application {
+public class DeletaMain extends Application {
 
 	private static Stage stage;
 
-	@Override
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("altera.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/turmas/deleta.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("../principal/styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/turmas/styles.css").toExternalForm());
 
-		stage.setTitle("Alterar turma");
+		stage.setTitle("Deletar turma");
 		stage.setScene(sc);
 		setStage(stage);
 
@@ -38,4 +36,5 @@ public class AlteraMain extends Application {
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
+
 }

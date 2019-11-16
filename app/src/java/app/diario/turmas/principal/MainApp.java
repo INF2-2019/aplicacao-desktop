@@ -1,4 +1,4 @@
-package principal;
+package app.diario.turmas.principal;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +13,10 @@ public class MainApp extends Application {
 	}
 
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/turmas/main.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/turmas/styles.css").toExternalForm());
 
 		primaryStage.setTitle("Manutenção de Turmas");
 		primaryStage.setScene(sc);

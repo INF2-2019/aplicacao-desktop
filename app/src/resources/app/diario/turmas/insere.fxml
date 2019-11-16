@@ -7,15 +7,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="637.0" stylesheets="@../principal/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inserir.InsereController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="637.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.turmas.inserir.InsereController">
     <children>
         <TextField fx:id="idField" layoutX="158.0" layoutY="95.0" prefHeight="31.0" prefWidth="246.0" />
-        <TextField fx:id="idCursosField" layoutX="158.0" layoutY="139.0" prefHeight="31.0" prefWidth="246.0" />
+        <ChoiceBox fx:id="cursosField" layoutX="158.0" layoutY="139.0" prefHeight="31.0" prefWidth="246.0" />
         <TextField fx:id="nomeField" layoutX="158.0" layoutY="184.0" prefHeight="31.0" prefWidth="246.0" />
-        <Label alignment="CENTER" layoutX="66.0" layoutY="93.0" prefHeight="31.0" prefWidth="51.0" styleClass="generalLabel" text="ID" />
-        <Label layoutX="40.0" layoutY="137.0" styleClass="generalLabel" text="ID Cursos" />
+        <Label alignment="CENTER" layoutX="67.0" layoutY="93.0" prefHeight="31.0" prefWidth="51.0" styleClass="generalLabel" text="ID" />
+        <Label layoutX="61.0" layoutY="137.0" styleClass="generalLabel" text="Curso" />
         <Label layoutX="59.0" layoutY="182.0" styleClass="generalLabel" text="Nome" />
-        <BorderPane prefHeight="73.0" prefWidth="1444.0" styleClass="header">
+        <BorderPane prefHeight="48.0" prefWidth="637.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <left>
                 <Label id="header-text" prefHeight="33.0" prefWidth="367.0" styleClass="h1" text="Adicionar Turma" />
             </left>

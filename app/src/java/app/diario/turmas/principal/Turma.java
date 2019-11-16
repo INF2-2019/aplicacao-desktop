@@ -1,21 +1,27 @@
-package principal;
+package app.diario.turmas.principal;
 
-import alterar.AlteraController;
-import alterar.AlteraMain;
-import deletar.DeletaController;
-import deletar.DeletaMain;
+import app.diario.turmas.alterar.AlteraController;
+import app.diario.turmas.alterar.AlteraMain;
+import app.diario.turmas.deletar.DeletaController;
+import app.diario.turmas.deletar.DeletaMain;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Turma {
 
-    private int id, idCursos;
-    private String nome;
+	private int id;
+	private String cursos, nome;
 	private Button deletaBtn, alteraBtn;
 
-	public Turma(int id, int idCursos, String nome, Button deletaBtn, Button alteraBtn) {
+	public Turma(int id, String cursos, String nome) {
 		this.id = id;
-		this.idCursos = idCursos;
+		this.cursos = cursos;
+		this.nome = nome;
+	}
+
+	public Turma(int id, String cursos, String nome, Button deletaBtn, Button alteraBtn) {
+		this.id = id;
+		this.cursos = cursos;
 		this.nome = nome;
 		this.deletaBtn = deletaBtn;
 		this.deletaBtn.setId("deleta");
@@ -28,7 +34,7 @@ public class Turma {
 				System.out.println(ex);
 			}
 		});
-		
+
 		this.alteraBtn = alteraBtn;
 		this.alteraBtn.setId("altera");
 		alteraBtn.setOnMouseClicked((ev) -> {
@@ -50,12 +56,12 @@ public class Turma {
 		this.id = id;
 	}
 
-	public int getIdCursos() {
-		return idCursos;
+	public String getCursos() {
+		return cursos;
 	}
 
-	public void setIdCursos(int idCursos) {
-		this.idCursos = idCursos;
+	public void setCursos(String cursos) {
+		this.cursos = cursos;
 	}
 
 	public String getNome() {
@@ -73,7 +79,7 @@ public class Turma {
 	public void setDeletaBtn(Button deleteBtn) {
 		this.deletaBtn = deleteBtn;
 	}
-	
+
 	public Button getAlteraBtn() {
 		return alteraBtn;
 	}
@@ -81,5 +87,5 @@ public class Turma {
 	public void setAlteraBtn(Button alteraBtn) {
 		this.alteraBtn = alteraBtn;
 	}
-	
+
 }

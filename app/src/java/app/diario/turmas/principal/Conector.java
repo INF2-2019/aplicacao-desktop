@@ -1,4 +1,4 @@
-package principal;
+package app.diario.turmas.principal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

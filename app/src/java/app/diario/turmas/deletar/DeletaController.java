@@ -1,5 +1,7 @@
-package deletar;
+package app.diario.turmas.deletar;
 
+import app.diario.turmas.principal.Conector;
+import app.diario.turmas.principal.MainController;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -8,16 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import principal.Conector;
-import principal.MainController;
 
 public class DeletaController implements Initializable {
 
 	private static int id;
-	
+
 	@FXML
 	private Button botaoConfirmar;
-	
+
 	@FXML
 	private Button botaoCancelar;
 
@@ -41,7 +41,7 @@ public class DeletaController implements Initializable {
 	@FXML
 	private void deletaAction(ActionEvent event) throws SQLException, ClassNotFoundException {
 		Connection con = Conector.conectar();
-		String sql = "DELETE FROM turmas WHERE id = "+id;
+		String sql = "DELETE FROM turmas WHERE id = " + id;
 		int res = con.createStatement().executeUpdate(sql);
 		MainController.updateTab();
 		fecha();

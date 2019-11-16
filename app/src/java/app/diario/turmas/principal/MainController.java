@@ -1,12 +1,15 @@
-package principal;
+package app.diario.turmas.principal;
 
-import consultar.ConsultaMain;
-import inserir.InsereMain;
+import app.diario.turmas.consultar.ConsultaController;
+import app.diario.turmas.consultar.ConsultaMain;
+import app.diario.turmas.inserir.InsereMain;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +30,9 @@ public class MainController implements Initializable {
 
 	public static ObservableList<Turma> tabList = FXCollections.observableArrayList();
 
+	public static int fixedId = 0;
+	private static int maior;
+
 	@FXML
 	public TableView<Turma> tab;
 
@@ -34,16 +40,16 @@ public class MainController implements Initializable {
 	public TableColumn<Turma, Integer> colId;
 
 	@FXML
-	public TableColumn<Turma, Integer> colIdCursos;
+	public TableColumn<Turma, String> colCursos;
 
 	@FXML
 	public TableColumn<Turma, String> colNome;
 
 	@FXML
-	public TableColumn<Turma, String> colAcoes;
+	public TableColumn<Turma, Button> colAcoes;
 
 	@FXML
-	public TableColumn<Turma, String> colAcoes2;
+	public TableColumn<Turma, Button> colAcoes2;
 
 	@FXML
 	private Button botaoAdicionar;
@@ -59,9 +65,9 @@ public class MainController implements Initializable {
 			table = tab;
 			createTab();
 		} catch (SQLException ex) {
-			System.out.println(ex);
+			Logger.getLogger(ConsultaController.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (ClassNotFoundException ex) {
-			System.out.println(ex);
+			Logger.getLogger(ConsultaController.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -70,24 +76,32 @@ public class MainController implements Initializable {
 	}
 
 	public static void updateTab() throws SQLException, ClassNotFoundException {
+		maior = 0;
 		tabList.clear();
 		Connection con = Conector.conectar();
 		String sql = "SELECT * FROM turmas";
 		ResultSet res = con.createStatement().executeQuery(sql);
 		while (res.next()) {
-			tabList.add(new Turma(res.getInt("id"), res.getInt("id-cursos"), res.getString("nome"), new Button("DELETAR"), new Button("ALTERAR")));
+			sql = "SELECT * FROM cursos WHERE id=" + res.getInt("id-cursos");
+			ResultSet res2 = con.createStatement().executeQuery(sql);
+			if (res2.next()) {
+				tabList.add(new Turma(res.getInt("id"), res2.getString("nome"), res.getString("nome"), new Button("DELETAR"), new Button("ALTERAR")));
+				if (maior < res.getInt("id")) {
+					maior = res.getInt("id");
+				}
+			}
 		}
+		fixedId = maior + 1;
 		setTable();
 		con.close();
 	}
 
 	public void createTab() throws SQLException, ClassNotFoundException {
 		colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-		colIdCursos.setCellValueFactory(new PropertyValueFactory<>("idCursos"));
+		colCursos.setCellValueFactory(new PropertyValueFactory<>("cursos"));
 		colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		colAcoes.setCellValueFactory(new PropertyValueFactory<>("deletaBtn"));
 		colAcoes2.setCellValueFactory(new PropertyValueFactory<>("alteraBtn"));
-		System.out.println(colAcoes);
 		updateTab();
 	}
 

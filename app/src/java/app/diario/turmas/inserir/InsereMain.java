@@ -1,39 +1,40 @@
-package consultar;
+package app.diario.turmas.inserir;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class ConsultaMain extends Application {
+public class InsereMain extends Application {
+
 	private static Stage stage;
 
+	@Override
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("consulta.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/turmas/insere.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("../principal/styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/turmas/styles.css").toExternalForm());
 
-		stage.setTitle("Consulta de turmas");
+		stage.setTitle("Inserir turma");
 		stage.setScene(sc);
 		setStage(stage);
 
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.showAndWait();
 	}
-	
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		launch(args);
 	}
-	
-	public static Stage getStage(){
+
+	public static Stage getStage() {
 		return stage;
 	}
-	
-	public void setStage(Stage stage){
+
+	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
 
