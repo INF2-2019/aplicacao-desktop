@@ -27,6 +27,7 @@ public class FXMLControllerInicio implements Initializable {
         Scene scene = new Scene(root);
         stg.setScene(scene);
         stg.setResizable(false);
+        stg.setTitle("Sistema Acadêmico");
         stg.setWidth(1280);
         stg.showAndWait();
     }
@@ -40,6 +41,7 @@ public class FXMLControllerInicio implements Initializable {
         Scene scene = new Scene(root);
         stg.setScene(scene);
         stg.setResizable(false);
+        stg.setTitle("Sistema Acadêmico");
         stg.setWidth(1280);
         stg.showAndWait();
     }

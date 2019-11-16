@@ -16,6 +16,18 @@ public class FXMLControllerTelaTransicaoBiblioteca implements Initializable {
     
     @FXML
     private Button btnVoltaInicio;
+    @FXML
+    private Button btnManutencaoDescartes;
+    @FXML
+    private Button btnManutencaoAcervos;
+    @FXML
+    private Button btnMenuRelatorios;
+    @FXML
+    private Button btnManutencaoEmprestimos;
+    @FXML
+    private Button btnManutencaoReservas;
+    
+    private static Stage stageTelaTransicao;
     
     @FXML
     public void voltaInicio(ActionEvent event) throws Exception {
@@ -26,28 +38,33 @@ public class FXMLControllerTelaTransicaoBiblioteca implements Initializable {
         Scene scene = new Scene(root);
         stg.setScene(scene);
         stg.setResizable(false);
+        stg.setTitle("Sistema Acadêmico");
         stg.setWidth(1280);
         stg.show();
     }
     
     @FXML
-    void entraManutencaoDescartes(ActionEvent event) {
-
+    public void entraManutencaoDescartes(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoDescartes.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoReservas(ActionEvent event) {
-
+    public void entraManutencaoReservas(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoReservas.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoAcervos(ActionEvent event) {
-
+    public void entraManutencaoAcervos(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoAcervos.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoEmprestimos(ActionEvent event) {
-
+    public void entraManutencaoEmprestimos(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoEmprestimos.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -57,12 +74,24 @@ public class FXMLControllerTelaTransicaoBiblioteca implements Initializable {
         Scene scene = new Scene(root);
         stg.setScene(scene);
         stg.setResizable(false);
+        stg.setTitle("Sistema Acadêmico");
         stg.setWidth(740);
-        stg.showAndWait();
+        setStageTelaTransicao((Stage) btnMenuRelatorios.getScene().getWindow());
+        stg.show();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-    }    
+    }
+
+    public static Stage getStageTelaTransicao() {
+        return stageTelaTransicao;
+    }
+
+    public static void setStageTelaTransicao(Stage stageTelaTransicao) {
+        FXMLControllerTelaTransicaoBiblioteca.stageTelaTransicao = stageTelaTransicao;
+    }
+    
+    
 }

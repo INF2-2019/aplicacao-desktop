@@ -16,6 +16,26 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
     
     @FXML
     private Button btnVoltaInicio;
+    @FXML
+    private Button btnManutencaoCursos;
+    @FXML
+    private Button btnManutencaoDepartamentos;
+    @FXML
+    private Button btnManutencaoDisciplinas;
+    @FXML
+    private Button btnManutencaoCampi;
+    @FXML
+    private Button btnMenuRelatorios;
+    @FXML
+    private Button btnManutencaoAlunos;
+    @FXML
+    private Button btnManutencaoProfessores;
+    @FXML
+    private Button btnTransferenciaAluno;
+    @FXML
+    private Button btnManutencaoEtapas;
+    
+    private static Stage stageTelaTransicao;
     
     @FXML
     public void voltaInicio(ActionEvent event) throws Exception {
@@ -26,52 +46,84 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
         Scene scene = new Scene(root);
         stg.setScene(scene);
         stg.setResizable(false);
+        stg.setTitle("Sistema Acadêmico");
         stg.setWidth(1280);
         stg.show();
     }
     
     @FXML
-    void entraManutencaoProfessores(ActionEvent event) {
-
+    public void entraManutencaoProfessores(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoProfessores.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoCursos(ActionEvent event) {
-
+    public void entraManutencaoCursos(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoCursos.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoDisciplinas(ActionEvent event) {
-
+    public void entraManutencaoDisciplinas(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoDisciplinas.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoCampi(ActionEvent event) {
-
+    public void entraManutencaoCampi(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoCampi.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraTransferenciaAluno(ActionEvent event) {
-
+    public void entraTransferenciaAluno(ActionEvent event) {
+        Stage stage = (Stage) btnTransferenciaAluno.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoDepartamentos(ActionEvent event) {
-
+    public void entraManutencaoDepartamentos(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoDepartamentos.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoEtapas(ActionEvent event) {
-
+    public void entraManutencaoEtapas(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoEtapas.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    void entraManutencaoAlunos(ActionEvent event) {
-
+    public void entraManutencaoAlunos(ActionEvent event) {
+        Stage stage = (Stage) btnManutencaoAlunos.getScene().getWindow();
+        stage.close();
+    }
+    
+    @FXML
+    public void abreModalRelatorios(ActionEvent event) throws Exception {
+        Parent root = FXMLLoader.load(MainApp.class.getResource("/app/diario/telatransicao/FXMLModalRelatoriosDiario.fxml"));
+        Stage stg = new Stage();
+        Scene scene = new Scene(root);
+        stg.setScene(scene);
+        stg.setResizable(false);
+        stg.setTitle("Sistema Acadêmico");
+        stg.setWidth(740);
+        setStageTelaTransicao((Stage) btnMenuRelatorios.getScene().getWindow());
+        stg.show();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
+
+    public static Stage getStageTelaTransicao() {
+        return stageTelaTransicao;
+    }
+
+    private static void setStageTelaTransicao(Stage stageTelaTransicao) {
+        FXMLControllerTelaTransicaoDiario.stageTelaTransicao = stageTelaTransicao;
+    }
+    
+    
 }
