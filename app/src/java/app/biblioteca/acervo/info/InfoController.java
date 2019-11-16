@@ -1,6 +1,5 @@
 package app.biblioteca.acervo.info;
 
-import app.biblioteca.acervo.principal.DbConnector;
 import app.biblioteca.acervo.principal.TableController;
 import app.utils.ConnectionFactory;
 import java.net.URL;

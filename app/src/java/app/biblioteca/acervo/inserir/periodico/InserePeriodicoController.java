@@ -1,7 +1,6 @@
 package app.biblioteca.acervo.inserir.periodico;
 
 import app.biblioteca.acervo.inserir.InsereController;
-import app.biblioteca.acervo.principal.DbConnector;
 import app.biblioteca.acervo.principal.TableController;
 import app.utils.ConnectionFactory;
 import java.net.URL;

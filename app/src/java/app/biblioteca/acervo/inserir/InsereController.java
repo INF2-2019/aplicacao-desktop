@@ -8,7 +8,6 @@ import app.biblioteca.acervo.inserir.livro.InsereLivroController;
 import app.biblioteca.acervo.inserir.academico.InsereAcademicoController;
 import app.biblioteca.acervo.inserir.academico.InsereAcademicoMain;
 import app.biblioteca.acervo.inserir.periodico.InserePeriodicoController;
-import app.biblioteca.acervo.principal.DbConnector;
 import app.biblioteca.acervo.principal.TableController;
 import app.utils.ConnectionFactory;
 import java.net.URL;
