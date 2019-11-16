@@ -20,9 +20,9 @@ public class MainApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("app/biblioteca/descartes/teladescartes/FXMLTelaDescartes.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/teladescartes/FXMLTelaDescartes.fxml"));        
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm()); 
+        scene.getStylesheets().add(getClass().getResource("/app/biblioteca/descartes/teladescartes/styles.css").toExternalForm()); 
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
