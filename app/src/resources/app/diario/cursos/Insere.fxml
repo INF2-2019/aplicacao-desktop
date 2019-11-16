@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="677.0" styleClass="fonte" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerInsere">
     <children>
-      <Label fx:id="idDeptoLabel" layoutX="113.0" layoutY="81.0" minHeight="16" minWidth="69" text="DEPARTAMENTOS" textAlignment="CENTER" textFill="#5dbaa7">
+      <Label fx:id="idDeptoLabel" layoutX="131.0" layoutY="81.0" minHeight="16" minWidth="69" text="ID-DEPTOS" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

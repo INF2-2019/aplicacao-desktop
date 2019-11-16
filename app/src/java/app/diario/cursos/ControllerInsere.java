@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +29,7 @@ import javafx.scene.control.TextField;
  */
 public class ControllerInsere implements Initializable {
 
-    ObservableList<String> departamentosLista = FXCollections.observableArrayList("Decom","Dcsa","Det","Demat","Dcta","Dequi","Deeb");
+    public static ObservableList<String> departamentosLista = FXCollections.observableArrayList();
     
     @FXML
     private TextField nomeInput;
@@ -47,8 +49,6 @@ public class ControllerInsere implements Initializable {
     @FXML
     private Button botaoSalvar;
 
-    @FXML
-    private TextField idDeptoInput;
 
     @FXML
     private TextField horasInput;
@@ -69,21 +69,22 @@ public class ControllerInsere implements Initializable {
     private Label labelError;
     
     @FXML
-    private ChoiceBox DepartamentosInput;
+    private  ChoiceBox <String> DepartamentosInput;
 
     @FXML
     void acaoCancelar(ActionEvent event) {
         fecha();
     }
 
+
     @FXML
     void acaoSalvar(ActionEvent event) throws SQLException {
-        if (!"".equals(idDeptoInput.getText())
-                && !"".equals(nomeInput.getText())
+        if (
+                !"".equals(nomeInput.getText())
                 && !"".equals(horasInput.getText())
                 && !"".equals(modalidadeInput.getText())) {
-            if (isNum(idDeptoInput.getText())
-                    && isNum(horasInput.getText())) {
+            if (
+                     isNum(horasInput.getText())) {
                 Connection con = new DbConnector().getConnection();
 
                 // cria um preparedStatement
@@ -93,7 +94,7 @@ public class ControllerInsere implements Initializable {
                 PreparedStatement stmt = con.prepareStatement(sql);
 
                 // preenche os valores
-                stmt.setString(1, idDeptoInput.getText());
+                stmt.setString(1, DepartamentosInput.getValue());
                 stmt.setString(2, nomeInput.getText());
                 stmt.setString(3, horasInput.getText());
                 stmt.setString(4, modalidadeInput.getText());
@@ -111,7 +112,7 @@ public class ControllerInsere implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        preencheChoiceBox();
     }
 
     public void fecha() {
@@ -129,5 +130,23 @@ public class ControllerInsere implements Initializable {
         }
         return ret;
     }
-
+      public void preencheChoiceBox(){
+        try {
+            Connection con = DbConnector.getConnection();
+            
+            ResultSet rs = con.createStatement().executeQuery("select * from departamentos");
+            //departamentosLista = FXCollections.observableArrayList();
+            departamentosLista.removeAll(departamentosLista);
+            while(rs.next()){
+                departamentosLista.add((rs.getString("id")));
+            }
+            
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControllerTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            DepartamentosInput.getItems().addAll(departamentosLista);
+    }
+      
+    
 }

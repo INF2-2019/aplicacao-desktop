@@ -49,6 +49,7 @@ public class ControllerTable implements Initializable{
     @FXML
     private void Insere(javafx.event.ActionEvent event) {
        InsereMain insere = new InsereMain();
+       ControllerInsere controlador = new ControllerInsere();
         try {
             insere.start(new Stage());
         } catch (Exception ex) {
