@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 public class RelatoriosMain extends Application {
 	
+	private static Stage stage;
+	
 	@Override
 	public void start(Stage stage) throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/principal/main.fxml"));
@@ -18,8 +20,18 @@ public class RelatoriosMain extends Application {
 		
 		stage.setTitle("Relatórios");
 		stage.setScene(sc);
+		setStage(stage);
+		
 		stage.setResizable(false);
 		stage.show();
+	}
+
+	public static Stage getStage() {
+		return stage;
+	}
+
+	public static void setStage(Stage stage) {
+		RelatoriosMain.stage = stage;
 	}
 	
 	public static void main(String[] args) {

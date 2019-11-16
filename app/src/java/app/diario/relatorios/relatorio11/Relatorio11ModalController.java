@@ -17,6 +17,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,6 +49,7 @@ public class Relatorio11ModalController implements Initializable {
 	@FXML
 	private void salvarAction(ActionEvent event) throws SQLException, ClassNotFoundException, DocumentException, FileNotFoundException {
 		if (disciplina && etapa) {
+			SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 			nomeDisciplina = selectDisciplina.getValue().toString();
 			idEtapa = Integer.parseInt(selectEtapa.getValue().toString());
 			Connection con = Conector.conectar();
@@ -93,7 +95,7 @@ public class Relatorio11ModalController implements Initializable {
 				while (res2.next()) {
 					cel = new PdfPCell(new Phrase(String.valueOf(res2.getString("conteudos"))));
 					tabela.addCell(cel);
-					cel = new PdfPCell(new Phrase(String.valueOf(res2.getDate("data"))));
+					cel = new PdfPCell(new Phrase(formatador.format(res2.getDate("data"))));
 					tabela.addCell(cel);
 					cel = new PdfPCell(new Phrase(String.valueOf(res2.getDouble("valor"))));
 					tabela.addCell(cel);

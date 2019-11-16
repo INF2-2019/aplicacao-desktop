@@ -1,10 +1,12 @@
 package app.diario.relatorios.relatorio11;
 
 import app.diario.turmas.principal.Conector;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,6 +38,7 @@ public class Relatorio11Controller implements Initializable {
 		colConteudos.setCellValueFactory(new PropertyValueFactory<>("conteudo"));
 		colData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		colValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
+		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 			ObservableList<Relatorio11Model> lista = FXCollections.observableArrayList();
 			Connection con = Conector.conectar();
@@ -48,7 +51,7 @@ public class Relatorio11Controller implements Initializable {
 			sql = "SELECT * FROM conteudos WHERE `id-etapas`=" + etapa + " AND `id-disciplinas`=" + idDisciplina;
 			ResultSet res2 = con.createStatement().executeQuery(sql);
 			while (res2.next()) {
-				lista.add(new Relatorio11Model(res2.getString("conteudos"), res2.getDate("data").toString(), res2.getDouble("valor")));
+				lista.add(new Relatorio11Model(res2.getString("conteudos"), formatador.format(res2.getDate("data")), res2.getDouble("valor")));
 			}
 			tab.setItems(lista);
 		} catch (SQLException ex) {

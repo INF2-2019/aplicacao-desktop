@@ -69,4 +69,13 @@ public class MainController implements Initializable {
 		}
 	}
 	
+	@FXML 
+	private void voltarAction(ActionEvent event) {
+		fecha();
+	}
+	
+	public void fecha(){
+		RelatoriosMain.getStage().close();
+	}
+	
 }

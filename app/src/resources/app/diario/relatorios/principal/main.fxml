@@ -52,7 +52,7 @@
                <VBox.margin>
                   <Insets left="150.0" />
                </VBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="167.0" styleClass="redBtn" text="VOLTAR">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="167.0" styleClass="redBtn" fx:id="voltarBtn" onAction="#voltarAction" text="VOLTAR">
                <VBox.margin>
                   <Insets bottom="500.0" right="890.0" />
                </VBox.margin>
