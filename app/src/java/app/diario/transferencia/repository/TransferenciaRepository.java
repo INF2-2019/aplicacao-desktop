@@ -33,6 +33,32 @@ public class TransferenciaRepository {
         }
     }
     
+    public static int consultaStatusMatricula(long cpf) throws SQLException{
+        Connection con = ConnectionFactory.getDiario();
+        if(con != null){
+            PreparedStatement prst = con.prepareStatement("SELECT ativo FROM `matriculas` WHERE `id-alunos` = ?");
+            prst.setLong(1, cpf);
+            ResultSet rs = prst.executeQuery();
+            
+            rs.next();
+            int ativo = rs.getInt("ativo");
+            
+            if(ativo == 0 || ativo == 1){
+                prst.close();
+                con.close();
+                
+                return ativo;
+            } else {
+                prst.close();
+                con.close();
+                
+                return 2;
+            }
+        } else {
+            throw new SQLException();
+        }
+    }
+    
     public static void mudaStatusMatricula(long cpf) throws SQLException{
         Connection con = ConnectionFactory.getDiario();
         if(con != null){

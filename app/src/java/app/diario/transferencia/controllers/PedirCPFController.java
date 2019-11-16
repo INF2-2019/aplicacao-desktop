@@ -2,10 +2,13 @@ package app.diario.transferencia.controllers;
 
 import app.diario.transferencia.repository.TransferenciaRepository;
 import app.diario.transferencia.utils.Validacao;
+import app.inicio.MainApp;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -33,6 +36,8 @@ public class PedirCPFController implements Initializable {
     
     @FXML
     private Label avisoL;
+    @FXML
+    private Button voltar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -91,6 +96,18 @@ public class PedirCPFController implements Initializable {
         transicao.setFromValue(1);
         transicao.setToValue(0);
         transicao.play();
+    }
+
+    @FXML
+    private void voltafunc(ActionEvent event) {
+        MainApp main = new MainApp();
+        Stage tabelaDeptos = (Stage) voltar.getScene().getWindow();
+        tabelaDeptos.close();
+        try {
+            main.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(PedirCPFController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

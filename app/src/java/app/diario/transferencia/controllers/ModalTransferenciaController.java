@@ -47,24 +47,35 @@ public class ModalTransferenciaController implements Initializable {
     @FXML
     private void transferirAluno(ActionEvent event) throws IOException { 
         try{
+            int transferido = TransferenciaRepository.consultaStatusMatricula(cpf);
+            
+            switch(transferido){
+                case 0:
+                    avisoL.setText("Aluno já transferido.");
+                    avisoL.getStyleClass().clear();
+                    avisoL.getStyleClass().add("aviso");
+                    fadeOutAviso();
+                    break;
+                case 1:
+                    TransferenciaRepository.mudaStatusMatricula(cpf);
+                    avisoL.setText("Aluno transferido com sucesso.");
+                    avisoL.getStyleClass().clear();
+                    avisoL.getStyleClass().add("sucesso");
+                    fadeOutAviso();
+                    break;
+                case 2:
+                    avisoL.setText("Aluno não encontrado");
+                    avisoL.getStyleClass().clear();
+                    avisoL.getStyleClass().add("aviso");
+                    fadeOutAviso();
+                    break;
+            }
+            
             TransferenciaRepository.mudaStatusMatricula(cpf);
-            
-            Stage janelaHistorico = new Stage();
-            FXMLLoader modalTransferenciaFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/transferencia/HistoricoAluno.fxml"));
-        
-            Parent historicoAlunoParent = (Parent) modalTransferenciaFXMLLoader.load();
-            HistoricoAlunoController historicoAlunoController = modalTransferenciaFXMLLoader.<HistoricoAlunoController>getController();
-            
-            janelaHistorico.setScene(new Scene(historicoAlunoParent));
-            janelaHistorico.initOwner(((Node) event.getSource()).getScene().getWindow());
-            janelaHistorico.initModality(Modality.APPLICATION_MODAL);
-            janelaHistorico.showAndWait();
-        
-            Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-            modal.close();
         } catch (SQLException e){
             avisoL.setText("Não foi possível transferir o aluno.");
             avisoL.getStyleClass().add("aviso");
+            System.out.println(e);
             fadeOutAviso();
         }
         
