@@ -2,6 +2,7 @@ package app.biblioteca.acervo.editar;
 
 import app.biblioteca.acervo.principal.DbConnector;
 import app.biblioteca.acervo.principal.TableController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -85,7 +86,7 @@ public class EditarController implements Initializable {
     @FXML
     public void acaoSalvar(){
         try {
-            Connection connection = DbConnector.getConnection();
+            Connection connection = ConnectionFactory.getBiblioteca();
             PreparedStatement stmt = connection.prepareStatement("UPDATE `acervo` SET"
                     + " `id` = ? , `id-campi` = ? "
                     + ", `nome` = ? , `local` = ?"

@@ -2,6 +2,7 @@ package app.biblioteca.acervo.info;
 
 import app.biblioteca.acervo.principal.DbConnector;
 import app.biblioteca.acervo.principal.TableController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -106,7 +107,7 @@ public class InfoController implements Initializable {
         // TODO
         /*BUSCA INFORMAÇÕES NO BANCO DE DADOS E MOSTRA (nos respectivos labels)*/
         try {
-            Connection con = DbConnector.getConnection();
+            Connection con = ConnectionFactory.getBiblioteca();
             /*ACERVO*/
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `acervo` WHERE `id`="+InfoController.getId());
             rs.first();

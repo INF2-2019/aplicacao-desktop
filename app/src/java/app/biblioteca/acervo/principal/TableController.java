@@ -2,9 +2,8 @@ package app.biblioteca.acervo.principal;
 
 import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
         
-import app.biblioteca.acervo.deletar.DeletarMain;
-import app.biblioteca.acervo.info.InfoController;
 import app.biblioteca.acervo.inserir.InsereMain;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -102,7 +101,7 @@ public class TableController implements Initializable {
     }
     public void deleta(String id,String tipo){
          try {
-            Connection connection = DbConnector.getConnection();
+            Connection connection = ConnectionFactory.getBiblioteca();
             PreparedStatement stmt = connection.prepareStatement("delete " +
                     "from acervo where id="+id);
             stmt.execute();
@@ -128,7 +127,7 @@ public class TableController implements Initializable {
     }
     public void consultarBD(){
         try {
-            Connection con = DbConnector.getConnection();
+            Connection con = ConnectionFactory.getBiblioteca();
             
             ResultSet rs = con.createStatement().executeQuery("select * from acervo");
             observableListAcervo = FXCollections.observableArrayList();

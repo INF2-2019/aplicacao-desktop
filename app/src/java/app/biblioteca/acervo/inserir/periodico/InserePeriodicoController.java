@@ -3,6 +3,7 @@ package app.biblioteca.acervo.inserir.periodico;
 import app.biblioteca.acervo.inserir.InsereController;
 import app.biblioteca.acervo.principal.DbConnector;
 import app.biblioteca.acervo.principal.TableController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -56,7 +57,7 @@ public class InserePeriodicoController {
         try {
             System.out.println(idPeriodicoInput.getText());
             
-            Connection con = DbConnector.getConnection();
+            Connection con = ConnectionFactory.getBiblioteca();
             String sql = "insert into periodicos" +
                     " (`id`,`id-acervo`, `periodicidade`, `mes`, `volume`, `subtipo`, `issn`)" +
                     " values (?,?,?,?,?,?,?)";
@@ -79,7 +80,7 @@ public class InserePeriodicoController {
     public void acaoCancelar(){
         /*se for cancelado aquilo que foi salvo em acervo nao pode permanecer na tabela, será apagado*/
         try{
-	    Connection con = new DbConnector().getConnection();
+	    Connection con = ConnectionFactory.getBiblioteca();
             String sql = "DELETE FROM acervo WHERE id=?";
             PreparedStatement stmt = con.prepareStatement(sql);
 	    stmt.setInt(1,Integer.parseInt(InsereController.getId()));
