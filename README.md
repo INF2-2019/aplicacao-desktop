@@ -66,13 +66,19 @@ A documentação estará disponível na pasta `docs`.
 - **Telas principais**: 
 
 	- Dimensões: 1280px x 720px
+	- Não serão redimensionáveis
+	- Headers: Dimensões de 1280px x 48px com fonte de tamanho 32
+	- Deverão ter um botão VOLTAR que retornará à tela de transição do sistema, diário ou biblioteca, ao qual a tela pertence
 	
 - **Modais**:
 	
 	- Dimensões: Ficarão a critério dos grupos de acordo com suas respectivas necessidades, respeitando o tamanho limite de 1280px x 720px
+	- Não serão redimensionáveis
+	
+- **Botões**:
+
+	- O cursor, ao passar por cima, deverá mudar para HAND (propriedade CURSOR: HAND no Scene Builder)
 	
 - **CSS**:
 	
-	- Todas as fontes deverão ser Montserrat
-	- Ao adicionar a referência à fonte no _início_ do arquivo: `@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');`
-	- Ao adicionar a fonte em classes, IDs e afins:`-fx-font-family: 'Montserrat', sans-serif;`
+	- Todas as fontes deverão ser a padrão (utilizada pelo Scene Builder)
