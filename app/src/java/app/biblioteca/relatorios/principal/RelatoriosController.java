@@ -1,9 +1,9 @@
 
 package app.biblioteca.relatorios.principal;
 
-import app.biblioteca.relatorios.impressao.MainImpRelAtrasos;
-import app.biblioteca.relatorios.impressao.MainImpRelDescartes;
-import app.biblioteca.relatorios.impressao.MainImpRelMultas;
+import app.biblioteca.relatorios.relAtrasos.RelAtrasosMain;
+import app.biblioteca.relatorios.relDescartes.RelDescartesMain;
+import app.biblioteca.relatorios.relMultas.RelMultasMain;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -31,12 +31,14 @@ public class RelatoriosController implements Initializable {
 
     @FXML
     private Button rel_multas;
-
+    
+    @FXML
+    private Button btnVoltar;
 
     
     @FXML
     void AbreRelAtrasos(ActionEvent event) throws SQLException {
-         MainImpRelAtrasos emp = new MainImpRelAtrasos();
+         RelAtrasosMain emp = new RelAtrasosMain();
         try {
             emp.start(new Stage());
         } catch (Exception ex) {
@@ -45,7 +47,7 @@ public class RelatoriosController implements Initializable {
     }
     @FXML
     void AbreRelMultas(ActionEvent event) throws SQLException {
-         MainImpRelMultas emp = new MainImpRelMultas();
+         RelMultasMain emp = new RelMultasMain();
         try {
             emp.start(new Stage());
         } catch (Exception ex) {
@@ -54,12 +56,17 @@ public class RelatoriosController implements Initializable {
     }
     @FXML
     void AbreRelDescartes(ActionEvent event) throws SQLException {
-         MainImpRelDescartes emp = new MainImpRelDescartes();
+         RelDescartesMain emp = new RelDescartesMain();
         try {
             emp.start(new Stage());
         } catch (Exception ex) {
             Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
         }       
+    }
+    @FXML
+    public void volta() {
+        BibliotecaMainRelatorios.getStage().close();
+    
     }
     
     @Override
