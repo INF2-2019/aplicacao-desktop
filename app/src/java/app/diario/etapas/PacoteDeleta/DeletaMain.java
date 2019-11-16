@@ -16,7 +16,8 @@ public class DeletaMain extends Application {
         
         stage.setScene(scene);
         stage.show();
-		setStage(stage);
+        stage.setResizable(false);
+	setStage(stage);
     }
 
     public static void main(String[] args) {
