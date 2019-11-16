@@ -1,0 +1,19 @@
+.button{
+    -fx-text-fill: #FDFBF9;
+    -fx-padding: 9.5px;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 2px;
+    -fx-cursor: hand;
+}
+.info{
+    -fx-background-color: #00B0FF;
+}
+#deleta{
+    -fx-background-color: #FF0000;
+    -fx-text-fill: white;
+
+}
+#edita{
+    -fx-background-color: #2C46A5;
+    -fx-text-fill: white;
+}
