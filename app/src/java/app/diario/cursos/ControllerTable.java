@@ -61,7 +61,7 @@ public class ControllerTable implements Initializable{
     }
     @FXML 
     public void acaoVoltar(){
-        MainApp main = new MainApp();
+        MainTelaTransicaoDiario main = new MainTelaTransicaoDiario();
         fecha();
         try {
             main.start(new Stage());
