@@ -37,6 +37,7 @@
          </font>
       </Label>
       <BorderPane prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="btnImprimir" layoutX="1092.0" layoutY="118.0" mnemonicParsing="false" onAction="#imprimePDF" prefHeight="31.0" prefWidth="156.0" text="SALVAR" />
+      <Button fx:id="btnImprimir" layoutX="1092.0" layoutY="118.0" mnemonicParsing="false" onAction="#imprimePDF" prefHeight="31.0" prefWidth="156.0" text="SALVAR" textFill="WHITE" />
+      <Button fx:id="btnVoltar" layoutX="905.0" layoutY="118.0" mnemonicParsing="false" onAction="#volta" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: #29A58C;" text="VOLTAR" textFill="WHITE" />
    </children>
 </AnchorPane>

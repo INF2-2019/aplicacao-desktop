@@ -9,17 +9,14 @@ import app.biblioteca.relatorios.principal.DbConnector;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -64,6 +61,9 @@ public class TableController implements Initializable{
     @FXML
     private Button btnImprimir;
     
+     @FXML
+    private Button btnVoltar;
+    
 
     static ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
    
@@ -106,7 +106,7 @@ public class TableController implements Initializable{
         table.setItems(oblist);
     }
     
-    public void imprimePDF() throws FileNotFoundException, DocumentException, SQLException, IOException {
+    public void imprimePDF() throws FileNotFoundException, DocumentException, SQLException {
 	//USADO iText PDF 5
 	Connection con = DbConnector.getConnection();
 
@@ -119,7 +119,7 @@ public class TableController implements Initializable{
 
 	if (file != null) {
 	    System.out.println(file.getAbsolutePath() + "\\relatorioEmprestimos.pdf");
-	    Document my_pdf_report = new Document(PageSize.A4.rotate());
+	    Document my_pdf_report = new Document();
 	    PdfWriter.getInstance(my_pdf_report, new FileOutputStream(file.getAbsolutePath() + "\\relatorioEmprestimos.pdf"));
 	    my_pdf_report.open();
 
@@ -128,7 +128,7 @@ public class TableController implements Initializable{
 	    //cria um celula
 	    PdfPCell table_cell;
 	    
-	    Paragraph title = new Paragraph("RELATÓRIO ACERVO LIVROS");
+	    Paragraph title = new Paragraph("RELATÓRIO EMPRÉSTIMOS");
 	    title.setSpacingAfter(50);
 	    
 	    my_pdf_report.add(title);
@@ -170,13 +170,18 @@ public class TableController implements Initializable{
 
 	    //adiciona tabela no pdf
 	    my_pdf_report.add(my_report_table);
-	    Desktop.getDesktop().print(file);
 	    my_pdf_report.close();
-	    
+
 	    /* Fecha conexão*/
 	    con.close();
 	    rs.close();
 	    con.close();
 	}
+    }
+    
+     @FXML
+    public void volta() {
+        RelEmprestimosMain.getStage().close();
+    
     }
 }

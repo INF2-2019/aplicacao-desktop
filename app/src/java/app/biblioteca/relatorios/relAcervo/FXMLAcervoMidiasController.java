@@ -71,6 +71,9 @@ public class FXMLAcervoMidiasController implements Initializable {
     
     @FXML
     private Button btnImprimir;
+    
+     @FXML
+    private Button btnVoltar;
 
     @FXML
     void refresh(MouseEvent event) {
@@ -207,4 +210,9 @@ public class FXMLAcervoMidiasController implements Initializable {
 	}
     }
 
+     @FXML
+    public void volta() {
+        RelAcervoMidiasMain.getStage().close();
+    
+    }
 }

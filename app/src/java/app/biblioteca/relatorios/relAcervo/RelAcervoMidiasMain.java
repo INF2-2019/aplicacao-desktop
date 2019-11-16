@@ -30,6 +30,7 @@ public class RelAcervoMidiasMain extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
         setStage(stage);
     }
     public static void main(String[] args) {

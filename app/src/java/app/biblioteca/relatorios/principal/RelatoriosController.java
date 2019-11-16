@@ -1,9 +1,12 @@
 
 package app.biblioteca.relatorios.principal;
 
+import app.biblioteca.relatorios.relAcervo.*;
 import app.biblioteca.relatorios.relAtrasos.RelAtrasosMain;
 import app.biblioteca.relatorios.relDescartes.RelDescartesMain;
+import app.biblioteca.relatorios.relEmprestimos.RelEmprestimosMain;
 import app.biblioteca.relatorios.relMultas.RelMultasMain;
+import app.biblioteca.relatorios.relReservas.RelReservasMain;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -63,6 +66,69 @@ public class RelatoriosController implements Initializable {
             Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }
+    @FXML
+    void AbreRelReservas(ActionEvent event) throws SQLException {
+         RelReservasMain emp = new RelReservasMain();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+    
+    @FXML
+    void AbreRelEmprestimos(ActionEvent event) throws SQLException {
+         RelEmprestimosMain emp = new RelEmprestimosMain();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+    
+      @FXML
+    void AbreRelMidias(ActionEvent event) throws SQLException {
+         RelAcervoMidiasMain emp = new RelAcervoMidiasMain();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+	
+      @FXML
+    void AbreRelPeriodicos(ActionEvent event) throws SQLException {
+         RelAcervoPeridiocosMain emp = new RelAcervoPeridiocosMain();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+	
+    
+      @FXML
+    void AbreRelLivros(ActionEvent event) throws SQLException {
+         RelAcervoLivrosMain emp = new RelAcervoLivrosMain();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+	
+    
+      @FXML
+    void AbreRelAcademicos(ActionEvent event) throws SQLException {
+         RelAcervoAcademicosMain emp = new RelAcervoAcademicosMain();
+        try {
+            emp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(RelatoriosController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }
+	
+	    
     @FXML
     public void volta() {
         BibliotecaMainRelatorios.getStage().close();

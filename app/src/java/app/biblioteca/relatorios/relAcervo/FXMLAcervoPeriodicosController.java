@@ -85,6 +85,9 @@ public class FXMLAcervoPeriodicosController implements Initializable {
 
     @FXML
     private Button btnImprimir;
+    
+     @FXML
+    private Button btnVoltar;
 
     @FXML
     void refresh(MouseEvent event) {
@@ -232,5 +235,11 @@ public class FXMLAcervoPeriodicosController implements Initializable {
 	    con.close();
 	}
     }
-
+    
+     @FXML
+    public void volta() {
+        RelAcervoPeridiocosMain.getStage().close();
+    
+    }
 }
+

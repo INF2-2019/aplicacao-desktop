@@ -70,6 +70,9 @@ public class FXMLReservasController implements Initializable {
 
     @FXML
     private Button btnImprimir;
+    
+     @FXML
+    private Button btnVoltar;
 
     @FXML
     private AnchorPane anchorImprimir;
@@ -183,4 +186,11 @@ public class FXMLReservasController implements Initializable {
 	    con.close();
 	}
     }
+    
+      @FXML
+    public void volta() {
+        RelReservasMain.getStage().close();
+    
+    }
 }
+

@@ -68,3 +68,12 @@ table-view, .tree-table-view {
 #estado{
     -fx-text-fill: red;
 }
+
+#btnImprimir{
+    -fx-cursor: hand;
+    -fx-background-color: #29A58C;
+}
+#btnVoltar{
+    -fx-cursor: hand;
+    -fx-background-color: #29A58C;
+}

@@ -39,8 +39,9 @@
       <Label text="Label" />
       <AnchorPane fx:id="anchorImprimir" layoutX="967.0" layoutY="118.0" prefHeight="31.0" prefWidth="156.0">
          <children>
-            <Button fx:id="btnImprimir" layoutX="3.0" layoutY="-1.0" mnemonicParsing="false" onAction="#imprimePDF" prefHeight="31.0" prefWidth="156.0" text="SALVAR" />
+            <Button fx:id="btnImprimir" layoutX="3.0" layoutY="-1.0" mnemonicParsing="false" onAction="#imprimePDF" prefHeight="31.0" prefWidth="156.0" text="SALVAR" textFill="WHITE" />
          </children>
       </AnchorPane>
+      <Button fx:id="btnVoltar" layoutX="787.0" layoutY="118.0" mnemonicParsing="false" onAction="#volta" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: #29A58C;" text="VOLTAR" textFill="WHITE" />
    </children>
 </AnchorPane>

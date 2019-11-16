@@ -77,6 +77,9 @@ public class FXMLAcervoLivrosController implements Initializable {
 
     @FXML
     private Button btnImprimir;
+    
+     @FXML
+    private Button btnVoltar;
 
     @FXML
     void refresh(MouseEvent event) {
@@ -211,6 +214,12 @@ public class FXMLAcervoLivrosController implements Initializable {
 	    rs.close();
 	    con.close();
 	}
+    }
+    
+    @FXML
+    public void volta() {
+        RelAcervoLivrosMain.getStage().close();
+    
     }
 
 }
