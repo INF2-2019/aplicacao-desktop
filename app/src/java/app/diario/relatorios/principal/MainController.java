@@ -2,6 +2,7 @@ package app.diario.relatorios.principal;
 
 import app.diario.relatorios.relatorio10.Relatorio10ModalMain;
 import app.diario.relatorios.relatorio11.Relatorio11ModalMain;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -69,13 +70,19 @@ public class MainController implements Initializable {
 		}
 	}
 	
-	@FXML 
+	@FXML
 	private void voltarAction(ActionEvent event) {
 		fecha();
 	}
 	
 	public void fecha(){
 		RelatoriosMain.getStage().close();
+		MainTelaTransicaoDiario mt = new MainTelaTransicaoDiario();
+		try {
+			mt.start(new Stage());
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 	
 }
