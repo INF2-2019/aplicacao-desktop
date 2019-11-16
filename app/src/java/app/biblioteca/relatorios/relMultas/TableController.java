@@ -68,17 +68,13 @@ public class TableController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         consultarBD();
-        if(podeConstruir){
-        criaTabela();
-        }
+        
         
     }
     public void refresh(){
         oblist.clear();
         consultarBD();
-        if(podeConstruir){
-        criaTabela();
-        }
+        
     }
     @FXML
     public void volta() {
@@ -97,10 +93,11 @@ public class TableController implements Initializable{
                 if(rs.getDate("data-devolucao").getTime()!=0){
                 if(rs.getDouble("multa")!=0){
                     oblist.add(new ModelTable(rs.getString("id"),verificaAlunos(rs.getString("id-alunos")),verificaAcervo(rs.getString("id-acervo")),rs.getDate("data-emprestimo"),rs.getDate("data-devolucao"),rs.getDouble("multa")));
-                    podeConstruir=true;
-                }else if(rs.getDouble("multa")==0){
-                    podeConstruir=false;
-                }
+                    
+			criaTabela();
+			
+			podeConstruir=true;
+                      }
                 }
             }
             
