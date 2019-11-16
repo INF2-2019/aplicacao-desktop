@@ -19,6 +19,7 @@ public class DeletaMain extends Application {
 
 		stage.setTitle("Deletar matrícula");
 		stage.setScene(sc);
+		stage.setResizable(false);
 		setStage(stage);
 
 		stage.initModality(Modality.APPLICATION_MODAL);

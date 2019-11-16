@@ -20,6 +20,7 @@ public class InsereMain extends Application {
 
 		stage.setTitle("Inserir matrícula");
 		stage.setScene(sc);
+		stage.setResizable(false);
 		setStage(stage);
 
 		stage.initModality(Modality.APPLICATION_MODAL);

@@ -19,6 +19,7 @@ public class MainApp extends Application {
 		sc.getStylesheets().add(getClass().getResource("/app/diario/matriculas/styles.css").toExternalForm());
 
 		primaryStage.setTitle("Manutenção de Matrículas");
+		primaryStage.setResizable(false);
 		primaryStage.setScene(sc);
 
 		primaryStage.show();
