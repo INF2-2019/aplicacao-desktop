@@ -2,6 +2,7 @@ package app.diario.departamentos.controllers;
 
 import app.diario.departamentos.model.Departamento;
 import app.diario.departamentos.repository.DepartamentoRepository;
+import app.inicio.MainApp;
 import java.awt.event.KeyEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,6 +26,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.collections.transformation.FilteredList;
@@ -64,6 +67,9 @@ public class TableController implements Initializable {
 
     @FXML
     private TextField pesquisaTf;
+    
+    @FXML
+    private Button voltar;
 
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
@@ -73,6 +79,7 @@ public class TableController implements Initializable {
         ModalAdicionarController modalAdicionarController = modalAdicionarFXMLLoader.<ModalAdicionarController>getController();
 
         modalAdicionar.setScene(new Scene(modalAdicionarParent));
+        modalAdicionar.setResizable(false);
         modalAdicionar.initOwner(((Node) event.getSource()).getScene().getWindow());
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);
         modalAdicionar.showAndWait();
@@ -169,5 +176,17 @@ public class TableController implements Initializable {
             loadTableData();
             mostraAviso();
         });
+    }
+
+    @FXML
+    private void voltafunc(ActionEvent event) throws IOException {
+        MainApp main = new MainApp();
+        Stage tabelaDeptos = (Stage) voltar.getScene().getWindow();
+        tabelaDeptos.close();
+        try {
+            main.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
