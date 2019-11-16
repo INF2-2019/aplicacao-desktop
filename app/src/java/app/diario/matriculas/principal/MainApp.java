@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
+	private static Stage stage;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -22,6 +24,16 @@ public class MainApp extends Application {
 		primaryStage.setResizable(false);
 		primaryStage.setScene(sc);
 
+		setStage(primaryStage);
 		primaryStage.show();
 	}
+
+	public static Stage getStage() {
+		return stage;
+	}
+
+	public static void setStage(Stage stage) {
+		MainApp.stage = stage;
+	}
+	
 }

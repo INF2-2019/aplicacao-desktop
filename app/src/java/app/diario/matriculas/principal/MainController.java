@@ -1,5 +1,6 @@
 package app.diario.matriculas.principal;
 
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.diario.matriculas.consultar.ConsultaController;
 import app.diario.matriculas.consultar.ConsultaMain;
 import app.diario.matriculas.inserir.InsereMain;
@@ -138,7 +139,17 @@ public class MainController implements Initializable {
 	
 	@FXML
 	private void voltarAction(ActionEvent event) {
-		System.out.println("volta");
+		fecha();
+	}
+	
+	public void fecha(){
+		MainApp.getStage().close();
+		MainTelaTransicaoDiario mt = new MainTelaTransicaoDiario();
+		try {
+			mt.start(new Stage());
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 }

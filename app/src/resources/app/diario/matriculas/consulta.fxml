@@ -26,7 +26,7 @@
         </TableView>
         <BorderPane layoutY="-2.0" prefHeight="48.0" prefWidth="786.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <left>
-                <Label id="header-text" prefHeight="53.0" prefWidth="403.0" styleClass="h1" text="Consultar" />
+                <Label id="header-text" prefHeight="48.0" prefWidth="403.0" styleClass="h1" text="Consultar" />
             </left>
         </BorderPane>
     </children>
