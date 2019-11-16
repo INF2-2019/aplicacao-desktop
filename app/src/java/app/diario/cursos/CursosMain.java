@@ -18,6 +18,7 @@ public class CursosMain extends Application{
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
+        stage.setWidth(1280);
         setStage(stage);
     }
     public static void main(String[] args) {

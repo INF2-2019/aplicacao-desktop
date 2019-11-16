@@ -24,7 +24,7 @@
             <Font size="35.0" />
          </font>
       </Label>
-      <Button fx:id="adiciona" layoutX="962.0" layoutY="180.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" styleClass="fonte" text="ADICIONAR" textFill="WHITE" />
+      <Button fx:id="adiciona" layoutX="926.0" layoutY="180.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" styleClass="fonte" text="ADICIONAR" textFill="WHITE" />
       <Label layoutX="89.0" layoutY="86.0" styleClass="fonte" text="Cursos">
          <font>
             <Font size="65.0" />

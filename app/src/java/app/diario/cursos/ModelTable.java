@@ -76,6 +76,9 @@ public class ModelTable {
         edita.setOnMouseClicked((MouseEvent event) -> {
             EditarMain mainEditar = new EditarMain();
             ControllerEditar.setId(id);
+            ControllerEditar.setNome(nome);
+            ControllerEditar.setHoras(horas);
+            ControllerEditar.setModalidade(modalidade);
             try {
                 mainEditar.start(new Stage());
             } catch (Exception ex) {
