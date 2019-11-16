@@ -23,6 +23,8 @@ public class ProfessorMain extends Application {
         stage.setScene(scene);
         stage.show();
         setStage(stage);
+		stage.setResizable(false);
+		stage.setWidth(1280);
         
     }
 

@@ -28,6 +28,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import app.diario.professores.info.InfoMain;
 import app.utils.ConnectionFactory;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 
 /**
  *
@@ -60,6 +61,9 @@ public class TableController implements Initializable {
             
     @FXML
     private Button botaoAdicionar;
+	
+    @FXML
+    private Button voltar;
     
     
     
@@ -86,6 +90,17 @@ public class TableController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+	
+	@FXML
+    private void Voltar(javafx.event.ActionEvent event) {
+		MainTelaTransicaoDiario voltar = new MainTelaTransicaoDiario();
+        try {
+            voltar.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+		ProfessorMain.getStage().close();
     }
     
     

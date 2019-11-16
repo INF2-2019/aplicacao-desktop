@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-
-.label, .TableColumn{
-    -fx-font-family: 'Montserrat', sans-serif;
-}
 table-view, .tree-table-view {
     /* Constants used throughout the tableview. */
     -fx-table-header-border-color: transparent;
     -fx-table-cell-border-color: -fx-box-border; /* Horizontal Lines*/
     -fx-background-color: transparent;
-    -fx-font-family: 'Montserrat', sans-serif;
     
 }
 
@@ -22,7 +16,6 @@ table-view, .tree-table-view {
     -fx-border-style: null;
     -fx-border-width: 0 0 2 0;
     -fx-background-color: transparent;
-    -fx-font-family: 'Montserrat', sans-serif;
     
    
     
@@ -31,7 +24,6 @@ table-view, .tree-table-view {
 .table-view .show-hide-columns-button, .tree-table-view .show-hide-columns-button
 {
     -fx-background-color: transparent;
-    -fx-font-family: 'Montserrat', sans-serif;
     
 }
 
@@ -41,14 +33,12 @@ table-view, .tree-table-view {
 {
     -fx-alignment: CENTER_LEFT;
     -fx-text-fill: #377256;
-    -fx-font-family: 'Montserrat', sans-serif;
    
 }
 
 .table-view .column-header-background, .tree-table-view .column-header-background
 {
     -fx-background-color: transparent;
-    -fx-font-family: 'Montserrat', sans-serif;
     
     
     
@@ -56,47 +46,37 @@ table-view, .tree-table-view {
 
 .table-row-cell, .tree-table-row-cell {
     -fx-cell-size: 40px;
-    -fx-font-family: 'Montserrat', sans-serif;
     
 }
 
 .table-cell {
     -fx-border-color: transparent; /* Vertical Lines*/
     -fx-border-width: 1;
-    -fx-font-family: 'Montserrat', sans-serif;
     
 }
 .table-view{
     -fx-border-color: transparent;
     -fx-alignment: CENTER_LEFT;
-    -fx-font-family: 'Montserrat', sans-serif;
    
     
 }
 #deleta{
     -fx-background-color: #E53935;
     -fx-text-fill: white;
-    -fx-font-family: 'Montserrat', sans-serif;
     
     
 }
 #edita{
     -fx-background-color: #2C46A5;
     -fx-text-fill: white;
-    -fx-font-family: 'Montserrat', sans-serif;
     
 
 }
 #info{
     -fx-background-color: #00b0ff;
     -fx-text-fill: white;
-    -fx-font-family: 'Montserrat', sans-serif;
 
 }
-#adiciona{
-    -fx-font-family: 'Montserrat', sans-serif;
-}
-
-#siapeInput, #idDeptoInput, #emailInput, #senhaInput, #nomeInput, #titulacaoInput{
-    
+.button{
+    -fx-cursor:hand;
 }
