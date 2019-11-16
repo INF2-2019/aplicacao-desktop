@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#refresh" onMouseEntered="#refresh" prefHeight="914.0" prefWidth="1310.0" styleClass="fonte" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerTable">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#refresh" onMouseEntered="#refresh" prefHeight="914.0" prefWidth="1310.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerTable">
    <children>
       <TableView fx:id="table" layoutX="185.0" layoutY="205.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#refresh" pickOnBounds="false" prefHeight="689.0" prefWidth="856.0" style="-fx-border-color: #ffffff;" styleClass="fonte" stylesheets="@style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="269.0" AnchorPane.topAnchor="205.0">
          <columns>
@@ -31,4 +31,8 @@
          </font>
       </Label>
    </children>
+   <styleClass>
+      <String fx:value="fonte" />
+      <String fx:value="ancora" />
+   </styleClass>
 </AnchorPane>

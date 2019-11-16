@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="676.0" styleClass="fonte" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerEditar">
+<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="676.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerEditar">
     <children>
       <Label fx:id="idDeptoLabel" layoutX="139.0" layoutY="66.0" minHeight="16" minWidth="69" text="   ID-DEPTO" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
@@ -42,4 +42,8 @@
       <TextField fx:id="modalidadeInput" layoutX="279.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
       <Label fx:id="errorLabel" layoutX="429.0" layoutY="155.0" styleClass="fonte" textFill="#e53935" />
     </children>
+   <styleClass>
+      <String fx:value="fonte" />
+      <String fx:value="ancora" />
+   </styleClass>
 </AnchorPane>

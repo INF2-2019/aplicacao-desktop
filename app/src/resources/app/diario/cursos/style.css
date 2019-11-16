@@ -62,10 +62,7 @@ table-view, .tree-table-view {
     -fx-text-fill: white;
 
 }
-.coluna{
-    -fx-font-family: 'Montserrat',sans-serif;
-}
 
-.fonte{
-    -fx-font-family: 'Montserrat',sans-serif;
+.ancora{
+    -fx-background-color: white;
 }

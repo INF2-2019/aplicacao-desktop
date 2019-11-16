@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" styleClass="fonte" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerDeleta">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.cursos.ControllerDeleta">
    <children>
       <Button fx:id="deleteLabelConfirmar" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" onAction="#confirma" style="-fx-background-color: #29a58c;" text="CONFIRMAR" textFill="WHITE" />
       <Button fx:id="deleteLabelCancelar" layoutX="172.0" layoutY="113.0" mnemonicParsing="false" onAction="#cancela" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
@@ -17,4 +17,8 @@
          </font>
       </Label>
    </children>
+   <styleClass>
+      <String fx:value="fonte" />
+      <String fx:value="ancora" />
+   </styleClass>
 </AnchorPane>
