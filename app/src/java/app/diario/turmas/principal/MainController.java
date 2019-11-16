@@ -23,11 +23,6 @@ import javafx.stage.Stage;
 
 public class MainController implements Initializable {
 
-	private final String URL_CONSULTAR = "http://localhost:8080/app/diario/turmas/consultar";
-	private final String URL_INSERIR = "http://localhost:8080/app/diario/turmas/inserir";
-	private final String URL_ALTERAR = "http://localhost:8080/app/diario/turmas/alterar";
-	private final String URL_DELETAR = "http://localhost:8080/app/diario/turmas/deletar";
-
 	public static ObservableList<Turma> tabList = FXCollections.observableArrayList();
 
 	public static int fixedId = 0;
