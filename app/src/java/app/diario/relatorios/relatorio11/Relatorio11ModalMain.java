@@ -13,10 +13,10 @@ public class Relatorio11ModalMain extends Application {
 	private static Stage stage;
 
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/relatorio11Modal.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/relatorio11/relatorio11Modal.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/principal/styles.css").toExternalForm());
 
 		stage.setTitle("Relatório 11");
 		stage.setScene(sc);
