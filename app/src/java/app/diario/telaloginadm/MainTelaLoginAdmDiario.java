@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -21,7 +20,6 @@ public class MainTelaLoginAdmDiario extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setWidth(1280);
-//        stage.getIcons().add(new Image("file:/src/resources/imgs/logoDiario.png"));
         stage.show();
     }
 

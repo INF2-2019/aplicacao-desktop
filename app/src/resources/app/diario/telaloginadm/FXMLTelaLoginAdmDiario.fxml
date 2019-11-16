@@ -40,7 +40,7 @@
                <children>
                   <AnchorPane prefHeight="672.0" prefWidth="640.0" GridPane.columnIndex="1">
                      <children>
-                        <Label id="lblLogin" layoutX="295.0" layoutY="195.0" text="Login">
+                        <Label id="lblLogin" layoutX="291.0" layoutY="195.0" text="LOGIN">
                            <font>
                               <Font size="20.0" />
                            </font>

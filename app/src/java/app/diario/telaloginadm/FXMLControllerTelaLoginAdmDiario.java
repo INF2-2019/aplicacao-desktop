@@ -48,8 +48,6 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
         
         senha = Hasher.hash(senha);
         
-        System.out.println("Usuário: "+usuario+". Senha: "+senha+".");
-        
         txtFieldUsuario.setText("");
         passwordFieldSenha.setText("");
         
@@ -64,9 +62,7 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
                 stmt.setString(1, usuario);
                 stmt.setString(2, senha);
                 ResultSet rs = stmt.executeQuery();
-                System.out.println(rs.toString());
                 if (rs.next()) {
-                    System.out.println("Usuário e senha equivalentes com o do db");
                     Stage stage = (Stage) btnAdmEntraDiario.getScene().getWindow();
                     stage.close();
                     Parent root = FXMLLoader.load(MainApp.class.getResource("/app/diario/telatransicao/FXMLTelaTransicaoDiario.fxml"));
