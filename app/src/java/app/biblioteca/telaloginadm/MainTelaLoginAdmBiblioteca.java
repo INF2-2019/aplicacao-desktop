@@ -1,4 +1,4 @@
-package app.inicio;
+package app.biblioteca.telaloginadm;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,14 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class MainApp extends Application {
+public class MainTelaLoginAdmBiblioteca extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLInicio.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaLoginAdmBiblioteca.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("EstiloInicio.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("EstiloTelaLoginAdmBiblioteca.css").toExternalForm());
         
         stage.setTitle("Sistema Acadêmico");
         stage.setScene(scene);
@@ -26,4 +26,5 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }
