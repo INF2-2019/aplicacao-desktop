@@ -16,7 +16,7 @@ public class InsereLivroMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/inserir/livro/InsereLivroFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/InsereLivro.fxml"));
         
         Scene scene = new Scene(root);
         

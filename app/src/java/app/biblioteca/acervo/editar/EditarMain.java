@@ -16,7 +16,7 @@ public class EditarMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/editar/EditarFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/Editar.fxml"));
         
         Scene scene = new Scene(root);
         

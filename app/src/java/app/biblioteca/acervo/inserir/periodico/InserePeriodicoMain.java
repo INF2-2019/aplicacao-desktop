@@ -17,7 +17,7 @@ public class InserePeriodicoMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/inserir/periodico/InserePeriodicosFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/InserePeriodicos.fxml"));
         
         Scene scene = new Scene(root);
         
