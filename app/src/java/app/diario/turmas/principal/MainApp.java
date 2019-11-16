@@ -19,6 +19,7 @@ public class MainApp extends Application {
 		sc.getStylesheets().add(getClass().getResource("/app/diario/turmas/styles.css").toExternalForm());
 
 		primaryStage.setTitle("Manutenção de Turmas");
+		primaryStage.setResizable(false);
 		primaryStage.setScene(sc);
 
 		primaryStage.show();

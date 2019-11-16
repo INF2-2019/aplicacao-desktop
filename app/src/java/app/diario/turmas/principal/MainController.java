@@ -124,5 +124,10 @@ public class MainController implements Initializable {
 			System.out.println(ex);
 		}
 	}
+	
+	@FXML
+	private void voltarAction(ActionEvent event) {
+		System.out.println("volta");
+	}
 
 }
