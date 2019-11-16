@@ -1,4 +1,4 @@
-package RespostaXML;
+package app;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
