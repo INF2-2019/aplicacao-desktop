@@ -5,6 +5,7 @@
  */
 package app.diario.cursos;
 
+import app.inicio.MainApp;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -45,6 +46,8 @@ public class ControllerTable implements Initializable{
     private TableColumn<ModelTable, Button> col_funcoes1;
     @FXML
     private TableColumn<ModelTable, Button> col_funcoes2;
+    @FXML
+    private Button voltar;
     
     @FXML
     private void Insere(javafx.event.ActionEvent event) {
@@ -52,6 +55,16 @@ public class ControllerTable implements Initializable{
        ControllerInsere controlador = new ControllerInsere();
         try {
             insere.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(ControllerTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    @FXML 
+    public void acaoVoltar(){
+        MainApp main = new MainApp();
+        fecha();
+        try {
+            main.start(new Stage());
         } catch (Exception ex) {
             Logger.getLogger(ControllerTable.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -126,5 +139,8 @@ public class ControllerTable implements Initializable{
         resultadoBusca =  stmt.executeQuery();
         resultadoBusca.next();
         return resultadoBusca.getString("nome");
+    }
+    public void fecha() {
+        CursosMain.getStage().close();
     }
 }

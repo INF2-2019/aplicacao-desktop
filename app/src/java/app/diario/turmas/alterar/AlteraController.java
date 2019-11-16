@@ -1,6 +1,6 @@
 package app.diario.turmas.alterar;
 
-import PacoteInsere.InsereController;
+import app.diario.turmas.inserir.InsereController;
 import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.MainController;
 import java.net.URL;

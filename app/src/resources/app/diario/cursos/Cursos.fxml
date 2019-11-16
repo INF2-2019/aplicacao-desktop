@@ -21,15 +21,16 @@
       </TableView>
       <Label prefHeight="51.0" prefWidth="1310.0" style="-fx-background-color: #29A58C;" styleClass="fonte" text="Sistema Academico" textFill="WHITE">
          <font>
-            <Font size="35.0" />
+            <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="adiciona" layoutX="926.0" layoutY="180.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" styleClass="fonte" text="ADICIONAR" textFill="WHITE" />
+      <Button fx:id="adiciona" layoutX="926.0" layoutY="180.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" styleClass="botoes" text="ADICIONAR" textFill="WHITE" />
       <Label layoutX="89.0" layoutY="86.0" styleClass="fonte" text="Cursos">
          <font>
             <Font size="65.0" />
          </font>
       </Label>
+      <Button fx:id="voltar" layoutX="159.0" layoutY="824.0" mnemonicParsing="false" onMouseClicked="#acaoVoltar" style="-fx-background-color: #29A58C;" styleClass="botoes" text="VOLTAR" textFill="WHITE" />
    </children>
    <styleClass>
       <String fx:value="fonte" />

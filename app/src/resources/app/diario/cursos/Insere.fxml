@@ -34,8 +34,8 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Button fx:id="botaoCancelar" layoutX="469.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
-      <Button fx:id="botaoSalvar" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE" />
+      <Button fx:id="botaoCancelar" layoutX="469.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" styleClass="botoes" text="CANCELAR" textFill="WHITE" />
+      <Button fx:id="botaoSalvar" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c;" styleClass="botoes" text="SALVAR" textFill="WHITE" />
       <TextField fx:id="horasInput" layoutX="260.0" layoutY="109.0" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="nomeInput" layoutX="91.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="modalidadeInput" layoutX="279.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
