@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*{
+    -fx-font-family: 'Montserrat',sans-serif;
+    -fx-spacing: 1em;
+}
+
+.header{
+    -fx-background-color:#29a48c;
+    -fx-padding: 10px;
+}
+
+.container{
+    -fx-padding: 10px;
+}
+
+.header .h1{
+    -fx-text-fill: #fff;
+    -fx-font-size: 32px;
+}
+
+.turmas{
+    -fx-text-fill: black;
+    -fx-font-size: 3em;
+}
+
+.generalLabel{
+    -fx-text-fill: #29a48c;
+    -fx-font-size: 2em;
+}
+
+.errorLabel{
+    -fx-text-fill: #e53935;
+    -fx-font-size: 2em;
+}
+
+.generalInput{
+    -fx-border-color: #9e9e9e;
+    -fx-border-width: 0 0 2px 0;
+    -fx-focus-color: transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+
+.greenBtn{
+    -fx-focus-color: transparent;
+    -fx-background-color: #29a48c;
+    -fx-padding: 1em 3em;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1em;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 1);
+}
+
+.blueBtn{
+    -fx-focus-color: transparent;
+    -fx-background-color: #00dcff;
+    -fx-padding: 1em 3em;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1em;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 1);
+}
+
+.redBtn{
+    -fx-focus-color: transparent;
+    -fx-background-color: #e53935;
+    -fx-padding: 1em 3em;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1em;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 1);
+}
+
+.greenBtn:hover, .blueBtn:hover, .redBtn:hover, #altera:hover, #deleta:hover{
+    -fx-cursor: hand;
+}
+
+
+.greenBtn:pressed, .blueBtn:pressed, .redBtn:pressed, #altera:pressed, #deleta:pressed{
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-scale-z: 0.98;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+
+.column-header{
+    -fx-text-fill: #646464;
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #646464;
+}
+
+.column-header > *{
+    -fx-text-fill: #646464;
+}
+
+.column-header-background{
+    -fx-background-color: transparent;
+}
+
+.menu-bar .h1{
+    -fx-text-fill: #fff;
+}
+
+#altera{
+    -fx-focus-color: transparent;
+    -fx-background-color: #3005b1;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 1); 
+}
+
+#deleta{
+    -fx-focus-color: transparent;
+    -fx-background-color: #e53935;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 1);
+}
