@@ -1,0 +1,20 @@
+.button{
+    -fx-text-fill: #FDFBF9;
+    -fx-padding: 9.5px;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 2px;
+    -fx-cursor: hand;
+}
+
+#devolver{
+    -fx-background-color: #00B0FF;
+}
+#deleta{
+    -fx-background-color: #E53935;
+    -fx-text-fill: white;
+}
+#altera{
+    -fx-background-color: #2C46A5;
+    -fx-text-fill: white;
+}
+
