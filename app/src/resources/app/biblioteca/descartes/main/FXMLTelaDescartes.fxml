@@ -16,15 +16,15 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@styles.css" type="StackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.descartes.controllers.TelaDescartesController">
+<fx:root alignment="TOP_CENTER" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@styles.css" type="StackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.descartes.controllers.TelaDescartesController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="47.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Label fx:id="label" text="S.A. Admin" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
-            <Insets left="10.0" top="12.0" />
+            <Insets left="10.0" />
          </StackPane.margin>
          <font>
-            <Font size="27.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <Label styleClass="titulo" text="DESCARTES" StackPane.alignment="TOP_LEFT">
@@ -51,10 +51,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <StackPane.margin>
-            <Insets top="20.0" />
+            <Insets top="50.0" />
          </StackPane.margin>
       </TableView>
-      <Button fx:id="Voltar" mnemonicParsing="false" onAction="#acaoVoltar" onMouseClicked="#acaoVoltar" stylesheets="@styles.css" text="Voltar" StackPane.alignment="BOTTOM_LEFT">
+      <Button fx:id="Voltar" graphicTextGap="0.0" mnemonicParsing="false" onAction="#acaoVoltar" onMouseClicked="#acaoVoltar" stylesheets="@styles.css" text="VOLTAR" StackPane.alignment="BOTTOM_LEFT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
