@@ -1,7 +1,7 @@
 package app.diario.turmas.deletar;
 
-import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.MainController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -40,7 +40,7 @@ public class DeletaController implements Initializable {
 
 	@FXML
 	private void deletaAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-		Connection con = Conector.conectar();
+		Connection con = ConnectionFactory.getDiario();
 		String sql = "DELETE FROM turmas WHERE id = " + id;
 		int res = con.createStatement().executeUpdate(sql);
 		MainController.updateTab();

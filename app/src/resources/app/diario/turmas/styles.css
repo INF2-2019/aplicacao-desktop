@@ -5,6 +5,8 @@
 .header{
     -fx-background-color:#29a48c;
     -fx-padding: 10px;
+    -fx-pref-width:1280px;
+    -fx-pref-heigth:48px;
 }
 
 .container{
