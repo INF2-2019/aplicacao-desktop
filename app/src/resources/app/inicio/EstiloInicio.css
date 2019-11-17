@@ -1,0 +1,17 @@
+#lblSistemaAcademico {
+    -fx-background-color: #29a58c;
+}
+
+#btnEntraSistemaDiario {
+    -fx-pref-width: 250;
+    -fx-pref-heigth: 50;
+}
+
+#btnEntraSistemaBiblioteca {
+    -fx-pref-width: 250;
+    -fx-pref-heigth: 50;
+}
+
+.backgroundBtn {
+    -fx-background-color: #29A58C;
+}

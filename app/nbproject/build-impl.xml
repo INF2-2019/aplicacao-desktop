@@ -77,11 +77,15 @@ is divided into following sections:
             <and>
                 <isset property="javac.profile"/>
                 <length length="0" string="${javac.profile}" when="greater"/>
+<<<<<<< HEAD
 <<<<<<< HEAD:java/nbproject/build-impl.xml
                 <matches pattern="((1\.[89])|9)(\..*)?" string="${javac.source}"/>
 =======
                 <matches pattern="1\.[89](\..*)?" string="${javac.source}"/>
 >>>>>>> dev:app/nbproject/build-impl.xml
+=======
+                <matches pattern="1\.[89](\..*)?" string="${javac.source}"/>
+>>>>>>> dev
             </and>
         </condition>
         <condition property="do.archive">
@@ -197,6 +201,7 @@ is divided into following sections:
                 </not>
             </and>
         </condition>
+<<<<<<< HEAD
 <<<<<<< HEAD:java/nbproject/build-impl.xml
         <condition else="false" property="javac.fork">
             <or>
@@ -207,6 +212,9 @@ is divided into following sections:
 =======
         <property name="javac.fork" value="${jdkBug6558476}"/>
 >>>>>>> dev:app/nbproject/build-impl.xml
+=======
+        <property name="javac.fork" value="${jdkBug6558476}"/>
+>>>>>>> dev
         <property name="jar.index" value="false"/>
         <property name="jar.index.metainf" value="${jar.index}"/>
         <property name="copylibs.rebase" value="true"/>
@@ -784,11 +792,15 @@ is divided into following sections:
             <attribute default="${debug.classpath}" name="classpath"/>
             <element name="customize" optional="true"/>
             <sequential>
+<<<<<<< HEAD
 <<<<<<< HEAD:java/nbproject/build-impl.xml
                 <java classname="@{classname}" dir="${work.dir}" failonerror="${java.failonerror}" fork="true">
 =======
                 <java classname="@{classname}" dir="${work.dir}" fork="true">
 >>>>>>> dev:app/nbproject/build-impl.xml
+=======
+                <java classname="@{classname}" dir="${work.dir}" fork="true">
+>>>>>>> dev
                     <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
                     <jvmarg line="${debug-args-line}"/>
                     <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
@@ -815,11 +827,15 @@ is divided into following sections:
             <attribute default="jvm" name="jvm"/>
             <element name="customize" optional="true"/>
             <sequential>
+<<<<<<< HEAD
 <<<<<<< HEAD:java/nbproject/build-impl.xml
                 <java classname="@{classname}" dir="${work.dir}" failonerror="${java.failonerror}" fork="true">
 =======
                 <java classname="@{classname}" dir="${work.dir}" fork="true">
 >>>>>>> dev:app/nbproject/build-impl.xml
+=======
+                <java classname="@{classname}" dir="${work.dir}" fork="true">
+>>>>>>> dev
                     <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
                     <jvmarg value="-Dfile.encoding=${runtime.encoding}"/>
                     <redirector errorencoding="${runtime.encoding}" inputencoding="${runtime.encoding}" outputencoding="${runtime.encoding}"/>
