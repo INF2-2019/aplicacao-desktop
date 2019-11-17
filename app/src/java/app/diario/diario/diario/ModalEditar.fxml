@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="275.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.diario.controllers.ModalEditarController">
+   <children>
+      <Label fx:id="aviso" style="-fx-background-color: red;" textAlignment="RIGHT" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelarBtn" alignment="TOP_RIGHT" layoutX="573.0" layoutY="197.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: #E53935;" text="Cancelar" textFill="#fdfbf9">
+       
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="editarBtn" layoutX="432.0" layoutY="197.0" mnemonicParsing="false" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Editar" textFill="#fdfbf9">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="Etapa" layoutX="14.0" layoutY="115.0" text="Etapa" textFill="#29a58c">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="EdEtapa" layoutX="144.0" layoutY="113.0" prefHeight="27.0" prefWidth="365.0" style="-fx-border-color: #29A58C; -fx-background-color: #FAFAFA;" />
+      <TextField fx:id="EdConteudo" layoutX="144.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="381.0" promptText="Nome" style="-fx-border-color: #29A58C;" />
+      <Label layoutX="8.0" layoutY="77.0" text="Conteudo" textFill="#29a58c">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="8.0" layoutY="10.0" prefHeight="58.0" prefWidth="391.0" text="Editar Conteúdo">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="Etapa1" layoutX="14.0" layoutY="159.0" text="Data" textFill="#29a58c">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="EdData" layoutX="144.0" layoutY="166.0" style="-fx-border-color: #29A58C;" />
+   </children>
+</Pane>
