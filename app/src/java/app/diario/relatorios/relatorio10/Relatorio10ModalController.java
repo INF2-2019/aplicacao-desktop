@@ -1,6 +1,6 @@
 package app.diario.relatorios.relatorio10;
 
-import app.diario.turmas.principal.Conector;
+import app.utils.ConnectionFactory;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -47,7 +47,7 @@ public class Relatorio10ModalController implements Initializable {
 	private void salvarAction(ActionEvent event) throws SQLException, ClassNotFoundException, DocumentException, FileNotFoundException {
 		if (podeGerar) {
 			nomeAluno = selectAluno.getValue().toString();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			final DirectoryChooser dir = new DirectoryChooser();
 
 			Stage stage = (Stage) impressoBtn.getScene().getWindow();
@@ -169,7 +169,7 @@ public class Relatorio10ModalController implements Initializable {
 		});
 		try {
 			ObservableList lista = FXCollections.observableArrayList();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM alunos";
 			ResultSet res = con.createStatement().executeQuery(sql);
 			while (res.next()) {
@@ -178,8 +178,6 @@ public class Relatorio10ModalController implements Initializable {
 			con.close();
 			selectAluno.setItems(lista);
 		} catch (SQLException ex) {
-			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (ClassNotFoundException ex) {
 			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}

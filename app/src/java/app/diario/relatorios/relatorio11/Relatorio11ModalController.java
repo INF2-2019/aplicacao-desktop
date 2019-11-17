@@ -1,7 +1,7 @@
 package app.diario.relatorios.relatorio11;
 
 import app.diario.relatorios.relatorio10.Relatorio10Controller;
-import app.diario.turmas.principal.Conector;
+import app.utils.ConnectionFactory;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -52,7 +52,7 @@ public class Relatorio11ModalController implements Initializable {
 			SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 			nomeDisciplina = selectDisciplina.getValue().toString();
 			idEtapa = Integer.parseInt(selectEtapa.getValue().toString());
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			final DirectoryChooser dir = new DirectoryChooser();
 
 			Stage stage = (Stage) impressoBtn.getScene().getWindow();
@@ -133,7 +133,7 @@ public class Relatorio11ModalController implements Initializable {
 		});
 		try {
 			ObservableList lista = FXCollections.observableArrayList();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM disciplinas";
 			ResultSet res = con.createStatement().executeQuery(sql);
 			while (res.next()) {
@@ -149,8 +149,6 @@ public class Relatorio11ModalController implements Initializable {
 			selectEtapa.setItems(lista2);
 			con.close();
 		} catch (SQLException ex) {
-			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (ClassNotFoundException ex) {
 			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}

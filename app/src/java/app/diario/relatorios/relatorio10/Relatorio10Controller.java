@@ -1,6 +1,6 @@
 package app.diario.relatorios.relatorio10;
 
-import app.diario.turmas.principal.Conector;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -53,7 +53,7 @@ public class Relatorio10Controller implements Initializable {
 		colNotas.setCellValueFactory(new PropertyValueFactory<>("nota"));
 		try {
 			ObservableList<Relatorio10Model> lista = FXCollections.observableArrayList();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM alunos WHERE nome='" + nomeAluno + "'"; // Pega o id do aluno escolhido
 			ResultSet res = con.createStatement().executeQuery(sql);
 			if (res.next()) {
@@ -107,8 +107,6 @@ public class Relatorio10Controller implements Initializable {
 			}
 
 		} catch (SQLException ex) {
-			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (ClassNotFoundException ex) {
 			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}

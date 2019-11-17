@@ -1,6 +1,6 @@
 package app.diario.relatorios.relatorio11;
 
-import app.diario.turmas.principal.Conector;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -40,7 +40,7 @@ public class Relatorio11Controller implements Initializable {
 		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 			ObservableList<Relatorio11Model> lista = FXCollections.observableArrayList();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM disciplinas WHERE nome='" + disciplina + "'";
 			ResultSet res = con.createStatement().executeQuery(sql);
 			if (res.next()) {
@@ -54,8 +54,6 @@ public class Relatorio11Controller implements Initializable {
 			}
 			tab.setItems(lista);
 		} catch (SQLException ex) {
-			System.out.println(ex);
-		} catch (ClassNotFoundException ex) {
 			System.out.println(ex);
 		}
 	}
