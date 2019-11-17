@@ -5,6 +5,15 @@
     -fx-background-radius: 2px;
     -fx-cursor: hand;
 }
+.table-cell{
+    -fx-alignment: CENTER;
+}
+.table-view .column-header{
+   -fx-background-color: white; 
+   -fx-text-fill: #29a58c;
+   -fx-border-width: 0 0 1 0;
+   -fx-border-color:#F2F2F2;
+}
 .info{
     -fx-background-color: #00B0FF;
 }
