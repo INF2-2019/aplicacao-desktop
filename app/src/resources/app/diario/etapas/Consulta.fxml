@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import app.diario.etapas.PacoteConsulta.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PacoteConsulta.ConsultaController">
+<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.etapas.PacoteConsulta.ConsultaController">
     <children>
       <Label fx:id="AnoLabel" layoutX="288.0" layoutY="85.0" minHeight="16" minWidth="69" text="       ANO" textAlignment="CENTER" textFill="#5dbaa7">
          <font>

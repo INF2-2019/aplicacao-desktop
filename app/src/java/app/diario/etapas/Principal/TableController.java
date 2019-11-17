@@ -18,7 +18,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import app.diario.etapas.PacoteInsere.InsereMain;
+import java.io.IOException;
 import java.sql.PreparedStatement;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 /**
  *
@@ -123,5 +126,14 @@ public class TableController implements Initializable{
         table.setItems(oblist);
     }
     
+    @FXML
+     public void voltar() {
+        try {
+            Main.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
 
 }

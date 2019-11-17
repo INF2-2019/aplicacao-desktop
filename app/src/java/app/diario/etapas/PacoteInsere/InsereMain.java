@@ -11,7 +11,7 @@ public class InsereMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Insere.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/etapas/Insere.fxml"));
         
         Scene scene = new Scene(root);
         

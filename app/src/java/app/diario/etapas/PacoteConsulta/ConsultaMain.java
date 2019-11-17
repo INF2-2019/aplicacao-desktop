@@ -11,7 +11,7 @@ public class ConsultaMain extends Application {
 	
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Consulta.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/etapas/Consulta.fxml"));
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
