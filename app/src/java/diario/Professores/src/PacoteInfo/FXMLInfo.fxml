@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="689.0" stylesheets="@../../../../../Área%20de%20Trabalho/Cursos/src/Principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PacoteInfo.FXMLInfoController">
+   <children>
+      <Label layoutX="15.0" prefHeight="67.0" prefWidth="246.0" textFill="#5dbaa7" text="Informações">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="88.0"  textFill="#5dbaa7" text="ID :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="88.0" prefHeight="30.0" textFill="#5dbaa7" prefWidth="163.0" />
+      <Label layoutX="14.0" layoutY="141.0" textFill="#5dbaa7" text="Nome:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelId" layoutX="56.0" textFill="#5dbaa7" layoutY="88.0" prefHeight="30.0" prefWidth="163.0" />
+      <Label fx:id="labelNome" layoutX="91.0" textFill="#5dbaa7" layoutY="141.0" prefHeight="30.0" prefWidth="163.0" />
+      <Label layoutX="14.0" layoutY="197.0" textFill="#5dbaa7" text="Departamento:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelDepartamento" layoutX="162.0" layoutY="197.0" textFill="#5dbaa7" prefHeight="30.0" prefWidth="178.0" />
+      <Label layoutX="14.0" layoutY="256.0" textFill="#5dbaa7" text="Titulação:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="256.0" prefHeight="30.0" textFill="#5dbaa7" prefWidth="178.0" />
+      <Label layoutX="14.0" layoutY="318.0" textFill="#5dbaa7" text="Email:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTitulacao" layoutX="130.0" layoutY="256.0" textFill="#5dbaa7" prefHeight="30.0" prefWidth="178.0" />
+      <Label fx:id="labelEmail" layoutX="91.0" layoutY="318.0" textFill="#5dbaa7" prefHeight="30.0" prefWidth="178.0" />
+   </children>
+</AnchorPane>

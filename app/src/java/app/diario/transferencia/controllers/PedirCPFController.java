@@ -2,7 +2,7 @@ package app.diario.transferencia.controllers;
 
 import app.diario.transferencia.repository.TransferenciaRepository;
 import app.diario.transferencia.utils.Validacao;
-import app.inicio.MainApp;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -100,7 +100,7 @@ public class PedirCPFController implements Initializable {
 
     @FXML
     private void voltafunc(ActionEvent event) {
-        MainApp main = new MainApp();
+        MainTelaTransicaoDiario main = new MainTelaTransicaoDiario();
         Stage tabelaDeptos = (Stage) voltar.getScene().getWindow();
         tabelaDeptos.close();
         try {

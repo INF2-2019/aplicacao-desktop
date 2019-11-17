@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="233.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PacoteInsere.InsereController">
+    <children>
+      <Label fx:id="idDeptoLabel" layoutX="14.0" layoutY="81.0" minHeight="16" minWidth="69" text="   ID-DEPTO" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomeLabel" layoutX="14.0" layoutY="155.0" minHeight="16" minWidth="69" text="    NOME" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="horasLabel" layoutX="143.0" layoutY="81.0" minHeight="16" minWidth="69" text="SEAP" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="modalidadeLabel" layoutX="193.0" layoutY="155.0" minHeight="16" minWidth="69" text="TITULAÇÃO" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="23.0" text="Inserir Professor" textFill="#377256">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="botaoCancelar" layoutX="469.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935; -fx-" text="CANCELAR" textFill="WHITE" />
+      <Button fx:id="botaoSalvar" layoutX="558.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE" />
+      <TextField fx:id="idDeptoInput" layoutX="14.0" layoutY="109.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
+      <TextField fx:id="seapInput" layoutX="143.0" layoutY="109.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
+      <TextField fx:id="nomeInput" layoutX="14.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
+      <TextField fx:id="titulacaoInput" layoutX="193.0" layoutY="181.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="emailLabel" layoutX="262.0" layoutY="81.0" minHeight="16" minWidth="69" text="EMAIL" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailInput" layoutX="262.0" layoutY="109.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="senhaLabel" layoutX="435.0" layoutY="81.0" minHeight="16" minWidth="69" text="SENHA" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="senhaInput" layoutX="432.0" layoutY="109.0" prefWidth="150.0" style="-fx-background-color: #dddddd;" />
+    </children>
+</AnchorPane>

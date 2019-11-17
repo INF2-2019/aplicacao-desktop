@@ -19,11 +19,11 @@ public class MainApp extends Application {
         stage.setTitle("Sistema Acadêmico");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setWidth(1280);
         stage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-
 }
