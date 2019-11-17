@@ -210,7 +210,13 @@ public class FXMLAcervoAcademicosController implements Initializable {
     
     @FXML
     public void volta() {
-        RelAcervoAcademicosMain.getStage().close();
+        try {
+            //.start(new Stage());
+            RelAcervoAcademicosMain.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLAcervoAcademicosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     
     }
     

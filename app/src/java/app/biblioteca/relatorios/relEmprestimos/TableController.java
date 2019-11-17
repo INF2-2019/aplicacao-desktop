@@ -181,7 +181,12 @@ public class TableController implements Initializable{
     
      @FXML
     public void volta() {
-        RelEmprestimosMain.getStage().close();
-    
+        //declaracao para a tela de transição
+        try {
+            //.start(new Stage());
+            RelEmprestimosMain.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 }

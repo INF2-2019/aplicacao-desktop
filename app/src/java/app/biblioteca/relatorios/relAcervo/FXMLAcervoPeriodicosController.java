@@ -125,7 +125,7 @@ public class FXMLAcervoPeriodicosController implements Initializable {
 
 	    con.close();
 	} catch (SQLException ex) {
-	    Logger.getLogger(FXMLAcervoLivrosController.class.getName()).log(Level.SEVERE, null, ex);
+	    Logger.getLogger(FXMLAcervoPeriodicosController.class.getName()).log(Level.SEVERE, null, ex);
 	}
     }
 
@@ -238,7 +238,13 @@ public class FXMLAcervoPeriodicosController implements Initializable {
     
      @FXML
     public void volta() {
-        RelAcervoPeridiocosMain.getStage().close();
+        //declaracao para a tela de transição
+        try {
+            //.start(new Stage());
+            RelAcervoPeridiocosMain.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLAcervoPeriodicosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
 }

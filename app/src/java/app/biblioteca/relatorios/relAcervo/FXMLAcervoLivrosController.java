@@ -218,8 +218,12 @@ public class FXMLAcervoLivrosController implements Initializable {
     
     @FXML
     public void volta() {
-        RelAcervoLivrosMain.getStage().close();
-    
+        try {
+            //.start(new Stage());
+            RelAcervoLivrosMain.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLAcervoLivrosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

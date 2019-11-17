@@ -103,7 +103,7 @@ public class FXMLReservasController implements Initializable {
 	    con.close();
 
 	} catch (SQLException ex) {
-	    Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+	    Logger.getLogger(FXMLReservasController.class.getName()).log(Level.SEVERE, null, ex);
 	}
     }
 
@@ -189,7 +189,13 @@ public class FXMLReservasController implements Initializable {
     
       @FXML
     public void volta() {
-        RelReservasMain.getStage().close();
+        //declaracao para a tela de transição
+        try {
+            //.start(new Stage());
+            RelReservasMain.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLReservasController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
 }

@@ -211,8 +211,14 @@ public class FXMLAcervoMidiasController implements Initializable {
     }
 
      @FXML
-    public void volta() {
-        RelAcervoMidiasMain.getStage().close();
+    public void volta() {//declaracao para a tela de transição
+        try {
+            //.start(new Stage());
+            RelAcervoMidiasMain.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLAcervoMidiasController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     
     }
 }
