@@ -19,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.Funções;
+import app.biblioteca.descartes.main.MainApp;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
@@ -54,11 +55,14 @@ public class TelaDescartesController implements Initializable {
 
    List<DescartadoLista> ListaDescartados;
 private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
-
+    @FXML 
+    public void acaoVoltar(){
+         MainApp.getStage().close();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    
+        
     List ListaD = null;
       Funções fun =new Funções();
         try {

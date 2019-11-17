@@ -1,7 +1,6 @@
-package app;
+package app.util;
 
-//package utils;
-/*
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -41,12 +40,9 @@ public class ConnectionFactory {
 	}
     }
   
-    public static Connection getDiario() {
-		return getConnection("diario");
-	}
+    
 
 	public static Connection getBiblioteca() {
 		return getConnection("biblioteca");
 	}
 }
-*/

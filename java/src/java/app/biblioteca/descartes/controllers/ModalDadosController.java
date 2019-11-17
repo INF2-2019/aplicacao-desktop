@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  *
  * @author User
  */
-public class ModalDadosDController implements Initializable {
+public class ModalDadosController implements Initializable {
 
    @FXML
     private Button Enviar;

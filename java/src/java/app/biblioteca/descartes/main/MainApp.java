@@ -17,22 +17,27 @@ import javafx.stage.Stage;
  */
 public class MainApp extends Application {
  
-    
+    private static Stage stage;
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/teladescartes/FXMLTelaDescartes.fxml"));        
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/app/biblioteca/descartes/teladescartes/styles.css").toExternalForm()); 
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
+        stage.setResizable(false);
+        stage.setWidth(1280);
+        setStage(stage);
     }
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
     
+      public static Stage getStage(){
+        return stage;
+    }
+
+    private void setStage(Stage stage) {
+        this.stage = stage;
+    }
 }
