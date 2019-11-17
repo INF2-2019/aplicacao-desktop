@@ -6,7 +6,7 @@
 
 package app.biblioteca.descartes.controllers;
 
-import app.Funções;
+import app.biblioteca.descartes.main.Funções;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;

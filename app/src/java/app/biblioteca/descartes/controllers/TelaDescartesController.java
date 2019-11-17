@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.DescartadoLista;
-import app.Funções;
+import app.biblioteca.descartes.main.Funções;
 import app.biblioteca.descartes.main.MainApp;
 import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.util.Arrays;
