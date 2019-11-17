@@ -15,7 +15,7 @@ public class Relatorio10Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/relatorio10/relatorio10.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/principal/styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/relatorio10/styles.css").toExternalForm());
 
 		stage.setTitle("Relatório 10");
 		stage.setScene(sc);

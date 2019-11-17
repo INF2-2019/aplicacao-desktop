@@ -1,7 +1,6 @@
 package app.diario.relatorios.relatorio11;
 
 import app.diario.turmas.principal.Conector;
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;

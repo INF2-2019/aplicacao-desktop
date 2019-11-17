@@ -16,15 +16,14 @@ public class Relatorio10ModalMain extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/relatorio10/relatorio10Modal.fxml"));
 
 		Scene sc = new Scene(root);
-		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/principal/styles.css").toExternalForm());
+		sc.getStylesheets().add(getClass().getResource("/app/diario/relatorios/relatorio10/styles.css").toExternalForm());
 
 		stage.setTitle("Relatório 10");
 		stage.setScene(sc);
 		stage.setResizable(false);
 		setStage(stage);
 
-		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.showAndWait();
+		stage.show();
 	}
 
 	public static void main(String[] args) {
