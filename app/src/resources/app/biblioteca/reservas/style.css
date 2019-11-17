@@ -1,0 +1,27 @@
+.button{
+    -fx-text-fill: #FDFBF9;
+    -fx-padding: 9.5px;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 2px;
+    -fx-cursor: hand;
+}
+
+#emprestar{
+    -fx-background-color: #00B0FF;
+}
+#deletar{
+    -fx-background-color: #E53935;
+    -fx-text-fill: white;
+}
+
+#alterar{
+    -fx-background-color: #2C46A5;
+    -fx-text-fill: white;
+}
+.column-header{
+    -fx-background-color: white;
+}
+.table-cell{
+    -fx-alignment: CENTER;
+}
+
