@@ -42,6 +42,8 @@ public class TelaDescartesController implements Initializable {
     @FXML
     private Button Descartar;
     @FXML
+    private Button Voltar;
+    @FXML
     private TableView<DescartadoLista> TabelaDescarte;
 
     @FXML
