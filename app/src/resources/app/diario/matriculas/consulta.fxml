@@ -24,10 +24,10 @@
                 <TableColumn fx:id="colAtivo" minWidth="0.0" prefWidth="127.0" text="Ativo" />
             </columns>
         </TableView>
-        <BorderPane layoutY="-2.0" prefHeight="48.0" prefWidth="786.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <left>
-                <Label id="header-text" prefHeight="48.0" prefWidth="403.0" styleClass="h1" text="Consultar" />
-            </left>
+        <BorderPane layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="786.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <left>
+                <Label id="header-text" prefHeight="47.0" prefWidth="148.0" styleClass="h1" text="Consultar" BorderPane.alignment="CENTER" />
+         </left>
         </BorderPane>
     </children>
 </AnchorPane>

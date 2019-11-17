@@ -14,10 +14,10 @@
         <Label layoutX="37.0" layoutY="93.0" prefHeight="35.0" prefWidth="102.0" styleClass="generalLabel" text="ID" />
         <Label layoutX="37.0" layoutY="137.0" prefHeight="35.0" prefWidth="102.0" styleClass="generalLabel" text="Aluno" />
         <Label layoutX="36.0" layoutY="182.0" styleClass="generalLabel" text="Disciplina" />
-        <BorderPane prefHeight="48.0" prefWidth="637.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <left>
-                <Label id="header-text" prefHeight="48.0" prefWidth="367.0" styleClass="h1" text="Adicionar Matrícula" />
-            </left>
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="637.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <left>
+                <Label id="header-text" prefHeight="48.0" prefWidth="367.0" styleClass="h1" text="Adicionar Matrícula" BorderPane.alignment="CENTER" />
+         </left>
         </BorderPane>
         <Button fx:id="botaoCancelar" layoutX="320.0" layoutY="317.0" mnemonicParsing="false" onAction="#cancelaAction" prefHeight="41.0" prefWidth="143.0" style="-fx-background-color: #E53935;" styleClass="redBtn" text="CANCELAR" textFill="WHITE">
             <font>

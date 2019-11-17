@@ -1,7 +1,7 @@
 package app.diario.matriculas.deletar;
 
-import app.diario.matriculas.principal.Conector;
 import app.diario.matriculas.principal.MainController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -40,7 +40,7 @@ public class DeletaController implements Initializable {
 
 	@FXML
 	private void deletaAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-		Connection con = Conector.conectar();
+		Connection con = ConnectionFactory.getDiario();
 		String sql = "DELETE FROM matriculas WHERE id = " + id;
 		int res = con.createStatement().executeUpdate(sql);
 		MainController.updateTab();

@@ -4,6 +4,7 @@ import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.diario.matriculas.consultar.ConsultaController;
 import app.diario.matriculas.consultar.ConsultaMain;
 import app.diario.matriculas.inserir.InsereMain;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -80,7 +81,7 @@ public class MainController implements Initializable {
 	public static void updateTab() throws SQLException, ClassNotFoundException {
 		maior = 0;
 		tabList.clear();
-		Connection con = Conector.conectar();
+		Connection con = ConnectionFactory.getDiario();
 		String sql = "SELECT * FROM matriculas";
 		ResultSet res = con.createStatement().executeQuery(sql);
 		while (res.next()) {

@@ -1,7 +1,7 @@
 package app.diario.matriculas.inserir;
 
-import app.diario.matriculas.principal.Conector;
 import app.diario.matriculas.principal.MainController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -56,7 +56,7 @@ public class InsereController implements Initializable {
 		ativoField.setSelected(true);
 		try {
 			ObservableList lista = FXCollections.observableArrayList();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM alunos";
 			ResultSet res = con.createStatement().executeQuery(sql);
 			while (res.next()) {
@@ -72,8 +72,6 @@ public class InsereController implements Initializable {
 			disciplinasField.setItems(lista2);
 			con.close();
 		} catch (SQLException ex) {
-			Logger.getLogger(InsereController.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (ClassNotFoundException ex) {
 			Logger.getLogger(InsereController.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		idField.setText(Integer.toString(MainController.fixedId));
@@ -132,7 +130,7 @@ public class InsereController implements Initializable {
 			aluno = alunosField.getValue().toString();
 			disciplina = disciplinasField.getValue().toString();
 			ano = anoField.getText();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM alunos WHERE nome='" + aluno + "'";
 			ResultSet res1 = con.createStatement().executeQuery(sql);
 			res1.next();
@@ -150,7 +148,7 @@ public class InsereController implements Initializable {
 	}
 
 	public boolean confereId(String novoValor) throws SQLException, ClassNotFoundException {
-		Connection con = Conector.conectar();
+		Connection con = ConnectionFactory.getDiario();
 		String sql = "SELECT * FROM matriculas WHERE id=" + Integer.parseInt(novoValor);
 		ResultSet res = con.createStatement().executeQuery(sql);
 		if (res.next()) {

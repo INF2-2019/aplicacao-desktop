@@ -33,13 +33,13 @@
         </Label>
         <Button fx:id="botaoAdicionar" layoutX="1094.0" layoutY="132.0" onAction="#adicionaAction" prefHeight="41.0" prefWidth="157.0" styleClass="greenBtn" text="ADICIONAR" />
         <Button fx:id="botaoInfo" layoutX="1094.0" layoutY="534.0" onAction="#consultaAction" prefHeight="41.0" prefWidth="157.0" styleClass="blueBtn" text="INFO" />
-        <BorderPane prefHeight="48.0" prefWidth="1280.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <left>
-                <Label id="header-text" prefHeight="48" prefWidth="403.0" styleClass="h1" text="S.A. Admin">
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="1280.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <left>
+                <Label id="header-text" prefHeight="48" prefWidth="403.0" styleClass="h1" text="S.A. Admin" BorderPane.alignment="CENTER">
                <font>
                   <Font size="32.0" />
                </font></Label>
-            </left>
+         </left>
         </BorderPane>
       <Button layoutX="1094.0" layoutY="612.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="41.0" prefWidth="157.0" styleClass="redBtn" text="VOLTAR" />
     </children>
