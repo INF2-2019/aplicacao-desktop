@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.relatorios.rel8e9.Controllers.GerarController">
+    <children>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="23.0" prefHeight="43.0" prefWidth="1280.0" text="Gerar certificado" textFill="#377256">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="botaoFechar" layoutX="980.0" layoutY="664.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #29a58c;" text="VOLTAR" textFill="WHITE" />
+      <Button fx:id="botaoGerar" layoutX="1083.0" layoutY="664.0" mnemonicParsing="false" onAction="#gerar" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #2d46a5;" text="GERAR" textFill="WHITE" />
+      <TextField fx:id="TextCPF" layoutX="385.0" layoutY="124.0" prefHeight="26.0" prefWidth="238.0" />
+      <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Label layoutX="241.0" layoutY="128.0" prefHeight="18.0" prefWidth="148.0" text="Insira CPF do aluno:" />
+      <Label fx:id="mensagem" layoutX="241.0" layoutY="198.0" prefHeight="18.0" prefWidth="496.0" />
+    </children>
+</AnchorPane>
