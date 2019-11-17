@@ -20,6 +20,7 @@ import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.Funções;
 import app.biblioteca.descartes.main.MainApp;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
@@ -57,7 +58,13 @@ public class TelaDescartesController implements Initializable {
 private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
     @FXML 
     public void acaoVoltar(){
-         MainApp.getStage().close();
+        MainTelaTransicaoDiario main = new MainTelaTransicaoDiario();
+        fecha();
+        try {
+            main.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TelaDescartesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -82,10 +89,12 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
         
        
     
-      
     }
     
-    
+    public void fecha() {
+        MainApp.getStage().close();
+    }
+      
     }
 
 
