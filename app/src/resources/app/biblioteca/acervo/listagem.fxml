@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#consultarBD" prefHeight="914.0" prefWidth="1280.0" stylesheets="@../../../../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.acervo.principal.TableController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#consultarBD" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.acervo.principal.TableController">
    <children>
-      <TableView fx:id="tabelaAcervo" layoutX="89.0" layoutY="196.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="596.0" prefWidth="988.0" style="-fx-border-color: #ffffff;" stylesheets="@../../../../style.css" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="89.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="196.0">
+      <TableView fx:id="tabelaAcervo" layoutX="89.0" layoutY="196.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="596.0" prefWidth="988.0" style="-fx-border-color: #ffffff;" stylesheets="@style.css" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="89.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="196.0">
         <columns>
           <TableColumn fx:id="colunaId" prefWidth="101.0" styleClass="coluna" text="Id" />
           <TableColumn fx:id="colunaIdCampi" prefWidth="101.0" styleClass="coluna" text="IdCampi" />
