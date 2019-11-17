@@ -2,6 +2,7 @@ package app.diario.departamentos.controllers;
 
 import app.diario.departamentos.model.Departamento;
 import app.diario.departamentos.repository.DepartamentoRepository;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.inicio.MainApp;
 import java.awt.event.KeyEvent;
 import javafx.collections.FXCollections;
@@ -180,7 +181,7 @@ public class TableController implements Initializable {
 
     @FXML
     private void voltafunc(ActionEvent event) throws IOException {
-        MainApp main = new MainApp();
+        MainTelaTransicaoDiario main = new MainTelaTransicaoDiario();
         Stage tabelaDeptos = (Stage) voltar.getScene().getWindow();
         tabelaDeptos.close();
         try {
