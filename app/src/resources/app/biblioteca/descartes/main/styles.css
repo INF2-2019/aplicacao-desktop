@@ -29,12 +29,10 @@
 
 .aviso-erro{
     
-    -fx-font-family: 'Montserrat', sans-serif;
     -fx-background-color: red;
 }
 
 .aviso-sucesso{
     
-    -fx-font-family: 'Montserrat', sans-serif;
     -fx-background-color:  #248f24;
 }
