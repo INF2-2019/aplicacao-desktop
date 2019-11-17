@@ -6,7 +6,7 @@
 
 package app.biblioteca.descartes.controllers;
 
-import app.biblioteca.descartes.main.Funções;
+import app.biblioteca.descartes.main.Funcoes;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -50,7 +50,7 @@ public class ModalDadosController implements Initializable {
         Integer NumeroAcervo = Integer.parseInt(ACERVO.getText());
        // DepartamentoRepository.insere(IDFuncionario, NumeroAcervo);      
        
-        Funções fun = new Funções(); 
+        Funcoes fun = new Funcoes(); 
                fun.insereDescartesEremoveAcervo(NumeroAcervo,data,IDFuncionario,motivo);
       
      

@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.DescartadoLista;
-import app.biblioteca.descartes.main.Funções;
+import app.biblioteca.descartes.main.Funcoes;
 import app.biblioteca.descartes.main.MainApp;
 import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.util.Arrays;
@@ -73,7 +73,7 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
     public void initialize(URL location, ResourceBundle resources) {
         
     List ListaD = null;
-      Funções fun =new Funções();
+      Funcoes fun =new Funcoes();
         try {
              ListaD =fun.ExibeOqueJaFoiDescartado();
         } catch (SQLException ex) {

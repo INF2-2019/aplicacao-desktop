@@ -27,7 +27,7 @@ import javafx.stage.Stage;
  *
  * @author User
  */
-public class Funções {
+public class Funcoes {
      private ObservableList<DescartadoLista> ObservLista =FXCollections.observableArrayList();
     
     public List<DescartadoLista>  ExibeOqueJaFoiDescartado() throws SQLException{
