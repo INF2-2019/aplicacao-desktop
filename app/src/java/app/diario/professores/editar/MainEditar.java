@@ -23,6 +23,7 @@ public class MainEditar extends Application {
         stage.setScene(scene);
         stage.show();
         setStage(stage);
+		stage.setResizable(false);
     }
 
     /**
