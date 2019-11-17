@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 public class Acervo {
     private int id, idCampi, ano, paginas, contador;
     private String nome, tipo, local, editora;
-    Button deleta,edita, info;
-    boolean isCancela;
+    private Button deleta,edita, info;
+    private boolean isCancela;
 
     public Acervo(int id, int idCampi, String nome, String tipo, String local, int ano, String editora, int paginas, Button edita, Button deleta, Button info) {
         this.id = id;
