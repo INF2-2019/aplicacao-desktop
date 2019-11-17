@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
 #lblSistemaAcademico {
     -fx-background-color: #29a58c;
 }
@@ -7,19 +5,13 @@
 #btnEntraSistemaDiario {
     -fx-pref-width: 250;
     -fx-pref-heigth: 50;
-    /*-fx-font-family: 'Montserrat', sans-serif;*/
 }
 
 #btnEntraSistemaBiblioteca {
     -fx-pref-width: 250;
     -fx-pref-heigth: 50;
-    /*-fx-font-family: 'Montserrat', sans-serif;*/
 }
 
 .backgroundBtn {
     -fx-background-color: #29A58C;
-}
-
-.fontFamily {
-    -fx-font-family: 'Montserrat', sans-serif;
 }
