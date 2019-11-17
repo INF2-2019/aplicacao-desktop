@@ -17,4 +17,9 @@
     -fx-background-color: #2C46A5;
     -fx-text-fill: white;
 }
-
+.column-header{
+    -fx-background-color: white;
+}
+.table-cell{
+    -fx-alignment: CENTER;
+}

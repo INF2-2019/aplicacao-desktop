@@ -48,7 +48,7 @@ public class ControllerEdita implements Initializable{
     private Button Deletar;
     
     @FXML
-    void salvarAlteracaoEmprestimo(ActionEvent event) throws NumberFormatException, SQLException {
+    void salvarAlteracaoEmprestimo(ActionEvent event) throws NumberFormatException, SQLException, Exception {
         TableControllerEmprestimos controle = new TableControllerEmprestimos();
 		System.out.println(DataEmprestimo);
         controle.AlterarEmprestimo(IDAluno,IDAcervo,DataEmprestimo,DataPrevDevolucao,DataDevolucao,getId());
