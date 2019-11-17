@@ -18,17 +18,10 @@ import javafx.stage.Stage;
  * @author Indra Matsiendra & Amanda Jacomette
  */
 public class Acervo {
-    int id;
-    int idCampi;
-    String nome;
-    String tipo;
-    String local;
-    int ano;
-    String editora;
-    int paginas;
+    private int id, idCampi, ano, paginas, contador;
+    private String nome, tipo, local, editora;
     Button deleta,edita, info;
     boolean isCancela;
-    int contador;
 
     public Acervo(int id, int idCampi, String nome, String tipo, String local, int ano, String editora, int paginas, Button edita, Button deleta, Button info) {
         this.id = id;
