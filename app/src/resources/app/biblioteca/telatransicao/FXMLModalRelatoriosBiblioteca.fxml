@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="740.0" stylesheets="@EstiloTelaTransicaoBiblioteca.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.telatransicao.FXMLControllerModalRelatoriosBiblioteca">
+   <children>
+      <Button fx:id="btnRelatorioMultas" layoutX="60.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraRelatorioMultas" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE MULTAS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioReservas" layoutX="60.0" layoutY="160.0" mnemonicParsing="false" onAction="#entraRelatorioReservas" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE RESERVAS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioAcervo" layoutX="60.0" layoutY="85.0" mnemonicParsing="false" onAction="#entraRelatorioAcervo" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE ACERVO" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioEmprestimos" layoutX="405.0" layoutY="85.0" mnemonicParsing="false" onAction="#entraRelatorioEmprestimos" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE EMPRÉSTIMOS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioAtrasos" layoutX="405.0" layoutY="160.0" mnemonicParsing="false" onAction="#entraRelatorioAtrasos" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE ATRASOS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioDescartes" layoutX="405.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraRelatorioDescartes" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE DESCARTES" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnFechaModal" layoutX="651.0" layoutY="361.0" mnemonicParsing="false" onAction="#fechaModal" prefWidth="75.0" style="-fx-background-color: #d32f2f;" text="FECHAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="15.0" layoutY="15.0" text="Relatórios:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
