@@ -1,5 +1,9 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.principal;
 
+import app.diario.disciplinas.alterar.AlterarController;
+import app.diario.disciplinas.alterar.AlterarMain;
+import app.diario.disciplinas.deleta.ControllerDeleta;
+import app.diario.disciplinas.deleta.DeletaMain;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Button;

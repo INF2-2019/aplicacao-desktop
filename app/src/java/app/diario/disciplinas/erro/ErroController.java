@@ -1,4 +1,4 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.erro;
 
 import java.net.URL;
 import java.util.ResourceBundle;

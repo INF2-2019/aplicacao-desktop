@@ -1,4 +1,4 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.principal;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;

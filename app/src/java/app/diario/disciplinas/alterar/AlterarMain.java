@@ -1,4 +1,4 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.alterar;
 
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;

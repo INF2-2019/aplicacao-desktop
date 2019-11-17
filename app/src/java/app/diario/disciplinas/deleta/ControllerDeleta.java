@@ -1,6 +1,6 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.deleta;
 
-import app.diario.disciplinas.TableControllerDisciplinas;
+import app.diario.disciplinas.principal.TableControllerDisciplinas;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

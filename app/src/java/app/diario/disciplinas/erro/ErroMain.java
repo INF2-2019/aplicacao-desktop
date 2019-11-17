@@ -1,5 +1,6 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.erro;
 
+import app.diario.disciplinas.deleta.DeletaMain;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +30,7 @@ public class ErroMain extends Application {
 	}
 
 	public static void setStage(Stage stage) {
-		DeletaMain.stage = stage;
+		ErroMain.stage = stage;
 	}
 
 	@Override

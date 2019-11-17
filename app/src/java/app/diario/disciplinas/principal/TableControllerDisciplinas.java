@@ -1,5 +1,6 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.principal;
 
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -196,6 +197,17 @@ public class TableControllerDisciplinas implements Initializable {
 			ret = false;
 		}
 		return ret;
+	}
+	
+	@FXML
+	private void Voltar(javafx.event.ActionEvent event){
+	    MainTelaTransicaoDiario voltar = new MainTelaTransicaoDiario();
+	    try{
+		voltar.start(new Stage());
+	    }catch(Exception ex){
+		Logger.getLogger(TableControllerDisciplinas.class.getName()).log(Level.SEVERE, null, ex);
+	    }
+	    MainApp.getStage().close();
 	}
         
         public void AtualizaTabela(){

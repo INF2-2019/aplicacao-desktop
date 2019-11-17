@@ -1,4 +1,4 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.principal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

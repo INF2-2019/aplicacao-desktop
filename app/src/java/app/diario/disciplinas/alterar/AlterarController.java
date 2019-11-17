@@ -1,5 +1,9 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.alterar;
 
+import app.diario.disciplinas.principal.BDConnection;
+import app.diario.disciplinas.principal.Disciplinas;
+import app.diario.disciplinas.erro.ErroMain;
+import app.diario.disciplinas.principal.TableControllerDisciplinas;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

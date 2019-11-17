@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" styleClass="fonte" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.disciplinas.ErroController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" styleClass="fonte" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.disciplinas.erro.ErroController">
     <children>
 	<Button fx:id="erroConfirmar" layoutX="270" layoutY="113.0" mnemonicParsing="false" onAction="#ok" style="-fx-background-color: #2C46A5;-fx-cursor: hand;" text="OK" textFill="WHITE" />
 	<Label fx:id="text" layoutX="50.0" layoutY="57.0" styleClass="fonte" textFill="#377256">

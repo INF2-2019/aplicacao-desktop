@@ -1,8 +1,8 @@
-package app.diario.disciplinas;
+package app.diario.disciplinas.inseri;
 
-import app.diario.disciplinas.BDConnection;
-import app.diario.disciplinas.BDConnection;
-import app.diario.disciplinas.Disciplinas;
+import app.diario.disciplinas.principal.BDConnection;
+import app.diario.disciplinas.principal.Disciplinas;
+import app.diario.disciplinas.erro.ErroMain;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

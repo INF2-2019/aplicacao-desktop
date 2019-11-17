@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" styleClass="fonte" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.disciplinas.ControllerDeleta">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" styleClass="fonte" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.disciplinas.deleta.ControllerDeleta">
     <children>
 	<Button fx:id="deleteLabelConfirmar" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" onAction="#confirma" style="-fx-background-color: #2C46A5;-fx-cursor: hand;" text="CONFIRMAR" textFill="WHITE" />
 	<Button fx:id="deleteLabelCancelar" layoutX="172.0" layoutY="113.0" mnemonicParsing="false"  onAction="#cancela" style="-fx-background-color: #E53935;-fx-cursor: hand;" text="CANCELAR" textFill="WHITE" />
