@@ -46,8 +46,6 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
         String usuario = txtFieldUsuario.getText();
         String senha = passwordFieldSenha.getText();
         
-        senha = Hasher.hash(senha);
-        
         txtFieldUsuario.setText("");
         passwordFieldSenha.setText("");
         
@@ -58,11 +56,18 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
         }
         else {
             try {
-                PreparedStatement stmt = con.prepareStatement("SELECT * FROM admin WHERE usuario=? AND senha=?");
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM admin WHERE usuario=?");
                 stmt.setString(1, usuario);
-                stmt.setString(2, senha);
                 ResultSet rs = stmt.executeQuery();
-                if (rs.next()) {
+                if(!rs.first()) {
+                    lblMsgErro.setText("Usuário não encontrado. Tente novamente!");
+                    lblMsgErro.setVisible(true);
+                    return;
+                }
+                String senhaCorreta = rs.getString("senha");
+                stmt.close();
+                rs.close();
+                if (Hasher.validar(senha, senhaCorreta)) {
                     Stage stage = (Stage) btnAdmEntraDiario.getScene().getWindow();
                     stage.close();
                     Parent root = FXMLLoader.load(MainApp.class.getResource("/app/diario/telatransicao/FXMLTelaTransicaoDiario.fxml"));
@@ -75,9 +80,10 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
                     stg.show();
                 }
                 else {
-                    lblMsgErro.setText("Usuário ou senha incorretos. Tente novamente!");
+                    lblMsgErro.setText("Senha incorreta. Tente novamente!");
                     lblMsgErro.setVisible(true);
                 }
+                con.close();
             } catch (SQLException ex) {
                 Logger.getLogger(FXMLControllerTelaLoginAdmDiario.class.getName()).log(Level.SEVERE, null, ex);
             }

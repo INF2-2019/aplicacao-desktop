@@ -1,8 +1,10 @@
 package app.diario.turmas.principal;
 
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.diario.turmas.consultar.ConsultaController;
 import app.diario.turmas.consultar.ConsultaMain;
 import app.diario.turmas.inserir.InsereMain;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,21 +14,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class MainController implements Initializable {
-
-	private final String URL_CONSULTAR = "http://localhost:8080/app/diario/turmas/consultar";
-	private final String URL_INSERIR = "http://localhost:8080/app/diario/turmas/inserir";
-	private final String URL_ALTERAR = "http://localhost:8080/app/diario/turmas/alterar";
-	private final String URL_DELETAR = "http://localhost:8080/app/diario/turmas/deletar";
 
 	public static ObservableList<Turma> tabList = FXCollections.observableArrayList();
 
@@ -56,6 +56,9 @@ public class MainController implements Initializable {
 
 	@FXML
 	private Button botaoInfo;
+	
+	@FXML
+	private TextField pesquisaField;
 
 	private static TableView<Turma> table;
 
@@ -78,7 +81,7 @@ public class MainController implements Initializable {
 	public static void updateTab() throws SQLException, ClassNotFoundException {
 		maior = 0;
 		tabList.clear();
-		Connection con = Conector.conectar();
+		Connection con = ConnectionFactory.getDiario();
 		String sql = "SELECT * FROM turmas";
 		ResultSet res = con.createStatement().executeQuery(sql);
 		while (res.next()) {
@@ -120,6 +123,50 @@ public class MainController implements Initializable {
 		ConsultaMain cm = new ConsultaMain();
 		try {
 			cm.start(new Stage());
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+	}
+
+	@FXML
+	public void pesquisaAction() {
+		FilteredList<Turma> filtro = new FilteredList<Turma>(tabList);
+		pesquisaField.textProperty().addListener((observable, oldValue, newValue) -> {
+			filtro.setPredicate(turma -> {
+
+				if (newValue == null || newValue.isEmpty()) {
+					return true;
+				}
+
+				String digitado = newValue.toLowerCase();
+
+				if (Integer.toString(turma.getId()).contains(digitado)) {
+					return true;
+				} else if (turma.getCursos().toLowerCase().contains(digitado)) {
+					return true;
+				} else if (turma.getNome().toLowerCase().contains(digitado)) {
+					return true;
+				}
+
+				return false;
+			});
+
+			SortedList<Turma> sortedList = new SortedList<>(filtro);
+			sortedList.comparatorProperty().bind(tab.comparatorProperty());
+			tab.setItems(sortedList);
+		});
+	}
+
+	@FXML
+	private void voltarAction(ActionEvent event) {
+		fecha();
+	}
+
+	public void fecha() {
+		MainApp.getStage().close();
+		MainTelaTransicaoDiario mt = new MainTelaTransicaoDiario();
+		try {
+			mt.start(new Stage());
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
