@@ -14,12 +14,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -61,6 +64,9 @@ public class MainController implements Initializable {
 
 	@FXML
 	private TableColumn<Matricula, Button> colAcoes2;
+	
+	@FXML
+	private TextField pesquisaField;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -136,6 +142,38 @@ public class MainController implements Initializable {
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
+	}
+	
+	@FXML
+	public void pesquisaAction() {
+		FilteredList<Matricula> filtro = new FilteredList<Matricula>(tabList);
+		String s = "Sim", n = "Não";
+		pesquisaField.textProperty().addListener((observable, oldValue, newValue) -> {
+			filtro.setPredicate(matricula -> {
+
+				if (newValue == null || newValue.isEmpty()) {
+					return true;
+				}
+
+				String digitado = newValue.toLowerCase();
+
+				if (Integer.toString(matricula.getId()).contains(digitado)) {
+					return true;
+				} else if (matricula.getAluno().toLowerCase().contains(digitado)) {
+					return true;
+				} else if (matricula.getDisciplina().toLowerCase().contains(digitado)) {
+					return true;
+				} else if (matricula.getAno().toLowerCase().contains(digitado)) {
+					return true;
+				}
+				
+				return false;
+			});
+
+			SortedList<Matricula> sortedList = new SortedList<>(filtro);
+			sortedList.comparatorProperty().bind(tab.comparatorProperty());
+			tab.setItems(sortedList);
+		});
 	}
 	
 	@FXML
