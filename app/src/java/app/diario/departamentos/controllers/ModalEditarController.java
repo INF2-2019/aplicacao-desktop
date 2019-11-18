@@ -54,11 +54,9 @@ public class ModalEditarController implements Initializable {
     @FXML
     void editarDepartamento(ActionEvent event) {
         try {
-            System.out.println(campusCb.getValue());
             if (nomeTf.getText().isEmpty() || campusCb.getValue() == null) {
                 setAviso("Por favor, verifique o preenchimento dos campos abaixo.");
             } else {
-                System.out.println("1");
                 String nome = nomeTf.getText();
                 String campus = campusCb.getValue();
 
