@@ -19,6 +19,7 @@ public class MainTranferencia extends Application{
         
         stage.setTitle("Sistema Acadêmico");
         stage.setScene(scene);
+        stage.setWidth(1280);
         stage.setResizable(false);
         stage.show();
     }
