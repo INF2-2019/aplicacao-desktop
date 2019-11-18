@@ -69,17 +69,13 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
         }
     }
     @FXML
-    public void abrirModal() throws IOException, Exception{
-        System.out.println("aaaaaaaaaaaaaaaa");
-        /*Stage modalAdicionar = new Stage();
-        FXMLLoader modalAdicionarFXMLLoader = new FXMLLoader(getClass().getResource("ModalDescartar.fxml"));
-        Parent modalAdicionarParent = modalAdicionarFXMLLoader.load();
-        
-        modalAdicionar.setScene(new Scene(modalAdicionarParent));
-       // modalAdicionar.initModality(Modality.APPLICATION_MODAL);
-        modalAdicionar.showAndWait();*/
-        descartarMain descartar = new descartarMain();
-        descartar.start(new Stage());
+    void modalAdicionar(ActionEvent event) throws IOException, SQLException {
+        Stage modalAdicionar = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/Descartar/ModalDescartar.fxml"));
+        modalAdicionar.setScene(new Scene(root));
+        modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
+        modalAdicionar.initModality(Modality.APPLICATION_MODAL);
+        modalAdicionar.showAndWait();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
