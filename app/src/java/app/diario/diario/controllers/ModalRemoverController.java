@@ -25,16 +25,16 @@ public class ModalRemoverController {
     @FXML
     private Label aviso;
 
-    @FXML
-    private ChoiceBox<?> campusCb;
+   
 
     @FXML
     private Button cancelarBtn;
 
    @FXML
     void apagar(ActionEvent event) throws SQLException, ExcecaoPadrao {
+        System.out.println("Entrou2");
         Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-     //   ConteudosRepository.remover(this.id);
+        ConteudosRepository.remover(this.id);
         status = true;
         modal.close();
         

@@ -30,7 +30,7 @@ public class ConteudosRepository {
 
 
 	public static List<ConteudosModel> consulta() throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             List<ConteudosModel> Conteudos;
             try (Statement stmt = con.createStatement()) {
@@ -59,7 +59,7 @@ public class ConteudosRepository {
      * @throws SQLException
      */
     public static List<DiarioModel> consultaDiario() throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             List<DiarioModel> Atividades;
             try (Statement stmt = con.createStatement()) {
@@ -79,7 +79,7 @@ public class ConteudosRepository {
         }
     }    
      public static List<AtividadeModel> consultaAtividade() throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             List<AtividadeModel> Atividades;
             try (Statement stmt = con.createStatement()) {
@@ -100,7 +100,7 @@ public class ConteudosRepository {
     }    
         
          public static void atualizaE(int id, String Etapa) throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             try (PreparedStatement prst = con.prepareStatement("UPDATE `conteudos` SET `id-etapas`= ? WHERE `id` = ?")) {
                 prst.setString(1, Etapa);
@@ -114,7 +114,7 @@ public class ConteudosRepository {
     }
 
     public static void atualizaC(int id, String Conteudo) throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             try (PreparedStatement prst = con.prepareStatement("UPDATE `conteudos` SET `conteudos`= ? WHERE `id` = ?")) {
                 prst.setString(1, Conteudo);
@@ -128,7 +128,7 @@ public class ConteudosRepository {
     }
 
     public static void atualiza(int id, String Etapa, String Conteudo) throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             try (PreparedStatement prst = con.prepareStatement("UPDATE `conteudos` SET `id-etapas` = ?, `conteudos` = ? WHERE `id` = ?")) {
                 prst.setString(1, Etapa);
@@ -150,7 +150,7 @@ public class ConteudosRepository {
      * @throws SQLException
      */
     public static void insereConteudo(int idEtapas,String Conteudo,String date) throws SQLException   {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             try (PreparedStatement prst = con.prepareStatement("INSERT INTO `conteudos` (`id-etapas`, `conteudos`,`data´) VALUES (?, ?,?)")) {
                 prst.setInt(1, idEtapas);
@@ -165,7 +165,7 @@ public class ConteudosRepository {
         }
     }
      public static List<EtapaModel> consultaEtapa() throws SQLException {
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory.getDiario();
         if (con != null) {
             List<EtapaModel> Etapalinked;
             try (Statement stmt = con.createStatement()) {
@@ -193,7 +193,7 @@ public class ConteudosRepository {
         }
     }
    public static boolean insere(AdicionarConteudosModel modelo) throws SQLException {
-	Connection con =ConnectionFactory.getConnection();
+	Connection con =ConnectionFactory.getDiario();
          String query = "INSERT INTO conteudos(id,id-disciplinas, conteudos , data, valor) VALUES ("
                  + "?,?,?,?,?)";
          int r;
@@ -213,17 +213,19 @@ public class ConteudosRepository {
 		return r != 0;
 	}
    public static boolean remover(int id) throws SQLException, ExcecaoPadrao {
-		Connection conexao = ConnectionFactory.getConnection();
+		Connection conexao = ConnectionFactory.getDiario();
                 String query;
 		PreparedStatement st;
 
 		if (id !=0 ) {
 			query = "DELETE FROM conteudos WHERE id=?";
+                        
 			st = conexao.prepareStatement(query);
 			st.setInt(1, id);
 
 			int r = st.executeUpdate();
-			if (r != 0) {
+			                 System.out.println(" passou  ");
+                        if (r != 0) {
 				DiarioRepository repositorioDiario = new DiarioRepository(conexao);
 				DiarioModel filtroDiario = new DiarioModel();
 				filtroDiario.setIdConteudo(id);

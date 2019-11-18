@@ -276,7 +276,7 @@ public class ConteudosModel {
                 }
             }
         });
-         btns[3].setOnAction(new EventHandler() {
+         /*btns[3].setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
                 try {
@@ -287,7 +287,7 @@ public class ConteudosModel {
                     System.err.println(ex);
                 }
             }
-        });
+        });*/
     }
 
     private void editar(Event event) throws SQLException, IOException {
@@ -325,8 +325,8 @@ public class ConteudosModel {
         FXMLLoader modalRemoverFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/diario/ModalRemover.fxml"));
 
         Parent modalRemoverParent = (Parent) modalRemoverFXMLLoader.load();
-        //ModalRemoverController modalRemoverController = modalRemoverFXMLLoader.<ModalRemoverController>getController();
-//        modalRemoverController.setId(this.id);
+        ModalRemoverController modalRemoverController = modalRemoverFXMLLoader.<ModalRemoverController>getController();
+        modalRemoverController.setId(this.id);
 
         modalRemover.setScene(new Scene(modalRemoverParent));
         modalRemover.initOwner(((Node) event.getSource()).getScene().getWindow());

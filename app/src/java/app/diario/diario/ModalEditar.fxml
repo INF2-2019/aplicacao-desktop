@@ -32,7 +32,7 @@
       </Button>
       <Button fx:id="editarBtn" layoutX="432.0" layoutY="197.0" mnemonicParsing="false" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Editar" textFill="#fdfbf9">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            
          </cursor>
          <font>
             <Font size="24.0" />
@@ -43,8 +43,7 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="EdEtapa" layoutX="144.0" layoutY="113.0" prefHeight="27.0" prefWidth="365.0" style="-fx-border-color: #29A58C; -fx-background-color: #FAFAFA;" />
-      <TextField fx:id="EdConteudo" layoutX="144.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="381.0" promptText="Nome" style="-fx-border-color: #29A58C;" />
+      <TextField fx:id="EdConteudo" layoutX="144.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="381.0" promptText="Conteudo" style="-fx-border-color: #29A58C;" />
       <Label layoutX="8.0" layoutY="77.0" text="Conteudo" textFill="#29a58c">
          <font>
             <Font size="26.0" />
@@ -61,5 +60,6 @@
          </font>
       </Label>
       <DatePicker fx:id="EdData" layoutX="144.0" layoutY="166.0" style="-fx-border-color: #29A58C;" />
+      <TextField fx:id="EdEtapa" layoutX="144.0" layoutY="122.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" promptText="Etapa" style="-fx-border-color: #29A58C;" />
    </children>
 </Pane>

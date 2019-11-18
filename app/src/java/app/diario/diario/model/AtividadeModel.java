@@ -259,7 +259,7 @@ public class AtividadeModel {
         this.valor = valor;
     }
 
-	 public void btnSetup(int id) {
+		 public void btnSetup(int id) {
         btns[0].setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
@@ -296,6 +296,18 @@ public class AtividadeModel {
                 }
             }
         });
+         btns[3].setOnAction(new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                try {
+                    faltas(event);
+                } catch (SQLException ex) {
+                    System.err.println(ex);
+                } catch (IOException ex) {
+                    System.err.println(ex);
+                }
+            }
+        });
     }
 
     private void editar(Event event) throws SQLException, IOException {
@@ -304,13 +316,13 @@ public class AtividadeModel {
 
         Parent modalEditarParent = (Parent) modalEditarFXMLLoader.load();
         ModalEditarController modalEditarController = modalEditarFXMLLoader.<ModalEditarController>getController();
-        modalEditarController.setData(this.id, this.idEtapa, this.conteudo);
-
+//        modalEditarController.setData(this.id, this.idEtapa, this.conteudo);
+        
         modalEditar.setScene(new Scene(modalEditarParent));
         modalEditar.initOwner(((Node) event.getSource()).getScene().getWindow());
         modalEditar.initModality(Modality.APPLICATION_MODAL);
         modalEditar.showAndWait();
-        boolean status = modalEditarController.getStatus();
+//        boolean status = modalEditarController.getStatus();
 
         Stage table = (Stage) btns[1].getScene().getWindow();
 
@@ -318,29 +330,61 @@ public class AtividadeModel {
         Pane TabelaConteudoRoot = fxmlLoader.load(getClass().getResource("/app/diario/diario/TabelaConteudo.fxml").openStream());
         TableController tableController = (TableController) fxmlLoader.getController();
 
-        if (status) {
+      /*  if (status) {
             tableController.setAviso("Conteudo editado com sucesso", 1);
             
-        }
+        }*/
 
         Scene scene = new Scene(TabelaConteudoRoot);
-        scene.getStylesheets().add("/app/diario/diario/EstiloDepartamentos.css");
+        scene.getStylesheets().add("/app/diario/diario/EstiloDiario.css");
+        table.setScene(scene);
+    }
+    /*private void faltas (Event event) throws SQLException, IOException {
+    
+         Stage modalEditar = new Stage();
+        FXMLLoader modalEFaltasFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/diario/ModalFaltas.fxml"));
+
+       /* Parent FaltasModalParent = (Parent) modalFaltasFXMLLoader.load();
+        ModalEditarController modalEditarController = modalEditarFXMLLoader.<ModalEditarController>getController();
+//        modalEditarController.setData(this.id, this.idEtapa, this.conteudo);
+        *//*
+        //modalEditar.setScene(new Scene(modalFaltasParent));
+        modalEditar.initOwner(((Node) event.getSource()).getScene().getWindow());
+        modalEditar.initModality(Modality.APPLICATION_MODAL);
+        modalEditar.showAndWait();
+//        boolean status = modalEditarController.getStatus();
+
+        Stage table = (Stage) btns[1].getScene().getWindow();
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Pane TabelaConteudoRoot = fxmlLoader.load(getClass().getResource("/app/diario/diario/TabelaConteudo.fxml").openStream());
+        TableController tableController = (TableController) fxmlLoader.getController();
+
+      /*  if (status) {
+            tableController.setAviso("Conteudo editado com sucesso", 1);
+            
+        }*//*
+
+        Scene scene = new Scene(TabelaConteudoRoot);
+        scene.getStylesheets().add("/app/diario/diario/EstiloDiario.css");
         table.setScene(scene);
     }
 
+   */
+      
     private void remover(Event event) throws SQLException, IOException {
         Stage modalRemover = new Stage();
         FXMLLoader modalRemoverFXMLLoader = new FXMLLoader(getClass().getResource("/app/diario/diario/ModalRemover.fxml"));
 
         Parent modalRemoverParent = (Parent) modalRemoverFXMLLoader.load();
         ModalRemoverController modalRemoverController = modalRemoverFXMLLoader.<ModalRemoverController>getController();
-        //modalRemoverController.setId(this.id);
+        modalRemoverController.setId(this.id);
 
         modalRemover.setScene(new Scene(modalRemoverParent));
         modalRemover.initOwner(((Node) event.getSource()).getScene().getWindow());
         modalRemover.initModality(Modality.APPLICATION_MODAL);
         modalRemover.showAndWait();
-        boolean status = modalRemoverController.getStatus();
+    //  boolean status = modalRemoverController.getStatus();
 
         Stage table = (Stage) btns[1].getScene().getWindow();
 
@@ -348,13 +392,14 @@ public class AtividadeModel {
         Pane TabelaConteudoRoot = fxmlLoader.load(getClass().getResource("/app/diario/diario/TabelaConteudo.fxml").openStream());
         TableController tableController = (TableController) fxmlLoader.getController();
 
-        if (status) {
+       /* if (status) {
             tableController.setAviso("Conteudo com sucesso", 1);
         }
-
+*/
         Scene scene = new Scene(TabelaConteudoRoot);
-        scene.getStylesheets().add("/app/diario/diario/EstiloDepartamentos.css");
+        scene.getStylesheets().add("/app/diario/diario/EstiloDiario.css");
         table.setScene(scene);
     }
 
 }
+

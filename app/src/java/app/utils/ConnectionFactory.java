@@ -22,7 +22,7 @@ public class ConnectionFactory {
         driver = "com.mysql.cj.jdbc.Driver";
         url = "jdbc:mysql://localhost/";
         usuario = "root";
-        senha = "";
+        senha = "123456";
 
         try {
             Class.forName(driver);

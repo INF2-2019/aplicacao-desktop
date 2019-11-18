@@ -70,11 +70,6 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <ChoiceBox fx:id="EtapaCb" prefWidth="150.0" style="-fx-background-color: #FAFAFA; -fx-border-color: #29A58C;">
-                            <HBox.margin>
-                                <Insets top="4.0" />
-                            </HBox.margin>
-                        </ChoiceBox>
                   <TextField fx:id="EtapaTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Conteudo" style="-fx-border-color: #29A58C;" />
                     </children>
                     <VBox.margin>
@@ -92,7 +87,6 @@
                      </HBox.margin>
                   </Label>
                   <TextField fx:id="Datatf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Conteudo" style="-fx-border-color: #29A58C;" />
-                  <DatePicker fx:id="DataPicker" />
                </children>
             </HBox>
                 <HBox alignment="TOP_RIGHT" prefHeight="65.0" prefWidth="601.0">

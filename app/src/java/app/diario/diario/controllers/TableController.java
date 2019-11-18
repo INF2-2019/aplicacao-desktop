@@ -2,10 +2,12 @@ package app.diario.diario.controllers;
 
 
 
+import app.diario.diario.main.MainDiario;
 import app.diario.diario.model.AtividadeModel;
 import app.diario.diario.model.ConteudosModel;
 import app.diario.diario.model.DiarioModel;
 import app.diario.diario.repository.ConteudosRepository;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 
 import java.awt.event.KeyEvent;
 import javafx.collections.FXCollections;
@@ -76,7 +78,10 @@ public class TableController implements Initializable {
    private TableColumn<AtividadeModel, HBox> col_acoes2;
    @FXML
    private TextField pesquisaTf;
-
+   @FXML
+   private Button voltar;
+   
+   
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
         Stage modalAdicionar = new Stage();
@@ -91,7 +96,7 @@ public class TableController implements Initializable {
         boolean status = modalAdicionarController.getStatus();
 
         if (status) {
-            setAviso("Departamento Adicionado com Sucesso", 1);
+            setAviso("Adicionado com Sucesso", 1);
         }
 
         loadTableData();
@@ -156,34 +161,6 @@ public class TableController implements Initializable {
         Etapa1.setCellValueFactory(new PropertyValueFactory<>("idEtapa"));
     }
 
-    @FXML
-    private void pesquisar(javafx.scene.input.KeyEvent event) {
-        FilteredList<ConteudosModel> filtro = new FilteredList<>(tabelaConteudos, p -> true);
-        pesquisaTf.textProperty().addListener((observable, oldValue, newValue) -> {
-            filtro.setPredicate(depto -> {
-
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-
-                String digitado = newValue.toLowerCase();
-
-               /* if (depto.getNome().toLowerCase().contains(digitado)) {
-                    return true;
-                } else if (depto.getNomeCampi().toLowerCase().contains(digitado)) {
-                    return true;
-                } else if (Integer.toString(depto.getId()).contains(digitado)) {
-                    return true;
-                }
-/*/
-                return false;
-            });
-
-     /*       SortedList<Departamento> sortedList = new SortedList<>(filtro);
-            sortedList.comparatorProperty().bind(tabela.comparatorProperty());
-            tabela.setItems(sortedList);
-  */      });
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -196,4 +173,17 @@ public class TableController implements Initializable {
         });
       
     }
+     @FXML 
+    public void acaoVoltar(ActionEvent event){
+        MainTelaTransicaoDiario main = new MainTelaTransicaoDiario();
+        
+        try {
+            main.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        MainDiario.getStage().close();
+         
+    }
 }
+   

@@ -5,22 +5,7 @@
  */
 package app.diario.diario.model;
 
-import app.diario.diario.controllers.ModalEditarController;
-import app.diario.diario.controllers.ModalRemoverController;
-import app.diario.diario.controllers.TableController;
-import java.io.IOException;
-import java.sql.SQLException;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+
 
 /**
  * @author juanr
