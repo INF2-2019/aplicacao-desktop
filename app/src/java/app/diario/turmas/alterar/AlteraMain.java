@@ -21,6 +21,7 @@ public class AlteraMain extends Application {
 
 		stage.setTitle("Alterar turma");
 		stage.setScene(sc);
+		stage.setResizable(false);
 		setStage(stage);
 
 		stage.initModality(Modality.APPLICATION_MODAL);
