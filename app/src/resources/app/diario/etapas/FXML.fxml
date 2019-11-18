@@ -21,9 +21,9 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label prefHeight="51.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" text="S.A." textFill="WHITE">
+      <Label prefHeight="48.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" text="S.A." textFill="WHITE">
          <font>
-            <Font size="35.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <Button fx:id="adiciona" layoutX="1016.0" layoutY="155.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C; -fx-cursor: hand;" text="ADICIONAR" textFill="WHITE" />
