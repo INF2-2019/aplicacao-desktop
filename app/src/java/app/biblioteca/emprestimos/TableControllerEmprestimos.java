@@ -1,5 +1,6 @@
 package app.biblioteca.emprestimos;
 
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -372,6 +373,15 @@ public class TableControllerEmprestimos implements Initializable {
     public void AtualizaTabela() {
 	consultaBD();
 	CriarTabela();
+    }
+    public void Voltar() throws Exception{
+	MainTelaTransicaoBiblioteca voltar = new MainTelaTransicaoBiblioteca();
+	try{
+		voltar.start(new Stage());
+	    }catch(Exception ex){
+		Logger.getLogger(TableControllerEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
+	    }
+	    Main.getStage().close();
     }
 
 }

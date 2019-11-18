@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-
+    static Stage stage;
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/emprestimos/emprestimos.fxml"));
@@ -19,6 +19,7 @@ public class Main extends Application {
         scene.getStylesheets().add(getClass().getResource("/app/biblioteca/emprestimos/style.css").toExternalForm());
         
         stage.setTitle("Biblioteca");
+	setStage(stage);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -27,5 +28,11 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+     public static Stage getStage(){
+        return stage;
+    }
 
+    private void setStage(Stage stage) {
+        Main.stage = stage;
+    }
 }

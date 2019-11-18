@@ -1,13 +1,14 @@
 
 package app.biblioteca.emprestimos;
 
+import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class EditarMain {
+public class EditarMain extends Application{
     
     private static Stage stage;
 
@@ -18,7 +19,7 @@ public class EditarMain {
     public static void setStage(Stage stage) {
         EditarMain.stage = stage;
     }
-    
+    public EditarMain(){}
     public void start(Stage stage) throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/emprestimos/Editar.fxml"));        
