@@ -5,6 +5,8 @@
 .header{
     -fx-background-color: #29a48c;
     -fx-padding: 10px;
+	-fx-pref-height: 48px;
+	-fx-pref-width: 1280px;
 }
 
 .header .label{
