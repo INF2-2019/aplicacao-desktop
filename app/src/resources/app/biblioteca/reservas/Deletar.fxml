@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.reservas.ControllerDeletar">
+   <children>
+      <Button fx:id="Confirmar" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" onAction="#confirmaDeletar" style="-fx-background-color: #2C46A5;" text="CONFIRMAR" textFill="WHITE" />
+      <Button fx:id="Cancelar" layoutX="172.0" layoutY="113.0" mnemonicParsing="false"  onAction="#cancelaDeletar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
+      <Label fx:id="text" layoutX="37.0" layoutY="57.0" textFill="#377256">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
