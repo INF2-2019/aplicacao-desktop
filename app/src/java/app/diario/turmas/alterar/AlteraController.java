@@ -1,8 +1,8 @@
 package app.diario.turmas.alterar;
 
 import PacoteInsere.InsereController;
-import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.MainController;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -60,7 +60,7 @@ public class AlteraController implements Initializable {
 			id = Integer.parseInt(idField.getText());
 			curso = cursoField.getValue().toString();
 			nome = nomeField.getText();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM cursos WHERE nome='" + curso + "'";
 			ResultSet res1 = con.createStatement().executeQuery(sql);
 			res1.next();
@@ -109,7 +109,7 @@ public class AlteraController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
 			ObservableList lista = FXCollections.observableArrayList();
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM cursos";
 			ResultSet res = con.createStatement().executeQuery(sql);
 			while (res.next()) {
@@ -118,8 +118,6 @@ public class AlteraController implements Initializable {
 			con.close();
 			cursoField.setItems(lista);
 		} catch (SQLException ex) {
-			Logger.getLogger(InsereController.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (ClassNotFoundException ex) {
 			Logger.getLogger(InsereController.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		idField.setText(Integer.toString(idVelho));
@@ -147,7 +145,7 @@ public class AlteraController implements Initializable {
 
 	public boolean confereId(String novoValor) throws SQLException, ClassNotFoundException {
 		if (Integer.parseInt(novoValor) != idVelho) {
-			Connection con = Conector.conectar();
+			Connection con = ConnectionFactory.getDiario();
 			String sql = "SELECT * FROM turmas WHERE id=" + Integer.parseInt(novoValor);
 			ResultSet res = con.createStatement().executeQuery(sql);
 			if (res.next()) {

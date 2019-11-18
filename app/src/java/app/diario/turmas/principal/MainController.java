@@ -1,8 +1,10 @@
 package app.diario.turmas.principal;
 
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.diario.turmas.consultar.ConsultaController;
 import app.diario.turmas.consultar.ConsultaMain;
 import app.diario.turmas.inserir.InsereMain;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,11 +24,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class MainController implements Initializable {
-
-	private final String URL_CONSULTAR = "http://localhost:8080/app/diario/turmas/consultar";
-	private final String URL_INSERIR = "http://localhost:8080/app/diario/turmas/inserir";
-	private final String URL_ALTERAR = "http://localhost:8080/app/diario/turmas/alterar";
-	private final String URL_DELETAR = "http://localhost:8080/app/diario/turmas/deletar";
 
 	public static ObservableList<Turma> tabList = FXCollections.observableArrayList();
 
@@ -78,7 +75,7 @@ public class MainController implements Initializable {
 	public static void updateTab() throws SQLException, ClassNotFoundException {
 		maior = 0;
 		tabList.clear();
-		Connection con = Conector.conectar();
+		Connection con = ConnectionFactory.getDiario();
 		String sql = "SELECT * FROM turmas";
 		ResultSet res = con.createStatement().executeQuery(sql);
 		while (res.next()) {
@@ -120,6 +117,21 @@ public class MainController implements Initializable {
 		ConsultaMain cm = new ConsultaMain();
 		try {
 			cm.start(new Stage());
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+	}
+	
+	@FXML
+	private void voltarAction(ActionEvent event) {
+		fecha();
+	}
+	
+	public void fecha(){
+		MainApp.getStage().close();
+		MainTelaTransicaoDiario mt = new MainTelaTransicaoDiario();
+		try {
+			mt.start(new Stage());
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}

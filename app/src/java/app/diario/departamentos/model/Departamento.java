@@ -147,6 +147,7 @@ public class Departamento {
         modalEditarController.setData(this.id, this.idCampi, this.nome);
 
         modalEditar.setScene(new Scene(modalEditarParent));
+        modalEditar.setResizable(false);
         modalEditar.initOwner(((Node) event.getSource()).getScene().getWindow());
         modalEditar.initModality(Modality.APPLICATION_MODAL);
         modalEditar.showAndWait();
@@ -176,8 +177,9 @@ public class Departamento {
         modalRemoverController.setId(this.id);
 
         modalRemover.setScene(new Scene(modalRemoverParent));
+        modalRemover.setResizable(false);
         modalRemover.initOwner(((Node) event.getSource()).getScene().getWindow());
-        modalRemover.initModality(Modality.APPLICATION_MODAL);
+        modalRemover.initModality(Modality.APPLICATION_MODAL);  
         modalRemover.showAndWait();
         boolean status = modalRemoverController.getStatus();
 
