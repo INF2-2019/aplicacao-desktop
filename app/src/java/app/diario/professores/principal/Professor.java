@@ -1,30 +1,26 @@
-package Principal;
+package app.diario.professores.principal;
 
-import PacoteDeletar.ControllerDeleta;
-import PacoteDeletar.MainDeleta;
-import PacoteEditar.ControllerEditar;
-import PacoteEditar.MainEditar;
+import app.diario.professores.deletar.DeletaController;
+import app.diario.professores.deletar.MainDeleta;
+import app.diario.professores.editar.ControllerEditar;
+import app.diario.professores.editar.MainEditar;
+import app.diario.professores.info.InfoController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import app.diario.professores.info.InfoMain;
 
 /**
  *
  * @author Nikolas Victor
- * @author Jonata Novaes
+ * @author Jonata Novais
  */
 public class Professor {
-    int idDpto;
-    String nome;
-    int id;
-    String titulacao;
-    String email;
-    String senha;
-    Button deleta,edita, info;
-    boolean isCancela;
-    int contador;
+    private int idDpto, id;
+    private String titulacao, email, senha, nome;
+    private Button deleta,edita, info;
     
     public Professor(int id, int idDpto, String nome, String titulacao, String email, String senha, Button edita, Button deleta, Button info){
         this.id = id;
@@ -42,14 +38,15 @@ public class Professor {
         
         deleta.setOnMouseClicked((MouseEvent event) -> {
             MainDeleta mainDeleta = new MainDeleta();
-            ControllerDeleta.setId(Integer.toString(id));
-            ControllerDeleta.setNome(nome);
+            DeletaController.setId(Integer.toString(id));
+            DeletaController.setNome(nome);
             try {
                 mainDeleta.start(new Stage());
             } catch (Exception ex) {
                 Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        
         
         edita.setOnMouseClicked((MouseEvent event) -> {
             MainEditar mainEditar = new MainEditar();
@@ -62,7 +59,13 @@ public class Professor {
         });
         
         info.setOnMouseClicked((MouseEvent event) -> {
-            
+             InfoMain mainInfo = new InfoMain();
+             InfoController.setId(Integer.toString(id));
+            try {
+                mainInfo.start(new Stage());
+            } catch (Exception ex) {
+                Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
         
     }
@@ -82,25 +85,7 @@ public class Professor {
     public void setEdita(Button edita) {
         this.edita = edita;
     }
-
-    public boolean isIsCancela() {
-        return isCancela;
-    }
-
-    public void setIsCancela(boolean isCancela) {
-        this.isCancela = isCancela;
-    }
-
-    public int getContador() {
-        return contador;
-    }
-
-    public void setContador(int contador) {
-        this.contador = contador;
-    }
     
-    
-
     public int getIdDpto() {
         return idDpto;
     }
@@ -147,6 +132,14 @@ public class Professor {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Button getInfo() {
+        return info;
+    }
+
+    public void setInfo(Button info) {
+        this.info = info;
     }
     
     

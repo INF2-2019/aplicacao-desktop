@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package pacoteinfo;
+package app.diario.professores.info;
 
-import PacoteInsere.InsereMain;
+import app.diario.professores.insere.InsereMain;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -14,21 +9,22 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author nikpl
+ * @author Nikolas Victor
+ * @author Jonata Novais
  */
 public class InfoMain extends Application {
      private static Stage stage;
      
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLInfo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/professores/Info.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
         stage.show();
         setStage(stage);
+		stage.setResizable(false);
     }
 
     /**
