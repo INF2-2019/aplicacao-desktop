@@ -55,7 +55,6 @@ public class ControllerEdita implements Initializable{
         Stage modal = (Stage)Alterar.getScene().getWindow();
         modal.setResizable(false);
         modal.close();
-        controle.atualizarTabela();
         
     }
     

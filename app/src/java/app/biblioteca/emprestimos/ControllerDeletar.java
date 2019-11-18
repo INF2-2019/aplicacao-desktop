@@ -38,7 +38,6 @@ public class ControllerDeletar implements Initializable {
         Stage modal = (Stage)Confirmar.getScene().getWindow();
         modal.setResizable(false);
         modal.close();
-        controle.atualizarTabela();
     }
     
     @FXML
