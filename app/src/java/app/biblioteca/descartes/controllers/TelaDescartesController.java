@@ -71,7 +71,7 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
         Stage modalAdicionar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/Descartar/ModalDescartar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/descartar/ModalDescartar.fxml"));
         modalAdicionar.setScene(new Scene(root));
         modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);
