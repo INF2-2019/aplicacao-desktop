@@ -41,5 +41,7 @@
             </left>
         </BorderPane>
       <Button fx:id="voltarBtn" layoutX="1096.0" layoutY="612.0" mnemonicParsing="false" onAction="#voltarAction" prefHeight="41.0" prefWidth="152.0" styleClass="redBtn" text="VOLTAR" />
+      <TextField fx:id="pesquisaField" layoutX="862.0" layoutY="140.0" onKeyTyped="#pesquisaAction" prefHeight="25.0" prefWidth="184.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="659.0" layoutY="135.0" prefHeight="35.0" prefWidth="184.0" styleClass="generalLabel" text="Pesquisar" />
     </children>
 </AnchorPane>
