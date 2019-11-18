@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -16,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root alignment="TOP_CENTER" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@styles.css" type="StackPane"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.descartes.controllers.TelaDescartesController">
+<StackPane alignment="TOP_CENTER" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="app.biblioteca.descartes.controllers.TelaDescartesController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="47.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Label fx:id="label" styleClass="titulo" text="S.A. Admin" textFill="WHITE" StackPane.alignment="TOP_LEFT">
@@ -63,4 +57,4 @@
          </StackPane.margin>
       </Button>
    </children>
-</fx:root>
+</StackPane>

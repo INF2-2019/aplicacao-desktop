@@ -20,7 +20,7 @@ public class MainApp extends Application {
     private static Stage stage;
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/main/FXMLTelaDescartes.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaDescartes.fxml"));        
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/app/biblioteca/descartes/main/styles.css").toExternalForm()); 
         stage.setScene(scene);
