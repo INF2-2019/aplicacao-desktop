@@ -296,7 +296,7 @@ public class AtividadeModel {
                 }
             }
         });
-         btns[3].setOnAction(new EventHandler() {
+         /*btns[3].setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
                 try {
@@ -307,7 +307,7 @@ public class AtividadeModel {
                     System.err.println(ex);
                 }
             }
-        });
+        });*/
     }
 
     private void editar(Event event) throws SQLException, IOException {
