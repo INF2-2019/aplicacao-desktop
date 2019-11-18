@@ -10,13 +10,13 @@
 
 <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.transferencia.controllers.PedirCPFController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1396.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="48.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Label text="S.A. Admin" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
          <font>
-            <Font size="27.0" />
+            <Font size="32.0" />
          </font>
          <StackPane.margin>
-            <Insets left="10.0" top="12.0" />
+            <Insets left="10.0" />
          </StackPane.margin>
       </Label>
       <Label text="Transferência de Aluno" StackPane.alignment="TOP_LEFT">
