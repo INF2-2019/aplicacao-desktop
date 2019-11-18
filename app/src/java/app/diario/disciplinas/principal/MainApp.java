@@ -23,6 +23,7 @@ public class MainApp extends Application {
 		stage.setTitle("Disciplinas");
 		stage.setScene(scene);
                 stage.setResizable(false);
+                stage.setWidth(1280);
 		stage.show();
 		setStage(stage);
 	}
