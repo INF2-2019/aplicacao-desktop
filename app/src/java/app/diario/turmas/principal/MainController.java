@@ -1,6 +1,5 @@
 package app.diario.turmas.principal;
 
-import app.diario.departamentos.model.Departamento;
 import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.diario.turmas.consultar.ConsultaController;
 import app.diario.turmas.consultar.ConsultaMain;
