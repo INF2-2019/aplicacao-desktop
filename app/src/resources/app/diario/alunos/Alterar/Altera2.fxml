@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="810.0" stylesheets="@../Principal/style.css"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.alunos.Alterar.AlteraController">
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="810.0" stylesheets="@../Principal/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.diario.alunos.Alterar.AlteraController">
     <children>
       <Label fx:id="AnoLabel" layoutX="24.0" layoutY="85.0" minHeight="16" minWidth="69" styleClass="legendas" text="CPF" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
@@ -22,8 +23,14 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Button fx:id="botaoCancelar" layoutX="605.0" layoutY="542.0" mnemonicParsing="false" onAction="#AcaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
-      <Button fx:id="botaoSalvar" layoutX="703.0" layoutY="542.0" mnemonicParsing="false" onAction="#Alterar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE" />
+      <Button fx:id="botaoCancelar" layoutX="605.0" layoutY="542.0" mnemonicParsing="false" onAction="#AcaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="botaoSalvar" layoutX="703.0" layoutY="542.0" mnemonicParsing="false" onAction="#Alterar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <TextField fx:id="cpfInput" editable="false" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="nomeInput" layoutX="276.0" layoutY="117.0" prefHeight="25.0" prefWidth="346.0" style="-fx-background-color: #dddddd;" />
       <Label fx:id="AnoLabel1" layoutX="276.0" layoutY="85.0" minHeight="16" minWidth="69" styleClass="legendas" text="Nome" textAlignment="CENTER" textFill="#5dbaa7">

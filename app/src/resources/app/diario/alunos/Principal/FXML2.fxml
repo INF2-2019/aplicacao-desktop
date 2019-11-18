@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.alunos.Principal.TableController">
+<AnchorPane id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.diario.alunos.Principal.TableController">
    <children>
       <TableView fx:id="table" editable="true" layoutX="52.0" layoutY="168.0" pickOnBounds="false" prefHeight="640.0" prefWidth="940.0" style="-fx-border-color: #ffffff;" styleClass="fonte" stylesheets="@style.css" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="318.0" AnchorPane.topAnchor="168.0">
          <columns>
@@ -32,12 +33,18 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="adiciona" layoutX="1046.0" layoutY="155.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" stylesheets="@style.css" text="ADICIONAR" textFill="WHITE" />
+      <Button fx:id="adiciona" layoutX="1046.0" layoutY="155.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" stylesheets="@style.css" text="ADICIONAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label layoutX="52.0" layoutY="74.0" stylesheets="@style.css" text="Alunos">
          <font>
             <Font size="65.0" />
          </font>
       </Label>
-      <Button fx:id="voltar" layoutX="52.0" layoutY="640.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #29A58C;" stylesheets="@style.css" text="VOLTAR" textFill="WHITE" />
+      <Button fx:id="voltar" layoutX="52.0" layoutY="640.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #29A58C;" stylesheets="@style.css" text="VOLTAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

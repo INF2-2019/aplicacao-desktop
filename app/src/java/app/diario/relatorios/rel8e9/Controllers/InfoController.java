@@ -119,8 +119,6 @@ public class InfoController implements Initializable {
                                                 carga = procuraCarga(con, idTurmas[i][j]);
                                                 for(int c = 0; c < carga.length;c++){
                                                      profs.add(new Professor(carga[c], nomeDisci[c], true));
-                                                     System.out.println(carga[c]);
-                                                     System.out.println(nomeDisci[c]);
                                                 }
                                                
                                             }

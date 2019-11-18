@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1015.0" stylesheets="@../Principal/style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.alunos.Informar.InfoController">
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1015.0" stylesheets="@../Principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.alunos.Informar.InfoController">
     <children>
       <Label fx:id="AnoLabel" layoutX="24.0" layoutY="85.0" minHeight="16" minWidth="69" styleClass="legendas" text="CPF" textAlignment="CENTER" textFill="#5dbaa7">
          <font>
@@ -20,10 +21,13 @@
       </Label>
       <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="1015.0" styleClass="cabecalho" text="Alunos" textFill="#377256">
          <font>
-            <Font size="29.0" />
+            <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="botaoCancelar" layoutX="807.0" layoutY="541.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" text="FECHAR" textFill="WHITE" />
+      <Button fx:id="botaoCancelar" layoutX="807.0" layoutY="541.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" text="FECHAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <TextField fx:id="cpfInput" editable="false" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: #dddddd;" />
       <TextField fx:id="nomeInput" editable="false" layoutX="276.0" layoutY="117.0" prefHeight="25.0" prefWidth="346.0" style="-fx-background-color: #dddddd;" />
       <Label fx:id="AnoLabel1" layoutX="276.0" layoutY="85.0" minHeight="16" minWidth="69" styleClass="legendas" text="Nome" textAlignment="CENTER" textFill="#5dbaa7">

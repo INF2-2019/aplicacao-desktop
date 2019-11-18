@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,15 +11,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="810.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.campi.Alterar.AlteraController">
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="810.0" stylesheets="@../principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.campi.Alterar.AlteraController">
     <children>
-      <Label layoutX="11.0" prefHeight="66.0" prefWidth="798.0" text="Campus" textFill="#377256">
+      <Label layoutX="-1.0" prefHeight="66.0" prefWidth="816.0" styleClass="cabecalho" text="Campus" textFill="#377256">
          <font>
-            <Font size="29.0" />
+            <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="botaoCancelar" layoutX="605.0" layoutY="542.0" mnemonicParsing="false" onAction="#AcaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
-      <Button fx:id="botaoSalvar" layoutX="703.0" layoutY="542.0" mnemonicParsing="false" onAction="#Alterar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE" />
+      <Button fx:id="botaoCancelar" layoutX="605.0" layoutY="542.0" mnemonicParsing="false" onAction="#AcaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="botaoSalvar" layoutX="703.0" layoutY="542.0" mnemonicParsing="false" onAction="#Alterar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <TextField fx:id="nomeInput" layoutX="51.0" layoutY="176.0" prefHeight="25.0" prefWidth="442.0" style="-fx-background-color: #dddddd;" />
       <Label fx:id="AnoLabel1" layoutX="51.0" layoutY="140.0" minHeight="16" minWidth="69" text="Nome" textAlignment="CENTER" textFill="#5dbaa7">
          <font>

@@ -28,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import app.diario.relatorios.rel8e9.relatorioModels.*;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.inicio.MainApp;
 import app.utils.ConnectionFactory;
 import java.util.logging.Level;
@@ -74,8 +75,10 @@ public class GerarController implements Initializable {
         } else{
             modalTransferenciaController.setNomeAluno(al.getNome());
             modalTransferencia.setScene(new Scene(modalTransferenciaParent));
+            modalTransferencia.setWidth(1280);
             modalTransferencia.initOwner(((Node) event.getSource()).getScene().getWindow());
             modalTransferencia.initModality(Modality.APPLICATION_MODAL);
+            modalTransferencia.setResizable(false);
             modalTransferencia.showAndWait(); 
         }
         
@@ -179,7 +182,7 @@ public class GerarController implements Initializable {
     public void voltar(javafx.event.ActionEvent event)
     {
         fechar(event);
-        MainApp inicioabrir=new MainApp();
+        MainTelaTransicaoDiario inicioabrir=new MainTelaTransicaoDiario();
         try {
             inicioabrir.start(new Stage());
         } catch (Exception ex) {

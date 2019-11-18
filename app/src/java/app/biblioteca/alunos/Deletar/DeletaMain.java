@@ -27,6 +27,7 @@ public class DeletaMain extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/alunos/Deletar/Deleta2.fxml"));
         Scene scene = new Scene(root);
         stage.setResizable(false);
+        
         stage.setScene(scene);
         stage.show();
 	setStage(stage);

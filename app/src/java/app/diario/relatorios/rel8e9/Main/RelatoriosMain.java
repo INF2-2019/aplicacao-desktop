@@ -25,6 +25,8 @@ public class RelatoriosMain extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setWidth(1280);
+        stage.setResizable(false);
         stage.show();
     }
     public static void main(String[] args) {

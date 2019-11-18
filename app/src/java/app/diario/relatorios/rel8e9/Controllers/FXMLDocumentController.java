@@ -1,5 +1,6 @@
 package app.diario.relatorios.rel8e9.Controllers;
 
+import app.diario.campi.Principal.TableController;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,7 +18,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import app.diario.relatorios.rel8e9.relatorioModels.*;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.utils.ConnectionFactory;
+import javafx.stage.Stage;
 
 /**
  *
@@ -43,7 +46,16 @@ public class FXMLDocumentController implements Initializable {
     
    
     @FXML
-    private void voltar(ActionEvent event) throws Exception {
+    public void voltar(javafx.event.ActionEvent event)
+    {
+        MainTelaTransicaoDiario inicioabrir=new MainTelaTransicaoDiario();
+        Stage stage = (Stage)tabela.getScene().getWindow();
+        stage.close();
+        try {
+            inicioabrir.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
        

@@ -19,7 +19,7 @@ public class AlteraMain extends Application {
     private static Stage stage;
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/Alterar/Altera.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/alterar/Altera.fxml"));
   
         Scene scene = new Scene(root);
         stage.setResizable(false);
