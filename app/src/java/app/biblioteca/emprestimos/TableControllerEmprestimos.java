@@ -345,9 +345,6 @@ public class TableControllerEmprestimos implements Initializable {
 	return false;
     }
 
-    public void atualizarTabela() {
-
-    }
 
     public static void devolve(int id, Date dataPrevDevolucao) throws SQLException {
 	Connection con = BDConnection.getConnection();
