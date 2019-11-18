@@ -89,6 +89,7 @@ public class TableController implements Initializable {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     @FXML
     private void voltar(javafx.event.ActionEvent event) {
         MainTelaTransicaoBiblioteca main = new MainTelaTransicaoBiblioteca();
@@ -99,6 +100,7 @@ public class TableController implements Initializable {
         }
         ListagemMain.getStage().close();
     }
+    
     public void deleta(String id,String tipo){
          try {
             Connection connection = ConnectionFactory.getBiblioteca();
@@ -125,6 +127,7 @@ public class TableController implements Initializable {
              //throw new RuntimeException(e);
         }
     }
+    
     public void consultarBD(){
         try {
             Connection con = ConnectionFactory.getBiblioteca();
