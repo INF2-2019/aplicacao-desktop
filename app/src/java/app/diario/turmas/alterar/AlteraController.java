@@ -1,6 +1,5 @@
 package app.diario.turmas.alterar;
 
-import PacoteInsere.InsereController;
 import app.diario.turmas.principal.MainController;
 import app.utils.ConnectionFactory;
 import java.net.URL;
@@ -118,7 +117,7 @@ public class AlteraController implements Initializable {
 			con.close();
 			cursoField.setItems(lista);
 		} catch (SQLException ex) {
-			Logger.getLogger(InsereController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(AlteraController.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		idField.setText(Integer.toString(idVelho));
 		cursoField.getSelectionModel().selectedItemProperty().addListener((obs, valorAntigo, valorNovo) -> {
