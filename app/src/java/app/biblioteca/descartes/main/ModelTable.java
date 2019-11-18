@@ -3,7 +3,6 @@ package app.biblioteca.descartes.main;
 
 
 import java.sql.Date;
-import javafx.scene.control.Label;
 
 public class ModelTable {
     String idAcervo, motivos, operador;

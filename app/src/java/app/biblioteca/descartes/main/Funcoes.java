@@ -6,23 +6,15 @@
 
 package app.biblioteca.descartes.main;
 
-import app.biblioteca.descartes.main.DescartadoLista;
 import app.utils.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.stage.Stage;
 
 /**
  *
