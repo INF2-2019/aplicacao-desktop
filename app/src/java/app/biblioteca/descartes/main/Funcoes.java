@@ -7,6 +7,7 @@
 package app.biblioteca.descartes.main;
 
 import app.biblioteca.descartes.main.DescartadoLista;
+import app.utils.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -32,8 +33,7 @@ public class Funcoes {
     
     public List<DescartadoLista>  ExibeOqueJaFoiDescartado() throws SQLException{
         
-       DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-       Connection conexao =  DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca","root",""); 
+       Connection conexao = ConnectionFactory.getBiblioteca();
        PreparedStatement st = conexao.prepareStatement("SELECT * FROM descartes");
        ResultSet rs = st.executeQuery();
      //  List<DescartadoLista> descartes = new LinkedList();
@@ -65,8 +65,8 @@ public class Funcoes {
 
     
     public  void insereDescartesEremoveAcervo(int idAcervo,Date data,String idFuncionario,String motivo) throws SQLException{
-         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-       Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca","root",""); 
+         Connection con = ConnectionFactory.getBiblioteca();
+      
       
       
         if(con  != null){
