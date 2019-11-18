@@ -18,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import app.diario.etapas.PacoteInsere.InsereMain;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import javafx.fxml.FXMLLoader;
@@ -128,7 +129,9 @@ public class TableController implements Initializable{
     
     @FXML
      public void voltar() {
+		MainTelaTransicaoDiario transi = new MainTelaTransicaoDiario();
         try {
+			transi.start(new Stage());
             Main.getStage().close();
         } catch (Exception ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
