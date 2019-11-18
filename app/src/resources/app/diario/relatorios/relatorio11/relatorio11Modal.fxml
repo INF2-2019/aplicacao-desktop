@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.relatorios.relatorio11.Relatorio11ModalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="640.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.relatorios.relatorio11.Relatorio11ModalController">
    <top>
-      <BorderPane prefHeight="74.0" prefWidth="600.0" styleClass="header" BorderPane.alignment="CENTER">
+      <BorderPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="74.0" prefWidth="600.0" styleClass="header" BorderPane.alignment="CENTER">
          <left>
             <Label alignment="TOP_CENTER" text="Relação de Conteúdos" BorderPane.alignment="CENTER" />
          </left>
