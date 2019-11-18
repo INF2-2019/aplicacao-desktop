@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 table-view, .tree-table-view {
     /* Constants used throughout the tableview. */
@@ -66,9 +65,15 @@ table-view, .tree-table-view {
     -fx-background-color: #00B0FF;
     -fx-text-fill: white;
 }
-.fonte{
-    -fx-font-family: 'Montserrat', sans-serif;
-}
 #estado{
     -fx-text-fill: red;
+}
+
+#btnImprimir{
+    -fx-cursor: hand;
+    -fx-background-color: #29A58C;
+}
+#btnVoltar{
+    -fx-cursor: hand;
+    -fx-background-color: #29A58C;
 }

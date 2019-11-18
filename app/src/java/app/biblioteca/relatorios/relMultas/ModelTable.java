@@ -2,22 +2,20 @@
 package app.biblioteca.relatorios.relMultas;
 
 
-import app.biblioteca.relatorios.relAtrasos.*;
 import java.sql.Date;
 import javafx.scene.control.Label;
 
 public class ModelTable {
     String id,idAlunos,idAcervo;
-    Date dataEmprestimo,dataPrevDevol,dataDevolucao;
+    Date dataEmprestimo,dataDevolucao;
     Double multa;
 
     
-    public ModelTable(String id, String idAlunos, String idAcervo, Date dataEmprestimo, Date dataPrevDevol, Date dataDevolucao, Double multa){
+    public ModelTable(String id, String idAlunos, String idAcervo, Date dataEmprestimo, Date dataDevolucao, Double multa){
         this.id = id;
         this.idAlunos = idAlunos;
         this.idAcervo = idAcervo;
         this.dataEmprestimo = dataEmprestimo;
-        this.dataPrevDevol = dataPrevDevol;
 	this.dataDevolucao = dataDevolucao;
         this.multa = multa;
         
@@ -52,14 +50,6 @@ public class ModelTable {
 
     public void setDataEmprestimo(Date dataEmprestimo) {
 	this.dataEmprestimo = dataEmprestimo;
-    }
-
-    public Date getDataPrevDevol() {
-	return dataPrevDevol;
-    }
-
-    public void setDataPrevDevol(Date dataPrevDevol) {
-	this.dataPrevDevol = dataPrevDevol;
     }
 
     public Date getDataDevolucao() {

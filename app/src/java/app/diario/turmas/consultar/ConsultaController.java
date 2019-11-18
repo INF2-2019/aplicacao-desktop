@@ -1,7 +1,7 @@
 package app.diario.turmas.consultar;
 
-import app.diario.turmas.principal.Conector;
 import app.diario.turmas.principal.Turma;
+import app.utils.ConnectionFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -41,7 +41,7 @@ public class ConsultaController implements Initializable {
 	ObservableList<Turma> tabList;
 	try {
 	    tabList = FXCollections.observableArrayList();
-	    con = Conector.conectar();
+	    con = ConnectionFactory.getDiario();
 	    String sql = "SELECT * FROM turmas";
 	    ResultSet res = con.createStatement().executeQuery(sql);
 	    while (res.next()) {
@@ -53,8 +53,6 @@ public class ConsultaController implements Initializable {
 	    tab.setItems(tabList);
 	    con.close();
 	} catch (SQLException ex) {
-	    Logger.getLogger(ConsultaController.class.getName()).log(Level.SEVERE, null, ex);
-	} catch (ClassNotFoundException ex) {
 	    Logger.getLogger(ConsultaController.class.getName()).log(Level.SEVERE, null, ex);
 	}
     }
