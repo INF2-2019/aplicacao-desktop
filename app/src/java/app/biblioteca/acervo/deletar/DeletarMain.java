@@ -22,7 +22,7 @@ public class DeletarMain extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/Deleta.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/acervo/Deleta.fxml"));
         
         Scene scene = new Scene(root);
         

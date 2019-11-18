@@ -16,7 +16,7 @@ public class InsereAcademicoMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/InsereAcademico.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/acervo/InsereAcademico.fxml"));
         
         Scene scene = new Scene(root);
         

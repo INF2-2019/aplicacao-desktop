@@ -67,7 +67,7 @@ public class InsereLivroController {
         /*se for cancelado aquilo que foi salvo em acervo nao pode permanecer na tabela, será apagado*/
         try{
 	    Connection con = ConnectionFactory.getBiblioteca();
-            String sql = "DELETE * FROM `acervo` WHERE id=?";
+            String sql = "DELETE FROM `acervo` WHERE id=?";
             PreparedStatement stmt = con.prepareStatement(sql);
 	    stmt.setInt(1,Integer.parseInt(InsereController.getId()));
             stmt.execute();

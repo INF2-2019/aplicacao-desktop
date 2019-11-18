@@ -15,7 +15,7 @@ public class InfoMain extends Application {
      
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/app/biblioteca/acervo/Info.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/acervo/Info.fxml"));
         
         Scene scene = new Scene(root);
         
