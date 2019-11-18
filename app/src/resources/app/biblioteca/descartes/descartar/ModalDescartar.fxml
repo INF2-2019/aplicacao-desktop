@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" stylesheets="@../main/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ModalDadosDController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" stylesheets="@../main/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.descartes.controllers.ModalDadosController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -32,9 +32,7 @@
                      </HBox.margin>
                   </Label>
                   <TextField fx:id="ACERVO" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Número do Acervo">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
+                     
                      <HBox.margin>
                         <Insets left="80.0" top="10.0" />
                      </HBox.margin>
@@ -68,9 +66,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="MOTIVO" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Motivação">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
+                    
                      <HBox.margin>
                         <Insets left="40.0" />
                      </HBox.margin>
@@ -88,9 +84,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="OPERADOR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Identificação Funcionario">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
+                     
                      <HBox.margin>
                         <Insets bottom="40.0" />
                      </HBox.margin>
@@ -103,9 +97,7 @@
                      <font>
                         <Font size="24.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                     
                   </Button>
                </children>
             </HBox>

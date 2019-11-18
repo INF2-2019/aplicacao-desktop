@@ -13,12 +13,21 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.Funcoes;
 import app.biblioteca.descartes.main.MainApp;
+import app.biblioteca.descartes.main.descartarMain;
+import app.diario.departamentos.controllers.ModalAdicionarController;
 import app.diario.telatransicao.MainTelaTransicaoDiario;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 /**
  *
@@ -59,7 +68,19 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
             Logger.getLogger(TelaDescartesController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    @FXML
+    public void abrirModal() throws IOException, Exception{
+        System.out.println("aaaaaaaaaaaaaaaa");
+        /*Stage modalAdicionar = new Stage();
+        FXMLLoader modalAdicionarFXMLLoader = new FXMLLoader(getClass().getResource("ModalDescartar.fxml"));
+        Parent modalAdicionarParent = modalAdicionarFXMLLoader.load();
+        
+        modalAdicionar.setScene(new Scene(modalAdicionarParent));
+       // modalAdicionar.initModality(Modality.APPLICATION_MODAL);
+        modalAdicionar.showAndWait();*/
+        descartarMain descartar = new descartarMain();
+        descartar.start(new Stage());
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
