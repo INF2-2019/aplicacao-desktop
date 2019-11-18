@@ -36,9 +36,7 @@ public class ErroMain extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		System.out.println("FOI");
 		Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/reservas/Erro.fxml"));
-		System.out.println("FOI");
 		Scene scene = new Scene(root);
 
 		stage.setScene(scene);

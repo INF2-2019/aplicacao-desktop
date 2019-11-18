@@ -2,18 +2,14 @@ package app.biblioteca.reservas;
 
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
 public class MainReservas extends Application {
-    
+    static Stage stage;
     @Override
     public void start(Stage stage) throws IOException {
          Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/reservas/Reservas.fxml"));
@@ -23,6 +19,8 @@ public class MainReservas extends Application {
         
         stage.setTitle("Biblioteca");
         stage.setResizable(false);
+        stage.setWidth(1280);
+        setStage(stage);
         stage.setScene(scene);
         stage.show();
     }
@@ -30,5 +28,11 @@ public class MainReservas extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+    public static Stage getStage(){
+        return stage;
+    }
+
+    private void setStage(Stage stage) {
+        MainReservas.stage = stage;
+    }
 }

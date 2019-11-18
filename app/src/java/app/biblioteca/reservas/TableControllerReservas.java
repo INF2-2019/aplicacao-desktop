@@ -1,5 +1,6 @@
 package app.biblioteca.reservas;
 
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -15,7 +16,6 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +28,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import static app.biblioteca.reservas.ControllerEditar.getId;
+
 
 public class TableControllerReservas implements Initializable {
 
@@ -367,7 +367,18 @@ public class TableControllerReservas implements Initializable {
 	ps.setDouble(6, multa);
 	ps.executeUpdate();
     }
-
+    
+    @FXML
+    public void Voltar(javafx.event.ActionEvent event){
+        MainTelaTransicaoBiblioteca voltar = new MainTelaTransicaoBiblioteca(); 
+        try{
+            voltar.start(new Stage());
+        }catch(Exception ex){
+             Logger.getLogger(TableControllerReservas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        MainReservas.getStage().close();
+    }
+    
     public void atualizarTabela() {
 	consultaBD();
 	CriarTabela();

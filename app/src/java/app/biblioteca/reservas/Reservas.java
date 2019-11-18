@@ -44,14 +44,15 @@ public class Reservas {
             }   
         });
          emprestar.setOnMouseClicked((MouseEvent event) -> {
-	     System.out.println("Emtr");
 	    try {
 		TableControllerReservas.emprestar(id,idAluno,idAcervo,dataReserva);
 	    } catch (SQLException ex) {
 		Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
 	    } catch (AlunoException ex) {
 		Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
-	    }
+	    } catch (Exception ex) {
+                Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
         deletar.setOnMouseClicked((MouseEvent event) -> {
             DeletarMain mainDeleta = new DeletarMain();

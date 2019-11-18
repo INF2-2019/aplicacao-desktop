@@ -36,7 +36,7 @@
          </StackPane.margin>
       </Button>
       
-      <Button mnemonicParsing="false" style="-fx-background-color: #29a58c" text="VOLTAR" textFill="#fdfbf9" StackPane.alignment="BOTTOM_LEFT">
+      <Button mnemonicParsing="false" style="-fx-background-color: #29a58c" text="VOLTAR" textFill="#fdfbf9" StackPane.alignment="BOTTOM_LEFT" onAction="#Voltar">
          <StackPane.margin>
             <Insets left="133.0" bottom="150.0" />
          </StackPane.margin>

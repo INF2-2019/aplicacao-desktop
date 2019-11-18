@@ -42,13 +42,12 @@ public class ControllerEditar implements Initializable{
     private Button Deletar;
     
      @FXML
-    void salvarAlteracaoReserva(ActionEvent event) throws NumberFormatException, SQLException {
+    void salvarAlteracaoReserva(ActionEvent event) throws NumberFormatException, SQLException, Exception {
         TableControllerReservas controle = new TableControllerReservas();
         controle.AlterarReserva(IDAluno,IDAcervo,DataReserva,TempoEspera,getId());
         Stage modal = (Stage)Alterar.getScene().getWindow();
         modal.setResizable(false);
         modal.close();
-        controle.atualizarTabela();
         
     }
     
