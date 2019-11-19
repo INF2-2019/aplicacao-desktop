@@ -20,7 +20,7 @@ public class AlteraMain extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/alterar/Altera.fxml"));
-  
+        stage.setWidth(810);
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);

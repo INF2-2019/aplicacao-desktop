@@ -6,6 +6,7 @@
 package app.diario.campi.Principal;
 
 import app.diario.campi.Inserir.InsereMain;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.inicio.MainApp;
 import java.net.URL;
 import java.sql.Connection;
@@ -82,13 +83,15 @@ public class TableController implements Initializable{
     }
      public void voltar(javafx.event.ActionEvent event)
     {
-        fechar();
-        MainApp inicioabrir=new MainApp();
+         MainTelaTransicaoDiario inicioabrir=new MainTelaTransicaoDiario();
+        Stage stage = (Stage)table.getScene().getWindow();
+        stage.close();
         try {
             inicioabrir.start(new Stage());
         } catch (Exception ex) {
-            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(app.biblioteca.campi.Principal.TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
     }
      private void fechar() {

@@ -56,11 +56,6 @@ public class DeletaController implements Initializable {
         fechar();
     }
     
-    	/*public boolean checarAutorizacaoAluno(HttpServletRequest request, HttpServletResponse response, String id) {
-		DiarioAutenticador x = new DiarioAutenticador(request, response);
-		long idParsed = Long.parseLong(id);
-		return x.cargoLogado() == DiarioCargos.ALUNO && (Long) x.idLogado() == idParsed;
-	}
-    */
+    	
     
 }

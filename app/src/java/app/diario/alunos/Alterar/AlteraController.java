@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package app.diario.alunos.Alterar;
 
 
@@ -171,7 +166,7 @@ public class AlteraController implements Initializable {
     
     @FXML
     void Alterar(ActionEvent event) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        System.out.print("pao");
+   
 	try {
             Connection connection = DbConnector.getConnection();
 	    if(!"".equals(bairroInput.getText()))
@@ -204,7 +199,7 @@ public class AlteraController implements Initializable {
             if(!(SexoInput.getValue() == null))
             {
                  String sexo=String.valueOf(SexoInput.getValue());
-                 System.out.println(sexo);
+                
                  if(sexo.equals("Masculino")){
                     
                         PreparedStatement stmt = connection.prepareStatement("UPDATE `alunos` SET `sexo` = 'M' WHERE `id` = "+AlteraController.getId());
@@ -227,7 +222,7 @@ public class AlteraController implements Initializable {
             stmt.execute();
             stmt.close();  
                     }
-            System.out.print("nao da n");
+           
             
               
                 if(!"".equals(compInput.getText()))
@@ -278,7 +273,7 @@ public class AlteraController implements Initializable {
                   if(!(nascInput.getValue() == null))
                       
                     {
-                        System.out.println("A"+nascInput.getValue()+"A");
+                       
                         java.util.Date date = java.util.Date.from(nascInput.getValue().atStartOfDay(ZoneId.systemDefault()).plusDays(1).toInstant());
                         java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
                         
@@ -317,28 +312,3 @@ public class AlteraController implements Initializable {
     }
     
 }
-/*
-if(!"".equals(bairroInput.getText()) && !"".equals(ValorInput.getText())){
-            PreparedStatement stmt = connection.prepareStatement("UPDATE `alunos` SET"
-                    + " `ano` = '"+AnoInput.getText()+"'"
-                    + ", `valor` = '"+ValorInput.getText()+"'"
-                    + " WHERE `alunos`.`id` = "+AlteraController.getId());
-            stmt.execute();
-            stmt.close();}
-	    
-	    else if(!"".equals(AnoInput.getText()) && "".equals(ValorInput.getText())){
-            PreparedStatement stmt = connection.prepareStatement("UPDATE `etapas` SET"
-                    + " `ano` = '"+AnoInput.getText()+"'"
-                    + " WHERE `etapas`.`id` = "+AlteraController.getId());
-            stmt.execute();
-            stmt.close();}
-	    
-	    else if("".equals(AnoInput.getText()) && !"".equals(ValorInput.getText())){
-            PreparedStatement stmt = connection.prepareStatement("UPDATE `etapas` SET"
-                    + " `valor` = '"+ValorInput.getText()+"'"
-                    + " WHERE `etapas`.`id` = "+AlteraController.getId());
-            stmt.execute();
-            stmt.close();}
-
-
-*/

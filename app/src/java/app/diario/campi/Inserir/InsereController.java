@@ -64,7 +64,7 @@ public class InsereController implements Initializable {
                 + " (nome,cidade,uf)"
                 + " values (?,?,?)";
         PreparedStatement stmt = con.prepareStatement(sql);
-        System.out.println((Button) event.getSource());
+     
         // preenche os valores
        
         stmt.setString(1,(nomeInput.getText()));

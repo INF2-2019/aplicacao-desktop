@@ -138,14 +138,14 @@ public class InsereController implements Initializable {
         if(Validators.isCPF(cpfInput.getText())==false)
         {
      
-	System.out.println("<erro><mensagem>CPF inserido é inválido</mensagem></erro>");
+	
         }
         else{
         String sql = "insert into alunos"
                 + " (id,nome,email,senha,sexo,nascimento,logradouro,numero,complemento,bairro,cidade,cep,uf,foto)"
                 + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement stmt = con.prepareStatement(sql);
-        System.out.println((Button) event.getSource());
+        
         // preenche os valores
         stmt.setLong(1,Long.parseLong(cpfInput.getText()));
         stmt.setString(2,(nomeInput.getText()));
@@ -153,8 +153,7 @@ public class InsereController implements Initializable {
         stmt.setString(4,Hasher.hash(senhaInput.getText()));
         
          String sexo=String.valueOf(SexoInput.getValue());
-                 System.out.println(sexo); 
-        
+               
         if(sexo.equals("Masculino")){
             stmt.setString(5, "M");
         }else if(sexo.equals("Femenino")){

@@ -66,6 +66,7 @@ table-view, .tree-table-view {
     -fx-text-fill: white;
     -fx-cursor: hand;
 }
+
 #info{
     -fx-background-color: #29a58c;
     -fx-text-fill: white;

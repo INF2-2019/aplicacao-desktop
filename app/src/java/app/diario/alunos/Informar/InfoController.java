@@ -166,7 +166,7 @@ static long id;
                  Image img = new Image(rs.getString("foto"));
                 foto.setImage(img);
             }catch(IllegalArgumentException ex){
-                System.out.println("endreço de imagem invalido");
+               
             } 
       }catch (SQLException ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);

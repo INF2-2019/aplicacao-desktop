@@ -12,7 +12,7 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/principal/FXML2.fxml"));
-        
+        stage.setWidth(1280);
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);

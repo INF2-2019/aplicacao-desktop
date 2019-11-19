@@ -59,17 +59,12 @@ table-view, .tree-table-view {
 #deleta{
     -fx-background-color: #E53935;
     -fx-text-fill: white;
-    -fx-cursor: hand;
+    
 }
 #edita{
     -fx-background-color: #2C46A5;
     -fx-text-fill: white;
-    -fx-cursor: hand;
-}
-#info{
-    -fx-background-color: #29a58c;
-    -fx-text-fill: white;
-    -fx-cursor: hand;
+
 }
 .legendas{
     

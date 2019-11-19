@@ -83,7 +83,7 @@ public class AlteraController implements Initializable {
     
     @FXML
     void Alterar(ActionEvent event) {
-        System.out.print("pao");
+     
 	try {
             Connection connection = DbConnector.getConnection();
 	   

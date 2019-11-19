@@ -16,14 +16,13 @@ public class modalMain extends Application{
     public void start() throws IOException{  
         Stage stage = new Stage();
         
-        /*URL url = new File("/app/diario/relatorios/modal-professor.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);*/
+        
         Parent root = FXMLLoader.load(getClass().getResource("/app/diario/relatorios/rel9/modal-professor.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setWidth(1280);
+        stage.setWidth(810);
         stage.setResizable(false);
         stage.show();
     }
