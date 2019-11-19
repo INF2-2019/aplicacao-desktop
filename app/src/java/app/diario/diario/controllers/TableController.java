@@ -182,8 +182,11 @@ public class TableController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        MainDiario.getStage().close();
+       // MainDiario.getStage().close();
+        Stage stage = (Stage)  voltar.getScene().getWindow(); //Obtendo a janela atual
+    stage.close();
          
     }
+   
 }
    

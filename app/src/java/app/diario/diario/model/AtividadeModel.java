@@ -24,9 +24,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * @author juanr
- */
+
 public class AtividadeModel {
 
 	String  idEtapa, idDisciplina;

@@ -20,28 +20,9 @@
 
 <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.diario.controllers.TableController">
     <children>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E5E5E5;">
+      <Pane prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: #E5E5E5;">
          <children>
-            <Button fx:id="adicionaratv" layoutX="1024.0" layoutY="188.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #29a58c;" text="Nova Atividade" textFill="#fdfbf9">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button fx:id="adicionarNotas" layoutX="91.0" layoutY="146.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" style="-fx-background-color: #29a58c;" text="Notas" textFill="#fdfbf9">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button fx:id="adicionarFaltas" layoutX="91.0" layoutY="212.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" style="-fx-background-color: #29a58c;" text="Faltas" textFill="#fdfbf9">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+            <Button fx:id="adicionaratv" layoutX="852.0" layoutY="113.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #29a58c;" text="Nova Atividade" textFill="#fdfbf9">
                <font>
                   <Font size="16.0" />
                </font>
@@ -57,6 +38,12 @@
                   <TableColumn fx:id="col_acoes2" maxWidth="358.0" minWidth="190.0" prefWidth="352.0" resizable="false" style="-fx-font-size: 16;" text="Ações" />
                </columns>
             </TableView>
+              <Button fx:id="adicionar" layoutX="1028.0" layoutY="113.0" mnemonicParsing="false" onAction="#modalAdicionar" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #29a58c;" text="Novo Conteudo" textFill="#fdfbf9">
+                  <font>
+                      <Font size="16.0" />
+                  </font>
+              </Button>
+            <Button fx:id="voltar" layoutX="37.0" layoutY="638.0" mnemonicParsing="false" onAction="#acaoVoltar" onMouseClicked="#acaoVoltar" prefHeight="39.0" prefWidth="83.0" style="-fx-background-color: #29a58c;" text="Voltar" textFill="#fcfcfc" />
          </children>
       </Pane>
         <TableView fx:id="tabela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="1018.0" StackPane.alignment="CENTER">
@@ -73,26 +60,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
         </TableView>
-        <Button fx:id="adicionar" mnemonicParsing="false" onAction="#modalAdicionar" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #29a58c;" text="Novo Conteudo" textFill="#fdfbf9" StackPane.alignment="TOP_RIGHT">
-            <StackPane.margin>
-                <Insets right="84.0" top="116.0" />
-            </StackPane.margin>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Button>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" StackPane.alignment="TOP_CENTER" />
-        <Label text="S.A. Admin" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
-            <StackPane.margin>
-                <Insets left="10.0" top="8.0" />
-            </StackPane.margin>
-            <font>
-                <Font size="27.0" />
-            </font>
-        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="48.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1290.0" />
         <Label text="Conteudos e Atividades:" StackPane.alignment="TOP_LEFT">
             <font>
                 <Font size="48.0" />
@@ -101,11 +69,6 @@
                 <Insets left="84.0" top="84.0" />
             </StackPane.margin>
         </Label>
-        <TextField fx:id="pesquisaTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#pesquisar" prefHeight="25.0" prefWidth="278.0" promptText="Pesquisar" StackPane.alignment="TOP_CENTER">
-            <StackPane.margin>
-                <Insets left="300.0" top="120.0" />
-            </StackPane.margin>
-        </TextField>
         <Label fx:id="aviso" alignment="TOP_CENTER" contentDisplay="CENTER" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
             <font>
                 <Font size="14.0" />
@@ -113,6 +76,14 @@
             <StackPane.margin>
                 <Insets right="85.0" top="80.0" />
             </StackPane.margin>
+        </Label>
+        <Label text="S.A." textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
+            <StackPane.margin>
+                <Insets left="10.0" top="8.0" />
+            </StackPane.margin>
+            <font>
+                <Font size="32.0" />
+            </font>
         </Label>
     </children>
 </StackPane>

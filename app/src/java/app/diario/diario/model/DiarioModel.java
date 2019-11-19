@@ -7,9 +7,6 @@ package app.diario.diario.model;
 
 
 
-/**
- * @author juanr
- */
 public class DiarioModel {
 
 	protected Integer idConteudo, idMatricula, falta;

@@ -3,8 +3,7 @@ package app.diario.diario.controllers;
 
 import app.diario.diario.model.ConteudosModel;
 
-import app.diario.diario.utils.Validacao;
-import javafx.application.Platform;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -71,15 +70,13 @@ public class ModalEditarController implements Initializable {
                 String Cont = EdConteudo.getText();
                 String Et = EdEtapa.getText();
                 LocalDate Dat = EdData.getValue();
-               
-                if (!Validacao.validaNome(conteudo)) {
-                    setAviso("Nome inválido(Excede 255 caracteres).");
-                } else {
-                    ConteudosRepository.atualiza(id, Et, Cont);
-                    Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-                    status = true;
-                    modal.close();
-                }
+ 
+                
+                ConteudosRepository.atualiza(id, Et, Cont);
+                Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+                status = true;
+                modal.close();
+                
             }
         } catch (SQLException e) {
             setAviso("Não foi possível editar o departamento.");
