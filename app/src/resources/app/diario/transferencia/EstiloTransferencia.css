@@ -1,0 +1,8 @@
+.aviso {
+    -fx-background-color: red;
+    -fx-padding: 2px;
+}
+.sucesso{
+    -fx-background-color: #248f24;
+    -fx-padding: 2px;
+}

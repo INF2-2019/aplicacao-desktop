@@ -6,25 +6,15 @@ import java.sql.Date;
 import javafx.scene.control.Label;
 
 public class ModelTable {
-    String id,idAlunos,idAcervo;
-    Date dataEmprestimo,dataPrevDevol,dataDevolucao;
-    Double multa;
-
-    
-    
-    
+    String id,idAlunos,idAcervo,atraso;
 
     
 
-    public ModelTable(String id, String idAlunos, String idAcervo, Date dataEmprestimo, Date dataPrevDevol, Date dataDevolucao, Double multa){
+    public ModelTable(String id, String idAlunos, String idAcervo,  String atraso){
         this.id = id;
         this.idAlunos = idAlunos;
         this.idAcervo = idAcervo;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataPrevDevol = dataPrevDevol;
-	this.dataDevolucao = dataDevolucao;
-        this.multa = multa;
-        
+        this.atraso = atraso;
         
     }
     
@@ -51,36 +41,13 @@ public class ModelTable {
 	this.idAcervo = idAcervo;
     }
 
-    public Date getDataEmprestimo() {
-	return dataEmprestimo;
+    public String getAtraso() {
+	return atraso;
     }
 
-    public void setDataEmprestimo(Date dataEmprestimo) {
-	this.dataEmprestimo = dataEmprestimo;
+    public void setAtraso(String atraso) {
+	this.atraso = atraso;
     }
 
-    public Date getDataPrevDevol() {
-	return dataPrevDevol;
-    }
-
-    public void setDataPrevDevol(Date dataPrevDevol) {
-	this.dataPrevDevol = dataPrevDevol;
-    }
-
-    public Date getDataDevolucao() {
-	return dataDevolucao;
-    }
-
-    public void setDataDevolucao(Date dataDevolucao) {
-	this.dataDevolucao = dataDevolucao;
-    }
-
-    public Double getMulta() {
-	return multa;
-    }
-
-    public void setMulta(Double multa) {
-	this.multa = multa;
-    }
     
 }

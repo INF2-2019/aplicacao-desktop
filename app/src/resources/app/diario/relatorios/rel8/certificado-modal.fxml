@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="810.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.relatorios.rel8e9.Controllers.ModalCertificadoController">
+    <children>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="23.0" prefHeight="43.0" prefWidth="810.0" text="Certificado de conclusão de curso" textFill="#377256">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="botaoFechar" layoutX="613.0" layoutY="542.0" mnemonicParsing="false" onAction="#fechar" style="-fx-background-color: #29a58c;" text="FECHAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="120.0" layoutY="112.0" prefHeight="43.0" prefWidth="568.0" text="É através deste documento que o Centro Federal de Educação Tecnológica de Minas Gerais certifica de que o aluno " wrapText="true" />
+      <TextField fx:id="nome" editable="false" layoutX="323.0" layoutY="129.0" prefHeight="26.0" prefWidth="366.0" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="120.0" layoutY="155.0" prefHeight="65.0" prefWidth="568.0" text="foi aprovado em todas as disciplinas em que estava inscrito, ou seja, possui nota igual ou superior a 60 pontos em todas essas." wrapText="true" />
+      <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <ImageView fitHeight="87.0" fitWidth="107.0" layoutX="120.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="https://www.cefetmg.br/galeria/imagens/Logo_Assinatura_CEFET_Rodape.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

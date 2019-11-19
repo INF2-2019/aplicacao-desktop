@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="556.0" prefWidth="918.0" stylesheets="@../../../../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.acervo.info.InfoController">
+   <children>
+      <Label layoutX="15.0" layoutY="14.0" prefHeight="67.0" prefWidth="246.0" text="Informações" textFill="#5dbaa7">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      
+      
+      <Label layoutX="15.0" layoutY="103.0" text="Id :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelId" layoutX="66.0" layoutY="103.0" prefHeight="30.0" prefWidth="316.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" /> 
+      
+      <Label layoutX="404.0" layoutY="103.0" text="Id-Campi:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelIdCampi" layoutX="502.0" layoutY="103.0" prefHeight="30.0" prefWidth="130.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label layoutX="649.0" layoutY="103.0" text="Tipo:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTipo" layoutX="727.0" layoutY="103.0" prefHeight="30.0" prefWidth="163.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />      
+      
+      <Label layoutX="15.0" layoutY="156.0" text="Nome:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNome" layoutX="87.0" layoutY="156.0" prefHeight="30.0" prefWidth="350.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label layoutX="459.0" layoutY="156.0" prefHeight="30.0" prefWidth="86.0" text="Editora:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelEditora" layoutX="537.0" layoutY="156.0" prefHeight="30.0" prefWidth="350.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label layoutX="14.0" layoutY="212.0" prefHeight="30.0" prefWidth="69.0" text="Local:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelLocal" layoutX="87.0" layoutY="212.0" prefHeight="30.0" prefWidth="350.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label layoutX="468.0" layoutY="214.0" prefHeight="30.0" prefWidth="69.0" text="Ano:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelAno" layoutX="519.0" layoutY="214.0" prefHeight="30.0" prefWidth="92.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      
+      <Label layoutX="632.0" layoutY="214.0" prefHeight="30.0" prefWidth="86.0" text="Páginas:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPaginas" layoutX="715.0" layoutY="214.0" prefHeight="30.0" prefWidth="178.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      
+<!--**********                    Informações Adicionais do Tipo                    **********-->      
+      <Label layoutX="26.0" layoutY="286.0" prefHeight="39.0" prefWidth="295.0" text="Informações Adicionais do Tipo" textFill="#5dbaa7">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      
+      
+      <Label fx:id="l1" layoutX="11.0" layoutY="336.0" prefHeight="30.0" prefWidth="102.0" text="l1:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label1" layoutX="112.0" layoutY="336.0" prefHeight="30.0" prefWidth="192.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label fx:id="l2" layoutX="305.0" layoutY="336.0" prefHeight="30.0" prefWidth="102.0" text="l2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" layoutX="402.0" layoutY="336.0" prefHeight="30.0" prefWidth="186.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label fx:id="l3" layoutX="591.0" layoutY="336.0" prefHeight="30.0" prefWidth="102.0" text="l3">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label3" layoutX="698.0" layoutY="336.0" prefHeight="30.0" prefWidth="186.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label fx:id="l4" layoutX="7.0" layoutY="403.0" prefHeight="30.0" prefWidth="102.0" text="l4">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label4" layoutX="109.0" layoutY="403.0" prefHeight="30.0" prefWidth="192.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label fx:id="l5" layoutX="303.0" layoutY="403.0" prefHeight="30.0" prefWidth="102.0" text="l5">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label5" layoutX="402.0" layoutY="397.0" prefHeight="30.0" prefWidth="186.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      <Label fx:id="l6" layoutX="591.0" layoutY="403.0" prefHeight="30.0" prefWidth="102.0" text="l6">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label6" layoutX="692.0" layoutY="403.0" prefHeight="30.0" prefWidth="192.0" style="-fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" textFill="#5dbaa7" />
+      
+      
+      <Button fx:id="botaoOk" layoutX="781.0" layoutY="489.0" mnemonicParsing="false" onAction="#fecha" prefHeight="39.0" prefWidth="92.0" style="-fx-background-color: #29a58c; -fx-cursor: hand;" text="OK" textFill="WHITE" />
+   </children>
+</AnchorPane>

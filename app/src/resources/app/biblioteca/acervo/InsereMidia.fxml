@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="213.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.acervo.inserir.midia.InsereMidiaController">
+     <children>
+
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="288.0" text="Inserir Midia" textFill="#377256">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLabel" layoutX="14.0" layoutY="66.0" minHeight="16" minWidth="69" text=" Id: " textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idInput" layoutX="14.0" layoutY="88.0" prefHeight="27.0" prefWidth="162.0" style="-fx-background-color: transparent; -fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" />
+
+      <Label fx:id="tempoLabel" layoutX="226.0" layoutY="66.0" minHeight="16" minWidth="69" text="Tempo:" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tempoInput" layoutX="226.0" layoutY="88.0" prefHeight="27.0" prefWidth="162.0" style="-fx-background-color: transparent; -fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" />
+
+      <Label fx:id="subtipoLabel" layoutX="440.0" layoutY="66.0" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="88.0" text="Subtipo:" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="subtipoInput" layoutX="440.0" layoutY="88.0" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: #5dbaa7; -fx-border-width: 0 0 2 0;" />
+      
+      <Button fx:id="botaoCancelar" layoutX="400.0" layoutY="166.0" mnemonicParsing="false" onAction="#acaoCancelar" prefHeight="27.0" prefWidth="79.0" style="-fx-background-color: #E53935; -fx-cursor: hand;" text="Cancelar" textFill="WHITE" />
+      <Button fx:id="botaoSalvar" layoutX="514.0" layoutY="166.0" mnemonicParsing="false" onAction="#acaoSalvar" prefHeight="27.0" prefWidth="79.0" style="-fx-background-color: #29a58c; -fx-cursor: hand;" text="Salvar" textFill="WHITE" />
+      
+    </children>
+</AnchorPane>

@@ -18,6 +18,8 @@ public class RelMultasMain extends Application{
         stage.setScene(scene);
         stage.show();
         setStage(stage);
+	stage.setResizable(false);
+
     }
     public static void main(String[] args) {
         launch(args);
