@@ -84,50 +84,42 @@ public class InfoController implements Initializable {
     }
     
     ObservableList<Professor> profs = FXCollections.observableArrayList();
-    
-    String[] nomeCursos;
-    int[] idCursos;
-    String[] nomeDisci;
-    int[] carga;
-    int[][] idTurmas;
+
     
     public void consulta() throws SQLException, IOException {
-        int aux = 0;
 		Connection con = ConnectionFactory.getDiario();
-		if(con != null) {
-		
-			try(Statement stmt = con.createStatement()) {
-				ResultSet rs = stmt.executeQuery("SELECT * FROM `professores`");
-                                ResultSetMetaData rsmd = rs.getMetaData();
-                   
-                                int sizeDisc=rsmd.getPrecision(2);
-				while(rs.next()) {
-                                    if(getId() == rs.getInt("id")){ 
-                                        idCursos = procuraIdCurso(con, rs.getInt("id-depto"));
-                                        nomeCursos = procuraCursos(con, rs.getInt("id-depto"));
-                                        
-                                        for(int i = 0; i < idCursos.length;i++){
-                                            
-                                            profs.add(new Professor(idCursos[i], nomeCursos[i]));
-                                            int[] idT;
-                                            idT = procuraIdTurma(con, idCursos[i]);
-                                            for(int j = 0; j < idT.length; j++){
-                                              
-                                                idTurmas = new int[idCursos.length][idT.length];
-                                                idTurmas[i][j] = idT[j];
-                                                nomeDisci = procuraDisciplinas(con, idTurmas[i][j]);
-                                                carga = procuraCarga(con, idTurmas[i][j]);
-                                                for(int c = 0; c < carga.length;c++){
-                                                     profs.add(new Professor(carga[c], nomeDisci[c], true));
-                                                }
-                                               
-                                            }
-                                        }
-                                       
-                                        ThisNome = procuraNome(con, getId());
-                                    }					
-				}
+		if (con != null) {
+			PreparedStatement prst = con.prepareStatement("SELECT * FROM `professores` WHERE `id` = ?");
+			prst.setInt(1, (int)id);
+			ResultSet rs = prst.executeQuery();
+			rs.next();
+			int idDis[];
+			idDis =  procuraIdDisciplinas(con, (int)id);
+			String nomeCursos[] = new String[idDis.length];
+			int cargas[];
+			String nomeDis[];
+			String cursoDis[][] = new String [idDis.length][3];
+			nomeDis = procuraDisciplinas(con, idDis);
+			cargas = procuraCarga(con, idDis);
+			for (int i = 0; i < idDis.length; i++) {
+				nomeCursos[i] = procuraCursos(con, idDis[i]);
+				cursoDis[i][0] = nomeCursos[i];
+				cursoDis[i][1] = nomeDis[i];
+				cursoDis[i][2] = Integer.toString(cargas[i]);
 			}
+			sortStrings(cursoDis, idDis.length);
+			int j = 0;
+			for (int i = 0; i < idDis.length;i++, j++) {
+			if (i != 0) {	
+				if (!cursoDis[i][0].equals(cursoDis[i-1][0])) {
+					profs.add(new Professor(cursoDis[i][0]));
+				}
+			} else {
+				profs.add(new Professor(cursoDis[i][0]));
+			}
+				profs.add(new Professor(cursoDis[i][2], cursoDis[i][1], true));
+			}
+			ThisNome = procuraNome(con, getId());
 			con.close();
 		} else {
 			throw new SQLException();
@@ -142,57 +134,62 @@ public class InfoController implements Initializable {
         return rs.getString("nome");
     }
     
-    public static String[] procuraDisciplinas(Connection con, int idTurma) throws SQLException {
-		PreparedStatement prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id-turmas` = ?");
-		prst.setInt(1, idTurma);
-		ResultSet rs = prst.executeQuery();
-		prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id-turmas` = ?");
-		prst.setInt(1, idTurma);
-		ResultSet cp = prst.executeQuery();
-		String nomesDis[];
-		int cont = 0;
-		while (rs.next()) {
-			cont++;
-		}
-		nomesDis = new String[cont];
-		cont = 0;
-		while (cp.next()) {
-			nomesDis[cont] = cp.getString("nome");
-			cont++;
-		}
-		return nomesDis;
-
-	}
-
-	public static int[] procuraCarga(Connection con, int idTurma) throws SQLException {
-		PreparedStatement prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id-turmas` = ?");
-		prst.setInt(1, idTurma);
-		ResultSet rs = prst.executeQuery();
-		prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id-turmas` = ?");
-		prst.setInt(1, idTurma);
-		ResultSet cp = prst.executeQuery();
-		int cont = 0;
-		int cargas[];
-		while (rs.next()) {
-			cont++;
-		}
-		cargas = new int[cont];
-		cont = 0;
-		while (cp.next()) {
-			cargas[cont] = cp.getInt("carga-horaria-min");
-			cont++;
+    public static int[] procuraCarga(Connection con, int idDis[]) throws SQLException {
+		int[] cargas;
+		cargas = new int[idDis.length];
+		PreparedStatement prst;
+		ResultSet rs;
+		for (int i = 0; i < idDis.length; i++) {
+			prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id` = ?");
+			prst.setInt(1, idDis[i]);
+			rs = prst.executeQuery();
+			rs.next();
+			cargas[i] = rs.getInt("carga-horaria-min");
 		}
 		return cargas;
 	}
 
-	public static int[] procuraIdTurma(Connection con, int idCurso) throws SQLException {
-		PreparedStatement prst = con.prepareStatement("SELECT * FROM `turmas` WHERE `id-cursos` = ?");
-		prst.setInt(1, idCurso);
+	public static String procuraCursos(Connection con, int idDis) throws SQLException {
+		PreparedStatement prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id` = ?");
+		prst.setInt(1, idDis);
 		ResultSet rs = prst.executeQuery();
-		prst = con.prepareStatement("SELECT * FROM `turmas` WHERE `id-cursos` = ?");
-		prst.setInt(1, idCurso);
+		rs.next();
+		int idT = rs.getInt("id-turmas");
+		prst = con.prepareStatement("SELECT * FROM `turmas` WHERE `id` = ?");
+		prst.setInt(1, idT);
+		rs = prst.executeQuery();
+		rs.next();
+		int idC = rs.getInt("id-cursos");
+		prst = con.prepareStatement("SELECT * FROM `cursos` WHERE `id` = ?");
+		prst.setInt(1, idC);
+		rs = prst.executeQuery();
+		rs.next();
+		String curso = rs.getString("nome");
+		return curso;
+	}
+	
+	public static String[] procuraDisciplinas(Connection con, int idDis[]) throws SQLException {
+		String nomeDis[] = new String [idDis.length];
+		PreparedStatement prst;
+		ResultSet rs;
+		for (int i = 0; i < idDis.length; i++) {
+			prst = con.prepareStatement("SELECT * FROM `disciplinas` WHERE `id` = ?");
+			prst.setInt(1, idDis[i]);
+			rs = prst.executeQuery();
+			rs.next();
+			nomeDis[i] = rs.getString("nome");
+		}
+		return nomeDis;
+	}
+	
+	public static int[] procuraIdDisciplinas(Connection con, int idProf) throws SQLException {
+		PreparedStatement prst = con.prepareStatement("SELECT * FROM `prof_disciplinas` WHERE `id-professores` = ?");
+		prst.setInt(1, idProf);
+		ResultSet rs = prst.executeQuery();
+		prst = con.prepareStatement("SELECT * FROM `prof_disciplinas` WHERE `id-professores` = ?");
+		prst.setInt(1, idProf);
 		ResultSet cp = prst.executeQuery();
-		int ids[];
+		int[] ids;
 		int cont = 0;
 		while (rs.next()) {
 			cont++;
@@ -200,49 +197,7 @@ public class InfoController implements Initializable {
 		ids = new int[cont];
 		cont = 0;
 		while (cp.next()) {
-			ids[cont] = cp.getInt("id");
-			cont++;
-		}
-		return ids;
-	}
-
-	public static String[] procuraCursos(Connection con, int idDepto) throws SQLException {
-		PreparedStatement prst = con.prepareStatement("SELECT * FROM `cursos` WHERE `id-depto` = ?");
-		prst.setInt(1, idDepto);
-		ResultSet rs = prst.executeQuery();
-		prst = con.prepareStatement("SELECT * FROM `cursos` WHERE `id-depto` = ?");
-		prst.setInt(1, idDepto);
-		ResultSet cp = prst.executeQuery();
-		String nomesCursos[];
-		int cont = 0;
-		while (rs.next()) {
-			cont++;
-		}
-		nomesCursos = new String[cont];
-		cont = 0;
-		while (cp.next()) {
-			nomesCursos[cont] = cp.getString("nome");
-			cont++;
-		}
-		return nomesCursos;
-	}
-
-	public static int[] procuraIdCurso(Connection con, int idDepto) throws SQLException {
-		PreparedStatement prst = con.prepareStatement("SELECT * FROM `cursos` WHERE `id-depto` = ?");
-		prst.setInt(1, idDepto);
-		ResultSet rs = prst.executeQuery();
-		prst = con.prepareStatement("SELECT * FROM `cursos` WHERE `id-depto` = ?");
-		prst.setInt(1, idDepto);
-		ResultSet cp = prst.executeQuery();
-		int ids[];
-		int cont = 0;
-		while (rs.next()) {
-			cont++;
-		}
-		ids = new int[cont];
-		cont = 0;
-		while (cp.next()) {
-			ids[cont] = cp.getInt("id");
+			ids[cont] = cp.getInt("id-disciplinas");
 			cont++;
 		}
 		return ids;
@@ -261,5 +216,31 @@ public class InfoController implements Initializable {
             cargaModal.setCellValueFactory(new PropertyValueFactory<>("cargaH"));
             tabelaModal.setItems(profs);
                            
+    }
+	
+	public static void sortStrings(String[][] arr, int n)  
+    { 
+        String temp; 
+		String temp2;
+		String temp3;
+        // Sorting strings using bubble sort 
+        for (int j = 0; j < n - 1; j++) 
+        { 
+            for (int i = j + 1; i < n; i++)  
+            { 
+                if (arr[j][0].compareTo(arr[i][0]) > 0) 
+                { 
+                    temp = arr[j][0];
+					temp2 = arr[j][1];
+					temp3 = arr[j][2];
+                    arr[j][0] = arr[i][0];
+					arr[j][1] = arr[i][1];
+					arr[j][2] = arr[i][2];
+                    arr[i][0] = temp;
+					arr[i][1] = temp2; 
+					arr[i][2] = temp3; 
+                } 
+            } 
+        } 
     }
 }

@@ -17,7 +17,7 @@ public class Professor {
         private int idTurma;
         
         private String nomeDisciplina;
-        private Integer cargaH;
+        private String cargaH;
 
 	public Professor() {
 		this.id = 0;
@@ -29,13 +29,12 @@ public class Professor {
  
 	}
 	
-	public Professor(int cargaH, String nomeDisciplina, boolean x) {
+	public Professor(String cargaH, String nomeDisciplina, boolean x) {
 		this.cargaH = cargaH;
                 this.nomeDisciplina = nomeDisciplina;
 	}
         
-        public Professor(int idCurso, String nomeCurso) {
-		this.idCurso = idCurso;
+        public Professor(String nomeCurso) {
                 this.nomeCurso = nomeCurso;
 	}
 	
@@ -118,14 +117,14 @@ public class Professor {
     /**
      * @return the cargaH
      */
-    public Integer getCargaH() {
+    public String getCargaH() {
         return cargaH;
     }
 
     /**
      * @param cargaH the cargaH to set
      */
-    public void setCargaH(Integer cargaH) {
+    public void setCargaH(String cargaH) {
         this.cargaH = cargaH;
     }
         
