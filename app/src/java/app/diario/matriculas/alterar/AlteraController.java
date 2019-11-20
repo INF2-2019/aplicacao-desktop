@@ -24,7 +24,8 @@ public class AlteraController implements Initializable {
 
 	public static int idVelho, ativoVelho;
 	public static String anoVelho;
-	private int id, ativo, idAluno, idDisciplina;
+	private int id, ativo, idDisciplina;
+	private long idAluno;
 	private String aluno, disciplina, ano = "2019";
 	private boolean podeAlterar = false;
 
@@ -141,7 +142,7 @@ public class AlteraController implements Initializable {
 			sql = "SELECT * FROM disciplinas WHERE nome='" + disciplina + "'";
 			ResultSet res2 = con.createStatement().executeQuery(sql);
 			res2.next();
-			idAluno = res1.getInt("id");
+			idAluno = res1.getLong("id");
 			idDisciplina = res2.getInt("id");
 			sql = "UPDATE matriculas SET `id`=" + id + ",`id-alunos`=" + idAluno + ",`id-disciplinas`=" + idDisciplina + ",`ano`=" + Integer.parseInt(ano) + ",`ativo`=" + ativo + " WHERE id=" + idVelho;
 			int res = con.createStatement().executeUpdate(sql);
@@ -211,11 +212,11 @@ public class AlteraController implements Initializable {
 		this.ativo = ativo;
 	}
 
-	public int getIdAluno() {
+	public long getIdAluno() {
 		return idAluno;
 	}
 
-	public void setIdAluno(int idAluno) {
+	public void setIdAluno(long idAluno) {
 		this.idAluno = idAluno;
 	}
 
