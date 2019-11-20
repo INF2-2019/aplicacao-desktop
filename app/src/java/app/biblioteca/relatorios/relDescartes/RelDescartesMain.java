@@ -18,6 +18,7 @@ public class RelDescartesMain extends Application{
         
         stage.setScene(scene);
         stage.show();
+        stage.setWidth(1280);
         setStage(stage);
 	stage.setResizable(false);
     }

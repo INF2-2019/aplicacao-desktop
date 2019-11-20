@@ -6,7 +6,7 @@
 package app.biblioteca.alunos.Principal;
 
 import app.biblioteca.alunos.Inserir.InsereMain;
-import app.diario.telatransicao.MainTelaTransicaoDiario;
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import app.inicio.MainApp;
 import java.awt.event.ActionEvent;
 import java.net.URL;
@@ -81,7 +81,7 @@ public class TableController implements Initializable{
     }
     public void voltar(javafx.event.ActionEvent event)
     {
-        MainTelaTransicaoDiario inicioabrir=new MainTelaTransicaoDiario();
+        MainTelaTransicaoBiblioteca inicioabrir=new MainTelaTransicaoBiblioteca();
         Stage stage = (Stage)table.getScene().getWindow();
         stage.close();
         try {
@@ -92,7 +92,7 @@ public class TableController implements Initializable{
         
     }
      private void fechar() {
-	Main.getStage().close();
+	MainAlunos.getStage().close();
     }
 
     static ObservableList<ModelTable> oblist = FXCollections.observableArrayList();

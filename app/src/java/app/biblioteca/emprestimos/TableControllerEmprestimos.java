@@ -378,7 +378,7 @@ public class TableControllerEmprestimos implements Initializable {
 	    }catch(Exception ex){
 		Logger.getLogger(TableControllerEmprestimos.class.getName()).log(Level.SEVERE, null, ex);
 	    }
-	    Main.getStage().close();
+	    MainEmprestimos.getStage().close();
     }
 
 }

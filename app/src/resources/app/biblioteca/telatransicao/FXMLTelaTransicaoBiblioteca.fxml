@@ -20,7 +20,7 @@
    <children>
       <AnchorPane minHeight="0.0" prefHeight="48.0" prefWidth="1280.0">
          <children>
-            <Label id="lblHeader" alignment="TOP_LEFT" prefHeight="48.0" prefWidth="1280.0" text="S.A." textFill="WHITE">
+            <Label id="lblHeader" alignment="TOP_LEFT" prefHeight="48.0" prefWidth="1280.0" text="Biblioteca" textFill="WHITE">
                <font>
                   <Font size="32.0" />
                </font>
@@ -54,6 +54,14 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
+                        <Button fx:id="btnManutencaoCampi" layoutX="85.0" layoutY="315.0" mnemonicParsing="false" onAction="#entraManutencaoCampi" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE CAMPI" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -69,7 +77,7 @@
                            <font>
                               <Font size="36.0" />
                            </font></Label>
-                        <Button fx:id="btnManutencaoAcervos" layoutX="255.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoAcervos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ACERVOS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoAcervos" layoutX="255.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoAcervos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ACERVO" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -83,13 +91,21 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnMenuRelatorios" layoutX="255.0" layoutY="315.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
+                        <Button fx:id="btnMenuRelatorios" layoutX="255.0" layoutY="395.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                            <font>
                               <Font size="14.0" />
                            </font></Button>
+                        <Button fx:id="btnManutencaoAlunos" layoutX="255.0" layoutY="315.0" mnemonicParsing="false" onAction="#entraManutencaoAlunos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ALUNOS" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>

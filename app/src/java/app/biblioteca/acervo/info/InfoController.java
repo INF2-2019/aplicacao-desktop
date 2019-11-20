@@ -143,7 +143,7 @@ public class InfoController implements Initializable {
                     l2.setText("edição:");
                     label2.setText(rsTipo.getString("edicao"));
                     l3.setText("isbn:");
-                    label3.setText("isbn");
+                    label3.setText(rsTipo.getString("isbn"));
                     l4.setText("");
                     l5.setText("");
                     l6.setText("");

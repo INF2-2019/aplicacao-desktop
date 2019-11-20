@@ -15,7 +15,7 @@
     <top>
         <BorderPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="48.0" prefWidth="1280.0" styleClass="header">
             <left>
-                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="S.A. Admin" BorderPane.alignment="CENTER" />
+                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Conteúdos" BorderPane.alignment="CENTER" />
             </left>
         </BorderPane>
     </top>

@@ -207,7 +207,7 @@ public class TableControllerDisciplinas implements Initializable {
 	    }catch(Exception ex){
 		Logger.getLogger(TableControllerDisciplinas.class.getName()).log(Level.SEVERE, null, ex);
 	    }
-	    MainApp.getStage().close();
+	    MainDisciplinas.getStage().close();
 	}
         
         public void AtualizaTabela(){

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author User
  */
-public class MainApp extends Application {
+public class MainDescartes extends Application {
  
     private static Stage stage;
     @Override

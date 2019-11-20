@@ -132,7 +132,7 @@ public class TableController implements Initializable{
 		MainTelaTransicaoDiario transi = new MainTelaTransicaoDiario();
         try {
 			transi.start(new Stage());
-            Main.getStage().close();
+            MainEtapas.getStage().close();
         } catch (Exception ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
         }

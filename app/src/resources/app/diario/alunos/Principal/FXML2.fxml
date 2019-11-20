@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.diario.alunos.Principal.TableController">
+<AnchorPane id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.alunos.Principal.TableController">
    <children>
       <TableView fx:id="table" editable="true" layoutX="52.0" layoutY="168.0" pickOnBounds="false" prefHeight="640.0" prefWidth="940.0" style="-fx-border-color: #ffffff;" styleClass="fonte" stylesheets="@style.css" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="318.0" AnchorPane.topAnchor="168.0">
          <columns>
@@ -28,7 +28,7 @@
             <TableColumn fx:id="col_funcoes2" prefWidth="148.0" styleClass="coluna" />
          </columns>
       </TableView>
-      <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" styleClass="cabecalho" stylesheets="@style.css" text="S.A. Alunos" textFill="WHITE">
+      <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" styleClass="cabecalho" stylesheets="@style.css" text="Diário" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font>

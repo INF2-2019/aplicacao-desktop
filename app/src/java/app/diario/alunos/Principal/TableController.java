@@ -92,7 +92,7 @@ public class TableController implements Initializable{
         
     }
      private void fechar() {
-	Main.getStage().close();
+	MainAlunos.getStage().close();
     }
 
 

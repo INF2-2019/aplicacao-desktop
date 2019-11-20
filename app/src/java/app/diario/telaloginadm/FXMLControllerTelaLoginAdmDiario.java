@@ -75,7 +75,7 @@ public class FXMLControllerTelaLoginAdmDiario implements Initializable {
                     Scene scene = new Scene(root);
                     stg.setScene(scene);
                     stg.setResizable(false);
-                    stg.setTitle("Sistema Acadêmico");
+                    stg.setTitle("Diário");
                     stg.setWidth(1280);
                     stg.show();
                 }

@@ -6,6 +6,7 @@
 package app.biblioteca.relatorios.relEmprestimos;
 
 import app.biblioteca.relatorios.principal.DbConnector;
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -182,8 +183,9 @@ public class TableController implements Initializable{
      @FXML
     public void volta() {
         //declaracao para a tela de transição
+        MainTelaTransicaoBiblioteca main = new MainTelaTransicaoBiblioteca();
         try {
-            //.start(new Stage());
+            main.start(new Stage());
             RelEmprestimosMain.getStage().close();
         } catch (Exception ex) {
             Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);

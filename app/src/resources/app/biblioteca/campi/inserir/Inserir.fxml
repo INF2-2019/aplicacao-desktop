@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="864.0" stylesheets="@../principal/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.biblioteca.campi.Inserir.InsereController">
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="864.0" stylesheets="@../principal/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.campi.Inserir.InsereController">
     <children>
-      <Label prefHeight="43.0" prefWidth="864.0" styleClass="cabecalho" text="Alunos" textFill="#377256">
+      <Label prefHeight="43.0" prefWidth="864.0" styleClass="cabecalho" text="Campus" textFill="#377256">
          <font>
             <Font size="29.0" />
          </font>

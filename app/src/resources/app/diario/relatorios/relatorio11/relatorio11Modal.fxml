@@ -22,6 +22,11 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="640.0" BorderPane.alignment="CENTER">
          <children>
+            <AnchorPane prefHeight="50.0" prefWidth="260.0">
+               <children>
+                  <Button fx:id="btnVoltar" layoutY="8.0" mnemonicParsing="false" onAction="#voltaTelaTransicao" text="Voltar" />
+               </children>
+            </AnchorPane>
             <Label styleClass="generalLabel" text="Como deseja ver o relatório?" />
             <Button fx:id="impressoBtn" mnemonicParsing="false" onAction="#salvarAction" text="PDF" />
             <Button fx:id="telaBtn" mnemonicParsing="false" onAction="#telaAction" text="Tela" />

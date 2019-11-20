@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainApp extends Application {
+public class MainDisciplinas extends Application {
 
 	private static Stage stage;
 
@@ -37,7 +37,7 @@ public class MainApp extends Application {
 	}
 
 	private void setStage(Stage stage) {
-		MainApp.stage = stage;
+		MainDisciplinas.stage = stage;
 
 	}
 

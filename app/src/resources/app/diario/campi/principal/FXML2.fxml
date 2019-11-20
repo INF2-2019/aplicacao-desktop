@@ -24,7 +24,7 @@
             <TableColumn fx:id="col_funcoes1" minWidth="0.0" prefWidth="100.0" styleClass="coluna" />
          </columns>
       </TableView>
-      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="1280.0" styleClass="cabecalho" text="Campus" textFill="WHITE">
+      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="1280.0" styleClass="cabecalho" text="Diário" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font>

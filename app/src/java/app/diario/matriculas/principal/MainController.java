@@ -182,7 +182,7 @@ public class MainController implements Initializable {
 	}
 	
 	public void fecha(){
-		MainApp.getStage().close();
+		MainMatriculas.getStage().close();
 		MainTelaTransicaoDiario mt = new MainTelaTransicaoDiario();
 		try {
 			mt.start(new Stage());
