@@ -26,6 +26,7 @@ public class RelReservasMain extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setWidth(1280);
         stage.setResizable(false);
         setStage(stage);
     }

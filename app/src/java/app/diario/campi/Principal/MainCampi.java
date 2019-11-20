@@ -1,4 +1,5 @@
-package app.diario.etapas.Principal;
+
+package app.diario.campi.Principal;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,26 +7,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application{
+public class MainCampi extends Application{
     private static Stage stage;
-	
     @Override
     public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/etapas/FXML.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/Principal/FXML2.fxml"));
+        stage.setWidth(1280);
         Scene scene = new Scene(root);
-        
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-		stage.setWidth(1280.0);
-        stage.setResizable(false);
         setStage(stage);
     }
     public static void main(String[] args) {
         launch(args);
     }
     
-    public static Stage getStage(){
+      public static Stage getStage(){
         return stage;
     }
 

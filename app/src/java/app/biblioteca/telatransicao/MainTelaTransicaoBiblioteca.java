@@ -17,7 +17,7 @@ public class MainTelaTransicaoBiblioteca extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("EstiloTelaTransicaoBiblioteca.css").toExternalForm());
         
-        stage.setTitle("Sistema Acadêmico");
+        stage.setTitle("Biblioteca");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setWidth(1280);

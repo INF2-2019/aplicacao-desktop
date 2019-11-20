@@ -2,6 +2,7 @@
 package app.biblioteca.relatorios.relDescartes;
 
 import app.biblioteca.relatorios.principal.DbConnector;
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -73,6 +74,12 @@ public class TableController implements Initializable{
     }
     @FXML
     public void volta() {
+        MainTelaTransicaoBiblioteca main = new MainTelaTransicaoBiblioteca();
+        try {
+            main.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         RelDescartesMain.getStage().close();
     
     }

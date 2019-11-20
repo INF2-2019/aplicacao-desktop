@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.campi.Principal.TableController">
+<AnchorPane onMouseEntered="#refresh" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.biblioteca.campi.Principal.TableController">
    <children>
       <TableView fx:id="table" editable="true" layoutX="89.0" layoutY="198.0" pickOnBounds="false" prefHeight="640.0" prefWidth="897.0" style="-fx-border-color: #ffffff;" styleClass="fonte" stylesheets="@style.css" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="89.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="198.0">
          <columns>
@@ -23,9 +23,9 @@
             <TableColumn fx:id="col_funcoes1" minWidth="0.0" prefWidth="100.0" styleClass="coluna" />
          </columns>
       </TableView>
-      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="1280.0" styleClass="cabecalho" text="Campus" textFill="WHITE">
+      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="1280.0" styleClass="cabecalho" text="Biblioteca" textFill="WHITE">
          <font>
-            <Font size="35.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <Button fx:id="adiciona" layoutX="1046.0" layoutY="155.0" mnemonicParsing="false" onAction="#Insere" style="-fx-background-color: #29A58C;" text="ADICIONAR" textFill="WHITE" />

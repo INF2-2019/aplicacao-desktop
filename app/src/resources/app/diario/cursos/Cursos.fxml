@@ -19,7 +19,7 @@
             <TableColumn fx:id="col_funcoes2" prefWidth="115.0" styleClass="coluna" />
          </columns>
       </TableView>
-      <Label prefHeight="48.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" styleClass="fonte" text="Sistema Academico" textFill="WHITE">
+      <Label prefHeight="48.0" prefWidth="1280.0" style="-fx-background-color: #29A58C;" styleClass="fonte" text="Diário" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font>

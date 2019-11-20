@@ -20,7 +20,7 @@
    <children>
       <AnchorPane minHeight="0.0" prefHeight="48.0" prefWidth="1280.0">
          <children>
-            <Label id="lblHeader" alignment="TOP_LEFT" prefHeight="48.0" prefWidth="1280.0" text="S.A." textFill="WHITE">
+            <Label id="lblHeader" alignment="TOP_LEFT" prefHeight="48.0" prefWidth="1280.0" text="Diário" textFill="WHITE">
                <font>
                   <Font size="32.0" />
                </font>
@@ -68,6 +68,22 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
+                        <Button fx:id="btnConteudosAtividades" layoutX="85.0" layoutY="475.0" mnemonicParsing="false" onAction="#entraConteudosAtividades" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="CONTEÚDOS E ATIVIDADES" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnMenuRelatorios" layoutX="85.0" layoutY="75.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -111,7 +127,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnMenuRelatorios" layoutX="255.0" layoutY="475.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoMatriculas" layoutX="255.0" layoutY="475.0" mnemonicParsing="false" onAction="#entraManutencaoMatriculas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE MATRÍCULAS" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

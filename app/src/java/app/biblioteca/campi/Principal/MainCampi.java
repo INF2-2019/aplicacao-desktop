@@ -7,11 +7,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application{
+public class MainCampi extends Application{
     private static Stage stage;
     @Override
     public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/campi/principal/FXML2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/campi/Principal/FXML2.fxml"));
         
         Scene scene = new Scene(root);
         stage.setResizable(false);

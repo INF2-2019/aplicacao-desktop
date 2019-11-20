@@ -6,6 +6,7 @@
 package app.biblioteca.relatorios.relAcervo;
 
 import app.biblioteca.relatorios.principal.DbConnector;
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -239,8 +240,9 @@ public class FXMLAcervoPeriodicosController implements Initializable {
      @FXML
     public void volta() {
         //declaracao para a tela de transição
+        MainTelaTransicaoBiblioteca main = new MainTelaTransicaoBiblioteca();
         try {
-            //.start(new Stage());
+            main.start(new Stage());
             RelAcervoPeridiocosMain.getStage().close();
         } catch (Exception ex) {
             Logger.getLogger(FXMLAcervoPeriodicosController.class.getName()).log(Level.SEVERE, null, ex);

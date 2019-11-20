@@ -12,10 +12,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.Funcoes;
-import app.biblioteca.descartes.main.MainApp;
+import app.biblioteca.descartes.main.MainDescartes;
 import app.biblioteca.descartes.main.descartarMain;
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import app.diario.departamentos.controllers.ModalAdicionarController;
-import app.diario.telatransicao.MainTelaTransicaoDiario;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -60,7 +60,7 @@ public class TelaDescartesController implements Initializable {
 private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
     @FXML 
     public void acaoVoltar(){
-        MainTelaTransicaoDiario main = new MainTelaTransicaoDiario();
+        MainTelaTransicaoBiblioteca main = new MainTelaTransicaoBiblioteca();
         fecha();
         try {
             main.start(new Stage());
@@ -102,7 +102,7 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
     }
     
     public void fecha() {
-        MainApp.getStage().close();
+        MainDescartes.getStage().close();
     }
       
     }

@@ -20,7 +20,7 @@ public class InsereMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/alunos/inserir/Insere.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/alunos/Inserir/Insere.fxml"));
                stage.setWidth(810);
         Scene scene = new Scene(root);
         stage.setResizable(false);

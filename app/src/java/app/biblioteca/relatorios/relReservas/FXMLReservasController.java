@@ -7,6 +7,7 @@ package app.biblioteca.relatorios.relReservas;
 
 import app.biblioteca.relatorios.principal.DbConnector;
 import app.biblioteca.relatorios.relMultas.TableController;
+import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -190,8 +191,9 @@ public class FXMLReservasController implements Initializable {
       @FXML
     public void volta() {
         //declaracao para a tela de transição
+        MainTelaTransicaoBiblioteca main = new MainTelaTransicaoBiblioteca();
         try {
-            //.start(new Stage());
+            main.start(new Stage());
             RelReservasMain.getStage().close();
         } catch (Exception ex) {
             Logger.getLogger(FXMLReservasController.class.getName()).log(Level.SEVERE, null, ex);

@@ -24,7 +24,7 @@ public class DeletaMain extends Application {
     private static Stage stage;
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/deletar/Deleta.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/app/diario/campi/Deletar/Deleta.fxml"));
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);

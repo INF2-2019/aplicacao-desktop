@@ -75,7 +75,7 @@ public class FXMLControllerTelaLoginAdmBiblioteca implements Initializable {
                     Scene scene = new Scene(root);
                     stg.setScene(scene);
                     stg.setResizable(false);
-                    stg.setTitle("Sistema Acadêmico");
+                    stg.setTitle("Biblioteca");
                     stg.setWidth(1280);
                     stg.show();
                 }

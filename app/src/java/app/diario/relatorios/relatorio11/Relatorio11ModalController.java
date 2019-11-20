@@ -1,6 +1,7 @@
 package app.diario.relatorios.relatorio11;
 
 import app.diario.relatorios.relatorio10.Relatorio10Controller;
+import app.diario.telatransicao.MainTelaTransicaoDiario;
 import app.utils.ConnectionFactory;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -45,6 +46,8 @@ public class Relatorio11ModalController implements Initializable {
 	private ChoiceBox selectDisciplina;
 	@FXML
 	private ChoiceBox selectEtapa;
+        @FXML
+        private Button btnVoltar;
 
 	@FXML
 	private void salvarAction(ActionEvent event) throws SQLException, ClassNotFoundException, DocumentException, FileNotFoundException {
@@ -152,5 +155,16 @@ public class Relatorio11ModalController implements Initializable {
 			Logger.getLogger(Relatorio10Controller.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
+        
+        public void voltaTelaTransicao(ActionEvent event) {
+            Stage stage = (Stage) btnVoltar.getScene().getWindow();
+            stage.close();
+            MainTelaTransicaoDiario telaTransicao = new MainTelaTransicaoDiario();
+            try {
+                telaTransicao.start(new Stage());
+            } catch (Exception ex) {
+                Logger.getLogger(Relatorio11ModalController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 
 }
