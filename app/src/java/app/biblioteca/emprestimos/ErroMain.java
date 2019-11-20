@@ -48,8 +48,8 @@ public class ErroMain extends Application{
 
 		stage.setScene(scene);
 		stage.setResizable(false);
-		stage.show();
 		setStage(stage);
+                stage.show();
     }
     public static void main(String[] args) {
 		launch(args);

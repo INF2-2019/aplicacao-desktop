@@ -24,8 +24,8 @@ public class MainDisciplinas extends Application {
 		stage.setScene(scene);
                 stage.setResizable(false);
                 stage.setWidth(1280);
-		stage.show();
 		setStage(stage);
+                stage.show();
 	}
 
 	public static void main(String[] args) {

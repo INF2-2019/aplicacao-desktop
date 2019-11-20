@@ -16,8 +16,8 @@ public class MainCampi extends Application{
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);
-        stage.show();
         setStage(stage);
+        stage.show();
     }
     public static void main(String[] args) {
         launch(args);

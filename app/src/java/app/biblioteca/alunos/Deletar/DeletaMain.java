@@ -29,8 +29,8 @@ public class DeletaMain extends Application {
         stage.setResizable(false);
         
         stage.setScene(scene);
-        stage.show();
 	setStage(stage);
+        stage.show();
     }
 
     /**

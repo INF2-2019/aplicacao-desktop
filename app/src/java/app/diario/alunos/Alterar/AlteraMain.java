@@ -25,8 +25,8 @@ public class AlteraMain extends Application {
         stage.setResizable(false);
         stage.setWidth(810);
         stage.setScene(scene);
-        stage.show();
         setStage(stage);
+        stage.show();
     }
 
     /**

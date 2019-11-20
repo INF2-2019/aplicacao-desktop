@@ -10,6 +10,7 @@ import app.diario.etapas.Principal.MainEtapas;
 import app.diario.matriculas.principal.MainMatriculas;
 import app.diario.professores.principal.ProfessorMain;
 import app.diario.transferencia.main.MainTranferencia;
+import app.diario.turmas.principal.MainTurmas;
 import app.inicio.MainApp;
 import javafx.event.ActionEvent;
 import java.net.URL;
@@ -50,6 +51,8 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
     private Button btnManutencaoMatriculas;
     @FXML
     private Button btnConteudosAtividades;
+    @FXML
+    private Button btnManutencaoTurmas;
     
     private static Stage stageTelaTransicao;
     
@@ -171,7 +174,7 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(FXMLControllerTelaTransicaoDiario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Stage stage = (Stage) btnManutencaoAlunos.getScene().getWindow();
+        Stage stage = (Stage) btnManutencaoMatriculas.getScene().getWindow();
         stage.close();
     }
     
@@ -183,7 +186,19 @@ public class FXMLControllerTelaTransicaoDiario implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(FXMLControllerTelaTransicaoDiario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Stage stage = (Stage) btnManutencaoAlunos.getScene().getWindow();
+        Stage stage = (Stage) btnConteudosAtividades.getScene().getWindow();
+        stage.close();
+    }
+    
+    @FXML
+    public void entraManutencaoTurmas(ActionEvent event) {
+        MainTurmas manutencaoTurmas = new MainTurmas();
+        try {
+            manutencaoTurmas.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLControllerTelaTransicaoDiario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Stage stage = (Stage) btnManutencaoTurmas.getScene().getWindow();
         stage.close();
     }
     

@@ -32,9 +32,9 @@ public class descartarMain extends Application{
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.show();
         stage.setResizable(false);
         setStage(stage);
+        stage.show();
     }
 
     /**

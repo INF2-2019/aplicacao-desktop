@@ -16,10 +16,10 @@ public class MainEtapas extends Application{
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.show();
-		stage.setWidth(1280.0);
+        stage.setWidth(1280.0);
         stage.setResizable(false);
         setStage(stage);
+        stage.show();
     }
     public static void main(String[] args) {
         launch(args);

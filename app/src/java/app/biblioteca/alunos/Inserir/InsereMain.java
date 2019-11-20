@@ -21,12 +21,12 @@ public class InsereMain extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/alunos/Inserir/Insere.fxml"));
-               stage.setWidth(810);
+        stage.setWidth(810);
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);
-        stage.show();
         setStage(stage);
+        stage.show();
     }
 
     /**

@@ -40,35 +40,35 @@
                <children>
                   <AnchorPane prefHeight="672.0" prefWidth="640.0" GridPane.columnIndex="1">
                      <children>
-                        <Button fx:id="btnManutencaoProfessores" layoutX="85.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoProfessores" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE PROFESSORES" textFill="WHITE">
+                        <Button fx:id="btnManutencaoProfessores" layoutX="85.0" layoutY="115.0" mnemonicParsing="false" onAction="#entraManutencaoProfessores" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE PROFESSORES" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoCursos" layoutX="85.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraManutencaoCursos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE CURSOS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoCursos" layoutX="85.0" layoutY="195.0" mnemonicParsing="false" onAction="#entraManutencaoCursos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE CURSOS" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoDisciplinas" layoutX="85.0" layoutY="315.0" mnemonicParsing="false" onAction="#entraManutencaoDisciplinas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE DISCIPLINAS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoDisciplinas" layoutX="85.0" layoutY="275.0" mnemonicParsing="false" onAction="#entraManutencaoDisciplinas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE DISCIPLINAS" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoCampi" layoutX="85.0" layoutY="395.0" mnemonicParsing="false" onAction="#entraManutencaoCampi" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE CAMPI" textFill="WHITE">
+                        <Button fx:id="btnManutencaoCampi" layoutX="85.0" layoutY="355.0" mnemonicParsing="false" onAction="#entraManutencaoCampi" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE CAMPI" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnConteudosAtividades" layoutX="85.0" layoutY="475.0" mnemonicParsing="false" onAction="#entraConteudosAtividades" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="CONTEÚDOS E ATIVIDADES" textFill="WHITE">
+                        <Button fx:id="btnConteudosAtividades" layoutX="85.0" layoutY="435.0" mnemonicParsing="false" onAction="#entraConteudosAtividades" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="CONTEÚDOS E ATIVIDADES" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -76,7 +76,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnMenuRelatorios" layoutX="85.0" layoutY="75.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoTurmas" layoutX="85.0" layoutY="515.0" mnemonicParsing="false" onAction="#entraManutencaoTurmas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE TURMAS" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -95,39 +95,47 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label layoutX="255.0" layoutY="75.0" text="Serviços:">
+                        <Label layoutX="255.0" layoutY="35.0" text="Serviços:">
                            <font>
                               <Font size="36.0" />
                            </font></Label>
-                        <Button fx:id="btnTransferenciaAluno" layoutX="255.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraTransferenciaAluno" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="TRANSFERÊNCIA DE ALUNO" textFill="WHITE">
+                        <Button fx:id="btnTransferenciaAluno" layoutX="255.0" layoutY="115.0" mnemonicParsing="false" onAction="#entraTransferenciaAluno" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="TRANSFERÊNCIA DE ALUNO" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoDepartamentos" layoutX="255.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraManutencaoDepartamentos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE DEPARTAMENTOS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoDepartamentos" layoutX="255.0" layoutY="195.0" mnemonicParsing="false" onAction="#entraManutencaoDepartamentos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE DEPARTAMENTOS" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoEtapas" layoutX="255.0" layoutY="315.0" mnemonicParsing="false" onAction="#entraManutencaoEtapas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ETAPAS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoEtapas" layoutX="255.0" layoutY="275.0" mnemonicParsing="false" onAction="#entraManutencaoEtapas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ETAPAS" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoAlunos" layoutX="255.0" layoutY="395.0" mnemonicParsing="false" onAction="#entraManutencaoAlunos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ALUNOS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoAlunos" layoutX="255.0" layoutY="355.0" mnemonicParsing="false" onAction="#entraManutencaoAlunos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ALUNOS" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnManutencaoMatriculas" layoutX="255.0" layoutY="475.0" mnemonicParsing="false" onAction="#entraManutencaoMatriculas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE MATRÍCULAS" textFill="WHITE">
+                        <Button fx:id="btnManutencaoMatriculas" layoutX="255.0" layoutY="435.0" mnemonicParsing="false" onAction="#entraManutencaoMatriculas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE MATRÍCULAS" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnMenuRelatorios" layoutX="255.0" layoutY="515.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

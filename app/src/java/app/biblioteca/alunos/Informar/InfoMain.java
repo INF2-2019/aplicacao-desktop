@@ -26,9 +26,9 @@ public class InfoMain extends Application {
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);
-               stage.setWidth(1015);
-        stage.show();
+        stage.setWidth(1015);
         setStage(stage);
+        stage.show();
     }
 
     /**

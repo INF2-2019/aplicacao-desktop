@@ -30,9 +30,9 @@ public class MainDeleta extends Application {
         
         
         stage.setScene(scene);
-        stage.show();
         setStage(stage);
-		stage.setResizable(false);
+        stage.setResizable(false);
+        stage.show();
     }
 
     /**

@@ -26,8 +26,8 @@ public class InsereMain extends Application {
         stage.setResizable(false);
         stage.setWidth(864);
         stage.setScene(scene);
-        stage.show();
         setStage(stage);
+        stage.show();
     }
 
     /**

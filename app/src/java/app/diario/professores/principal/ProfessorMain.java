@@ -21,10 +21,10 @@ public class ProfessorMain extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.show();
         setStage(stage);
-		stage.setResizable(false);
-		stage.setWidth(1280);
+	stage.setResizable(false);
+	stage.setWidth(1280);
+        stage.show();
         
     }
 
