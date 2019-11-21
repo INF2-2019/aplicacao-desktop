@@ -50,7 +50,7 @@
         <columns>
             <TableColumn fx:id="ACERVO" minWidth="200.0" prefWidth="200.0" text="ACERVO" />
             <TableColumn fx:id="DATA" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="DATA" />
-          <TableColumn fx:id="OPERADOR" minWidth="289.0" prefWidth="289.0" resizable="false" text="OPERADOR" />
+            <TableColumn fx:id="OPERADOR" minWidth="289.0" prefWidth="289.0" resizable="false" text="OPERADOR" />
             <TableColumn fx:id="MOTIVO" minWidth="310.0" prefWidth="310.0" text="MOTIVO" />
         </columns>
          <columnResizePolicy>

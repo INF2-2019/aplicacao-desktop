@@ -13,20 +13,19 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import app.biblioteca.descartes.main.DescartadoLista;
 import app.biblioteca.descartes.main.Funcoes;
 import app.biblioteca.descartes.main.MainDescartes;
-import app.biblioteca.descartes.main.descartarMain;
 import app.biblioteca.telatransicao.MainTelaTransicaoBiblioteca;
-import app.diario.departamentos.controllers.ModalAdicionarController;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 /**
@@ -69,7 +68,7 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
         }
     }
     @FXML
-    void modalAdicionar(ActionEvent event) throws IOException, SQLException {
+    void modalAdicionar(MouseEvent event) throws IOException, SQLException {
         Stage modalAdicionar = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/app/biblioteca/descartes/descartar/ModalDescartar.fxml"));
         modalAdicionar.setScene(new Scene(root));
@@ -93,9 +92,9 @@ private ObservableList<DescartadoLista> a =FXCollections.observableArrayList();
         MOTIVO.setCellValueFactory(new PropertyValueFactory<>("MOTIVO"));
         OPERADOR.setCellValueFactory(new PropertyValueFactory<>("OPERADOR"));
         DATA.setCellValueFactory(new PropertyValueFactory<>("DATA"));
-    
+
         TabelaDescarte.setItems(FXCollections.observableArrayList(ListaD));
-       TabelaDescarte.getColumns().addAll(ACERVO,MOTIVO,OPERADOR,DATA);
+//        TabelaDescarte.getColumns().addAll(ACERVO,MOTIVO,OPERADOR,DATA);
         
        
     
