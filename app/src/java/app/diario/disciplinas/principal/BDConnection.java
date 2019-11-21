@@ -1,5 +1,7 @@
 package app.diario.disciplinas.principal;
 
+import app.utils.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,10 +9,11 @@ import java.sql.SQLException;
 public class BDConnection {
 
 	public static Connection getConnection() throws SQLException {
-		Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/diario?useTimezone=true&serverTimezone=UTC", "root", "");
-
-		return connect;
-
+		Connection con = ConnectionFactory.getDiario();
+		if(con == null){
+			throw new SQLException();
+		}
+		return con;
 	}
 
 }

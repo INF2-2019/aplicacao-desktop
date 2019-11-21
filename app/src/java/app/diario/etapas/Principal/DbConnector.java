@@ -1,5 +1,7 @@
 package app.diario.etapas.Principal;
 
+import app.utils.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,8 +12,10 @@ import java.sql.SQLException;
  */
 public class DbConnector {
     public static Connection getConnection() throws SQLException{
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:/diario?useTimezone=true&serverTimezone=UTC","root","");
-        
+        Connection con = ConnectionFactory.getDiario();
+        if(con == null){
+            throw new SQLException();
+        }
         return con;
     }
 }
