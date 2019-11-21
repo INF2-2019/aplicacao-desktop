@@ -2,15 +2,24 @@
 
 Este repositório é dedicado à parte de `front-end` desktop da aplicação a ser desenvolvida.
 
-## Aviso
+## Sobre o banco de dados
 
-Este repositório tem afazeres globais, caso queira ajudar verifique o [`TO-DO`](TO-DO.md).
+Isso é algo muito importante, caso você vá _buildar_ o projeto pela sua IDE, você pode mudar as credenciais do BD na classe `app.utils.ConnectionFactory`.
+
+Por padrão, seu BD deve ter as seguintes credenciais:
+
+> _Usuário:_ `root`  
+> _Senha:_ sem senha
+
+## Como _buildar_ o projeto
+
+Utilizar a ferramenta de _build_ padrão da IDE utilizada.
 
 ## Instruções para IDEs e Editores recomendados
 
 ### Ferramentas necessárias
 
-- `Oracle JDK 7/8` ou `OpenJDK 7/8` [recomendado]
+- `Oracle JDK 8` ou `OpenJDK 8 + OpenJFX 8` [recomendado]
 - Uma IDE recomendada
 
 Instruções para instalação: [aqui](https://duckduckgo.com/)
@@ -63,22 +72,17 @@ A documentação estará disponível na pasta `docs`.
 
 ## Padronizações
 
-- **Telas principais**: 
+- **Telas principais**:
 
-	- Dimensões: 1280px x 720px
-	- Não serão redimensionáveis
-	- Headers: Dimensões de 1280px x 48px com fonte de tamanho 32
-	- Deverão ter um botão VOLTAR que retornará à tela de transição do sistema, diário ou biblioteca, ao qual a tela pertence
-	
+  - Dimensões: 1280px x 720px
+  - Não serão redimensionáveis
+  - Headers: Dimensões de 1280px x 48px com fonte de tamanho 32
+  - Deverão ter um botão VOLTAR que retornará à tela de transição do sistema, diário ou biblioteca, ao qual a tela pertence
+
 - **Modais**:
-	
-	- Dimensões: Ficarão a critério dos grupos de acordo com suas respectivas necessidades, respeitando o tamanho limite de 1280px x 720px
-	- Não serão redimensionáveis
-	
+  - Dimensões: Ficarão a critério dos grupos de acordo com suas respectivas necessidades, respeitando o tamanho limite de 1280px x 720px - Não serão redimensionáveis
 - **Botões**:
 
-	- O cursor, ao passar por cima, deverá mudar para HAND (propriedade CURSOR: HAND no Scene Builder)
-	
-- **CSS**:
-	
-	- Todas as fontes deverão ser a padrão (utilizada pelo Scene Builder)
+  - O cursor, ao passar por cima, deverá mudar para HAND (propriedade CURSOR: HAND no Scene Builder)
+
+- **CSS**: - Todas as fontes deverão ser a padrão (utilizada pelo Scene Builder)
