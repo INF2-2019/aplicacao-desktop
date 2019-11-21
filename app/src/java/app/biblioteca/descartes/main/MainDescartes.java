@@ -24,10 +24,10 @@ public class MainDescartes extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/app/biblioteca/descartes/main/styles.css").toExternalForm()); 
         stage.setScene(scene);
-        stage.show();
         stage.setResizable(false);
         stage.setWidth(1280);
         setStage(stage);
+        stage.show();
     }
     public static void main(String[] args) {
         launch(args);

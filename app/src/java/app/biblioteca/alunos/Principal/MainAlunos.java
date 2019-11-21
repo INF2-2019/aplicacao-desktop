@@ -16,9 +16,9 @@ public class MainAlunos extends Application{
         Scene scene = new Scene(root);
         stage.setResizable(false);
         stage.setScene(scene);
-               stage.setWidth(1280);
-        stage.show();
+        stage.setWidth(1280);
         setStage(stage);
+        stage.show();
     }
     public static void main(String[] args) {
         launch(args);

@@ -16,11 +16,10 @@ public class RelMultasMain extends Application{
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.show();
         stage.setWidth(1280);
         setStage(stage);
 	stage.setResizable(false);
-
+        stage.show();
     }
     public static void main(String[] args) {
         launch(args);

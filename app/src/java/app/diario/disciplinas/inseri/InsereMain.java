@@ -20,9 +20,8 @@ public class InsereMain extends Application {
                 scene.setCursor(Cursor.HAND);
 
 		stage.setScene(scene);
-		stage.show();
 		setStage(stage);
-         
+                stage.show();
 	}
 
 	public static void main(String[] args) {

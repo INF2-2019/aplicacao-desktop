@@ -20,11 +20,10 @@ public class ListagemMain extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.show();
         stage.setWidth(1280);
         stage.setResizable(false);
         setStage(stage);
-        
+        stage.show();
     }
 
     /**
