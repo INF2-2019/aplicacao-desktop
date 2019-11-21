@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@EstiloTelaTransicaoBiblioteca.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.telatransicao.FXMLControllerTelaTransicaoBiblioteca">
+  <columnConstraints>
+    <ColumnConstraints hgrow="NEVER" maxWidth="1280.0" minWidth="10.0" prefWidth="1280.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="672.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane minHeight="0.0" prefHeight="48.0" prefWidth="1280.0">
+         <children>
+            <Label id="lblHeader" alignment="TOP_LEFT" prefHeight="48.0" prefWidth="1280.0" text="Biblioteca" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <GridPane layoutX="-1.0" prefHeight="672.0" prefWidth="1280.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="640.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="640.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="672.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="672.0" prefWidth="640.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="btnManutencaoDescartes" layoutX="85.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoDescartes" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE DESCARTES" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnManutencaoReservas" layoutX="85.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraManutencaoReservas" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE RESERVAS" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnManutencaoCampi" layoutX="85.0" layoutY="315.0" mnemonicParsing="false" onAction="#entraManutencaoCampi" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE CAMPI" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnVoltaInicio" layoutX="14.0" layoutY="618.0" mnemonicParsing="false" onAction="#voltaInicio" prefHeight="40.0" prefWidth="200.0" styleClass="bgBtn" text="VOLTAR" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label layoutX="255.0" layoutY="75.0" text="Serviços:">
+                           <font>
+                              <Font size="36.0" />
+                           </font></Label>
+                        <Button fx:id="btnManutencaoAcervos" layoutX="255.0" layoutY="155.0" mnemonicParsing="false" onAction="#entraManutencaoAcervos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ACERVO" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnManutencaoEmprestimos" layoutX="255.0" layoutY="235.0" mnemonicParsing="false" onAction="#entraManutencaoEmprestimos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE EMPRÉSTIMOS" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnMenuRelatorios" layoutX="255.0" layoutY="395.0" mnemonicParsing="false" onAction="#abreModalRelatorios" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MENU DE RELATÓRIOS" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="btnManutencaoAlunos" layoutX="255.0" layoutY="315.0" mnemonicParsing="false" onAction="#entraManutencaoAlunos" prefHeight="60.0" prefWidth="300.0" styleClass="bgBtn" text="MANUTENÇÃO DE ALUNOS" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

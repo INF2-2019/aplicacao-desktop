@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="740.0" stylesheets="@EstiloTelaTransicaoDiario.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.telatransicao.FXMLControllerModalRelatoriosDiario">
+   <children>
+      <Button fx:id="btnRelatorioProfessores" layoutX="60.0" layoutY="160.0" mnemonicParsing="false" onAction="#entraRelatorioProfessores" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE PROFESSORES" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioCertificados" layoutX="60.0" layoutY="85.0" mnemonicParsing="false" onAction="#entraRelatorioCertificados" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE CERTIFICADOS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioAlunos" layoutX="405.0" layoutY="85.0" mnemonicParsing="false" onAction="#entraRelatorioAlunos" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE ALUNOS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRelatorioConteudos" layoutX="405.0" layoutY="160.0" mnemonicParsing="false" onAction="#entraRelatorioConteudos" prefHeight="55.0" prefWidth="275.0" styleClass="bgBtn" text="RELATÓRIO DE CONTEÚDOS" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnFechaModal" layoutX="651.0" layoutY="261.0" mnemonicParsing="false" onAction="#fechaModal" prefWidth="75.0" style="-fx-background-color: #d32f2f;" text="FECHAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="15.0" layoutY="15.0" text="Relatórios:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

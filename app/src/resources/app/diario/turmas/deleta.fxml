@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="258.0" prefWidth="640.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.turmas.deletar.DeletaController">
+    <children>
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="1280.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <left>
+                <Label id="header-text" styleClass="h1" text="Deletar Turma" BorderPane.alignment="CENTER_LEFT" />
+            </left>
+        </BorderPane>
+        <Label layoutX="27.0" layoutY="112.0" prefHeight="35.0" prefWidth="613.0" styleClass="generalLabel" text="Você tem certeza que deseja deletar a turma?">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Button fx:id="botaoCancelar" layoutX="426.0" layoutY="179.0" onAction="#deletaAction" prefHeight="54.0" prefWidth="173.0" styleClass="greenBtn" text="CONFIRMAR">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="botaoConfirmar" layoutX="247.0" layoutY="179.0" onAction="#cancelaAction" prefHeight="54.0" prefWidth="173.0" styleClass="redBtn" text="CANCELAR">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

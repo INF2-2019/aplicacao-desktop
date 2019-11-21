@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="864.0" stylesheets="@../principal/style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.campi.Inserir.InsereController">
+    <children>
+      <Label prefHeight="43.0" prefWidth="864.0" styleClass="cabecalho" text="Campus" textFill="#377256">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="botaoCancelar" layoutX="605.0" layoutY="542.0" mnemonicParsing="false" onAction="#acaoCancelar" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="botaoSalvar" layoutX="703.0" layoutY="542.0" mnemonicParsing="false" onAction="#acaoSalvar" prefWidth="75.0" style="-fx-background-color: #29a58c;" text="SALVAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="nomeInput" layoutX="24.0" layoutY="147.0" prefHeight="25.0" prefWidth="346.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="AnoLabel1" layoutX="28.0" layoutY="121.0" minHeight="16" minWidth="69" text="Nome" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cityInput" layoutX="24.0" layoutY="231.0" prefHeight="25.0" prefWidth="215.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="AnoLabel8" layoutX="28.0" layoutY="205.0" minHeight="16" minWidth="69" text="Cidade" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ufInput" layoutX="28.0" layoutY="313.0" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #dddddd;" />
+      <Label fx:id="AnoLabel10" layoutX="28.0" layoutY="285.0" minHeight="16" minWidth="69" text="UF" textAlignment="CENTER" textFill="#5dbaa7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

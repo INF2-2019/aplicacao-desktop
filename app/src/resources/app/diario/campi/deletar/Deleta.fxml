@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="172.0" prefWidth="614.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.diario.campi.Deletar.DeletaController">
+    <children>
+      <Label layoutX="29.0" layoutY="22.0" prefHeight="79.0" prefWidth="508.0" text="Deseja deletar?" textAlignment="CENTER" textFill="#e53935">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
+      <Button fx:id="botaoDeletar" layoutX="488.0" layoutY="119.0" mnemonicParsing="false" onAction="#deletar" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #E53935;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="botaoCancelar" layoutX="371.0" layoutY="119.0" mnemonicParsing="false" onAction="#AcaoCancelar" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #29a58c;" text="CANCELAR" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+    </children>
+</AnchorPane>

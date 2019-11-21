@@ -1,0 +1,29 @@
+.button{
+    
+    -fx-text-fill: #FDFBF9;
+    -fx-padding: 10px;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 2px;
+    -fx-cursor: HAND;
+}
+
+.aviso{
+    -fx-padding: 5px;
+}
+
+.aviso-erro{
+    
+    -fx-background-color: red;
+}
+
+.aviso-sucesso{
+    
+    -fx-background-color:  #248f24;
+}
+
+.editar{
+    -fx-background-color: #2C46A5; 
+}
+.deletar{
+    -fx-background-color: #E53935;
+}

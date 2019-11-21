@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.biblioteca.emprestimos.ControllerEdita">
+    <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label prefHeight="59.0" prefWidth="391.0" text="Empréstimo">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="12.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="59.0" prefWidth="800.0">
+               <children>
+                  <Label text="ID-Aluno" textFill="#29a58c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="IDAluno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="59.0" prefWidth="800.0">
+               <children>
+                  <Label text="ID-Acervo" textFill="#29a58c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="IDAcervo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="59.0" prefWidth="800.0">
+               <children>
+                  <Label text="data-empréstimo" textFill="#29a58c" >
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="DataEmprestimo" />
+               </children>
+            </HBox><HBox prefHeight="59.0" prefWidth="800.0">
+               <children>
+                  <Label text="data-prévia-devolução" textFill="#29a58c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="DataPrevDevolucao" />
+               </children>
+            </HBox><HBox prefHeight="59.0" prefWidth="800.0">
+               <children>
+                  <Label text="data-devolução" textFill="#29a58c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="DataDevolucao" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="Alterar" style="-fx-cursor:hand;-fx-background-color: #29a58c;" mnemonicParsing="false" onAction="#salvarAlteracaoEmprestimo" prefHeight="30.0" prefWidth="200.0" text="Salvar">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Deletar" style="-fx-cursor:hand;-fx-background-color: #A4A4A4;" mnemonicParsing="false" onAction="#cancelarEmprestimo" prefHeight="30.0" prefWidth="200.0" text="Cancelar">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+    
+</StackPane>
