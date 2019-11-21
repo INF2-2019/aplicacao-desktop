@@ -91,7 +91,7 @@ public class MainController implements Initializable {
 		String sql = "SELECT * FROM matriculas";
 		ResultSet res = con.createStatement().executeQuery(sql);
 		while (res.next()) {
-			sql = "SELECT * FROM alunos WHERE id=" + res.getInt("id-alunos");
+			sql = "SELECT * FROM alunos WHERE id=" + res.getLong("id-alunos");
 			ResultSet res2 = con.createStatement().executeQuery(sql);
 			sql = "SELECT * FROM disciplinas WHERE id=" + res.getInt("id-disciplinas");
 			ResultSet res3 = con.createStatement().executeQuery(sql);
