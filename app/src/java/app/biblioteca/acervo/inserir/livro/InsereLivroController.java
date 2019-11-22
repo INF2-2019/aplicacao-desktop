@@ -55,7 +55,7 @@ public class InsereLivroController {
             stmt.setInt(1,Integer.parseInt(idInput.getText()));
             stmt.setInt(2,Integer.parseInt(id));
             stmt.setString(3,edicaoInput.getText());
-            stmt.setInt(4,Integer.parseInt(isbnInput.getText()));
+            stmt.setLong(4,Long.parseLong(isbnInput.getText()));
             stmt.execute();
             con.close();
         } catch (SQLException ex) {
