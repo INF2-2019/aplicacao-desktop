@@ -16,7 +16,7 @@
           </JavaFxApplicationIcons>
         </option>
         <option name="nativeBundle" value="all" />
-        <option name="title" value="Sistema Acadêmico" />
+        <option name="title" value="SAAdmin" />
         <option name="vendor" value="INF2" />
         <option name="version" value="0.1" />
         <option name="width" value="1280" />
